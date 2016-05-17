@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace KulochBus
 {
-    public partial class Form1 : Form
+    public partial class frmMain : Form
     {
-        public Form1()
+        public frmMain()
         {
             InitializeComponent();
+        }
+
+        private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hej");
         }
     }
 }
