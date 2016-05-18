@@ -15,11 +15,13 @@ namespace KulochBus
         public frmMain()
         {
             InitializeComponent();
+
+            panNewMember.Hide();
         }
 
         private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hej");
+            panNewMember.Show();
         }
 
         private void arkivToolStripMenuItem_Click(object sender, EventArgs e)
@@ -27,6 +29,9 @@ namespace KulochBus
 
         }
 
- 
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            panNewMember.Hide();
+        }
     }
 }
