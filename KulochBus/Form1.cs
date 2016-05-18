@@ -21,5 +21,15 @@ namespace KulochBus
         {
             MessageBox.Show("Hej");
         }
+
+        private void arkivToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hej");
+        }
     }
 }
