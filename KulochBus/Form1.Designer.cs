@@ -42,7 +42,7 @@
             this.visaHjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panNewMember = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblSecurityNumber = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
             this.lblZipcode = new System.Windows.Forms.Label();
             this.lblCity = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -212,7 +212,7 @@
             this.panNewMember.Controls.Add(this.textBox5);
             this.panNewMember.Controls.Add(this.textBox4);
             this.panNewMember.Controls.Add(this.textBox3);
-            this.panNewMember.Controls.Add(this.textBox2);
+            this.panNewMember.Controls.Add(this.txtLastName);
             this.panNewMember.Controls.Add(this.lblEmail);
             this.panNewMember.Controls.Add(this.lblCity);
             this.panNewMember.Controls.Add(this.lblZipcode);
@@ -221,19 +221,19 @@
             this.panNewMember.Controls.Add(this.lblSecurityNumber);
             this.panNewMember.Controls.Add(this.lblLastName);
             this.panNewMember.Controls.Add(this.lblFirstName);
-            this.panNewMember.Controls.Add(this.textBox1);
+            this.panNewMember.Controls.Add(this.txtFirstName);
             this.panNewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panNewMember.Location = new System.Drawing.Point(0, 24);
             this.panNewMember.Name = "panNewMember";
             this.panNewMember.Size = new System.Drawing.Size(642, 347);
             this.panNewMember.TabIndex = 1;
             // 
-            // textBox1
+            // txtFirstName
             // 
-            this.textBox1.Location = new System.Drawing.Point(97, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(150, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtFirstName.Location = new System.Drawing.Point(97, 16);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(150, 20);
+            this.txtFirstName.TabIndex = 0;
             // 
             // lblFirstName
             // 
@@ -307,12 +307,12 @@
             this.lblEmail.TabIndex = 8;
             this.lblEmail.Text = "E-post";
             // 
-            // textBox2
+            // txtLastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(97, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(150, 20);
-            this.textBox2.TabIndex = 9;
+            this.txtLastName.Location = new System.Drawing.Point(97, 45);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(150, 20);
+            this.txtLastName.TabIndex = 9;
             // 
             // textBox3
             // 
@@ -540,6 +540,7 @@
             this.btnSave.TabIndex = 35;
             this.btnSave.Text = "Spara";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -613,7 +614,7 @@
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.Label lblZipcode;
@@ -622,7 +623,7 @@
         private System.Windows.Forms.Label lblSecurityNumber;
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtFirstName;
     }
 }
 
