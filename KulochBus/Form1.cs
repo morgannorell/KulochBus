@@ -79,5 +79,15 @@ namespace KulochBus
 
             panNewTraininggroup.Show();
         }
+
+        private void kontaktToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (Control c in Controls)
+            {
+                if (c is Panel) c.Hide();
+            }
+
+            panNewContact.Show();
+        }
     }
 }
