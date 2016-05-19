@@ -80,8 +80,18 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.träningsgruppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panNewTraininggroup = new System.Windows.Forms.Panel();
+            this.lblTraningDescription = new System.Windows.Forms.Label();
+            this.lblTGName = new System.Windows.Forms.Label();
+            this.lblTGLevel = new System.Windows.Forms.Label();
+            this.lblTGDescription = new System.Windows.Forms.Label();
+            this.lblTGDiciplin = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panNewMember.SuspendLayout();
+            this.panNewTraininggroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -559,11 +569,95 @@
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp...";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
+            // panNewTraininggroup
+            // 
+            this.panNewTraininggroup.Controls.Add(this.textBox13);
+            this.panNewTraininggroup.Controls.Add(this.textBox2);
+            this.panNewTraininggroup.Controls.Add(this.textBox1);
+            this.panNewTraininggroup.Controls.Add(this.lblTGDiciplin);
+            this.panNewTraininggroup.Controls.Add(this.lblTGDescription);
+            this.panNewTraininggroup.Controls.Add(this.lblTGLevel);
+            this.panNewTraininggroup.Controls.Add(this.lblTGName);
+            this.panNewTraininggroup.Controls.Add(this.lblTraningDescription);
+            this.panNewTraininggroup.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panNewTraininggroup.Location = new System.Drawing.Point(0, 24);
+            this.panNewTraininggroup.Name = "panNewTraininggroup";
+            this.panNewTraininggroup.Size = new System.Drawing.Size(642, 347);
+            this.panNewTraininggroup.TabIndex = 37;
+            // 
+            // lblTraningDescription
+            // 
+            this.lblTraningDescription.AutoSize = true;
+            this.lblTraningDescription.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTraningDescription.Location = new System.Drawing.Point(12, 9);
+            this.lblTraningDescription.Name = "lblTraningDescription";
+            this.lblTraningDescription.Size = new System.Drawing.Size(271, 27);
+            this.lblTraningDescription.TabIndex = 0;
+            this.lblTraningDescription.Text = "Skapa ny träningsgrupp";
+            // 
+            // lblTGName
+            // 
+            this.lblTGName.AutoSize = true;
+            this.lblTGName.Location = new System.Drawing.Point(14, 53);
+            this.lblTGName.Name = "lblTGName";
+            this.lblTGName.Size = new System.Drawing.Size(35, 13);
+            this.lblTGName.TabIndex = 1;
+            this.lblTGName.Text = "Namn";
+            // 
+            // lblTGLevel
+            // 
+            this.lblTGLevel.AutoSize = true;
+            this.lblTGLevel.Location = new System.Drawing.Point(14, 94);
+            this.lblTGLevel.Name = "lblTGLevel";
+            this.lblTGLevel.Size = new System.Drawing.Size(29, 13);
+            this.lblTGLevel.TabIndex = 2;
+            this.lblTGLevel.Text = "Nivå";
+            // 
+            // lblTGDescription
+            // 
+            this.lblTGDescription.AutoSize = true;
+            this.lblTGDescription.Location = new System.Drawing.Point(14, 116);
+            this.lblTGDescription.Name = "lblTGDescription";
+            this.lblTGDescription.Size = new System.Drawing.Size(62, 13);
+            this.lblTGDescription.TabIndex = 3;
+            this.lblTGDescription.Text = "Beskrivning";
+            // 
+            // lblTGDiciplin
+            // 
+            this.lblTGDiciplin.AutoSize = true;
+            this.lblTGDiciplin.Location = new System.Drawing.Point(14, 73);
+            this.lblTGDiciplin.Name = "lblTGDiciplin";
+            this.lblTGDiciplin.Size = new System.Drawing.Size(40, 13);
+            this.lblTGDiciplin.TabIndex = 4;
+            this.lblTGDiciplin.Text = "Disiplin";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(109, 53);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 5;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(109, 78);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 6;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(109, 103);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(100, 20);
+            this.textBox13.TabIndex = 7;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(642, 371);
+            this.Controls.Add(this.panNewTraininggroup);
             this.Controls.Add(this.panNewMember);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -573,6 +667,8 @@
             this.menuStrip1.PerformLayout();
             this.panNewMember.ResumeLayout(false);
             this.panNewMember.PerformLayout();
+            this.panNewTraininggroup.ResumeLayout(false);
+            this.panNewTraininggroup.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -632,6 +728,15 @@
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.ToolStripMenuItem medlemToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem träningsgruppToolStripMenuItem;
+        private System.Windows.Forms.Panel panNewTraininggroup;
+        private System.Windows.Forms.Label lblTraningDescription;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label lblTGDiciplin;
+        private System.Windows.Forms.Label lblTGDescription;
+        private System.Windows.Forms.Label lblTGLevel;
+        private System.Windows.Forms.Label lblTGName;
     }
 }
 

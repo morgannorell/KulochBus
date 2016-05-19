@@ -20,12 +20,17 @@ namespace KulochBus
             // Döljer alla paneler
             foreach (Control c in Controls)
             {
-                if (c is Panel) c.Visible = false;
+                if (c is Panel) c.Hide();
             }
         }
 
         private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Control c in Controls)
+            {
+                if (c is Panel) c.Hide();
+            }
+
             panNewMember.Show();
         }
 
@@ -36,7 +41,7 @@ namespace KulochBus
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            panNewMember.Hide();
+            panNewMember.Hide();         
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -67,7 +72,12 @@ namespace KulochBus
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            foreach (Control c in Controls)
+            {
+                if (c is Panel) c.Hide();
+            }
 
+            panNewTraininggroup.Show();
         }
     }
 }
