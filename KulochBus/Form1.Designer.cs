@@ -117,6 +117,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
+            this.avslutaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panNewMember.SuspendLayout();
             this.panNewTraininggroup.SuspendLayout();
@@ -140,7 +141,8 @@
             // arkivToolStripMenuItem
             // 
             this.arkivToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nyToolStripMenuItem});
+            this.nyToolStripMenuItem,
+            this.avslutaToolStripMenuItem});
             this.arkivToolStripMenuItem.Name = "arkivToolStripMenuItem";
             this.arkivToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.arkivToolStripMenuItem.Text = "Arkiv";
@@ -941,14 +943,21 @@
             this.textBox25.Size = new System.Drawing.Size(150, 20);
             this.textBox25.TabIndex = 38;
             // 
+            // avslutaToolStripMenuItem
+            // 
+            this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.avslutaToolStripMenuItem.Text = "Avsluta";
+            this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(645, 405);
+            this.Controls.Add(this.panNewTraininggroup);
             this.Controls.Add(this.panNewContact);
             this.Controls.Add(this.panNewMember);
-            this.Controls.Add(this.panNewTraininggroup);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
@@ -1057,6 +1066,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.ToolStripMenuItem avslutaToolStripMenuItem;
     }
 }
 
