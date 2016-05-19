@@ -17,7 +17,11 @@ namespace KulochBus
         {
             InitializeComponent();
 
-            panNewMember.Hide();
+            // Döljer alla paneler
+            foreach (Control c in Controls)
+            {
+                if (c is Panel) c.Visible = false;
+            }
         }
 
         private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
@@ -59,6 +63,11 @@ namespace KulochBus
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

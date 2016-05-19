@@ -35,6 +35,7 @@
             this.medlemToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kontaktToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.redigeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medlemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.visaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.närvaroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.medlemmarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,7 +57,6 @@
             this.lblResponsibility = new System.Windows.Forms.Label();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox10 = new System.Windows.Forms.TextBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.labDash = new System.Windows.Forms.Label();
@@ -79,8 +79,7 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.medlemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.träningsgruppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panNewMember.SuspendLayout();
             this.SuspendLayout();
@@ -113,28 +112,29 @@
             this.nyToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.närvaroToolStripMenuItem,
             this.medlemToolStripMenuItem,
-            this.kontaktToolStripMenuItem});
+            this.kontaktToolStripMenuItem,
+            this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.närvaroToolStripMenuItem.Text = "Närvaro...";
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.medlemToolStripMenuItem.Text = "Medlem...";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.kontaktToolStripMenuItem.Text = "Kontakt...";
             // 
             // redigeraToolStripMenuItem
@@ -144,6 +144,12 @@
             this.redigeraToolStripMenuItem.Name = "redigeraToolStripMenuItem";
             this.redigeraToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.redigeraToolStripMenuItem.Text = "Redigera";
+            // 
+            // medlemToolStripMenuItem1
+            // 
+            this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
+            this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.medlemToolStripMenuItem1.Text = "Medlem";
             // 
             // visaToolStripMenuItem
             // 
@@ -157,13 +163,13 @@
             // närvaroToolStripMenuItem1
             // 
             this.närvaroToolStripMenuItem1.Name = "närvaroToolStripMenuItem1";
-            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(139, 22);
+            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.närvaroToolStripMenuItem1.Text = "Närvaro";
             // 
             // medlemmarToolStripMenuItem
             // 
             this.medlemmarToolStripMenuItem.Name = "medlemmarToolStripMenuItem";
-            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medlemmarToolStripMenuItem.Text = "Medlemmar";
             // 
             // hjälpToolStripMenuItem
@@ -189,7 +195,6 @@
             // 
             // panNewMember
             // 
-            this.panNewMember.Controls.Add(this.label3);
             this.panNewMember.Controls.Add(this.btnCancel);
             this.panNewMember.Controls.Add(this.btnSave);
             this.panNewMember.Controls.Add(this.rbnLeaderNo);
@@ -204,7 +209,6 @@
             this.panNewMember.Controls.Add(this.lblResponsibility);
             this.panNewMember.Controls.Add(this.textBox11);
             this.panNewMember.Controls.Add(this.label2);
-            this.panNewMember.Controls.Add(this.label1);
             this.panNewMember.Controls.Add(this.textBox10);
             this.panNewMember.Controls.Add(this.textBox9);
             this.panNewMember.Controls.Add(this.labDash);
@@ -367,15 +371,6 @@
             this.label2.Size = new System.Drawing.Size(10, 13);
             this.label2.TabIndex = 23;
             this.label2.Text = "-";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(348, 245);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(10, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "-";
             // 
             // textBox10
             // 
@@ -557,20 +552,12 @@
             this.txtFirstName.Size = new System.Drawing.Size(150, 20);
             this.txtFirstName.TabIndex = 0;
             // 
-            // label3
+            // träningsgruppToolStripMenuItem
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(397, 228);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 37;
-            this.label3.Text = "TEST";
-            //
-            // medlemToolStripMenuItem1
-            //
-            this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
-            this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.medlemToolStripMenuItem1.Text = "Medlem";
+            this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp...";
+            this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // frmMain
             // 
@@ -621,7 +608,6 @@
         private System.Windows.Forms.Label lblResponsibility;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label labDash;
@@ -644,8 +630,8 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem medlemToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem träningsgruppToolStripMenuItem;
     }
 }
 
