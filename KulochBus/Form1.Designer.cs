@@ -79,6 +79,7 @@
             this.lblLastName = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.medlemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panNewMember.SuspendLayout();
@@ -188,6 +189,7 @@
             // 
             // panNewMember
             // 
+            this.panNewMember.Controls.Add(this.label3);
             this.panNewMember.Controls.Add(this.btnCancel);
             this.panNewMember.Controls.Add(this.btnSave);
             this.panNewMember.Controls.Add(this.rbnLeaderNo);
@@ -555,8 +557,17 @@
             this.txtFirstName.Size = new System.Drawing.Size(150, 20);
             this.txtFirstName.TabIndex = 0;
             // 
-            // medlemToolStripMenuItem1
+            // label3
             // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(397, 228);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "TEST";
+            //
+            // medlemToolStripMenuItem1
+            //
             this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
             this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.medlemToolStripMenuItem1.Text = "Medlem";
@@ -633,6 +644,7 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ToolStripMenuItem medlemToolStripMenuItem1;
     }
 }
