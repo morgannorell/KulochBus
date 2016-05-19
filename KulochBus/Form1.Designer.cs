@@ -42,43 +42,44 @@
             this.visaHjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panNewMember = new System.Windows.Forms.Panel();
-            this.txtFirstName = new System.Windows.Forms.TextBox();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.lblSecurityNumber = new System.Windows.Forms.Label();
-            this.lblGender = new System.Windows.Forms.Label();
-            this.lblAddress = new System.Windows.Forms.Label();
-            this.lblZipcode = new System.Windows.Forms.Label();
-            this.lblCity = new System.Windows.Forms.Label();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtLastName = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.lblPhone = new System.Windows.Forms.Label();
-            this.lblMobile = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.labDash = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.lblResponsibility = new System.Windows.Forms.Label();
-            this.lblMembership = new System.Windows.Forms.Label();
-            this.lblPicture = new System.Windows.Forms.Label();
-            this.lblLeader = new System.Windows.Forms.Label();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.rbnPictureYes = new System.Windows.Forms.RadioButton();
-            this.rbnPictureNo = new System.Windows.Forms.RadioButton();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.rbnLeaderNo = new System.Windows.Forms.RadioButton();
             this.rbnLeaderYes = new System.Windows.Forms.RadioButton();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
+            this.rbnPictureNo = new System.Windows.Forms.RadioButton();
+            this.rbnPictureYes = new System.Windows.Forms.RadioButton();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.lblLeader = new System.Windows.Forms.Label();
+            this.lblPicture = new System.Windows.Forms.Label();
+            this.lblMembership = new System.Windows.Forms.Label();
+            this.lblResponsibility = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.labDash = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.lblMobile = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblCity = new System.Windows.Forms.Label();
+            this.lblZipcode = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblGender = new System.Windows.Forms.Label();
+            this.lblSecurityNumber = new System.Windows.Forms.Label();
+            this.lblLastName = new System.Windows.Forms.Label();
+            this.lblFirstName = new System.Windows.Forms.Label();
+            this.txtFirstName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panNewMember.SuspendLayout();
             this.SuspendLayout();
@@ -113,26 +114,26 @@
             this.medlemToolStripMenuItem,
             this.kontaktToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.närvaroToolStripMenuItem.Text = "Närvaro...";
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.medlemToolStripMenuItem.Text = "Medlem...";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.kontaktToolStripMenuItem.Text = "Kontakt...";
             // 
             // redigeraToolStripMenuItem
@@ -185,6 +186,7 @@
             // 
             // panNewMember
             // 
+            this.panNewMember.Controls.Add(this.label3);
             this.panNewMember.Controls.Add(this.btnCancel);
             this.panNewMember.Controls.Add(this.btnSave);
             this.panNewMember.Controls.Add(this.rbnLeaderNo);
@@ -228,287 +230,25 @@
             this.panNewMember.Size = new System.Drawing.Size(642, 347);
             this.panNewMember.TabIndex = 1;
             // 
-            // txtFirstName
-            // 
-            this.txtFirstName.Location = new System.Drawing.Point(97, 16);
-            this.txtFirstName.Name = "txtFirstName";
-            this.txtFirstName.Size = new System.Drawing.Size(150, 20);
-            this.txtFirstName.TabIndex = 0;
-            // 
-            // lblFirstName
-            // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(12, 19);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(48, 13);
-            this.lblFirstName.TabIndex = 1;
-            this.lblFirstName.Text = "Förnamn";
-            // 
-            // lblLastName
-            // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(12, 48);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(55, 13);
-            this.lblLastName.TabIndex = 2;
-            this.lblLastName.Text = "Efternamn";
-            // 
-            // lblSecurityNumber
-            // 
-            this.lblSecurityNumber.AutoSize = true;
-            this.lblSecurityNumber.Location = new System.Drawing.Point(12, 76);
-            this.lblSecurityNumber.Name = "lblSecurityNumber";
-            this.lblSecurityNumber.Size = new System.Drawing.Size(77, 13);
-            this.lblSecurityNumber.TabIndex = 3;
-            this.lblSecurityNumber.Text = "Personnummer";
-            // 
-            // lblGender
-            // 
-            this.lblGender.AutoSize = true;
-            this.lblGender.Location = new System.Drawing.Point(12, 103);
-            this.lblGender.Name = "lblGender";
-            this.lblGender.Size = new System.Drawing.Size(26, 13);
-            this.lblGender.TabIndex = 4;
-            this.lblGender.Text = "Kön";
-            // 
-            // lblAddress
-            // 
-            this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(12, 132);
-            this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(39, 13);
-            this.lblAddress.TabIndex = 5;
-            this.lblAddress.Text = "Adress";
-            // 
-            // lblZipcode
-            // 
-            this.lblZipcode.AutoSize = true;
-            this.lblZipcode.Location = new System.Drawing.Point(12, 166);
-            this.lblZipcode.Name = "lblZipcode";
-            this.lblZipcode.Size = new System.Drawing.Size(65, 13);
-            this.lblZipcode.TabIndex = 6;
-            this.lblZipcode.Text = "Postnummer";
-            // 
-            // lblCity
-            // 
-            this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(12, 198);
-            this.lblCity.Name = "lblCity";
-            this.lblCity.Size = new System.Drawing.Size(29, 13);
-            this.lblCity.TabIndex = 7;
-            this.lblCity.Text = "Stad";
-            // 
-            // lblEmail
-            // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(14, 228);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(37, 13);
-            this.lblEmail.TabIndex = 8;
-            this.lblEmail.Text = "E-post";
-            // 
-            // txtLastName
-            // 
-            this.txtLastName.Location = new System.Drawing.Point(97, 45);
-            this.txtLastName.Name = "txtLastName";
-            this.txtLastName.Size = new System.Drawing.Size(150, 20);
-            this.txtLastName.TabIndex = 9;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(97, 73);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(150, 20);
-            this.textBox3.TabIndex = 10;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(97, 129);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(150, 20);
-            this.textBox4.TabIndex = 11;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(97, 159);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(150, 20);
-            this.textBox5.TabIndex = 12;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(97, 191);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(150, 20);
-            this.textBox6.TabIndex = 13;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Man",
-            "Kvinna"});
-            this.comboBox1.Location = new System.Drawing.Point(97, 100);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 21);
-            this.comboBox1.TabIndex = 14;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(97, 224);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(150, 20);
-            this.textBox7.TabIndex = 15;
-            // 
-            // lblPhone
-            // 
-            this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(12, 281);
-            this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(80, 13);
-            this.lblPhone.TabIndex = 16;
-            this.lblPhone.Text = "Telefonnummer";
-            // 
-            // lblMobile
-            // 
-            this.lblMobile.AutoSize = true;
-            this.lblMobile.Location = new System.Drawing.Point(12, 310);
-            this.lblMobile.Name = "lblMobile";
-            this.lblMobile.Size = new System.Drawing.Size(69, 13);
-            this.lblMobile.TabIndex = 17;
-            this.lblMobile.Text = "Mobilnummer";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(98, 278);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(55, 20);
-            this.textBox8.TabIndex = 18;
-            // 
-            // labDash
-            // 
-            this.labDash.AutoSize = true;
-            this.labDash.Location = new System.Drawing.Point(159, 281);
-            this.labDash.Name = "labDash";
-            this.labDash.Size = new System.Drawing.Size(10, 13);
-            this.labDash.TabIndex = 19;
-            this.labDash.Text = "-";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(175, 278);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 20;
-            // 
-            // textBox10
-            // 
-            this.textBox10.Location = new System.Drawing.Point(97, 307);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(55, 20);
-            this.textBox10.TabIndex = 21;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(348, 245);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(10, 13);
-            this.label1.TabIndex = 22;
-            this.label1.Text = "-";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 314);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 13);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "-";
-            // 
-            // textBox11
-            // 
-            this.textBox11.Location = new System.Drawing.Point(175, 307);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 24;
-            // 
-            // lblResponsibility
-            // 
-            this.lblResponsibility.AutoSize = true;
-            this.lblResponsibility.Location = new System.Drawing.Point(370, 19);
-            this.lblResponsibility.Name = "lblResponsibility";
-            this.lblResponsibility.Size = new System.Drawing.Size(80, 13);
-            this.lblResponsibility.TabIndex = 25;
-            this.lblResponsibility.Text = "Ansvarsområde";
-            // 
-            // lblMembership
-            // 
-            this.lblMembership.AutoSize = true;
-            this.lblMembership.Location = new System.Drawing.Point(370, 48);
-            this.lblMembership.Name = "lblMembership";
-            this.lblMembership.Size = new System.Drawing.Size(63, 13);
-            this.lblMembership.TabIndex = 26;
-            this.lblMembership.Text = "Medlemstyp";
-            // 
-            // lblPicture
-            // 
-            this.lblPicture.AutoSize = true;
-            this.lblPicture.Location = new System.Drawing.Point(370, 76);
-            this.lblPicture.Name = "lblPicture";
-            this.lblPicture.Size = new System.Drawing.Size(24, 13);
-            this.lblPicture.TabIndex = 27;
-            this.lblPicture.Text = "Bild";
-            // 
-            // lblLeader
-            // 
-            this.lblLeader.AutoSize = true;
-            this.lblLeader.Location = new System.Drawing.Point(370, 103);
-            this.lblLeader.Name = "lblLeader";
-            this.lblLeader.Size = new System.Drawing.Size(40, 13);
-            this.lblLeader.TabIndex = 28;
-            this.lblLeader.Text = "Ledare";
-            // 
-            // textBox12
-            // 
-            this.textBox12.Location = new System.Drawing.Point(465, 16);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(156, 20);
-            this.textBox12.TabIndex = 29;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Vanlig medlem",
-            "Prova-på",
-            "Cirkusvän"});
-            this.comboBox2.Location = new System.Drawing.Point(465, 45);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(156, 21);
-            this.comboBox2.TabIndex = 30;
-            // 
-            // rbnPictureYes
-            // 
-            this.rbnPictureYes.AutoSize = true;
-            this.rbnPictureYes.Location = new System.Drawing.Point(475, 76);
-            this.rbnPictureYes.Name = "rbnPictureYes";
-            this.rbnPictureYes.Size = new System.Drawing.Size(36, 17);
-            this.rbnPictureYes.TabIndex = 31;
-            this.rbnPictureYes.TabStop = true;
-            this.rbnPictureYes.Text = "Ja";
-            this.rbnPictureYes.UseVisualStyleBackColor = true;
-            // 
-            // rbnPictureNo
-            // 
-            this.rbnPictureNo.AutoSize = true;
-            this.rbnPictureNo.Location = new System.Drawing.Point(517, 76);
-            this.rbnPictureNo.Name = "rbnPictureNo";
-            this.rbnPictureNo.Size = new System.Drawing.Size(41, 17);
-            this.rbnPictureNo.TabIndex = 32;
-            this.rbnPictureNo.TabStop = true;
-            this.rbnPictureNo.Text = "Nej";
-            this.rbnPictureNo.UseVisualStyleBackColor = true;
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(546, 300);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 36;
+            this.btnCancel.Text = "Avbryt";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(465, 300);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 35;
+            this.btnSave.Text = "Spara";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // rbnLeaderNo
             // 
@@ -532,25 +272,296 @@
             this.rbnLeaderYes.Text = "Ja";
             this.rbnLeaderYes.UseVisualStyleBackColor = true;
             // 
-            // btnSave
+            // rbnPictureNo
             // 
-            this.btnSave.Location = new System.Drawing.Point(465, 300);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 35;
-            this.btnSave.Text = "Spara";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.rbnPictureNo.AutoSize = true;
+            this.rbnPictureNo.Location = new System.Drawing.Point(517, 76);
+            this.rbnPictureNo.Name = "rbnPictureNo";
+            this.rbnPictureNo.Size = new System.Drawing.Size(41, 17);
+            this.rbnPictureNo.TabIndex = 32;
+            this.rbnPictureNo.TabStop = true;
+            this.rbnPictureNo.Text = "Nej";
+            this.rbnPictureNo.UseVisualStyleBackColor = true;
             // 
-            // btnCancel
+            // rbnPictureYes
             // 
-            this.btnCancel.Location = new System.Drawing.Point(546, 300);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 36;
-            this.btnCancel.Text = "Avbryt";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            this.rbnPictureYes.AutoSize = true;
+            this.rbnPictureYes.Location = new System.Drawing.Point(475, 76);
+            this.rbnPictureYes.Name = "rbnPictureYes";
+            this.rbnPictureYes.Size = new System.Drawing.Size(36, 17);
+            this.rbnPictureYes.TabIndex = 31;
+            this.rbnPictureYes.TabStop = true;
+            this.rbnPictureYes.Text = "Ja";
+            this.rbnPictureYes.UseVisualStyleBackColor = true;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Vanlig medlem",
+            "Prova-på",
+            "Cirkusvän"});
+            this.comboBox2.Location = new System.Drawing.Point(465, 45);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(156, 21);
+            this.comboBox2.TabIndex = 30;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(465, 16);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(156, 20);
+            this.textBox12.TabIndex = 29;
+            // 
+            // lblLeader
+            // 
+            this.lblLeader.AutoSize = true;
+            this.lblLeader.Location = new System.Drawing.Point(370, 103);
+            this.lblLeader.Name = "lblLeader";
+            this.lblLeader.Size = new System.Drawing.Size(40, 13);
+            this.lblLeader.TabIndex = 28;
+            this.lblLeader.Text = "Ledare";
+            // 
+            // lblPicture
+            // 
+            this.lblPicture.AutoSize = true;
+            this.lblPicture.Location = new System.Drawing.Point(370, 76);
+            this.lblPicture.Name = "lblPicture";
+            this.lblPicture.Size = new System.Drawing.Size(24, 13);
+            this.lblPicture.TabIndex = 27;
+            this.lblPicture.Text = "Bild";
+            // 
+            // lblMembership
+            // 
+            this.lblMembership.AutoSize = true;
+            this.lblMembership.Location = new System.Drawing.Point(370, 48);
+            this.lblMembership.Name = "lblMembership";
+            this.lblMembership.Size = new System.Drawing.Size(63, 13);
+            this.lblMembership.TabIndex = 26;
+            this.lblMembership.Text = "Medlemstyp";
+            // 
+            // lblResponsibility
+            // 
+            this.lblResponsibility.AutoSize = true;
+            this.lblResponsibility.Location = new System.Drawing.Point(370, 19);
+            this.lblResponsibility.Name = "lblResponsibility";
+            this.lblResponsibility.Size = new System.Drawing.Size(80, 13);
+            this.lblResponsibility.TabIndex = 25;
+            this.lblResponsibility.Text = "Ansvarsområde";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(175, 307);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(100, 20);
+            this.textBox11.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(159, 314);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(10, 13);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "-";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(348, 245);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(10, 13);
+            this.label1.TabIndex = 22;
+            this.label1.Text = "-";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(97, 307);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(55, 20);
+            this.textBox10.TabIndex = 21;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(175, 278);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(100, 20);
+            this.textBox9.TabIndex = 20;
+            // 
+            // labDash
+            // 
+            this.labDash.AutoSize = true;
+            this.labDash.Location = new System.Drawing.Point(159, 281);
+            this.labDash.Name = "labDash";
+            this.labDash.Size = new System.Drawing.Size(10, 13);
+            this.labDash.TabIndex = 19;
+            this.labDash.Text = "-";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(98, 278);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(55, 20);
+            this.textBox8.TabIndex = 18;
+            // 
+            // lblMobile
+            // 
+            this.lblMobile.AutoSize = true;
+            this.lblMobile.Location = new System.Drawing.Point(12, 310);
+            this.lblMobile.Name = "lblMobile";
+            this.lblMobile.Size = new System.Drawing.Size(69, 13);
+            this.lblMobile.TabIndex = 17;
+            this.lblMobile.Text = "Mobilnummer";
+            // 
+            // lblPhone
+            // 
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Location = new System.Drawing.Point(12, 281);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(80, 13);
+            this.lblPhone.TabIndex = 16;
+            this.lblPhone.Text = "Telefonnummer";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(97, 224);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(150, 20);
+            this.textBox7.TabIndex = 15;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Man",
+            "Kvinna"});
+            this.comboBox1.Location = new System.Drawing.Point(97, 100);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(150, 21);
+            this.comboBox1.TabIndex = 14;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(97, 191);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(150, 20);
+            this.textBox6.TabIndex = 13;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(97, 159);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(150, 20);
+            this.textBox5.TabIndex = 12;
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(97, 129);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(150, 20);
+            this.textBox4.TabIndex = 11;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(97, 73);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(150, 20);
+            this.textBox3.TabIndex = 10;
+            // 
+            // txtLastName
+            // 
+            this.txtLastName.Location = new System.Drawing.Point(97, 45);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(150, 20);
+            this.txtLastName.TabIndex = 9;
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(14, 228);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(37, 13);
+            this.lblEmail.TabIndex = 8;
+            this.lblEmail.Text = "E-post";
+            // 
+            // lblCity
+            // 
+            this.lblCity.AutoSize = true;
+            this.lblCity.Location = new System.Drawing.Point(12, 198);
+            this.lblCity.Name = "lblCity";
+            this.lblCity.Size = new System.Drawing.Size(29, 13);
+            this.lblCity.TabIndex = 7;
+            this.lblCity.Text = "Stad";
+            // 
+            // lblZipcode
+            // 
+            this.lblZipcode.AutoSize = true;
+            this.lblZipcode.Location = new System.Drawing.Point(12, 166);
+            this.lblZipcode.Name = "lblZipcode";
+            this.lblZipcode.Size = new System.Drawing.Size(65, 13);
+            this.lblZipcode.TabIndex = 6;
+            this.lblZipcode.Text = "Postnummer";
+            // 
+            // lblAddress
+            // 
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Location = new System.Drawing.Point(12, 132);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(39, 13);
+            this.lblAddress.TabIndex = 5;
+            this.lblAddress.Text = "Adress";
+            // 
+            // lblGender
+            // 
+            this.lblGender.AutoSize = true;
+            this.lblGender.Location = new System.Drawing.Point(12, 103);
+            this.lblGender.Name = "lblGender";
+            this.lblGender.Size = new System.Drawing.Size(26, 13);
+            this.lblGender.TabIndex = 4;
+            this.lblGender.Text = "Kön";
+            // 
+            // lblSecurityNumber
+            // 
+            this.lblSecurityNumber.AutoSize = true;
+            this.lblSecurityNumber.Location = new System.Drawing.Point(12, 76);
+            this.lblSecurityNumber.Name = "lblSecurityNumber";
+            this.lblSecurityNumber.Size = new System.Drawing.Size(77, 13);
+            this.lblSecurityNumber.TabIndex = 3;
+            this.lblSecurityNumber.Text = "Personnummer";
+            // 
+            // lblLastName
+            // 
+            this.lblLastName.AutoSize = true;
+            this.lblLastName.Location = new System.Drawing.Point(12, 48);
+            this.lblLastName.Name = "lblLastName";
+            this.lblLastName.Size = new System.Drawing.Size(55, 13);
+            this.lblLastName.TabIndex = 2;
+            this.lblLastName.Text = "Efternamn";
+            // 
+            // lblFirstName
+            // 
+            this.lblFirstName.AutoSize = true;
+            this.lblFirstName.Location = new System.Drawing.Point(12, 19);
+            this.lblFirstName.Name = "lblFirstName";
+            this.lblFirstName.Size = new System.Drawing.Size(48, 13);
+            this.lblFirstName.TabIndex = 1;
+            this.lblFirstName.Text = "Förnamn";
+            // 
+            // txtFirstName
+            // 
+            this.txtFirstName.Location = new System.Drawing.Point(97, 16);
+            this.txtFirstName.Name = "txtFirstName";
+            this.txtFirstName.Size = new System.Drawing.Size(150, 20);
+            this.txtFirstName.TabIndex = 0;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(397, 228);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 37;
+            this.label3.Text = "TEST";
             // 
             // frmMain
             // 
@@ -624,6 +635,7 @@
         private System.Windows.Forms.Label lblLastName;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.TextBox txtFirstName;
+        private System.Windows.Forms.Label label3;
     }
 }
 
