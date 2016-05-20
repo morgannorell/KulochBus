@@ -64,8 +64,7 @@ namespace KulochBus
             Phone newPhone = new Phone(newPersonId, txtPhoneAreaCode.Text, txtPhone.Text, txtCellphoneAreaCode.Text, txtCellphone.Text);
             newPhone.createPhone();
             newPhone.createCellphone();
-
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+        }
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
         {
