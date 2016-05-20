@@ -13,9 +13,15 @@ namespace KulochBus
 {
     public partial class frmMain : Form
     {
+
         public frmMain()
         {
             InitializeComponent();
+
+            //lägger till items i combobox + tilldelar värden
+            comboBoxMembership.Items.Add(new Membership("Vanlig medlem", 150));
+            comboBoxMembership.Items.Add(new Membership("Prova-på", 50));
+            comboBoxMembership.Items.Add(new Membership("Cirkusvän", 0));
 
             // Döljer alla paneler
             foreach (Control c in Controls)
@@ -41,31 +47,38 @@ namespace KulochBus
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            NpgsqlConnection conn = new NpgsqlConnection
-                ("Server = 81.25.82.40; Port = 5432; User Id = adminkulobus; Password = developer; Database = kulochbus");
-            try
-            {
-                conn.Open();
 
-                string strFirstName, strLastName;
-                strFirstName = txtFirstName.Text;
-                strLastName = txtLastName.Text;
+            var membership = (Membership)comboBoxMembership.SelectedItem;
+            
+            Person newPerson = new Person(txtFirstName.Text, txtLastName.Text, txtSecurityNr.Text, txtAddress.Text, txtZipcode.Text, txtCity.Text, txtEmail.Text, comboBoxGender.SelectedItem.ToString());
+            var newPersonId = newPerson.createPerson();
 
-                string sql = "INSERT INTO person (firstname, lastname) values ('" + strFirstName + "', '" + strLastName + "')";
+            Member newMember = new Member(newPersonId, txtResponsibility.Text, membership.Name, checkBoxPicture.Checked, checkBoxLeader.Checked, membership.Price);
+            var newMemberId = newMember.createMember();
 
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+            Phone newPhone = new Phone(newPersonId, txtPhoneAreaCode.Text, txtPhone.Text, txtCellphoneAreaCode.Text, txtCellphone.Text);
+            newPhone.createPhone();
+            newPhone.createCellphone();
 
-                cmd.ExecuteNonQuery();
-
-                conn.Close();
-            }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBoxGender_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void comboBoxMembership_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panNewMember_Paint(object sender, PaintEventArgs e)
         {
 
         }
