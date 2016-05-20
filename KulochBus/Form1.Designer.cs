@@ -119,6 +119,8 @@
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.panViewMember = new System.Windows.Forms.Panel();
             this.dgrViewMember = new System.Windows.Forms.DataGridView();
+            this.checkBoxPicture = new System.Windows.Forms.CheckBox();
+            this.checkBoxLeader = new System.Windows.Forms.CheckBox();
             this.menuStrip1.SuspendLayout();
             this.panNewMember.SuspendLayout();
             this.panNewTraininggroup.SuspendLayout();
@@ -255,6 +257,8 @@
             // 
             // panNewMember
             // 
+            this.panNewMember.Controls.Add(this.checkBoxLeader);
+            this.panNewMember.Controls.Add(this.checkBoxPicture);
             this.panNewMember.Controls.Add(this.btnCancel);
             this.panNewMember.Controls.Add(this.btnSave);
             this.panNewMember.Controls.Add(this.rbnLeaderNo);
@@ -993,6 +997,26 @@
             this.dgrViewMember.Size = new System.Drawing.Size(412, 214);
             this.dgrViewMember.TabIndex = 0;
             // 
+            // checkBoxPicture
+            // 
+            this.checkBoxPicture.AutoSize = true;
+            this.checkBoxPicture.Location = new System.Drawing.Point(540, 126);
+            this.checkBoxPicture.Name = "checkBoxPicture";
+            this.checkBoxPicture.Size = new System.Drawing.Size(43, 17);
+            this.checkBoxPicture.TabIndex = 37;
+            this.checkBoxPicture.Text = "Bild";
+            this.checkBoxPicture.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxLeader
+            // 
+            this.checkBoxLeader.AutoSize = true;
+            this.checkBoxLeader.Location = new System.Drawing.Point(540, 91);
+            this.checkBoxLeader.Name = "checkBoxLeader";
+            this.checkBoxLeader.Size = new System.Drawing.Size(59, 17);
+            this.checkBoxLeader.TabIndex = 38;
+            this.checkBoxLeader.Text = "Ledare";
+            this.checkBoxLeader.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1114,6 +1138,8 @@
         private System.Windows.Forms.ToolStripMenuItem avslutaToolStripMenuItem;
         private System.Windows.Forms.Panel panViewMember;
         private System.Windows.Forms.DataGridView dgrViewMember;
+        private System.Windows.Forms.CheckBox checkBoxPicture;
+        private System.Windows.Forms.CheckBox checkBoxLeader;
     }
 }
 

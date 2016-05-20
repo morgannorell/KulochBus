@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Npgsql;
 
 namespace KulochBus
 {
@@ -65,7 +66,8 @@ namespace KulochBus
             newPhone.createPhone();
             newPhone.createCellphone();
 
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+            //NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+        }
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
         {
