@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Npgsql;
 
 namespace KulochBus
 {
@@ -24,14 +23,20 @@ namespace KulochBus
             comboBoxMembership.Items.Add(new Membership("Cirkusvän", 0));
 
             // Döljer alla paneler
+            HidePanels();
+        }
+
+        private void HidePanels()
+        {
             foreach (Control c in Controls)
             {
-                if (c is Panel) c.Visible = false;
+                if (c is Panel) c.Hide();
             }
         }
 
         private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            HidePanels();
             panNewMember.Show();
         }
 
@@ -49,7 +54,7 @@ namespace KulochBus
         {
 
             var membership = (Membership)comboBoxMembership.SelectedItem;
-            
+
             Person newPerson = new Person(txtFirstName.Text, txtLastName.Text, txtSecurityNr.Text, txtAddress.Text, txtZipcode.Text, txtCity.Text, txtEmail.Text, comboBoxGender.SelectedItem.ToString());
             var newPersonId = newPerson.createPerson();
 
@@ -60,27 +65,41 @@ namespace KulochBus
             newPhone.createPhone();
             newPhone.createCellphone();
 
-        }
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            HidePanels();
+            panNewTraininggroup.Show();
         }
 
-        private void comboBoxGender_SelectedIndexChanged(object sender, EventArgs e)
+        private void kontaktToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            HidePanels();
+            panNewContact.Show();
+            }
 
-
+        private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
+            {
+            Application.Exit();
         }
 
-        private void comboBoxMembership_SelectedIndexChanged(object sender, EventArgs e)
+        private void medlemmarToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            HidePanels();
+            panViewMember.Show();
 
-        }
+            Sql select = new Sql();
 
-        private void panNewMember_Paint(object sender, PaintEventArgs e)
-        {
+            select.Connect();
 
+            string sql = "SELECT * FROM person";
+
+            
+
+            List<string> test = new List<string>();
+
+            test = select.Select(sql);
         }
     }
 }
