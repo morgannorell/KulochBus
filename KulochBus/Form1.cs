@@ -80,7 +80,7 @@ namespace KulochBus
             }
 
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
-            {
+        {
             Application.Exit();
         }
 
@@ -89,9 +89,9 @@ namespace KulochBus
             HidePanels();
             panViewMember.Show();
 
-            Sql select = new Sql();
+            Sql getMembers = new Sql();
 
-            select.Connect();
+            getMembers.Connect();
 
             string sql = "SELECT * FROM person";
 
@@ -99,7 +99,7 @@ namespace KulochBus
 
             List<string> test = new List<string>();
 
-            test = select.Select(sql);
+            test = getMembers.Select(sql);
         }
     }
 }

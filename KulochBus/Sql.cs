@@ -57,7 +57,7 @@ namespace KulochBus
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
-
+                
                
 
                 while (dr.Read())
