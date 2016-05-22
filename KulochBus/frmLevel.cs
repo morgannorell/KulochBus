@@ -24,20 +24,29 @@ namespace KulochBus
             {
                 string newLevel = txtLevel.Text;
                 if (String.IsNullOrWhiteSpace(newLevel))
+                {
                     MessageBox.Show("Du måste ge din nivå ett namn.");
+                }
 
-                string insert = "Insert into level (name) values ('" + newLevel + "')";
-                Sql level = new Sql();
+                else
+                {
+                    string insert = "Insert into level (name) values ('" + newLevel + "')";
+                    Sql level = new Sql();
 
-                level.Connect();
-                level.Insert(insert);
-                level.Close();
+                    level.Connect();
+                    level.Insert(insert);
+                    level.Close();
+                }
             }
 
-            if (rbnLevelRemove.Checked)
+            else if (rbnLevelRemove.Checked)
             {
 
             }
+
+            else
+                MessageBox.Show("Du måste välja att lägga till eller ta bort nivå.");
+
             ListLevels();
         }
 
