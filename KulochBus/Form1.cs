@@ -89,17 +89,22 @@ namespace KulochBus
             HidePanels();
             panViewMember.Show();
 
-            Sql getMembers = new Sql();
+            Sql getMemberList = new Sql();
 
-            getMembers.Connect();
+            getMemberList.Connect();
 
             string sql = "SELECT * FROM person";
 
-            
+            DataTable tb = new DataTable();
+            BindingSource bs = new BindingSource();
 
-            List<string> test = new List<string>();
+            tb = getMemberList.Select(sql);
 
-            test = getMembers.Select(sql);
+            bs.DataSource = tb;
+
+            dgrViewMember.DataSource = bs;
+
+            getMemberList.Close();            
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
@@ -111,23 +116,5 @@ namespace KulochBus
         {
             //lägg till medlemmar i datagrid
         }
-
-        private void panViewMember_VisibleChanged(object sender, EventArgs e)
-        {
-            Sql newConnect = new Sql();
-            newConnect.Connect();
-
-            string sql = "select * from person";
-
-            List<string> viewMember = new List<string>();
-
-            viewMember = newConnect.Select(sql);
-
-            dgrViewMember.DataSource = viewMember;
-
-            newConnect.Close();     
-        }
-
-
     }
 }

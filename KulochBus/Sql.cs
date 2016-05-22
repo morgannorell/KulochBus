@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Npgsql;
+using System.Data;
 
 namespace KulochBus
 {
@@ -49,28 +50,24 @@ namespace KulochBus
             }
         }
 
-        public List<string> Select(string sql)
-        {
-            List<string> data = new List<string>();
-             
+        public DataTable Select(string sql)
+        {     
+            DataTable myTable = new DataTable();
+
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-                
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
 
-                while (dr.Read())
-                {
-                    data.Add(dr["firstname"].ToString());
-                }
+                da.SelectCommand = cmd; 
+                da.Fill(myTable);
 
-            return data;   
-             
+                return myTable;                
             }
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
-                return data;    
+                return myTable;    
             }
 
         }
