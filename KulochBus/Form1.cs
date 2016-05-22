@@ -31,7 +31,11 @@ namespace KulochBus
         {
             foreach (Control c in Controls)
             {
-                if (c is Panel) c.Hide();
+                if (c is Panel)
+                {
+                    c.Hide();
+                    continue;
+                }
             }
         }
 
@@ -90,18 +94,15 @@ namespace KulochBus
             panViewMember.Show();
 
             Sql getMemberList = new Sql();
-
             getMemberList.Connect();
 
-            string sql = "SELECT * FROM person";
+            string sql = "SELECT firstname, lastname, securitynr, gender, membership, ispayed FROM person Join member ON person.personid = member.personid";
 
             DataTable tb = new DataTable();
             BindingSource bs = new BindingSource();
 
             tb = getMemberList.Select(sql);
-
             bs.DataSource = tb;
-
             dgrViewMember.DataSource = bs;
 
             getMemberList.Close();            
@@ -115,6 +116,30 @@ namespace KulochBus
         private void panNewTraininggroup_VisibleChanged(object sender, EventArgs e)
         {
             //lägg till medlemmar i datagrid
+        }
+
+        private void btnMemberSearch_Click(object sender, EventArgs e)
+        {
+            string memberSearch = txtMemberSearch.Text;
+
+            Sql getMemberList = new Sql();
+            getMemberList.Connect();
+
+            string sql = 
+                "SELECT firstname, lastname, securitynr, gender, membership, ispayed " +
+                "FROM person " +
+                "Join member ON person.personid = member.personid " +
+                "WHERE firstname like '%" + memberSearch + "%' OR " +
+                "lastname like '%" + memberSearch + "%'";
+
+            DataTable tb = new DataTable();
+            BindingSource bs = new BindingSource();
+
+            tb = getMemberList.Select(sql);
+            bs.DataSource = tb;
+            dgrViewMember.DataSource = bs;
+
+            getMemberList.Close();
         }
     }
 }

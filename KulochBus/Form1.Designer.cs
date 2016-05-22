@@ -86,9 +86,8 @@
             this.label14 = new System.Windows.Forms.Label();
             this.textBox25 = new System.Windows.Forms.TextBox();
             this.panViewMember = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.lblViewMemberTitle = new System.Windows.Forms.Label();
+            this.txtMemberSearch = new System.Windows.Forms.TextBox();
             this.dgrViewMember = new System.Windows.Forms.DataGridView();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -125,6 +124,7 @@
             this.panNewMember = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.btnMemberSearch = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panNewTraininggroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTrainingmembers)).BeginInit();
@@ -682,9 +682,9 @@
             // 
             // panViewMember
             // 
-            this.panViewMember.Controls.Add(this.label16);
-            this.panViewMember.Controls.Add(this.label15);
-            this.panViewMember.Controls.Add(this.textBox4);
+            this.panViewMember.Controls.Add(this.btnMemberSearch);
+            this.panViewMember.Controls.Add(this.lblViewMemberTitle);
+            this.panViewMember.Controls.Add(this.txtMemberSearch);
             this.panViewMember.Controls.Add(this.dgrViewMember);
             this.panViewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panViewMember.Location = new System.Drawing.Point(0, 24);
@@ -693,41 +693,35 @@
             this.panViewMember.Size = new System.Drawing.Size(673, 434);
             this.panViewMember.TabIndex = 9;
             // 
-            // label16
+            // lblViewMemberTitle
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(10, 29);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(41, 13);
-            this.label16.TabIndex = 3;
-            this.label16.Text = "label16";
+            this.lblViewMemberTitle.AutoSize = true;
+            this.lblViewMemberTitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblViewMemberTitle.Location = new System.Drawing.Point(12, 9);
+            this.lblViewMemberTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblViewMemberTitle.Name = "lblViewMemberTitle";
+            this.lblViewMemberTitle.Size = new System.Drawing.Size(157, 32);
+            this.lblViewMemberTitle.TabIndex = 3;
+            this.lblViewMemberTitle.Text = "Medlemmar";
             // 
-            // label15
+            // txtMemberSearch
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(273, 12);
-            this.label15.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 2;
-            this.label15.Text = "label15";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(273, 29);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(68, 20);
-            this.textBox4.TabIndex = 1;
+            this.txtMemberSearch.Location = new System.Drawing.Point(447, 13);
+            this.txtMemberSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberSearch.Name = "txtMemberSearch";
+            this.txtMemberSearch.Size = new System.Drawing.Size(144, 20);
+            this.txtMemberSearch.TabIndex = 1;
             // 
             // dgrViewMember
             // 
+            this.dgrViewMember.AllowUserToAddRows = false;
+            this.dgrViewMember.AllowUserToDeleteRows = false;
             this.dgrViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewMember.Location = new System.Drawing.Point(11, 63);
+            this.dgrViewMember.Location = new System.Drawing.Point(11, 49);
             this.dgrViewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgrViewMember.Name = "dgrViewMember";
-            this.dgrViewMember.Size = new System.Drawing.Size(651, 360);
+            this.dgrViewMember.ReadOnly = true;
+            this.dgrViewMember.Size = new System.Drawing.Size(651, 374);
             this.dgrViewMember.TabIndex = 0;
             // 
             // txtFirstName
@@ -1067,6 +1061,16 @@
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
+            // btnMemberSearch
+            // 
+            this.btnMemberSearch.Location = new System.Drawing.Point(600, 11);
+            this.btnMemberSearch.Name = "btnMemberSearch";
+            this.btnMemberSearch.Size = new System.Drawing.Size(61, 23);
+            this.btnMemberSearch.TabIndex = 4;
+            this.btnMemberSearch.Text = "Sök";
+            this.btnMemberSearch.UseVisualStyleBackColor = true;
+            this.btnMemberSearch.Click += new System.EventHandler(this.btnMemberSearch_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1193,9 +1197,9 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.DataGridView dgrListTrainingmembers;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label lblViewMemberTitle;
+        private System.Windows.Forms.TextBox txtMemberSearch;
+        private System.Windows.Forms.Button btnMemberSearch;
     }
 }
 
