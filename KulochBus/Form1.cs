@@ -96,7 +96,9 @@ namespace KulochBus
             Sql getMemberList = new Sql();
             getMemberList.Connect();
 
-            string sql = "SELECT firstname, lastname, securitynr, gender, membership, ispayed FROM person Join member ON person.personid = member.personid";
+            string sql = "SELECT personid, firstname, lastname, securitynr, gender, membership, ispayed " +
+                "FROM person " +
+                "Join member ON personid = memberid";
 
             DataTable tb = new DataTable();
             BindingSource bs = new BindingSource();
@@ -125,12 +127,15 @@ namespace KulochBus
             Sql getMemberList = new Sql();
             getMemberList.Connect();
 
-            string sql = 
-                "SELECT firstname, lastname, securitynr, gender, membership, ispayed " +
+            string sql =
+                "SELECT personid, firstname, lastname, securitynr, gender, membership, ispayed " +
                 "FROM person " +
-                "Join member ON person.personid = member.personid " +
+                "JOIN member ON personid = memberid " +
                 "WHERE firstname like '%" + memberSearch + "%' OR " +
-                "lastname like '%" + memberSearch + "%'";
+                "lastname like '%" + memberSearch + "%' OR " +
+                "securitynr like '%" + memberSearch + "%' OR " +
+                "gender like '%" + memberSearch + "%' OR " +
+                "membership like '%" + memberSearch + "%'";
 
             DataTable tb = new DataTable();
             BindingSource bs = new BindingSource();
@@ -140,6 +145,31 @@ namespace KulochBus
             dgrViewMember.DataSource = bs;
 
             getMemberList.Close();
+        }
+
+        private void dgrViewMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //HidePanels();
+            //panNewContact.Show();
+
+            // Get memberid
+            string selectedMember;
+            DataGridViewRow selectedRow = this.dgrViewMember.Rows[e.RowIndex];
+            selectedMember = selectedRow.Cells[0].Value.ToString();
+
+            txtTest.Text = selectedMember;
+
+            Sql getMemberDetails = new Sql();
+            getMemberDetails.Connect();
+
+            string querry =
+                "SELECT firstname, lastname, securitynr, address, " +
+                "zipcode, city, email, gender " +
+                "WHERE personid = " + selectedMember;
+
+            DataTable dt = new DataTable();
+
+            
         }
     }
 }

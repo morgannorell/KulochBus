@@ -11,7 +11,9 @@ namespace KulochBus
 {
     public class Sql
     {
-        static private string connectionString = "Server = 81.25.82.40; Port = 5432; User Id = adminkulobus; Password = developer; Database = kulochbus; Pooling=false";
+        // Adding pooling=false du to bug see https://github.com/npgsql/npgsql/issues/1105
+        static private string connectionString = 
+            "Server = 81.25.82.40; Port = 5432; User Id = adminkulobus; Password = developer; Database = kulochbus; Pooling=false";
         NpgsqlConnection conn = new NpgsqlConnection(connectionString);
 
         public void Connect()

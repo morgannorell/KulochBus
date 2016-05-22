@@ -125,6 +125,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.btnMemberSearch = new System.Windows.Forms.Button();
+            this.txtTest = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panNewTraininggroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTrainingmembers)).BeginInit();
@@ -144,7 +145,7 @@
             this.hjälpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(673, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(725, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -289,7 +290,7 @@
             this.panNewTraininggroup.Location = new System.Drawing.Point(0, 24);
             this.panNewTraininggroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panNewTraininggroup.Name = "panNewTraininggroup";
-            this.panNewTraininggroup.Size = new System.Drawing.Size(673, 434);
+            this.panNewTraininggroup.Size = new System.Drawing.Size(725, 446);
             this.panNewTraininggroup.TabIndex = 37;
             this.panNewTraininggroup.VisibleChanged += new System.EventHandler(this.panNewTraininggroup_VisibleChanged);
             // 
@@ -446,7 +447,7 @@
             this.panNewContact.Location = new System.Drawing.Point(0, 24);
             this.panNewContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panNewContact.Name = "panNewContact";
-            this.panNewContact.Size = new System.Drawing.Size(673, 434);
+            this.panNewContact.Size = new System.Drawing.Size(725, 446);
             this.panNewContact.TabIndex = 38;
             // 
             // lblCTTitle
@@ -682,6 +683,7 @@
             // 
             // panViewMember
             // 
+            this.panViewMember.Controls.Add(this.txtTest);
             this.panViewMember.Controls.Add(this.btnMemberSearch);
             this.panViewMember.Controls.Add(this.lblViewMemberTitle);
             this.panViewMember.Controls.Add(this.txtMemberSearch);
@@ -690,7 +692,7 @@
             this.panViewMember.Location = new System.Drawing.Point(0, 24);
             this.panViewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panViewMember.Name = "panViewMember";
-            this.panViewMember.Size = new System.Drawing.Size(673, 434);
+            this.panViewMember.Size = new System.Drawing.Size(725, 446);
             this.panViewMember.TabIndex = 9;
             // 
             // lblViewMemberTitle
@@ -706,23 +708,25 @@
             // 
             // txtMemberSearch
             // 
-            this.txtMemberSearch.Location = new System.Drawing.Point(447, 13);
+            this.txtMemberSearch.Location = new System.Drawing.Point(473, 13);
             this.txtMemberSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMemberSearch.Name = "txtMemberSearch";
-            this.txtMemberSearch.Size = new System.Drawing.Size(144, 20);
+            this.txtMemberSearch.Size = new System.Drawing.Size(163, 20);
             this.txtMemberSearch.TabIndex = 1;
             // 
             // dgrViewMember
             // 
             this.dgrViewMember.AllowUserToAddRows = false;
             this.dgrViewMember.AllowUserToDeleteRows = false;
+            this.dgrViewMember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrViewMember.Location = new System.Drawing.Point(11, 49);
             this.dgrViewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgrViewMember.Name = "dgrViewMember";
             this.dgrViewMember.ReadOnly = true;
-            this.dgrViewMember.Size = new System.Drawing.Size(651, 374);
+            this.dgrViewMember.Size = new System.Drawing.Size(703, 386);
             this.dgrViewMember.TabIndex = 0;
+            this.dgrViewMember.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewMember_CellDoubleClick);
             // 
             // txtFirstName
             // 
@@ -1035,7 +1039,7 @@
             this.panNewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panNewMember.Location = new System.Drawing.Point(0, 24);
             this.panNewMember.Name = "panNewMember";
-            this.panNewMember.Size = new System.Drawing.Size(673, 434);
+            this.panNewMember.Size = new System.Drawing.Size(725, 446);
             this.panNewMember.TabIndex = 1;
             // 
             // label1
@@ -1063,7 +1067,7 @@
             // 
             // btnMemberSearch
             // 
-            this.btnMemberSearch.Location = new System.Drawing.Point(600, 11);
+            this.btnMemberSearch.Location = new System.Drawing.Point(652, 11);
             this.btnMemberSearch.Name = "btnMemberSearch";
             this.btnMemberSearch.Size = new System.Drawing.Size(61, 23);
             this.btnMemberSearch.TabIndex = 4;
@@ -1071,11 +1075,18 @@
             this.btnMemberSearch.UseVisualStyleBackColor = true;
             this.btnMemberSearch.Click += new System.EventHandler(this.btnMemberSearch_Click);
             // 
+            // txtTest
+            // 
+            this.txtTest.Location = new System.Drawing.Point(251, 13);
+            this.txtTest.Name = "txtTest";
+            this.txtTest.Size = new System.Drawing.Size(150, 20);
+            this.txtTest.TabIndex = 5;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 458);
+            this.ClientSize = new System.Drawing.Size(725, 470);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panNewTraininggroup);
             this.Controls.Add(this.panNewContact);
@@ -1200,6 +1211,7 @@
         private System.Windows.Forms.Label lblViewMemberTitle;
         private System.Windows.Forms.TextBox txtMemberSearch;
         private System.Windows.Forms.Button btnMemberSearch;
+        private System.Windows.Forms.TextBox txtTest;
     }
 }
 
