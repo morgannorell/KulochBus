@@ -51,7 +51,7 @@ namespace KulochBus
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
-        {
+        {            
             panNewMember.Hide();
         }
 
@@ -74,7 +74,19 @@ namespace KulochBus
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HidePanels();
-            panNewTraininggroup.Show();
+            rbnTGAdd.Hide();
+            rbnTGRemove.Hide();
+            cmbTGMember.Hide();
+            btnTGSave.Hide();
+            lblTGMembers.Hide();
+            dgrListTGMembers.Hide();
+
+            panTGGroup.Show();
+            btnTGCreate.Show();
+            btnTGDiciplin.Show();
+            btnTGLevel.Show();
+
+
         }
 
         private void kontaktToolStripMenuItem_Click(object sender, EventArgs e)
@@ -96,7 +108,7 @@ namespace KulochBus
             Sql getMemberList = new Sql();
             getMemberList.Connect();
 
-            string sql = "SELECT personid, firstname, lastname, securitynr, gender, membership, ispayed " +
+            string sql = "SELECT personid, firstname, lastname, securitynr, gender, membership, ispayed, isleader " +
                 "FROM person " +
                 "Join member ON personid = memberid";
 
@@ -179,6 +191,30 @@ namespace KulochBus
                 txtEmail.Text = row["email"].ToString();
                 comboBoxGender.Text = row["gender"].ToString();              
             }
+        }
+
+        private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panTGGroupList.Show();
+
+            Traininggroup tg = new Traininggroup();
+        }
+
+        private void btnTGCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTGDiciplin_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTGLevel_Click(object sender, EventArgs e)
+        {
+            frmLevel level = new frmLevel();
+            level.Show();
         }
     }
 }

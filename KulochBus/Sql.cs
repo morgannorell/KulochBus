@@ -11,7 +11,7 @@ namespace KulochBus
 {
     public class Sql
     {
-        // Adding pooling=false du to bug see https://github.com/npgsql/npgsql/issues/1105
+        // Adding pooling=false due to bug see https://github.com/npgsql/npgsql/issues/1105
         static private string connectionString = 
             "Server = 81.25.82.40; Port = 5432; User Id = adminkulobus; Password = developer; Database = kulochbus; Pooling=false";
         NpgsqlConnection conn = new NpgsqlConnection(connectionString);
@@ -33,16 +33,17 @@ namespace KulochBus
                         timeOut = true;
                         break;
                     }
-                    Thread.Yield(); //tells the kernel to give other threads some time
+                    Thread.Yield();
                 }
 
                 if (timeOut)
                 {
+                    // if sql connection times out
                     System.Windows.Forms.MessageBox.Show("Connection Timeout");
-                    // TODO: Handle your time out here.
                 }
 
             }
+
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
@@ -55,6 +56,7 @@ namespace KulochBus
             {
                 conn.Close();
             }
+
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
@@ -68,6 +70,7 @@ namespace KulochBus
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
             }
+
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
@@ -88,12 +91,12 @@ namespace KulochBus
 
                 return myTable;                
             }
+
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
                 return myTable;    
             }
-
         }
     }
 }
