@@ -137,11 +137,11 @@ namespace KulochBus
                 "gender like '%" + memberSearch + "%' OR " +
                 "membership like '%" + memberSearch + "%'";
 
-            DataTable tb = new DataTable();
+            DataTable dt = new DataTable();
             BindingSource bs = new BindingSource();
-
-            tb = getMemberList.Select(sql);
-            bs.DataSource = tb;
+            
+            dt = getMemberList.Select(sql);
+            bs.DataSource = dt;
             dgrViewMember.DataSource = bs;
 
             getMemberList.Close();
@@ -149,15 +149,13 @@ namespace KulochBus
 
         private void dgrViewMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //HidePanels();
-            //panNewContact.Show();
+            HidePanels();
+            panNewMember.Show();
 
             // Get memberid
             string selectedMember;
-            DataGridViewRow selectedRow = this.dgrViewMember.Rows[e.RowIndex];
+            DataGridViewRow selectedRow = dgrViewMember.Rows[e.RowIndex];
             selectedMember = selectedRow.Cells[0].Value.ToString();
-
-            txtTest.Text = selectedMember;
 
             Sql getMemberDetails = new Sql();
             getMemberDetails.Connect();
@@ -165,11 +163,22 @@ namespace KulochBus
             string querry =
                 "SELECT firstname, lastname, securitynr, address, " +
                 "zipcode, city, email, gender " +
+                "FROM person " +
                 "WHERE personid = " + selectedMember;
 
             DataTable dt = new DataTable();
+            dt = getMemberDetails.Select(querry);
 
-            
+            foreach (DataRow row in dt.Rows)
+            {
+                txtFirstName.Text = row["firstname"].ToString();
+                txtLastName.Text = row["lastname"].ToString();
+                txtSecurityNr.Text = row["securitynr"].ToString();
+                txtAddress.Text = row["address"].ToString();
+                txtZipcode.Text = row["city"].ToString();
+                txtEmail.Text = row["email"].ToString();
+                comboBoxGender.Text = row["gender"].ToString();              
+            }
         }
     }
 }
