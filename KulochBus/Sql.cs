@@ -52,27 +52,27 @@ namespace KulochBus
         public List<string> Select(string sql)
         {
             List<string> data = new List<string>();
-
+             
             try
             {
                 NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
                 NpgsqlDataReader dr = cmd.ExecuteReader();
                 
-               
 
                 while (dr.Read())
                 {
-                    data.Add(dr.GetString(0));
+                    data.Add(dr["firstname"].ToString());
                 }
 
-                
+            return data;   
+             
             }
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
+                return data;    
             }
 
-            return data;
         }
     }
 }

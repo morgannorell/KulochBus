@@ -101,5 +101,33 @@ namespace KulochBus
 
             test = getMembers.Select(sql);
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panNewTraininggroup_VisibleChanged(object sender, EventArgs e)
+        {
+            //lägg till medlemmar i datagrid
+        }
+
+        private void panViewMember_VisibleChanged(object sender, EventArgs e)
+        {
+            Sql newConnect = new Sql();
+            newConnect.Connect();
+
+            string sql = "select * from person";
+
+            List<string> viewMember = new List<string>();
+
+            viewMember = newConnect.Select(sql);
+
+            dgrViewMember.DataSource = viewMember;
+
+            newConnect.Close();     
+        }
+
+
     }
 }
