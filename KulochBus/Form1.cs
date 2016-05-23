@@ -57,18 +57,48 @@ namespace KulochBus
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            bool picture = false;
+            bool leader = false;
+            bool payed = false;
 
-            var membership = (Membership)comboBoxMembership.SelectedItem;
+            if (checkBoxPicture.Checked) { picture = true; }
+            if (checkBoxLeader.Checked) { leader = true; }
+            if (checkPayed.Checked) { payed = true; }
+            
+            Person ps = new Person()
+            {
+                Firstname = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                SecurityNr = txtSecurityNr.Text,
+                Address = txtAddress.Text,
+                Zipcode = txtZipcode.Text,
+                City = txtCity.Text,
+                Email = txtEmail.Text,
+                Gender = comboBoxGender.SelectedItem.ToString(),
+                Responsibility = txtResponsibility.Text,
+                Membership = comboBoxMembership.SelectedItem.ToString(),
+                Picture = picture,
+                Leader = leader,
+                payed = payed,
+                Homeareacode = txtPhoneAreaCode.Text,
+                Homephone = txtPhone.Text,
+                Mobilecode = txtCellphoneAreaCode.Text,
+                Mobilephone = txtCellphone.Text
+            };
 
-            Person newPerson = new Person(txtFirstName.Text, txtLastName.Text, txtSecurityNr.Text, txtAddress.Text, txtZipcode.Text, txtCity.Text, txtEmail.Text, comboBoxGender.SelectedItem.ToString());
-            var newPersonId = newPerson.createPerson();
+            ps.CreatePersonTest();
 
-            Member newMember = new Member(newPersonId, txtResponsibility.Text, membership.Name, checkBoxPicture.Checked, checkBoxLeader.Checked, membership.Price);
-            var newMemberId = newMember.createMember();
+            //var membership = (Membership)comboBoxMembership.SelectedItem;
 
-            Phone newPhone = new Phone(newPersonId, txtPhoneAreaCode.Text, txtPhone.Text, txtCellphoneAreaCode.Text, txtCellphone.Text);
-            newPhone.createPhone();
-            newPhone.createCellphone();
+            //Person newPerson = new Person(txtFirstName.Text, txtLastName.Text, txtSecurityNr.Text, txtAddress.Text, txtZipcode.Text, txtCity.Text, txtEmail.Text, comboBoxGender.SelectedItem.ToString());
+            //var newPersonId = newPerson.createPerson();
+
+            //Member newMember = new Member(newPersonId, txtResponsibility.Text, membership.Name, checkBoxPicture.Checked, checkBoxLeader.Checked, membership.Price);
+            //var newMemberId = newMember.createMember();
+
+            //Phone newPhone = new Phone(newPersonId, txtPhoneAreaCode.Text, txtPhone.Text, txtCellphoneAreaCode.Text, txtCellphone.Text);
+            //newPhone.createPhone();
+            //newPhone.createCellphone();
         }
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
