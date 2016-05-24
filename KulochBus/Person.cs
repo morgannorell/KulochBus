@@ -59,9 +59,19 @@ namespace KulochBus
 
             string insert = "START TRANSACTION; " +
                 "WITH id AS (" +
-                "INSERT INTO person (securitynr, firstname, lastname, gender, address, zipcode, city, email) " +
-                "VALUES ('" + SecurityNr + "', '" + Firstname + "', '" + LastName + "', '" + Gender + "', '" + Address + "', '" +
-                Zipcode + "', '" + City + "', '" + Email + "') RETURNING personid), pid AS (" +
+                "INSERT INTO person " +
+                "(securitynr, firstname, lastname, gender, address, zipcode, city, email) " +
+                "VALUES ('" 
+                + SecurityNr + "', '" 
+                + Firstname + "', '" 
+                + LastName + "', '" 
+                + Gender + "', '" 
+                + Address + "', '" 
+                + Zipcode + "', '" 
+                + City + "', '" 
+                + Email + "') " + 
+                "RETURNING personid), " + 
+                "pid AS (" +
                 "INSERT INTO phone (personid, areacode, phone) SELECT id.personid, '" + Homeareacode + "', '" + Homephone + "' " +
                 "FROM id RETURNING personid) INSERT INTO member (memberid, responsibility, membership, pictureallowed, isleader, ispayed) " +
                 "SELECT pid.personid, '" + Responsibility + "', '" + Membership + "', " + Picture + ", " + Leader + ", " + payed + " FROM pid; " +
