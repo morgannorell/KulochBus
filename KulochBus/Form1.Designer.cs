@@ -68,6 +68,10 @@
             this.lblTraningTitle = new System.Windows.Forms.Label();
             this.btnTGCreate = new System.Windows.Forms.Button();
             this.panNewContact = new System.Windows.Forms.Panel();
+            this.txtMemberIdContact = new System.Windows.Forms.TextBox();
+            this.lblMemberIdContact = new System.Windows.Forms.Label();
+            this.btnCancelContact = new System.Windows.Forms.Button();
+            this.btnNewContact = new System.Windows.Forms.Button();
             this.lblCTTitle = new System.Windows.Forms.Label();
             this.txtContactMobilephone = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -142,10 +146,6 @@
             this.lblTGGroupListTitle = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
-            this.btnCancelContact = new System.Windows.Forms.Button();
-            this.btnNewContact = new System.Windows.Forms.Button();
-            this.lblMemberIdContact = new System.Windows.Forms.Label();
-            this.txtMemberIdContact = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -190,7 +190,7 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(155, 30);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
@@ -223,7 +223,7 @@
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(155, 30);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -556,6 +556,44 @@
             this.panNewContact.Size = new System.Drawing.Size(1088, 688);
             this.panNewContact.TabIndex = 38;
             // 
+            // txtMemberIdContact
+            // 
+            this.txtMemberIdContact.Enabled = false;
+            this.txtMemberIdContact.Location = new System.Drawing.Point(156, 79);
+            this.txtMemberIdContact.Name = "txtMemberIdContact";
+            this.txtMemberIdContact.Size = new System.Drawing.Size(177, 26);
+            this.txtMemberIdContact.TabIndex = 66;
+            // 
+            // lblMemberIdContact
+            // 
+            this.lblMemberIdContact.AutoSize = true;
+            this.lblMemberIdContact.Location = new System.Drawing.Point(21, 82);
+            this.lblMemberIdContact.Name = "lblMemberIdContact";
+            this.lblMemberIdContact.Size = new System.Drawing.Size(131, 20);
+            this.lblMemberIdContact.TabIndex = 65;
+            this.lblMemberIdContact.Text = "Medlemsnummer";
+            // 
+            // btnCancelContact
+            // 
+            this.btnCancelContact.Location = new System.Drawing.Point(193, 581);
+            this.btnCancelContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnCancelContact.Name = "btnCancelContact";
+            this.btnCancelContact.Size = new System.Drawing.Size(112, 38);
+            this.btnCancelContact.TabIndex = 64;
+            this.btnCancelContact.Text = "Avbryt";
+            this.btnCancelContact.UseVisualStyleBackColor = true;
+            // 
+            // btnNewContact
+            // 
+            this.btnNewContact.Location = new System.Drawing.Point(33, 581);
+            this.btnNewContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnNewContact.Name = "btnNewContact";
+            this.btnNewContact.Size = new System.Drawing.Size(151, 38);
+            this.btnNewContact.TabIndex = 63;
+            this.btnNewContact.Text = "Skapa ny kontakt";
+            this.btnNewContact.UseVisualStyleBackColor = true;
+            this.btnNewContact.Click += new System.EventHandler(this.btnNewContact_Click);
+            // 
             // lblCTTitle
             // 
             this.lblCTTitle.AutoSize = true;
@@ -847,6 +885,7 @@
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "Spara";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // lblCreateNewMember
             // 
@@ -1274,51 +1313,13 @@
             this.dgrViewTGGroupList.Size = new System.Drawing.Size(1054, 594);
             this.dgrViewTGGroupList.TabIndex = 5;
             // 
-            // btnCancelContact
-            // 
-            this.btnCancelContact.Location = new System.Drawing.Point(193, 581);
-            this.btnCancelContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancelContact.Name = "btnCancelContact";
-            this.btnCancelContact.Size = new System.Drawing.Size(112, 38);
-            this.btnCancelContact.TabIndex = 64;
-            this.btnCancelContact.Text = "Avbryt";
-            this.btnCancelContact.UseVisualStyleBackColor = true;
-            // 
-            // btnNewContact
-            // 
-            this.btnNewContact.Location = new System.Drawing.Point(33, 581);
-            this.btnNewContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnNewContact.Name = "btnNewContact";
-            this.btnNewContact.Size = new System.Drawing.Size(151, 38);
-            this.btnNewContact.TabIndex = 63;
-            this.btnNewContact.Text = "Skapa ny kontakt";
-            this.btnNewContact.UseVisualStyleBackColor = true;
-            this.btnNewContact.Click += new System.EventHandler(this.btnNewContact_Click);
-            // 
-            // lblMemberIdContact
-            // 
-            this.lblMemberIdContact.AutoSize = true;
-            this.lblMemberIdContact.Location = new System.Drawing.Point(21, 82);
-            this.lblMemberIdContact.Name = "lblMemberIdContact";
-            this.lblMemberIdContact.Size = new System.Drawing.Size(131, 20);
-            this.lblMemberIdContact.TabIndex = 65;
-            this.lblMemberIdContact.Text = "Medlemsnummer";
-            // 
-            // txtMemberIdContact
-            // 
-            this.txtMemberIdContact.Enabled = false;
-            this.txtMemberIdContact.Location = new System.Drawing.Point(156, 79);
-            this.txtMemberIdContact.Name = "txtMemberIdContact";
-            this.txtMemberIdContact.Size = new System.Drawing.Size(177, 26);
-            this.txtMemberIdContact.TabIndex = 66;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 723);
-            this.Controls.Add(this.panNewContact);
             this.Controls.Add(this.panNewMember);
+            this.Controls.Add(this.panNewContact);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);

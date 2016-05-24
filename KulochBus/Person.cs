@@ -25,7 +25,7 @@ namespace KulochBus
         public bool Picture { get; set; }
         public int Price { get; set; }
         public bool Leader { get; set; }
-        public bool payed { get; set; }
+        public bool Payed { get; set; }
         public string Homeareacode { get; set; }
         public string Homephone { get; set; }
         public string Mobilecode { get; set; }

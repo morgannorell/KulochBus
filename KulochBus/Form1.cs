@@ -90,7 +90,7 @@ namespace KulochBus
                 Price = membership.Price,
                 Picture = picture,
                 Leader = leader,
-                payed = payed,
+                Payed = payed,
                 Homeareacode = txtPhoneAreaCode.Text,
                 Homephone = txtPhone.Text,
                 Mobilecode = txtCellphoneAreaCode.Text,
@@ -282,6 +282,33 @@ namespace KulochBus
             };
 
             ct.CreateContact();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool picture = false;
+            bool leader = false;
+            bool payed = false;
+
+            if (checkBoxPicture.Checked) { picture = true; }
+            if (checkBoxLeader.Checked) { leader = true; }
+            if (checkPayed.Checked) { payed = true; }
+            var membership1 = (Membership)comboBoxMembership.SelectedItem;
+
+
+            Member updateMember = new Member()
+            {
+                PersonId = txtMemberId.Text,
+                Responsibility = txtResponsibility.Text,
+                Membership = membership1.Name,
+                Price = membership1.Price,
+                Picture = picture,
+                Leader = leader,
+                Payed = payed
+            };
+
+            updateMember.UpdateMember();
+
         }
 
     }

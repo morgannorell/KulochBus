@@ -24,10 +24,21 @@ namespace KulochBus
                 "FROM id RETURNING personid),"
                 + " pid AS (INSERT INTO phone (personid, areacode, phone) SELECT mpid.personid, '" + Homeareacode + "', '" + Homephone + "' " +
                 "FROM mpid RETURNING personid) INSERT INTO member (memberid, responsibility, membership, pictureallowed, isleader, price, ispayed) " +
-                "SELECT pid.personid, '" + Responsibility + "', '" + Membership + "', " + Picture + ", " + Leader + ", " + Price + ", " + payed + " FROM pid; " +
+                "SELECT pid.personid, '" + Responsibility + "', '" + Membership + "', " + Picture + ", " + Leader + ", " + Price + ", " + Payed + " FROM pid; " +
                 "COMMIT;";
 
             member.Insert(insert);
+            member.Close();
+        }
+
+        public void UpdateMember()
+        {
+            Sql member = new Sql();
+            member.Connect();
+
+            string update = "UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "'WHERE memberid = '" + PersonId  +"';";
+
+            member.Insert(update);
             member.Close();
         }
     }
