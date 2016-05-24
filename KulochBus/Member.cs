@@ -8,55 +8,27 @@ using Npgsql;
 
 namespace KulochBus
 {
-    class Member
+    class Member:Person
     {
-        public int PersonId;
-        public string Responsibility;
-        public string Membership;
-        public bool PictureAllowed;
-        public bool IsLeader;
-        public int Price;
-        
-        public Member(int personId, string responsibility, string membership, bool pictureAllowed, bool isLeader, int price)
+        //ärver från person och skapar ny medlem (persontabell, medlemstabell och telefontabell)
+        public void CreateMember()
         {
-            PersonId = personId;
-            Responsibility = responsibility;
-            Membership = membership;
-            PictureAllowed = pictureAllowed;
-            IsLeader = isLeader;
-            Price = price;
-          
-        }
+            Sql member = new Sql();
+            member.Connect();
 
-        public int createMember()
-        {
-            NpgsqlConnection conn = new NpgsqlConnection
-                ("Server = 81.25.82.40; Port = 5432; User Id = adminkulobus; Password = developer; Database = kulochbus");
+            string insert = "START TRANSACTION; " +
+                "WITH id AS (" +
+                "INSERT INTO person (securitynr, firstname, lastname, gender, address, zipcode, city, email) " +
+                "VALUES ('" + SecurityNr + "', '" + Firstname + "', '" + LastName + "', '" + Gender + "', '" + Address + "', '" + Zipcode + "', '" + City + "', '" + Email + "') RETURNING personid),"
+                + " mpid AS (INSERT INTO phone(personid, areacode, phone) SELECT id.personid, '" + Mobilecode + "', '" + Mobilephone + "' " +
+                "FROM id RETURNING personid),"
+                + " pid AS (INSERT INTO phone (personid, areacode, phone) SELECT mpid.personid, '" + Homeareacode + "', '" + Homephone + "' " +
+                "FROM mpid RETURNING personid) INSERT INTO member (memberid, responsibility, membership, pictureallowed, isleader, price, ispayed) " +
+                "SELECT pid.personid, '" + Responsibility + "', '" + Membership + "', " + Picture + ", " + Leader + ", " + Price + ", " + payed + " FROM pid; " +
+                "COMMIT;";
 
-            try
-            {
-                conn.Open();
-
-                string sqlMember = "INSERT INTO member (personid, membership, responsibility, pictureallowed, isleader, price) values (" + PersonId + ",'" + Membership + "', '" + Responsibility + "', " + PictureAllowed + ", " + IsLeader + ", " + Price + ")RETURNING memberid;";
-                NpgsqlCommand cmd = new NpgsqlCommand(sqlMember, conn);
-                NpgsqlDataReader dr = cmd.ExecuteReader();
-                var id = 0;
-
-                while (dr.Read())
-                {
-                    id = (int)dr["memberid"];
-                }
-
-                dr.Close();
-                conn.Close();
-
-                return id;
-            }
-            catch (NpgsqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-                return 0;
-            }
+            member.Insert(insert);
+            member.Close();
         }
     }
 }
