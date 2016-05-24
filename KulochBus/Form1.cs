@@ -42,7 +42,16 @@ namespace KulochBus
         private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HidePanels();
-            panNewMember.Show();
+            panNewMember.Show();            
+            
+            //ändrar visibility på buttons osv
+            btnCreateNewMember.Visible = true;
+            btnContact.Visible = false;
+            btnSave.Visible = false;
+            txtMemberId.Visible = false;
+            lblMemberID.Visible = false;
+            lblCreateNewMember.Text = "Skapa ny medlem";
+
         }
 
         private void arkivToolStripMenuItem_Click(object sender, EventArgs e)
@@ -55,7 +64,7 @@ namespace KulochBus
             panNewMember.Hide();
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnCreateNewMember_Click(object sender, EventArgs e)
         {
             bool picture = false;
             bool leader = false;
@@ -64,8 +73,9 @@ namespace KulochBus
             if (checkBoxPicture.Checked) { picture = true; }
             if (checkBoxLeader.Checked) { leader = true; }
             if (checkPayed.Checked) { payed = true; }
+            var membership = (Membership)comboBoxMembership.SelectedItem;
             
-            Person ps = new Person()
+            Member ps = new Member()
             {
                 Firstname = txtFirstName.Text,
                 LastName = txtLastName.Text,
@@ -76,29 +86,18 @@ namespace KulochBus
                 Email = txtEmail.Text,
                 Gender = comboBoxGender.SelectedItem.ToString(),
                 Responsibility = txtResponsibility.Text,
-                Membership = comboBoxMembership.SelectedItem.ToString(),
+                Membership = membership.Name,
+                Price = membership.Price,
                 Picture = picture,
                 Leader = leader,
-                payed = payed,
+                Payed = payed,
                 Homeareacode = txtPhoneAreaCode.Text,
                 Homephone = txtPhone.Text,
                 Mobilecode = txtCellphoneAreaCode.Text,
                 Mobilephone = txtCellphone.Text
             };
 
-            ps.CreatePersonTest();
-
-            //var membership = (Membership)comboBoxMembership.SelectedItem;
-
-            //Person newPerson = new Person(txtFirstName.Text, txtLastName.Text, txtSecurityNr.Text, txtAddress.Text, txtZipcode.Text, txtCity.Text, txtEmail.Text, comboBoxGender.SelectedItem.ToString());
-            //var newPersonId = newPerson.createPerson();
-
-            //Member newMember = new Member(newPersonId, txtResponsibility.Text, membership.Name, checkBoxPicture.Checked, checkBoxLeader.Checked, membership.Price);
-            //var newMemberId = newMember.createMember();
-
-            //Phone newPhone = new Phone(newPersonId, txtPhoneAreaCode.Text, txtPhone.Text, txtCellphoneAreaCode.Text, txtCellphone.Text);
-            //newPhone.createPhone();
-            //newPhone.createCellphone();
+            ps.CreateMember();
         }
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
@@ -159,7 +158,7 @@ namespace KulochBus
 
         private void panNewTraininggroup_VisibleChanged(object sender, EventArgs e)
         {
-            //lägg till medlemmar i datagrid
+
         }
 
         private void btnMemberSearch_Click(object sender, EventArgs e)
@@ -191,8 +190,14 @@ namespace KulochBus
 
         private void dgrViewMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
+            //visibility på members
             HidePanels();
             panNewMember.Show();
+            btnContact.Visible = true;
+            btnSave.Visible = true;
+            lblCreateNewMember.Text = "Medlem";
+            lblMemberID.Visible = true;
+            txtMemberId.Visible = true;
 
             // Get memberid
             string selectedMember;
@@ -202,8 +207,9 @@ namespace KulochBus
             Sql getMemberDetails = new Sql();
             getMemberDetails.Connect();
 
+            //la till personid så det gick att hämta ut i en textbox
             string querry =
-                "SELECT firstname, lastname, securitynr, address, " +
+                "SELECT personid, firstname, lastname, securitynr, address, " +
                 "zipcode, city, email, gender " +
                 "FROM person " +
                 "WHERE personid = " + selectedMember;
@@ -213,14 +219,17 @@ namespace KulochBus
 
             foreach (DataRow row in dt.Rows)
             {
+                txtMemberId.Text = row["personid"].ToString();
                 txtFirstName.Text = row["firstname"].ToString();
                 txtLastName.Text = row["lastname"].ToString();
                 txtSecurityNr.Text = row["securitynr"].ToString();
                 txtAddress.Text = row["address"].ToString();
-                txtZipcode.Text = row["city"].ToString();
+                txtCity.Text = row["city"].ToString();
+                txtZipcode.Text = row["zipcode"].ToString();
                 txtEmail.Text = row["email"].ToString();
                 comboBoxGender.Text = row["gender"].ToString();              
             }
+            btnCreateNewMember.Visible = false;
         }
 
         private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,5 +255,61 @@ namespace KulochBus
             frmLevel level = new frmLevel();
             level.Show();
         }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
+          HidePanels();
+          panNewContact.Show();
+        }
+
+        private void btnNewContact_Click(object sender, EventArgs e)
+        {
+  
+            Contact ct = new Contact()
+            {
+                Firstname = txtContactFn.Text,
+                LastName = txtContactLn.Text,
+                SecurityNr = txtContactSc.Text,
+                Address = txtContactAddress.Text,
+                Zipcode = txtContactZipcode.Text,
+                City = txtContactCity.Text,
+                Email = txtContactEmail.Text,
+                Gender = comboBoxContactGender.SelectedItem.ToString(),
+                Homeareacode = txtContactPAC.Text,
+                Homephone = txtContactPhone.Text,
+                Mobilecode = txtContactMPAC.Text,
+                Mobilephone = txtContactMobilephone.Text
+            };
+
+            ct.CreateContact();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            bool picture = false;
+            bool leader = false;
+            bool payed = false;
+
+            if (checkBoxPicture.Checked) { picture = true; }
+            if (checkBoxLeader.Checked) { leader = true; }
+            if (checkPayed.Checked) { payed = true; }
+            var membership1 = (Membership)comboBoxMembership.SelectedItem;
+
+
+            Member updateMember = new Member()
+            {
+                PersonId = txtMemberId.Text,
+                Responsibility = txtResponsibility.Text,
+                Membership = membership1.Name,
+                Price = membership1.Price,
+                Picture = picture,
+                Leader = leader,
+                Payed = payed
+            };
+
+            updateMember.UpdateMember();
+
+        }
+
     }
 }
