@@ -190,7 +190,7 @@ namespace KulochBus
 
         private void dgrViewMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            //visibility på member
+            //visibility på members
             HidePanels();
             panNewMember.Show();
             btnContact.Visible = true;
