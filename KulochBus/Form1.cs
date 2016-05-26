@@ -195,7 +195,7 @@ namespace KulochBus
             panNewMember.Show();
             btnContact.Visible = true;
             btnSave.Visible = true;
-            lblCreateNewMember.Text = "Medlem";
+            lblCreateNewMember.Text = "Redigera medlem";
             lblMemberID.Visible = true;
             txtMemberId.Visible = true;
 
@@ -260,6 +260,8 @@ namespace KulochBus
         {
           HidePanels();
           panNewContact.Show();
+          txtMemberIdContact.Text = txtMemberId.Text;
+          txtMemberIdContact.Enabled = false;
         }
 
         private void btnNewContact_Click(object sender, EventArgs e)
@@ -322,6 +324,13 @@ namespace KulochBus
 
             updateMember.UpdateMember();
 
+        }
+
+        private void medlemToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panNewContact.Show();
+            txtMemberIdContact.Enabled = true;
         }
 
     }
