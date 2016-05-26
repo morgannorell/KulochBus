@@ -34,7 +34,7 @@ namespace KulochBus
         public void UpdateMember()
         {
             Sql member = new Sql();
-            member.Connect();
+            //member.Connect();
 
             string update = "START TRANSACTION; " +
                 " UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "' WHERE memberid = " + PersonId + ";" +

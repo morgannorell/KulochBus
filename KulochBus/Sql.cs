@@ -6,18 +6,22 @@ using System.Threading.Tasks;
 using Npgsql;
 using System.Data;
 using System.Threading;
+using System.Configuration;
 
 namespace KulochBus
 {
     public class Sql
     {
-        // Adding pooling=false due to bug see https://github.com/npgsql/npgsql/issues/1105
-        static private string connectionString = 
-            "Server = 81.25.82.40; Port = 5432; User Id = adminkulobus; Password = developer; Database = kulochbus; Pooling=false";
-        NpgsqlConnection conn = new NpgsqlConnection(connectionString);
+        private NpgsqlConnection conn;
+        private NpgsqlCommand _cmd;
+        private NpgsqlDataReader _dr;
+        private DataTable _table;
 
-        public void Connect()
+
+
+        public Sql()
         {
+            conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db_connection"].ConnectionString);
             try
             {
                 conn.Open();
@@ -41,13 +45,44 @@ namespace KulochBus
                     // if sql connection times out
                     System.Windows.Forms.MessageBox.Show("Connection Timeout");
                 }
-
             }
-
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+        }
+        public void Connect()
+        {
+            ////try
+            ////{
+            ////    //conn.Open();
+
+            ////    var startTime = DateTime.Now;
+            ////    var endTime = DateTime.Now.AddSeconds(5);
+            ////    var timeOut = false;
+
+            ////    while (conn.State != ConnectionState.Open)
+            ////    {
+            ////        if (DateTime.Now.CompareTo(endTime) >= 0)
+            ////        {
+            ////            timeOut = true;
+            ////            break;
+            ////        }
+            ////        Thread.Yield();
+            ////    }
+
+            ////    if (timeOut)
+            ////    {
+            ////        // if sql connection times out
+            ////        System.Windows.Forms.MessageBox.Show("Connection Timeout");
+            ////    }
+
+            //}
+
+            //catch (NpgsqlException ex)
+            //{
+            //    System.Windows.Forms.MessageBox.Show(ex.Message);
+            //}
         }
 
         public void Close()
