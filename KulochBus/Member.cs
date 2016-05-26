@@ -36,7 +36,12 @@ namespace KulochBus
             Sql member = new Sql();
             member.Connect();
 
-            string update = "UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "'WHERE memberid = '" + PersonId  +"';";
+            string update = "START TRANSACTION; " +
+                " UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "' WHERE memberid = " + PersonId + ";" +
+                " UPDATE person SET securitynr = '" + SecurityNr + "', firstname = '" + Firstname + "', lastname = '" + LastName + "', gender = '" + Gender + "', Address = '" + Address + "', zipcode = '" + Zipcode + "', city = '" + City + "', email = '" + Email + "' WHERE personid = " + PersonId + ";" +
+                " UPDATE phone SET areacode = '" + Homeareacode + "', phone = '" + Homephone + "' WHERE phone = '" + Homephone + " AND areacode = '" + Homeareacode + "' AND personid = " + PersonId + ";" +
+                " UPDATE phone SET areacode = '" + Mobilecode + "', phone = '" + Mobilephone + "' WHERE phone = '" + Mobilephone + " AND areacode = '" + Mobilecode + "' AND personid = " + PersonId + ";" +
+                " COMMIT;";
 
             member.Insert(update);
             member.Close();

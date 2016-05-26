@@ -267,6 +267,7 @@ namespace KulochBus
   
             Contact ct = new Contact()
             {
+                MemberId = txtMemberIdContact.Text,
                 Firstname = txtContactFn.Text,
                 LastName = txtContactLn.Text,
                 SecurityNr = txtContactSc.Text,
