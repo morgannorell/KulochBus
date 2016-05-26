@@ -122,6 +122,7 @@ namespace KulochBus
         {
             HidePanels();
             panNewContact.Show();
+            txtMemberIdContact.Enabled = true;
             }
 
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -329,8 +330,13 @@ namespace KulochBus
         private void medlemToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             HidePanels();
-            panNewContact.Show();
-            txtMemberIdContact.Enabled = true;
+            panNewMember.Show();
+            btnContact.Visible = true;
+            btnSave.Visible = true;
+            btnCreateNewMember.Visible = false;
+            lblCreateNewMember.Text = "Redigera medlem";
+            lblMemberID.Visible = true;
+            txtMemberId.Visible = true;
         }
 
     }
