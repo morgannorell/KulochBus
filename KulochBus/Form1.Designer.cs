@@ -168,7 +168,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(9, 3, 0, 3);
-            this.menuStrip1.Size = new System.Drawing.Size(1088, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(1101, 35);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -190,40 +190,40 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(155, 30);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.närvaroToolStripMenuItem.Text = "Närvaro...";
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.medlemToolStripMenuItem.Text = "Medlem...";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.kontaktToolStripMenuItem.Text = "Kontakt...";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp...";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(155, 30);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -254,20 +254,20 @@
             // medlemmarToolStripMenuItem
             // 
             this.medlemmarToolStripMenuItem.Name = "medlemmarToolStripMenuItem";
-            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.medlemmarToolStripMenuItem.Text = "Medlemmslista";
             this.medlemmarToolStripMenuItem.Click += new System.EventHandler(this.medlemmarToolStripMenuItem_Click);
             // 
             // närvaroToolStripMenuItem1
             // 
             this.närvaroToolStripMenuItem1.Name = "närvaroToolStripMenuItem1";
-            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(226, 30);
             this.närvaroToolStripMenuItem1.Text = "Närvarolistor";
             // 
             // träningsgrupperToolStripMenuItem
             // 
             this.träningsgrupperToolStripMenuItem.Name = "träningsgrupperToolStripMenuItem";
-            this.träningsgrupperToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.träningsgrupperToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.träningsgrupperToolStripMenuItem.Text = "Träningsgrupper";
             this.träningsgrupperToolStripMenuItem.Click += new System.EventHandler(this.träningsgrupperToolStripMenuItem_Click);
             // 
@@ -327,7 +327,7 @@
             this.panTGGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panTGGroup.Location = new System.Drawing.Point(0, 35);
             this.panTGGroup.Name = "panTGGroup";
-            this.panTGGroup.Size = new System.Drawing.Size(1088, 688);
+            this.panTGGroup.Size = new System.Drawing.Size(1101, 608);
             this.panTGGroup.TabIndex = 37;
             this.panTGGroup.VisibleChanged += new System.EventHandler(this.panNewTraininggroup_VisibleChanged);
             // 
@@ -553,7 +553,7 @@
             this.panNewContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panNewContact.Location = new System.Drawing.Point(0, 35);
             this.panNewContact.Name = "panNewContact";
-            this.panNewContact.Size = new System.Drawing.Size(1088, 688);
+            this.panNewContact.Size = new System.Drawing.Size(1101, 608);
             this.panNewContact.TabIndex = 38;
             // 
             // txtMemberIdContact
@@ -844,7 +844,7 @@
             this.panNewMember.Location = new System.Drawing.Point(0, 35);
             this.panNewMember.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panNewMember.Name = "panNewMember";
-            this.panNewMember.Size = new System.Drawing.Size(1088, 688);
+            this.panNewMember.Size = new System.Drawing.Size(1101, 608);
             this.panNewMember.TabIndex = 1;
             // 
             // txtMemberId
@@ -1217,7 +1217,7 @@
             this.panViewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panViewMember.Location = new System.Drawing.Point(0, 35);
             this.panViewMember.Name = "panViewMember";
-            this.panViewMember.Size = new System.Drawing.Size(1088, 688);
+            this.panViewMember.Size = new System.Drawing.Size(1101, 608);
             this.panViewMember.TabIndex = 9;
             // 
             // btnMemberSearch
@@ -1271,7 +1271,7 @@
             this.panTGGroupList.Location = new System.Drawing.Point(0, 35);
             this.panTGGroupList.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panTGGroupList.Name = "panTGGroupList";
-            this.panTGGroupList.Size = new System.Drawing.Size(1088, 688);
+            this.panTGGroupList.Size = new System.Drawing.Size(1101, 608);
             this.panTGGroupList.TabIndex = 18;
             // 
             // button1
@@ -1317,9 +1317,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(725, 470);
-            this.Controls.Add(this.panTGGroup);
+            this.ClientSize = new System.Drawing.Size(1101, 643);
             this.Controls.Add(this.panNewMember);
+            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panNewContact);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panTGGroupList);
