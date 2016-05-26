@@ -264,22 +264,36 @@ namespace KulochBus
 
         private void btnNewContact_Click(object sender, EventArgs e)
         {
-  
+            bool picture = false;
+            bool leader = false;
+            bool payed = false;
+
+            if (checkBoxPicture.Checked) { picture = true; }
+            if (checkBoxLeader.Checked) { leader = true; }
+            if (checkPayed.Checked) { payed = true; }
+            var membership = (Membership)comboBoxMembership.SelectedItem;
+
             Contact ct = new Contact()
             {
                 MemberId = txtMemberIdContact.Text,
-                Firstname = txtContactFn.Text,
-                LastName = txtContactLn.Text,
-                SecurityNr = txtContactSc.Text,
-                Address = txtContactAddress.Text,
-                Zipcode = txtContactZipcode.Text,
-                City = txtContactCity.Text,
-                Email = txtContactEmail.Text,
-                Gender = comboBoxContactGender.SelectedItem.ToString(),
-                Homeareacode = txtContactPAC.Text,
-                Homephone = txtContactPhone.Text,
-                Mobilecode = txtContactMPAC.Text,
-                Mobilephone = txtContactMobilephone.Text
+                Firstname = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                SecurityNr = txtSecurityNr.Text,
+                Address = txtAddress.Text,
+                Zipcode = txtZipcode.Text,
+                City = txtCity.Text,
+                Email = txtEmail.Text,
+                Gender = comboBoxGender.SelectedItem.ToString(),
+                Responsibility = txtResponsibility.Text,
+                Membership = membership.Name,
+                Price = membership.Price,
+                Picture = picture,
+                Leader = leader,
+                Payed = payed,
+                Homeareacode = txtPhoneAreaCode.Text,
+                Homephone = txtPhone.Text,
+                Mobilecode = txtCellphoneAreaCode.Text,
+                Mobilephone = txtCellphone.Text
             };
 
             ct.CreateContact();
@@ -305,7 +319,7 @@ namespace KulochBus
                 Price = membership1.Price,
                 Picture = picture,
                 Leader = leader,
-                Payed = payed
+                Payed = payed,
             };
 
             updateMember.UpdateMember();
