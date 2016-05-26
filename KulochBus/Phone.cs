@@ -10,6 +10,7 @@ namespace KulochBus
 {
     class Phone:Person
     {
-
+        public string Areacode { get; set; }
+        public string Phonenumber { get; set; }
     }
 }

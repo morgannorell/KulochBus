@@ -217,6 +217,12 @@ namespace KulochBus
             DataTable dt = new DataTable();
             dt = getMemberDetails.Select(querry);
 
+            Phone ph = new Phone()
+            {
+                Areacode = "0650",
+                Phonenumber = "111 22"
+            };
+
             foreach (DataRow row in dt.Rows)
             {
                 txtMemberId.Text = row["personid"].ToString();
@@ -296,31 +302,36 @@ namespace KulochBus
             if (checkPayed.Checked) { payed = true; }
             var membership = (Membership)comboBoxMembership.SelectedItem;
 
+            Phone ph = new Phone();
 
-            Member updateMember = new Member()
-            {
-                PersonId = txtMemberId.Text,
-                Firstname = txtFirstName.Text,
-                LastName = txtLastName.Text,
-                SecurityNr = txtSecurityNr.Text,
-                Address = txtAddress.Text,
-                Zipcode = txtZipcode.Text,
-                City = txtCity.Text,
-                Email = txtEmail.Text,
-                Gender = comboBoxGender.SelectedItem.ToString(),
-                Responsibility = txtResponsibility.Text,
-                Membership = membership.Name,
-                Price = membership.Price,
-                Picture = picture,
-                Leader = leader,
-                Payed = payed,
-                Homeareacode = txtPhoneAreaCode.Text,
-                Homephone = txtPhone.Text,
-                Mobilecode = txtCellphoneAreaCode.Text,
-                Mobilephone = txtCellphone.Text
-            };
+            ph.Phonenumber = txtPhone.Text;
 
-            updateMember.UpdateMember();
+            //Member updateMember = new Member()
+            //{
+            //    PersonId = txtMemberId.Text,
+            //    Firstname = txtFirstName.Text,
+            //    LastName = txtLastName.Text,
+            //    SecurityNr = txtSecurityNr.Text,
+            //    Address = txtAddress.Text,
+            //    Zipcode = txtZipcode.Text,
+            //    City = txtCity.Text,
+            //    Email = txtEmail.Text,
+            //    Gender = comboBoxGender.SelectedItem.ToString(),
+            //    Responsibility = txtResponsibility.Text,
+            //    Membership = membership.Name,
+            //    Price = membership.Price,
+            //    Picture = picture,
+            //    Leader = leader,
+            //    Payed = payed,
+            //    Homeareacode = txtPhoneAreaCode.Text,
+            //    Homephone = txtPhone.Text,
+            //    Mobilecode = txtCellphoneAreaCode.Text,
+            //    Mobilephone = txtCellphone.Text
+            //};
+
+            
+
+            //updateMember.UpdateMember();
 
         }
 
