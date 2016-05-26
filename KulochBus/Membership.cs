@@ -12,6 +12,11 @@ namespace KulochBus
         public string Name;
         public int Price;
         
+        public Membership()
+        {
+
+        }
+
         //konstruktor
         public Membership(string name, int price)
         {

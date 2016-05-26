@@ -122,6 +122,8 @@ namespace KulochBus
         {
             HidePanels();
             panNewContact.Show();
+            txtMemberIdContact.Enabled = true;
+
             }
 
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -195,7 +197,7 @@ namespace KulochBus
             panNewMember.Show();
             btnContact.Visible = true;
             btnSave.Visible = true;
-            lblCreateNewMember.Text = "Medlem";
+            lblCreateNewMember.Text = "Redigera medlem";
             lblMemberID.Visible = true;
             txtMemberId.Visible = true;
 
@@ -258,15 +260,17 @@ namespace KulochBus
 
         private void btnContact_Click(object sender, EventArgs e)
         {
-          HidePanels();
-          panNewContact.Show();
+            HidePanels();
+            panNewContact.Show();
+
+            txtMemberIdContact.Text = txtMemberId.Text;
         }
 
         private void btnNewContact_Click(object sender, EventArgs e)
         {
-  
             Contact ct = new Contact()
             {
+                MemberId = Convert.ToInt32(txtMemberIdContact.Text),
                 Firstname = txtContactFn.Text,
                 LastName = txtContactLn.Text,
                 SecurityNr = txtContactSc.Text,
@@ -280,12 +284,14 @@ namespace KulochBus
                 Mobilecode = txtContactMPAC.Text,
                 Mobilephone = txtContactMobilephone.Text
             };
-
+            
+            
             ct.CreateContact();
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            Membership membership1 = new Membership();
             bool picture = false;
             bool leader = false;
             bool payed = false;
@@ -293,23 +299,56 @@ namespace KulochBus
             if (checkBoxPicture.Checked) { picture = true; }
             if (checkBoxLeader.Checked) { leader = true; }
             if (checkPayed.Checked) { payed = true; }
-            var membership1 = (Membership)comboBoxMembership.SelectedItem;
+            membership1 = (Membership)comboBoxMembership.SelectedItem;
 
 
             Member updateMember = new Member()
             {
-                PersonId = txtMemberId.Text,
+                PersonId = Convert.ToInt32(txtMemberId.Text),
+                Firstname = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                SecurityNr = txtSecurityNr.Text,
+                Address = txtAddress.Text,
+                Zipcode = txtZipcode.Text,
+                City = txtCity.Text,
+                Email = txtEmail.Text,
+                Gender = comboBoxGender.SelectedItem.ToString(),
                 Responsibility = txtResponsibility.Text,
                 Membership = membership1.Name,
                 Price = membership1.Price,
                 Picture = picture,
                 Leader = leader,
-                Payed = payed
+                Payed = payed,
+                Homeareacode = txtPhoneAreaCode.Text,
+                Homephone = txtPhone.Text,
+                Mobilecode = txtCellphoneAreaCode.Text,
+                Mobilephone = txtCellphone.Text
             };
 
             updateMember.UpdateMember();
 
         }
 
+        private void medlemToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panViewMember.Show();
+
+            Sql getMemberList = new Sql();
+            getMemberList.Connect();
+
+            string sql = "SELECT personid, firstname, lastname, securitynr, gender, membership, ispayed, isleader " +
+                "FROM person " +
+                "Join member ON personid = memberid";
+
+            DataTable tb = new DataTable();
+            BindingSource bs = new BindingSource();
+
+            tb = getMemberList.Select(sql);
+            bs.DataSource = tb;
+            dgrViewMember.DataSource = bs;
+
+            getMemberList.Close();           
+        }
     }
 }

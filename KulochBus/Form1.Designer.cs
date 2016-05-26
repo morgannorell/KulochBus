@@ -190,7 +190,7 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(155, 30);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
@@ -223,7 +223,7 @@
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(155, 30);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(211, 30);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -240,6 +240,7 @@
             this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
             this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(162, 30);
             this.medlemToolStripMenuItem1.Text = "Medlem";
+            this.medlemToolStripMenuItem1.Click += new System.EventHandler(this.medlemToolStripMenuItem1_Click);
             // 
             // visaToolStripMenuItem
             // 
@@ -559,7 +560,7 @@
             // txtMemberIdContact
             // 
             this.txtMemberIdContact.Enabled = false;
-            this.txtMemberIdContact.Location = new System.Drawing.Point(156, 79);
+            this.txtMemberIdContact.Location = new System.Drawing.Point(184, 79);
             this.txtMemberIdContact.Name = "txtMemberIdContact";
             this.txtMemberIdContact.Size = new System.Drawing.Size(177, 26);
             this.txtMemberIdContact.TabIndex = 66;
@@ -575,7 +576,7 @@
             // 
             // btnCancelContact
             // 
-            this.btnCancelContact.Location = new System.Drawing.Point(193, 581);
+            this.btnCancelContact.Location = new System.Drawing.Point(309, 581);
             this.btnCancelContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCancelContact.Name = "btnCancelContact";
             this.btnCancelContact.Size = new System.Drawing.Size(112, 38);
@@ -585,7 +586,7 @@
             // 
             // btnNewContact
             // 
-            this.btnNewContact.Location = new System.Drawing.Point(33, 581);
+            this.btnNewContact.Location = new System.Drawing.Point(149, 581);
             this.btnNewContact.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNewContact.Name = "btnNewContact";
             this.btnNewContact.Size = new System.Drawing.Size(151, 38);
@@ -606,15 +607,15 @@
             // 
             // txtContactMobilephone
             // 
-            this.txtContactMobilephone.Location = new System.Drawing.Point(233, 496);
+            this.txtContactMobilephone.Location = new System.Drawing.Point(286, 496);
             this.txtContactMobilephone.Name = "txtContactMobilephone";
-            this.txtContactMobilephone.Size = new System.Drawing.Size(100, 26);
+            this.txtContactMobilephone.Size = new System.Drawing.Size(135, 26);
             this.txtContactMobilephone.TabIndex = 61;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(216, 502);
+            this.label3.Location = new System.Drawing.Point(265, 502);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(14, 20);
             this.label3.TabIndex = 60;
@@ -622,22 +623,22 @@
             // 
             // txtContactMPAC
             // 
-            this.txtContactMPAC.Location = new System.Drawing.Point(155, 496);
+            this.txtContactMPAC.Location = new System.Drawing.Point(183, 496);
             this.txtContactMPAC.Name = "txtContactMPAC";
-            this.txtContactMPAC.Size = new System.Drawing.Size(55, 26);
+            this.txtContactMPAC.Size = new System.Drawing.Size(75, 26);
             this.txtContactMPAC.TabIndex = 59;
             // 
             // txtContactPhone
             // 
-            this.txtContactPhone.Location = new System.Drawing.Point(233, 456);
+            this.txtContactPhone.Location = new System.Drawing.Point(286, 456);
             this.txtContactPhone.Name = "txtContactPhone";
-            this.txtContactPhone.Size = new System.Drawing.Size(100, 26);
+            this.txtContactPhone.Size = new System.Drawing.Size(135, 26);
             this.txtContactPhone.TabIndex = 58;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(216, 459);
+            this.label4.Location = new System.Drawing.Point(265, 459);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(14, 20);
             this.label4.TabIndex = 57;
@@ -645,9 +646,9 @@
             // 
             // txtContactPAC
             // 
-            this.txtContactPAC.Location = new System.Drawing.Point(155, 456);
+            this.txtContactPAC.Location = new System.Drawing.Point(183, 456);
             this.txtContactPAC.Name = "txtContactPAC";
-            this.txtContactPAC.Size = new System.Drawing.Size(55, 26);
+            this.txtContactPAC.Size = new System.Drawing.Size(75, 26);
             this.txtContactPAC.TabIndex = 56;
             // 
             // label5
@@ -670,7 +671,7 @@
             // 
             // txtContactEmail
             // 
-            this.txtContactEmail.Location = new System.Drawing.Point(155, 402);
+            this.txtContactEmail.Location = new System.Drawing.Point(183, 402);
             this.txtContactEmail.Name = "txtContactEmail";
             this.txtContactEmail.Size = new System.Drawing.Size(177, 26);
             this.txtContactEmail.TabIndex = 53;
@@ -681,42 +682,42 @@
             this.comboBoxContactGender.Items.AddRange(new object[] {
             "Man",
             "Kvinna"});
-            this.comboBoxContactGender.Location = new System.Drawing.Point(155, 237);
+            this.comboBoxContactGender.Location = new System.Drawing.Point(183, 237);
             this.comboBoxContactGender.Name = "comboBoxContactGender";
             this.comboBoxContactGender.Size = new System.Drawing.Size(177, 28);
             this.comboBoxContactGender.TabIndex = 52;
             // 
             // txtContactCity
             // 
-            this.txtContactCity.Location = new System.Drawing.Point(155, 363);
+            this.txtContactCity.Location = new System.Drawing.Point(183, 363);
             this.txtContactCity.Name = "txtContactCity";
             this.txtContactCity.Size = new System.Drawing.Size(177, 26);
             this.txtContactCity.TabIndex = 51;
             // 
             // txtContactZipcode
             // 
-            this.txtContactZipcode.Location = new System.Drawing.Point(155, 322);
+            this.txtContactZipcode.Location = new System.Drawing.Point(183, 322);
             this.txtContactZipcode.Name = "txtContactZipcode";
             this.txtContactZipcode.Size = new System.Drawing.Size(177, 26);
             this.txtContactZipcode.TabIndex = 50;
             // 
             // txtContactAddress
             // 
-            this.txtContactAddress.Location = new System.Drawing.Point(155, 279);
+            this.txtContactAddress.Location = new System.Drawing.Point(183, 279);
             this.txtContactAddress.Name = "txtContactAddress";
             this.txtContactAddress.Size = new System.Drawing.Size(177, 26);
             this.txtContactAddress.TabIndex = 49;
             // 
             // txtContactSc
             // 
-            this.txtContactSc.Location = new System.Drawing.Point(155, 197);
+            this.txtContactSc.Location = new System.Drawing.Point(183, 197);
             this.txtContactSc.Name = "txtContactSc";
             this.txtContactSc.Size = new System.Drawing.Size(177, 26);
             this.txtContactSc.TabIndex = 48;
             // 
             // txtContactLn
             // 
-            this.txtContactLn.Location = new System.Drawing.Point(155, 159);
+            this.txtContactLn.Location = new System.Drawing.Point(183, 159);
             this.txtContactLn.Name = "txtContactLn";
             this.txtContactLn.Size = new System.Drawing.Size(177, 26);
             this.txtContactLn.TabIndex = 47;
@@ -795,7 +796,7 @@
             // 
             // txtContactFn
             // 
-            this.txtContactFn.Location = new System.Drawing.Point(155, 120);
+            this.txtContactFn.Location = new System.Drawing.Point(183, 120);
             this.txtContactFn.Name = "txtContactFn";
             this.txtContactFn.Size = new System.Drawing.Size(177, 26);
             this.txtContactFn.TabIndex = 38;
@@ -1318,8 +1319,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 723);
-            this.Controls.Add(this.panNewMember);
             this.Controls.Add(this.panNewContact);
+            this.Controls.Add(this.panNewMember);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);

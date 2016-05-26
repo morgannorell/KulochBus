@@ -24,21 +24,38 @@ namespace KulochBus
                 "FROM id RETURNING personid),"
                 + " pid AS (INSERT INTO phone (personid, areacode, phone) SELECT mpid.personid, '" + Homeareacode + "', '" + Homephone + "' " +
                 "FROM mpid RETURNING personid) INSERT INTO member (memberid, responsibility, membership, pictureallowed, isleader, price, ispayed) " +
-                "SELECT pid.personid, '" + Responsibility + "', '" + Membership + "', " + Picture + ", " + Leader + ", " + Price + ", " + Payed + " FROM pid; " +
+                "SELECT pid.personid, '" + Responsibility + "', '" + Membership + "', " + Picture + ", " + Leader + ", " + Price + ", " + Payed + " FROM pid RETURNING personid; " +
                 "COMMIT;";
 
             member.Insert(insert);
             member.Close();
         }
 
+
         public void UpdateMember()
-        {
+        {        
             Sql member = new Sql();
             member.Connect();
 
-            string update = "UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "'WHERE memberid = '" + PersonId  +"';";
+            //string update = "START TRANSACTION; " +
+            //    " SELECT areacode, phone, personid FROM phone WHERE phone = '" + Homephone + "' AND areacode = '" + Homeareacode + "' AND personid = " + PersonId + ";" +
+            //    " UPDATE phone SET areacode = '" + Homeareacode + "', phone = '" + Homephone + "';" +
+            //    " SELECT areacode, phone, personid FROM phone WHERE phone = '" + Mobilephone + "' AND areacode = '" + Mobilecode + "' AND personid = " + PersonId + ";" +
+            //    " UPDATE phone SET areacode = '" + Mobilecode + "', phone = '" + Mobilephone + "';" +
+            //    " UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "' WHERE memberid = " + PersonId + ";" +
+            //    " UPDATE person SET securitynr = '" + SecurityNr + "', firstname = '" + Firstname + "', lastname = '" + LastName + "', gender = '" + Gender + "', Address = '" + Address + "', zipcode = '" + Zipcode + "', city = '" + City + "', email = '" + Email + "' WHERE personid = " + PersonId + ";" +
+            //    " COMMIT;";
+
+            string update = "START TRANSACTION; " +
+                " UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "' WHERE memberid = " + PersonId + ";" +
+                " UPDATE person SET securitynr = '" + SecurityNr + "', firstname = '" + Firstname + "', lastname = '" + LastName + "', gender = '" + Gender + "', Address = '" + Address + "', zipcode = '" + Zipcode + "', city = '" + City + "', email = '" + Email + "' WHERE personid = " + PersonId + ";" +
+                " UPDATE phone SET areacode = '" + Homeareacode + "', phone = '" + Homephone + "' WHERE phone = '" + Homephone + " AND areacode = '" + Homeareacode + "' AND personid = " + PersonId + ";" +
+                " UPDATE phone SET areacode = '" + Mobilecode + "', phone = '" + Mobilephone + "' WHERE phone = '" + Mobilephone + " AND areacode = '" + Mobilecode + "' AND personid = " + PersonId + ";" +
+                " COMMIT;";
 
             member.Insert(update);
+
+
             member.Close();
         }
     }

@@ -21,8 +21,9 @@ namespace KulochBus
             + " mpid AS (INSERT INTO phone (personid, areacode, phone) SELECT id.personid, '" + Mobilecode + "', '" + Mobilephone + "' " +
             "FROM id RETURNING personid),"
             + " pid AS (INSERT INTO phone (personid, areacode, phone) SELECT mpid.personid, '" + Homeareacode + "', '" + Homephone + "' " +
-            "FROM mpid RETURNING personid) INSERT INTO contact (contactid) " +
-            "SELECT pid.personid FROM pid; COMMIT;";
+            "FROM mpid RETURNING personid),"
+            + " cid AS (INSERT INTO contact (contactid) SELECT pid.personid FROM pid RETURNING contactid),"
+            + " mcid AS (INSERT INTO membercontact (contactid, memberid) SELECT cid.contactid, " + MemberId + " FROM cid;";
 
             contact.Insert(insert);
             contact.Close();

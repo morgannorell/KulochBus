@@ -11,5 +11,6 @@ namespace KulochBus
     class Phone:Person
     {
 
+
     }
 }

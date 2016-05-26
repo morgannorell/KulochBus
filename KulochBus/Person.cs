@@ -11,7 +11,8 @@ namespace KulochBus
     //abstract klass (går endast att ärva från)
     public abstract class Person
     {
-        public string PersonId { get; set; }
+        public int MemberId { get; set; }
+        public int PersonId { get; set; }
         public string Firstname { get; set; }
         public string LastName { get; set; }
         public string SecurityNr { get; set; }
