@@ -195,27 +195,27 @@
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.närvaroToolStripMenuItem.Text = "Närvaro...";
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.medlemToolStripMenuItem.Text = "Medlem...";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.kontaktToolStripMenuItem.Text = "Kontakt...";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(223, 30);
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp...";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
@@ -253,20 +253,20 @@
             // medlemmarToolStripMenuItem
             // 
             this.medlemmarToolStripMenuItem.Name = "medlemmarToolStripMenuItem";
-            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.medlemmarToolStripMenuItem.Text = "Medlemmslista";
             this.medlemmarToolStripMenuItem.Click += new System.EventHandler(this.medlemmarToolStripMenuItem_Click);
             // 
             // närvaroToolStripMenuItem1
             // 
             this.närvaroToolStripMenuItem1.Name = "närvaroToolStripMenuItem1";
-            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
+            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(226, 30);
             this.närvaroToolStripMenuItem1.Text = "Närvarolistor";
             // 
             // träningsgrupperToolStripMenuItem
             // 
             this.träningsgrupperToolStripMenuItem.Name = "träningsgrupperToolStripMenuItem";
-            this.träningsgrupperToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.träningsgrupperToolStripMenuItem.Size = new System.Drawing.Size(226, 30);
             this.träningsgrupperToolStripMenuItem.Text = "Träningsgrupper";
             this.träningsgrupperToolStripMenuItem.Click += new System.EventHandler(this.träningsgrupperToolStripMenuItem_Click);
             // 

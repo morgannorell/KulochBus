@@ -264,6 +264,29 @@ namespace KulochBus
 
         private void btnNewContact_Click(object sender, EventArgs e)
         {
+  
+            Contact ct = new Contact()
+            {
+                MemberId = txtMemberIdContact.Text,
+                Firstname = txtContactFn.Text,
+                LastName = txtContactLn.Text,
+                SecurityNr = txtContactSc.Text,
+                Address = txtContactAddress.Text,
+                Zipcode = txtContactZipcode.Text,
+                City = txtContactCity.Text,
+                Email = txtContactEmail.Text,
+                Gender = comboBoxContactGender.SelectedItem.ToString(),
+                Homeareacode = txtContactPAC.Text,
+                Homephone = txtContactPhone.Text,
+                Mobilecode = txtContactMPAC.Text,
+                Mobilephone = txtContactMobilephone.Text
+            };
+
+            ct.CreateContact();
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
             bool picture = false;
             bool leader = false;
             bool payed = false;
@@ -273,9 +296,10 @@ namespace KulochBus
             if (checkPayed.Checked) { payed = true; }
             var membership = (Membership)comboBoxMembership.SelectedItem;
 
-            Contact ct = new Contact()
+
+            Member updateMember = new Member()
             {
-                MemberId = txtMemberIdContact.Text,
+                PersonId = txtMemberId.Text,
                 Firstname = txtFirstName.Text,
                 LastName = txtLastName.Text,
                 SecurityNr = txtSecurityNr.Text,
@@ -294,32 +318,6 @@ namespace KulochBus
                 Homephone = txtPhone.Text,
                 Mobilecode = txtCellphoneAreaCode.Text,
                 Mobilephone = txtCellphone.Text
-            };
-
-            ct.CreateContact();
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            bool picture = false;
-            bool leader = false;
-            bool payed = false;
-
-            if (checkBoxPicture.Checked) { picture = true; }
-            if (checkBoxLeader.Checked) { leader = true; }
-            if (checkPayed.Checked) { payed = true; }
-            var membership1 = (Membership)comboBoxMembership.SelectedItem;
-
-
-            Member updateMember = new Member()
-            {
-                PersonId = txtMemberId.Text,
-                Responsibility = txtResponsibility.Text,
-                Membership = membership1.Name,
-                Price = membership1.Price,
-                Picture = picture,
-                Leader = leader,
-                Payed = payed,
             };
 
             updateMember.UpdateMember();
