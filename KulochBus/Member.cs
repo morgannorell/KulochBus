@@ -141,6 +141,9 @@ namespace KulochBus
                 "WHERE personid = " + member;
 
             return null;
+
+            //select firstname, lastname, phone, type, membership from person
+            //join phone on person.personid = phone.personid join member on person.personid = member.memberid
         }
     }
 }
