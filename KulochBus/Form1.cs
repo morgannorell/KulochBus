@@ -336,11 +336,15 @@ namespace KulochBus
             bool picture = false;
             bool leader = false;
             bool payed = false;
-
+            //var membership = (Membership)cmbMembership.SelectedItem;    
+            Membership membership = new Membership();
+            
             if (checkBoxPicture.Checked) { picture = true; }
             if (checkBoxLeader.Checked) { leader = true; }
             if (checkPayed.Checked) { payed = true; }
-            var membership = (Membership)cmbMembership.SelectedItem;
+            if (cmbMembership.Text == "Medlem") { membership.Name = "Medlem"; membership.Price = 150; }
+            if (cmbMembership.Text == "Prova-på") { membership.Name = "Prova-på"; membership.Price = 50; }
+            if (cmbMembership.Text == "Cirkusvän") { membership.Name = "Cirkusvän"; membership.Price = 0;}
 
             Phone ph = new Phone();
 
@@ -368,18 +372,17 @@ namespace KulochBus
             };
 
             updateMember.UpdateMember();
+            MessageBox.Show("Medlem " + txtMemberId.Text + " är nu uppdaterad");
         }
 
         private void medlemToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             HidePanels();
-            panMember.Show();
-            btnContact.Visible = true;
-            btnSave.Visible = true;
-            btnCreateNewMember.Visible = false;
-            lblCreateNewMember.Text = "Redigera medlem";
-            lblMemberID.Visible = true;
-            txtMemberId.Visible = true;
+            panViewMember.Show();
+            string condition = "";
+            string search = "";
+            ShowMemberlist(condition, search);
+
         }
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
         {
