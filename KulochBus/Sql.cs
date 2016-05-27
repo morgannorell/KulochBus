@@ -13,7 +13,7 @@ namespace KulochBus
     public class Sql
     {
         private NpgsqlConnection conn;
-        private NpgsqlCommand _cmd;
+        private NpgsqlCommand cmd;
         private NpgsqlDataReader _dr;
         private DataTable _table;
 
@@ -85,24 +85,11 @@ namespace KulochBus
             //}
         }
 
-        public void Close()
-        {
-            try
-            {
-                conn.Close();
-            }
-
-            catch (NpgsqlException ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-        }
-
         public void Insert(string sql)
         {
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+                cmd = new NpgsqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();
             }
 
@@ -110,6 +97,7 @@ namespace KulochBus
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
+            conn.Close();
         }
 
         public DataTable Select(string sql)

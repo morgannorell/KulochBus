@@ -35,7 +35,6 @@ namespace KulochBus
 
                     level.Connect();
                     level.Insert(insert);
-                    level.Close();
                 }
             }
 
@@ -63,8 +62,6 @@ namespace KulochBus
             dt = listLevels.Select(querry);
             bs.DataSource = dt;
             dgrViewLevels.DataSource = bs;
-
-            listLevels.Close();
         }
 
         private void btnLevelClose_Click(object sender, EventArgs e)
