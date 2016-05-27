@@ -13,7 +13,6 @@ namespace KulochBus
 {
     public partial class frmMain : Form
     {
-
         public frmMain()
         {
             InitializeComponent();
@@ -21,7 +20,6 @@ namespace KulochBus
             HidePanels();
             // och visa startpanelen
             panStart.Show();
-
         }
 
         private DataTable dt;
