@@ -194,6 +194,7 @@ namespace KulochBus
         {
             //visibility på members
             HidePanels();
+            btnCreateNewMember.Hide();
             panMember.Show();
             btnContact.Show();
             btnSave.Show();
@@ -211,30 +212,35 @@ namespace KulochBus
 
             dt = new DataTable();
             dt = mb.GetMemberDetail(selectedMember);
-            
-            
-            //DataTable dt = new DataTable();
-            //dt = getMemberDetails.Select(querry);
-
-            Phone ph = new Phone()
-            {
-                Areacode = "0650",
-                Phonenumber = "111 22"
-            };
-
+ 
             foreach (DataRow row in dt.Rows)
             {
                 txtMemberId.Text = row["personid"].ToString();
                 txtFirstName.Text = row["firstname"].ToString();
                 txtLastName.Text = row["lastname"].ToString();
                 txtSecurityNr.Text = row["securitynr"].ToString();
+                comboBoxGender.Text = row["gender"].ToString();
                 txtAddress.Text = row["address"].ToString();
                 txtCity.Text = row["city"].ToString();
                 txtZipcode.Text = row["zipcode"].ToString();
                 txtEmail.Text = row["email"].ToString();
-                comboBoxGender.Text = row["gender"].ToString();              
+                txtResponsibility.Text = row["responsibility"].ToString();
+                cmbMembership.Text = row["membership"].ToString();
+                txtMemberId.Text = row["memberid"].ToString();
+                if ((bool)row["isleader"] == true) { checkBoxLeader.Checked = true; }
+                if ((bool)row["pictureallowed"] == true) { checkBoxPicture.Checked = true; }
+                if ((bool)row["ispayed"] == true) { checkPayed.Checked = true; }
             }
-            btnCreateNewMember.Visible = false;
+
+            dt = new DataTable();
+            dt = mb.GetPhone(selectedMember);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                if ((string)row["type"] == "phone") { txtPhone.Text = row["phone"].ToString(); }
+                if ((string)row["type"] == "cell") { txtCellphone.Text = row["phone"].ToString(); }
+            }
+            
         }
 
         private void btnViewList_Click(object sender, EventArgs e)

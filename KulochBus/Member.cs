@@ -134,17 +134,29 @@ namespace KulochBus
         public DataTable GetMemberDetail(string member)
         {
             Sql querry = new Sql();
-
+            
             string sql =
-                "SELECT personid, firstname, lastname, securitynr, address, " +
-                "zipcode, city, email, gender " +
-                "FROM person " +
+                "SELECT personid, firstname, lastname, securitynr, gender, address, zipcode, city, email, " +
+                "memberid, responsibility, membership, isleader, pictureallowed, ispayed " +
+                "FROM person JOIN member ON personid = memberid " +
                 "WHERE personid = " + member;
 
-            return null;
+            DataTable dt = new DataTable();
 
-            //select firstname, lastname, phone, type, membership from person
-            //join phone on person.personid = phone.personid join member on person.personid = member.memberid
+            dt = querry.Select(sql);
+            return dt;            
+        }
+
+        public DataTable GetPhone(string member)
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT phone, type FROM phone WHERE personid = " + member;
+
+            DataTable dt = new DataTable();
+            dt = querry.Select(sql);
+
+            return dt;
         }
     }
 }
