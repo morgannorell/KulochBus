@@ -21,6 +21,7 @@ namespace KulochBus
             HidePanels();
             // och visa startpanelen
             panStart.Show();
+
         }
 
         private DataTable dt;
@@ -66,6 +67,29 @@ namespace KulochBus
 
         private void btnCreateNewMember_Click(object sender, EventArgs e)
         {
+            string felmeddelande = string.Empty;
+            foreach (Control control in panMember.Controls)
+            {
+                string controlType = control.GetType().ToString();
+                if (controlType == "System.Windows.Forms.TextBox")
+                {
+                    TextBox txtBox = (TextBox)control;
+                    if (string.IsNullOrEmpty(txtBox.Text))
+                    {
+                        if (txtBox.Tag.ToString() == "Medlemsnummer")
+                        {
+                            continue;
+                        }
+                        felmeddelande += txtBox.Tag.ToString() + " ";
+                    }
+                }
+            }
+
+            if (!string.IsNullOrEmpty(felmeddelande))
+            {
+            MessageBox.Show(felmeddelande + "måste fyllas i.");
+            }
+
             bool picture = false;
             bool leader = false;
             bool payed = false;
@@ -73,15 +97,16 @@ namespace KulochBus
             if (checkBoxPicture.Checked) { picture = true; }
             if (checkBoxLeader.Checked) { leader = true; }
             if (checkPayed.Checked) { payed = true; }
-            
-            if (comboBoxContactGender.SelectedItem == null)
+
+            if (comboBoxGender.SelectedItem == null)
             {
-                MessageBox.Show("Du måste ange om det är en man eller kvinna");
+                MessageBox.Show("Du måste ange om det är en man eller kvinna.");
                 return;
             }
-            if (cmbMembership.SelectedItem == null)
+
+            else if (cmbMembership.SelectedItem == null)
             {
-                MessageBox.Show("Du tala om vilken typ av medlem det är.");
+                MessageBox.Show("Du måste tala om vilken typ av medlem det är.");
                 return;
             }
 
@@ -110,6 +135,23 @@ namespace KulochBus
             };
 
             mb.CreateMember();
+            
+            foreach (Control control in panMember.Controls)
+            {
+                string controlType = control.GetType().ToString();
+                if (controlType == "System.Windows.Forms.TextBox")
+                {
+                    TextBox txtBox = (TextBox)control;
+                    txtBox.Clear();
+                }
+            }
+            comboBoxGender.Text = "";
+            cmbMembership.SelectedIndex = -1;
+            checkBoxLeader.Checked = false;
+            checkBoxPicture.Checked = false;
+            checkPayed.Checked = false;
+            MessageBox.Show("Medlem tillagd");
+
         }
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)

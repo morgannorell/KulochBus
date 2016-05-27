@@ -20,6 +20,7 @@ namespace KulochBus
         //ärver från person och skapar ny medlem (persontabell, medlemstabell och telefontabell)
         public void CreateMember()
         {
+
             Sql member = new Sql();
 
             string sql = 
