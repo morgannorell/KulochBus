@@ -20,9 +20,7 @@ namespace KulochBus
         public string City { get; set;  }
         public string Email { get; set; }
         public string Gender { get; set; }
-        public string Homeareacode { get; set; }
-        public string Homephone { get; set; }
-        public string Mobilecode { get; set; }
-        public string Mobilephone { get; set; }
+        public string Phone { get; set; }
+        public string Cellphone { get; set; }
     }
 }

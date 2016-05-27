@@ -37,16 +37,16 @@ namespace KulochBus
                 City + "', '" + 
                 Email + "') RETURNING personid)," + 
                 " mpid AS " +
-                "(INSERT INTO phone(personid, areacode, phone) " +
-                "SELECT id.personid, '" + 
-                Mobilecode + "', '" + 
-                Mobilephone + "' " +
+                "(INSERT INTO phone(personid, phone, type) " +
+                "SELECT id.personid, '" +
+                Cellphone + "', '" + 
+                "cell' " +
                 "FROM id RETURNING personid)," + 
                 " pid AS " +
-                "(INSERT INTO phone (personid, areacode, phone) " +
-                "SELECT mpid.personid, '" + 
-                Homeareacode + "', '" + 
-                Homephone + "' " +
+                "(INSERT INTO phone (personid, phone, type) " +
+                "SELECT mpid.personid, '" +
+                Phone + "', '" + 
+                "phone' " +
                 "FROM mpid RETURNING personid) " +
                 "INSERT INTO member " +
                 "(memberid, responsibility, membership, pictureallowed, isleader, price, ispayed) " +
@@ -68,14 +68,14 @@ namespace KulochBus
             Sql member = new Sql();
             //member.Connect();
 
-            string update = "START TRANSACTION; " +
-                " UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "' WHERE memberid = " + PersonId + ";" +
-                " UPDATE person SET securitynr = '" + SecurityNr + "', firstname = '" + Firstname + "', lastname = '" + LastName + "', gender = '" + Gender + "', Address = '" + Address + "', zipcode = '" + Zipcode + "', city = '" + City + "', email = '" + Email + "' WHERE personid = " + PersonId + ";" +
-                " UPDATE phone SET areacode = '" + Homeareacode + "', phone = '" + Homephone + "' WHERE phone = '" + Homephone + " AND areacode = '" + Homeareacode + "' AND personid = " + PersonId + ";" +
-                " UPDATE phone SET areacode = '" + Mobilecode + "', phone = '" + Mobilephone + "' WHERE phone = '" + Mobilephone + " AND areacode = '" + Mobilecode + "' AND personid = " + PersonId + ";" +
-                " COMMIT;";
+            //string update = "START TRANSACTION; " +
+            //    " UPDATE member SET responsibility = '" + Responsibility + "', membership = '" + Membership + "', pictureallowed = '" + Picture + "', isleader = '" + Leader + "', price = '" + Price + "', ispayed = '" + Payed + "' WHERE memberid = " + PersonId + ";" +
+            //    " UPDATE person SET securitynr = '" + SecurityNr + "', firstname = '" + Firstname + "', lastname = '" + LastName + "', gender = '" + Gender + "', Address = '" + Address + "', zipcode = '" + Zipcode + "', city = '" + City + "', email = '" + Email + "' WHERE personid = " + PersonId + ";" +
+            //    " UPDATE phone SET areacode = '" + Homeareacode + "', phone = '" + Homephone + "' WHERE phone = '" + Homephone + " AND areacode = '" + Homeareacode + "' AND personid = " + PersonId + ";" +
+            //    " UPDATE phone SET areacode = '" + Mobilecode + "', phone = '" + Mobilephone + "' WHERE phone = '" + Mobilephone + " AND areacode = '" + Mobilecode + "' AND personid = " + PersonId + ";" +
+            //    " COMMIT;";
 
-            member.Insert(update);
+            //member.Insert(update);
         }
 
         public DataTable GetMemberList(string condition, string search)
@@ -128,6 +128,19 @@ namespace KulochBus
             dt = querry.Select(sql);
 
             return dt;
+        }
+
+        public DataTable GetMemberDetail(string member)
+        {
+            Sql querry = new Sql();
+
+            string sql =
+                "SELECT personid, firstname, lastname, securitynr, address, " +
+                "zipcode, city, email, gender " +
+                "FROM person " +
+                "WHERE personid = " + member;
+
+            return null;
         }
     }
 }

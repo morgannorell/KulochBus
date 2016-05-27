@@ -114,11 +114,7 @@
             this.lblMembership = new System.Windows.Forms.Label();
             this.lblResponsibility = new System.Windows.Forms.Label();
             this.txtCellphone = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCellphoneAreaCode = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
-            this.labDash = new System.Windows.Forms.Label();
-            this.txtPhoneAreaCode = new System.Windows.Forms.TextBox();
             this.lblMobile = new System.Windows.Forms.Label();
             this.lblPhone = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -149,6 +145,7 @@
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
             this.cmbFilter = new System.Windows.Forms.ComboBox();
+            this.btnViewList = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -838,6 +835,7 @@
             // 
             // panMember
             // 
+            this.panMember.Controls.Add(this.btnViewList);
             this.panMember.Controls.Add(this.txtMemberId);
             this.panMember.Controls.Add(this.lblMemberID);
             this.panMember.Controls.Add(this.btnContact);
@@ -853,11 +851,7 @@
             this.panMember.Controls.Add(this.lblMembership);
             this.panMember.Controls.Add(this.lblResponsibility);
             this.panMember.Controls.Add(this.txtCellphone);
-            this.panMember.Controls.Add(this.label2);
-            this.panMember.Controls.Add(this.txtCellphoneAreaCode);
             this.panMember.Controls.Add(this.txtPhone);
-            this.panMember.Controls.Add(this.labDash);
-            this.panMember.Controls.Add(this.txtPhoneAreaCode);
             this.panMember.Controls.Add(this.lblMobile);
             this.panMember.Controls.Add(this.lblPhone);
             this.panMember.Controls.Add(this.txtEmail);
@@ -1022,49 +1016,17 @@
             // 
             // txtCellphone
             // 
-            this.txtCellphone.Location = new System.Drawing.Point(175, 354);
+            this.txtCellphone.Location = new System.Drawing.Point(97, 350);
             this.txtCellphone.Name = "txtCellphone";
-            this.txtCellphone.Size = new System.Drawing.Size(100, 20);
+            this.txtCellphone.Size = new System.Drawing.Size(150, 20);
             this.txtCellphone.TabIndex = 11;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(159, 361);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(10, 13);
-            this.label2.TabIndex = 23;
-            this.label2.Text = "-";
-            // 
-            // txtCellphoneAreaCode
-            // 
-            this.txtCellphoneAreaCode.Location = new System.Drawing.Point(97, 354);
-            this.txtCellphoneAreaCode.Name = "txtCellphoneAreaCode";
-            this.txtCellphoneAreaCode.Size = new System.Drawing.Size(55, 20);
-            this.txtCellphoneAreaCode.TabIndex = 10;
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(175, 325);
+            this.txtPhone.Location = new System.Drawing.Point(97, 325);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(100, 20);
+            this.txtPhone.Size = new System.Drawing.Size(150, 20);
             this.txtPhone.TabIndex = 9;
-            // 
-            // labDash
-            // 
-            this.labDash.AutoSize = true;
-            this.labDash.Location = new System.Drawing.Point(159, 328);
-            this.labDash.Name = "labDash";
-            this.labDash.Size = new System.Drawing.Size(10, 13);
-            this.labDash.TabIndex = 19;
-            this.labDash.Text = "-";
-            // 
-            // txtPhoneAreaCode
-            // 
-            this.txtPhoneAreaCode.Location = new System.Drawing.Point(98, 325);
-            this.txtPhoneAreaCode.Name = "txtPhoneAreaCode";
-            this.txtPhoneAreaCode.Size = new System.Drawing.Size(55, 20);
-            this.txtPhoneAreaCode.TabIndex = 8;
             // 
             // lblMobile
             // 
@@ -1349,13 +1311,24 @@
             this.cmbFilter.Size = new System.Drawing.Size(121, 21);
             this.cmbFilter.TabIndex = 8;
             // 
+            // btnViewList
+            // 
+            this.btnViewList.Location = new System.Drawing.Point(629, 16);
+            this.btnViewList.Name = "btnViewList";
+            this.btnViewList.Size = new System.Drawing.Size(75, 23);
+            this.btnViewList.TabIndex = 46;
+            this.btnViewList.Text = "Till Lista >";
+            this.btnViewList.UseVisualStyleBackColor = true;
+            this.btnViewList.Visible = false;
+            this.btnViewList.Click += new System.EventHandler(this.btnViewList_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 428);
-            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.panNewContact);
             this.Controls.Add(this.panTGGroup);
@@ -1459,11 +1432,7 @@
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblMobile;
-        private System.Windows.Forms.TextBox txtPhoneAreaCode;
-        private System.Windows.Forms.Label labDash;
         private System.Windows.Forms.TextBox txtPhone;
-        private System.Windows.Forms.TextBox txtCellphoneAreaCode;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtCellphone;
         private System.Windows.Forms.Label lblResponsibility;
         private System.Windows.Forms.Label lblMembership;
@@ -1506,6 +1475,7 @@
         private System.Windows.Forms.Button btnNewContact;
         private System.Windows.Forms.Panel panStart;
         private System.Windows.Forms.ComboBox cmbFilter;
+        private System.Windows.Forms.Button btnViewList;
     }
 }
 

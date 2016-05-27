@@ -26,6 +26,7 @@ namespace KulochBus
         private DataTable dt;
         private BindingSource bs;
 
+        // Metod för att dölja alla paneler
         private void HidePanels()
         {
             foreach (Control c in Controls)
@@ -38,11 +39,27 @@ namespace KulochBus
             }           
         }
 
+        // Tömmer alla textboxar
+        private void EmptyTxtBoxes(Panel name)
+        {
+            foreach (Control c in name.Controls)
+            {
+                if (c is TextBox)              
+                    (c as TextBox).Clear();
+                if (c is ComboBox)
+                    (c as ComboBox).ResetText();
+                if (c is CheckBox)
+                    (c as CheckBox).Checked = false;
+            }
+        }
+
+        //Medlemmar
         private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Visa panel för medlem
             HidePanels();
             panMember.Show();
+            EmptyTxtBoxes(panMember);
 
             // Ändrar visibility på buttons osv
             btnCreateNewMember.Show();
@@ -50,20 +67,15 @@ namespace KulochBus
             btnSave.Hide();
             txtMemberId.Hide();
             lblMemberID.Hide();
+            btnViewList.Hide();
             lblCreateNewMember.Text = "Skapa ny medlem";
-
+            
             //lägger till items i combobox + tilldelar värden
             cmbMembership.Items.Add(new Membership("Medlem", 150));
             cmbMembership.Items.Add(new Membership("Prova-på", 50));
             cmbMembership.Items.Add(new Membership("Cirkusvän", 0));
         }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            HidePanels();
-            panStart.Show();
-        }
-
+        
         private void btnCreateNewMember_Click(object sender, EventArgs e)
         {
             bool picture = false;
@@ -74,7 +86,7 @@ namespace KulochBus
             if (checkBoxLeader.Checked) { leader = true; }
             if (checkPayed.Checked) { payed = true; }
             
-            if (comboBoxContactGender.SelectedItem == null)
+            if (comboBoxGender.SelectedItem == null)
             {
                 MessageBox.Show("Du måste ange om det är en man eller kvinna");
                 return;
@@ -103,38 +115,20 @@ namespace KulochBus
                 Picture = picture,
                 Leader = leader,
                 Payed = payed,
-                Homeareacode = txtPhoneAreaCode.Text,
-                Homephone = txtPhone.Text,
-                Mobilecode = txtCellphoneAreaCode.Text,
-                Mobilephone = txtCellphone.Text
+                Phone = txtPhone.Text,
+                Cellphone = txtCellphone.Text
             };
 
             mb.CreateMember();
+            EmptyTxtBoxes(panMember);
         }
 
-        private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             HidePanels();
-            rbnTGAdd.Hide();
-            rbnTGRemove.Hide();
-            cmbTGMember.Hide();
-            btnTGSave.Hide();
-            lblTGMembers.Hide();
-            dgrListTGMembers.Hide();
-
-            panTGGroup.Show();
-            btnTGCreate.Show();
-            btnTGDiciplin.Show();
-            btnTGLevel.Show();
+            panStart.Show();
         }
-
-        private void kontaktToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            HidePanels();
-            panNewContact.Show();
-            txtMemberIdContact.Enabled = true;
-        }
-
+        
         // Medlemslista
         private void ShowMemberlist(string condition, string search)
         {
@@ -183,24 +177,21 @@ namespace KulochBus
             lblCreateNewMember.Text = "Redigera medlem";
             lblMemberID.Show();
             txtMemberId.Show();
+            btnViewList.Show();
 
             // Get memberid
             string selectedMember;
             DataGridViewRow selectedRow = dgrViewMember.Rows[e.RowIndex];
             selectedMember = selectedRow.Cells[0].Value.ToString();
 
-            Sql getMemberDetails = new Sql();
-            getMemberDetails.Connect();
+            Member mb = new Member();
 
-            //lagt till personid så det gick att hämta ut i en textbox
-            string querry =
-                "SELECT personid, firstname, lastname, securitynr, address, " +
-                "zipcode, city, email, gender " +
-                "FROM person " +
-                "WHERE personid = " + selectedMember;
-
-            DataTable dt = new DataTable();
-            dt = getMemberDetails.Select(querry);
+            dt = new DataTable();
+            dt = mb.GetMemberDetail(selectedMember);
+            
+            
+            //DataTable dt = new DataTable();
+            //dt = getMemberDetails.Select(querry);
 
             Phone ph = new Phone()
             {
@@ -223,12 +214,42 @@ namespace KulochBus
             btnCreateNewMember.Visible = false;
         }
 
+        private void btnViewList_Click(object sender, EventArgs e)
+        {
+            string condition = "";
+            string search = "";
+            ShowMemberlist(condition, search);
+        }
+
         private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HidePanels();
             panTGGroupList.Show();
 
             Traininggroup tg = new Traininggroup();
+        }
+
+        private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            rbnTGAdd.Hide();
+            rbnTGRemove.Hide();
+            cmbTGMember.Hide();
+            btnTGSave.Hide();
+            lblTGMembers.Hide();
+            dgrListTGMembers.Hide();
+
+            panTGGroup.Show();
+            btnTGCreate.Show();
+            btnTGDiciplin.Show();
+            btnTGLevel.Show();
+        }
+
+        private void kontaktToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panNewContact.Show();
+            txtMemberIdContact.Enabled = true;
         }
 
         private void btnTGCreate_Click(object sender, EventArgs e)
@@ -269,10 +290,10 @@ namespace KulochBus
                 City = txtContactCity.Text,
                 Email = txtContactEmail.Text,
                 Gender = comboBoxContactGender.SelectedItem.ToString(),
-                Homeareacode = txtContactPAC.Text,
-                Homephone = txtContactPhone.Text,
-                Mobilecode = txtContactMPAC.Text,
-                Mobilephone = txtContactMobilephone.Text
+                //Homeareacode = txtContactPAC.Text,
+                //Homephone = txtContactPhone.Text,
+                //Mobilecode = txtContactMPAC.Text,
+                //Mobilephone = txtContactMobilephone.Text
             };
 
             //ct.CreateContact();
@@ -337,5 +358,7 @@ namespace KulochBus
         {
             Application.Exit();
         }
+
+        
     }
 }
