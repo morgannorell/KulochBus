@@ -68,36 +68,10 @@
             this.lblTGName = new System.Windows.Forms.Label();
             this.lblTraningTitle = new System.Windows.Forms.Label();
             this.btnTGCreate = new System.Windows.Forms.Button();
-            this.panNewContact = new System.Windows.Forms.Panel();
+            this.panContact = new System.Windows.Forms.Panel();
             this.txtMemberIdContact = new System.Windows.Forms.TextBox();
             this.lblMemberIdContact = new System.Windows.Forms.Label();
-            this.btnCancelContact = new System.Windows.Forms.Button();
-            this.btnNewContact = new System.Windows.Forms.Button();
             this.lblCTTitle = new System.Windows.Forms.Label();
-            this.txtContactMobilephone = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtContactMPAC = new System.Windows.Forms.TextBox();
-            this.txtContactPhone = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtContactPAC = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtContactEmail = new System.Windows.Forms.TextBox();
-            this.comboBoxContactGender = new System.Windows.Forms.ComboBox();
-            this.txtContactCity = new System.Windows.Forms.TextBox();
-            this.txtContactZipcode = new System.Windows.Forms.TextBox();
-            this.txtContactAddress = new System.Windows.Forms.TextBox();
-            this.txtContactSc = new System.Windows.Forms.TextBox();
-            this.txtContactLn = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtContactFn = new System.Windows.Forms.TextBox();
             this.panMember = new System.Windows.Forms.Panel();
             this.btnViewList = new System.Windows.Forms.Button();
             this.txtMemberId = new System.Windows.Forms.TextBox();
@@ -146,10 +120,31 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
+            this.txtCTcellphone = new System.Windows.Forms.TextBox();
+            this.txtCTphone = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtCTemail = new System.Windows.Forms.TextBox();
+            this.cmbCTgender = new System.Windows.Forms.ComboBox();
+            this.txtCTcity = new System.Windows.Forms.TextBox();
+            this.txtCTzipcode = new System.Windows.Forms.TextBox();
+            this.txtCTaddress = new System.Windows.Forms.TextBox();
+            this.txtCTSecuritynr = new System.Windows.Forms.TextBox();
+            this.txtCTlastname = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtCTfirstname = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
-            this.panNewContact.SuspendLayout();
+            this.panContact.SuspendLayout();
             this.panMember.SuspendLayout();
             this.panViewMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewMember)).BeginInit();
@@ -526,48 +521,43 @@
             this.btnTGCreate.Visible = false;
             this.btnTGCreate.Click += new System.EventHandler(this.btnTGCreate_Click);
             // 
-            // panNewContact
+            // panContact
             // 
-            this.panNewContact.Controls.Add(this.txtMemberIdContact);
-            this.panNewContact.Controls.Add(this.lblMemberIdContact);
-            this.panNewContact.Controls.Add(this.btnCancelContact);
-            this.panNewContact.Controls.Add(this.btnNewContact);
-            this.panNewContact.Controls.Add(this.lblCTTitle);
-            this.panNewContact.Controls.Add(this.txtContactMobilephone);
-            this.panNewContact.Controls.Add(this.label3);
-            this.panNewContact.Controls.Add(this.txtContactMPAC);
-            this.panNewContact.Controls.Add(this.txtContactPhone);
-            this.panNewContact.Controls.Add(this.label4);
-            this.panNewContact.Controls.Add(this.txtContactPAC);
-            this.panNewContact.Controls.Add(this.label5);
-            this.panNewContact.Controls.Add(this.label6);
-            this.panNewContact.Controls.Add(this.txtContactEmail);
-            this.panNewContact.Controls.Add(this.comboBoxContactGender);
-            this.panNewContact.Controls.Add(this.txtContactCity);
-            this.panNewContact.Controls.Add(this.txtContactZipcode);
-            this.panNewContact.Controls.Add(this.txtContactAddress);
-            this.panNewContact.Controls.Add(this.txtContactSc);
-            this.panNewContact.Controls.Add(this.txtContactLn);
-            this.panNewContact.Controls.Add(this.label7);
-            this.panNewContact.Controls.Add(this.label8);
-            this.panNewContact.Controls.Add(this.label9);
-            this.panNewContact.Controls.Add(this.label10);
-            this.panNewContact.Controls.Add(this.label11);
-            this.panNewContact.Controls.Add(this.label12);
-            this.panNewContact.Controls.Add(this.label13);
-            this.panNewContact.Controls.Add(this.label14);
-            this.panNewContact.Controls.Add(this.txtContactFn);
-            this.panNewContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panNewContact.Location = new System.Drawing.Point(0, 24);
-            this.panNewContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.panNewContact.Name = "panNewContact";
-            this.panNewContact.Size = new System.Drawing.Size(727, 408);
-            this.panNewContact.TabIndex = 38;
+            this.panContact.Controls.Add(this.button2);
+            this.panContact.Controls.Add(this.txtCTcellphone);
+            this.panContact.Controls.Add(this.txtCTphone);
+            this.panContact.Controls.Add(this.label1);
+            this.panContact.Controls.Add(this.label2);
+            this.panContact.Controls.Add(this.txtCTemail);
+            this.panContact.Controls.Add(this.cmbCTgender);
+            this.panContact.Controls.Add(this.txtCTcity);
+            this.panContact.Controls.Add(this.txtCTzipcode);
+            this.panContact.Controls.Add(this.txtCTaddress);
+            this.panContact.Controls.Add(this.txtCTSecuritynr);
+            this.panContact.Controls.Add(this.txtCTlastname);
+            this.panContact.Controls.Add(this.label15);
+            this.panContact.Controls.Add(this.label16);
+            this.panContact.Controls.Add(this.label17);
+            this.panContact.Controls.Add(this.label18);
+            this.panContact.Controls.Add(this.label19);
+            this.panContact.Controls.Add(this.label20);
+            this.panContact.Controls.Add(this.label21);
+            this.panContact.Controls.Add(this.label22);
+            this.panContact.Controls.Add(this.txtCTfirstname);
+            this.panContact.Controls.Add(this.txtMemberIdContact);
+            this.panContact.Controls.Add(this.lblMemberIdContact);
+            this.panContact.Controls.Add(this.lblCTTitle);
+            this.panContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panContact.Location = new System.Drawing.Point(0, 24);
+            this.panContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panContact.Name = "panContact";
+            this.panContact.Size = new System.Drawing.Size(727, 408);
+            this.panContact.TabIndex = 38;
             // 
             // txtMemberIdContact
             // 
             this.txtMemberIdContact.Enabled = false;
-            this.txtMemberIdContact.Location = new System.Drawing.Point(104, 51);
+            this.txtMemberIdContact.Location = new System.Drawing.Point(484, 352);
             this.txtMemberIdContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtMemberIdContact.Name = "txtMemberIdContact";
             this.txtMemberIdContact.Size = new System.Drawing.Size(119, 20);
@@ -576,267 +566,28 @@
             // lblMemberIdContact
             // 
             this.lblMemberIdContact.AutoSize = true;
-            this.lblMemberIdContact.Location = new System.Drawing.Point(14, 53);
+            this.lblMemberIdContact.Location = new System.Drawing.Point(394, 357);
             this.lblMemberIdContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberIdContact.Name = "lblMemberIdContact";
             this.lblMemberIdContact.Size = new System.Drawing.Size(86, 13);
             this.lblMemberIdContact.TabIndex = 65;
             this.lblMemberIdContact.Text = "Medlemsnummer";
             // 
-            // btnCancelContact
-            // 
-            this.btnCancelContact.Location = new System.Drawing.Point(129, 378);
-            this.btnCancelContact.Name = "btnCancelContact";
-            this.btnCancelContact.Size = new System.Drawing.Size(75, 25);
-            this.btnCancelContact.TabIndex = 64;
-            this.btnCancelContact.Text = "Avbryt";
-            this.btnCancelContact.UseVisualStyleBackColor = true;
-            // 
-            // btnNewContact
-            // 
-            this.btnNewContact.Location = new System.Drawing.Point(22, 378);
-            this.btnNewContact.Name = "btnNewContact";
-            this.btnNewContact.Size = new System.Drawing.Size(101, 25);
-            this.btnNewContact.TabIndex = 63;
-            this.btnNewContact.Text = "Skapa ny kontakt";
-            this.btnNewContact.UseVisualStyleBackColor = true;
-            this.btnNewContact.Click += new System.EventHandler(this.btnNewContact_Click);
-            // 
             // lblCTTitle
             // 
             this.lblCTTitle.AutoSize = true;
-            this.lblCTTitle.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCTTitle.Location = new System.Drawing.Point(8, 6);
+            this.lblCTTitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCTTitle.Location = new System.Drawing.Point(9, 10);
             this.lblCTTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCTTitle.Name = "lblCTTitle";
-            this.lblCTTitle.Size = new System.Drawing.Size(198, 27);
+            this.lblCTTitle.Size = new System.Drawing.Size(226, 32);
             this.lblCTTitle.TabIndex = 62;
             this.lblCTTitle.Text = "Skapa ny kontakt";
             // 
-            // txtContactMobilephone
-            // 
-            this.txtContactMobilephone.Location = new System.Drawing.Point(155, 322);
-            this.txtContactMobilephone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactMobilephone.Name = "txtContactMobilephone";
-            this.txtContactMobilephone.Size = new System.Drawing.Size(68, 20);
-            this.txtContactMobilephone.TabIndex = 61;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(144, 326);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(10, 13);
-            this.label3.TabIndex = 60;
-            this.label3.Text = "-";
-            // 
-            // txtContactMPAC
-            // 
-            this.txtContactMPAC.Location = new System.Drawing.Point(103, 322);
-            this.txtContactMPAC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactMPAC.Name = "txtContactMPAC";
-            this.txtContactMPAC.Size = new System.Drawing.Size(38, 20);
-            this.txtContactMPAC.TabIndex = 59;
-            // 
-            // txtContactPhone
-            // 
-            this.txtContactPhone.Location = new System.Drawing.Point(155, 296);
-            this.txtContactPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactPhone.Name = "txtContactPhone";
-            this.txtContactPhone.Size = new System.Drawing.Size(68, 20);
-            this.txtContactPhone.TabIndex = 58;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(144, 298);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(10, 13);
-            this.label4.TabIndex = 57;
-            this.label4.Text = "-";
-            // 
-            // txtContactPAC
-            // 
-            this.txtContactPAC.Location = new System.Drawing.Point(103, 296);
-            this.txtContactPAC.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactPAC.Name = "txtContactPAC";
-            this.txtContactPAC.Size = new System.Drawing.Size(38, 20);
-            this.txtContactPAC.TabIndex = 56;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(14, 324);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 13);
-            this.label5.TabIndex = 55;
-            this.label5.Text = "Mobilnummer";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(14, 298);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
-            this.label6.TabIndex = 54;
-            this.label6.Text = "Telefonnummer";
-            // 
-            // txtContactEmail
-            // 
-            this.txtContactEmail.Location = new System.Drawing.Point(103, 261);
-            this.txtContactEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactEmail.Name = "txtContactEmail";
-            this.txtContactEmail.Size = new System.Drawing.Size(119, 20);
-            this.txtContactEmail.TabIndex = 53;
-            // 
-            // comboBoxContactGender
-            // 
-            this.comboBoxContactGender.FormattingEnabled = true;
-            this.comboBoxContactGender.Items.AddRange(new object[] {
-            "Man",
-            "Kvinna"});
-            this.comboBoxContactGender.Location = new System.Drawing.Point(103, 154);
-            this.comboBoxContactGender.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBoxContactGender.Name = "comboBoxContactGender";
-            this.comboBoxContactGender.Size = new System.Drawing.Size(119, 21);
-            this.comboBoxContactGender.TabIndex = 52;
-            // 
-            // txtContactCity
-            // 
-            this.txtContactCity.Location = new System.Drawing.Point(103, 236);
-            this.txtContactCity.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactCity.Name = "txtContactCity";
-            this.txtContactCity.Size = new System.Drawing.Size(119, 20);
-            this.txtContactCity.TabIndex = 51;
-            // 
-            // txtContactZipcode
-            // 
-            this.txtContactZipcode.Location = new System.Drawing.Point(103, 209);
-            this.txtContactZipcode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactZipcode.Name = "txtContactZipcode";
-            this.txtContactZipcode.Size = new System.Drawing.Size(119, 20);
-            this.txtContactZipcode.TabIndex = 50;
-            // 
-            // txtContactAddress
-            // 
-            this.txtContactAddress.Location = new System.Drawing.Point(103, 181);
-            this.txtContactAddress.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactAddress.Name = "txtContactAddress";
-            this.txtContactAddress.Size = new System.Drawing.Size(119, 20);
-            this.txtContactAddress.TabIndex = 49;
-            // 
-            // txtContactSc
-            // 
-            this.txtContactSc.Location = new System.Drawing.Point(103, 128);
-            this.txtContactSc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactSc.Name = "txtContactSc";
-            this.txtContactSc.Size = new System.Drawing.Size(119, 20);
-            this.txtContactSc.TabIndex = 48;
-            // 
-            // txtContactLn
-            // 
-            this.txtContactLn.Location = new System.Drawing.Point(103, 103);
-            this.txtContactLn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactLn.Name = "txtContactLn";
-            this.txtContactLn.Size = new System.Drawing.Size(119, 20);
-            this.txtContactLn.TabIndex = 47;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(15, 264);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
-            this.label7.TabIndex = 46;
-            this.label7.Text = "E-post";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(14, 240);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 45;
-            this.label8.Text = "Stad";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(14, 213);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 13);
-            this.label9.TabIndex = 44;
-            this.label9.Text = "Postnummer";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(14, 183);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(39, 13);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Adress";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(14, 156);
-            this.label11.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(26, 13);
-            this.label11.TabIndex = 42;
-            this.label11.Text = "Kön";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 130);
-            this.label12.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 13);
-            this.label12.TabIndex = 41;
-            this.label12.Text = "Personnummer";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(14, 105);
-            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(55, 13);
-            this.label13.TabIndex = 40;
-            this.label13.Text = "Efternamn";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 80);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(48, 13);
-            this.label14.TabIndex = 39;
-            this.label14.Text = "Förnamn";
-            // 
-            // txtContactFn
-            // 
-            this.txtContactFn.Location = new System.Drawing.Point(103, 78);
-            this.txtContactFn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContactFn.Name = "txtContactFn";
-            this.txtContactFn.Size = new System.Drawing.Size(119, 20);
-            this.txtContactFn.TabIndex = 38;
-            // 
             // panMember
             // 
-            this.panMember.Controls.Add(this.btnViewList);
             this.panMember.Controls.Add(this.txtMemberId);
+            this.panMember.Controls.Add(this.btnViewList);
             this.panMember.Controls.Add(this.lblMemberID);
             this.panMember.Controls.Add(this.btnContact);
             this.panMember.Controls.Add(this.btnSave);
@@ -1180,7 +931,7 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.Location = new System.Drawing.Point(12, 95);
+            this.lblLastName.Location = new System.Drawing.Point(12, 93);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(55, 13);
             this.lblLastName.TabIndex = 2;
@@ -1336,13 +1087,199 @@
             this.panStart.Size = new System.Drawing.Size(727, 408);
             this.panStart.TabIndex = 46;
             // 
+            // txtCTcellphone
+            // 
+            this.txtCTcellphone.Location = new System.Drawing.Point(97, 354);
+            this.txtCTcellphone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCTcellphone.Name = "txtCTcellphone";
+            this.txtCTcellphone.Size = new System.Drawing.Size(150, 20);
+            this.txtCTcellphone.TabIndex = 84;
+            this.txtCTcellphone.Tag = "Mobilnummer";
+            // 
+            // txtCTphone
+            // 
+            this.txtCTphone.Location = new System.Drawing.Point(97, 323);
+            this.txtCTphone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCTphone.Name = "txtCTphone";
+            this.txtCTphone.Size = new System.Drawing.Size(150, 20);
+            this.txtCTphone.TabIndex = 83;
+            this.txtCTphone.Tag = "Telefonnummer";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 357);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 13);
+            this.label1.TabIndex = 86;
+            this.label1.Text = "Mobilnummer";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 328);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(80, 13);
+            this.label2.TabIndex = 85;
+            this.label2.Text = "Telefonnummer";
+            // 
+            // txtCTemail
+            // 
+            this.txtCTemail.Location = new System.Drawing.Point(97, 269);
+            this.txtCTemail.Name = "txtCTemail";
+            this.txtCTemail.Size = new System.Drawing.Size(150, 20);
+            this.txtCTemail.TabIndex = 81;
+            this.txtCTemail.Tag = "E-post";
+            // 
+            // cmbCTgender
+            // 
+            this.cmbCTgender.FormattingEnabled = true;
+            this.cmbCTgender.Items.AddRange(new object[] {
+            "Man",
+            "Kvinna"});
+            this.cmbCTgender.Location = new System.Drawing.Point(97, 147);
+            this.cmbCTgender.Name = "cmbCTgender";
+            this.cmbCTgender.Size = new System.Drawing.Size(150, 21);
+            this.cmbCTgender.TabIndex = 72;
+            // 
+            // txtCTcity
+            // 
+            this.txtCTcity.Location = new System.Drawing.Point(97, 238);
+            this.txtCTcity.Name = "txtCTcity";
+            this.txtCTcity.Size = new System.Drawing.Size(150, 20);
+            this.txtCTcity.TabIndex = 78;
+            this.txtCTcity.Tag = "Stad";
+            // 
+            // txtCTzipcode
+            // 
+            this.txtCTzipcode.Location = new System.Drawing.Point(97, 208);
+            this.txtCTzipcode.Name = "txtCTzipcode";
+            this.txtCTzipcode.Size = new System.Drawing.Size(150, 20);
+            this.txtCTzipcode.TabIndex = 76;
+            this.txtCTzipcode.Tag = "Postnummer";
+            // 
+            // txtCTaddress
+            // 
+            this.txtCTaddress.Location = new System.Drawing.Point(97, 176);
+            this.txtCTaddress.Name = "txtCTaddress";
+            this.txtCTaddress.Size = new System.Drawing.Size(150, 20);
+            this.txtCTaddress.TabIndex = 74;
+            this.txtCTaddress.Tag = "Adress";
+            // 
+            // txtCTSecuritynr
+            // 
+            this.txtCTSecuritynr.Location = new System.Drawing.Point(97, 120);
+            this.txtCTSecuritynr.Name = "txtCTSecuritynr";
+            this.txtCTSecuritynr.Size = new System.Drawing.Size(150, 20);
+            this.txtCTSecuritynr.TabIndex = 71;
+            this.txtCTSecuritynr.Tag = "Personnummer";
+            // 
+            // txtCTlastname
+            // 
+            this.txtCTlastname.Location = new System.Drawing.Point(97, 92);
+            this.txtCTlastname.Name = "txtCTlastname";
+            this.txtCTlastname.Size = new System.Drawing.Size(150, 20);
+            this.txtCTlastname.TabIndex = 68;
+            this.txtCTlastname.Tag = "Efternamn";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(14, 275);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 13);
+            this.label15.TabIndex = 82;
+            this.label15.Text = "E-post";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(12, 245);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(29, 13);
+            this.label16.TabIndex = 80;
+            this.label16.Text = "Stad";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(12, 213);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 13);
+            this.label17.TabIndex = 79;
+            this.label17.Text = "Postnummer";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(12, 179);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(39, 13);
+            this.label18.TabIndex = 77;
+            this.label18.Text = "Adress";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(12, 149);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(26, 13);
+            this.label19.TabIndex = 75;
+            this.label19.Text = "Kön";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(12, 123);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(77, 13);
+            this.label20.TabIndex = 73;
+            this.label20.Text = "Personnummer";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(12, 93);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(55, 13);
+            this.label21.TabIndex = 70;
+            this.label21.Text = "Efternamn";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(12, 66);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(48, 13);
+            this.label22.TabIndex = 69;
+            this.label22.Text = "Förnamn";
+            // 
+            // txtCTfirstname
+            // 
+            this.txtCTfirstname.Location = new System.Drawing.Point(97, 63);
+            this.txtCTfirstname.Name = "txtCTfirstname";
+            this.txtCTfirstname.Size = new System.Drawing.Size(150, 20);
+            this.txtCTfirstname.TabIndex = 67;
+            this.txtCTfirstname.Tag = "Förnamn";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(615, 17);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 25);
+            this.button2.TabIndex = 87;
+            this.button2.Text = "Till Lista >";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 432);
+            this.Controls.Add(this.panContact);
             this.Controls.Add(this.panMember);
-            this.Controls.Add(this.panNewContact);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.panTGGroup);
@@ -1356,8 +1293,8 @@
             this.panTGGroup.ResumeLayout(false);
             this.panTGGroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).EndInit();
-            this.panNewContact.ResumeLayout(false);
-            this.panNewContact.PerformLayout();
+            this.panContact.ResumeLayout(false);
+            this.panContact.PerformLayout();
             this.panMember.ResumeLayout(false);
             this.panMember.PerformLayout();
             this.panViewMember.ResumeLayout(false);
@@ -1399,32 +1336,8 @@
         private System.Windows.Forms.Label lblTGName;
         private System.Windows.Forms.Label lblNMTitle;
         private System.Windows.Forms.TextBox txtTGDescription;
-        private System.Windows.Forms.Panel panNewContact;
+        private System.Windows.Forms.Panel panContact;
         private System.Windows.Forms.Label lblCTTitle;
-        private System.Windows.Forms.TextBox txtContactMobilephone;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtContactMPAC;
-        private System.Windows.Forms.TextBox txtContactPhone;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtContactPAC;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtContactEmail;
-        private System.Windows.Forms.ComboBox comboBoxContactGender;
-        private System.Windows.Forms.TextBox txtContactCity;
-        private System.Windows.Forms.TextBox txtContactZipcode;
-        private System.Windows.Forms.TextBox txtContactAddress;
-        private System.Windows.Forms.TextBox txtContactSc;
-        private System.Windows.Forms.TextBox txtContactLn;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox txtContactFn;
         private System.Windows.Forms.ToolStripMenuItem avslutaToolStripMenuItem;
         private System.Windows.Forms.Panel panViewMember;
         private System.Windows.Forms.DataGridView dgrViewMember;
@@ -1485,11 +1398,30 @@
         private System.Windows.Forms.TextBox txtMemberId;
         private System.Windows.Forms.TextBox txtMemberIdContact;
         private System.Windows.Forms.Label lblMemberIdContact;
-        private System.Windows.Forms.Button btnCancelContact;
-        private System.Windows.Forms.Button btnNewContact;
         private System.Windows.Forms.Panel panStart;
         private System.Windows.Forms.ComboBox cmbFilter;
         private System.Windows.Forms.Button btnViewList;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox txtCTcellphone;
+        private System.Windows.Forms.TextBox txtCTphone;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txtCTemail;
+        private System.Windows.Forms.ComboBox cmbCTgender;
+        private System.Windows.Forms.TextBox txtCTcity;
+        private System.Windows.Forms.TextBox txtCTzipcode;
+        private System.Windows.Forms.TextBox txtCTaddress;
+        private System.Windows.Forms.TextBox txtCTSecuritynr;
+        private System.Windows.Forms.TextBox txtCTlastname;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtCTfirstname;
     }
 }
 

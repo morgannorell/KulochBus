@@ -52,7 +52,9 @@ namespace KulochBus
             }
         }
 
+        //
         //Medlemmar
+        //
         private void medlemToolStripMenuItem_Click(object sender, EventArgs e)
         {
             // Visa panel för medlem
@@ -155,7 +157,9 @@ namespace KulochBus
             panStart.Show();
         }
         
+        //
         // Medlemslista
+        //
         private void ShowMemberlist(string condition, string search)
         {
             HidePanels();
@@ -253,6 +257,47 @@ namespace KulochBus
             ShowMemberlist(condition, search);
         }
 
+        //
+        // Kontakt
+        //
+        private void kontaktToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panContact.Show();
+            txtMemberIdContact.Enabled = true;
+        }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panContact.Show();
+            txtMemberIdContact.Text = txtMemberId.Text;
+            txtMemberIdContact.Enabled = false;
+        }
+
+        private void btnNewContact_Click(object sender, EventArgs e)
+        {
+
+            Contact ct = new Contact()
+            {
+                //MemberId = txtMemberIdContact.Text,
+                Firstname = txtContactFn.Text,
+                LastName = txtContactLn.Text,
+                SecurityNr = txtContactSc.Text,
+                Address = txtContactAddress.Text,
+                Zipcode = txtContactZipcode.Text,
+                City = txtContactCity.Text,
+                Email = txtContactEmail.Text,
+                Gender = comboBoxContactGender.SelectedItem.ToString(),
+                //Homeareacode = txtContactPAC.Text,
+                //Homephone = txtContactPhone.Text,
+                //Mobilecode = txtContactMPAC.Text,
+                //Mobilephone = txtContactMobilephone.Text
+            };
+
+            //ct.CreateContact();
+        }
+
         private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HidePanels();
@@ -277,12 +322,7 @@ namespace KulochBus
             btnTGLevel.Show();
         }
 
-        private void kontaktToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            HidePanels();
-            panNewContact.Show();
-            txtMemberIdContact.Enabled = true;
-        }
+        
 
         private void btnTGCreate_Click(object sender, EventArgs e)
         {
@@ -299,38 +339,7 @@ namespace KulochBus
             frmLevel level = new frmLevel();
             level.Show();
         }
-
-        private void btnContact_Click(object sender, EventArgs e)
-        {
-          HidePanels();
-          panNewContact.Show();
-          txtMemberIdContact.Text = txtMemberId.Text;
-          txtMemberIdContact.Enabled = false;
-        }
-
-        private void btnNewContact_Click(object sender, EventArgs e)
-        {
-  
-            Contact ct = new Contact()
-            {
-                //MemberId = txtMemberIdContact.Text,
-                Firstname = txtContactFn.Text,
-                LastName = txtContactLn.Text,
-                SecurityNr = txtContactSc.Text,
-                Address = txtContactAddress.Text,
-                Zipcode = txtContactZipcode.Text,
-                City = txtContactCity.Text,
-                Email = txtContactEmail.Text,
-                Gender = comboBoxContactGender.SelectedItem.ToString(),
-                //Homeareacode = txtContactPAC.Text,
-                //Homephone = txtContactPhone.Text,
-                //Mobilecode = txtContactMPAC.Text,
-                //Mobilephone = txtContactMobilephone.Text
-            };
-
-            //ct.CreateContact();
-        }
-
+        
         private void btnSave_Click(object sender, EventArgs e)
         {
             bool picture = false;
