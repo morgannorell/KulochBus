@@ -569,7 +569,7 @@
             this.lblMemberIdContact.Location = new System.Drawing.Point(394, 357);
             this.lblMemberIdContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblMemberIdContact.Name = "lblMemberIdContact";
-            this.lblMemberIdContact.Size = new System.Drawing.Size(86, 13);
+            this.lblMemberIdContact.Size = new System.Drawing.Size(131, 20);
             this.lblMemberIdContact.TabIndex = 65;
             this.lblMemberIdContact.Text = "Medlemsnummer";
             // 
