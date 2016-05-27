@@ -77,7 +77,16 @@ namespace KulochBus
         
         private void btnCreateNewMember_Click(object sender, EventArgs e)
         {
+            bool picture = false;
+            bool leader = false;
+            bool payed = false;
+
+            if (checkBoxPicture.Checked) { picture = true; }
+            if (checkBoxLeader.Checked) { leader = true; }
+            if (checkPayed.Checked) { payed = true; }
             string felmeddelande = string.Empty;
+
+
             foreach (Control control in panMember.Controls)
             {
                 string controlType = control.GetType().ToString();
@@ -91,23 +100,11 @@ namespace KulochBus
                             continue;
                         }
                         felmeddelande += txtBox.Tag.ToString() + " ";
+ 
                     }
                 }
             }
 
-            if (!string.IsNullOrEmpty(felmeddelande))
-            {
-            MessageBox.Show(felmeddelande + "måste fyllas i.");
-            }
-
-            bool picture = false;
-            bool leader = false;
-            bool payed = false;
-
-            if (checkBoxPicture.Checked) { picture = true; }
-            if (checkBoxLeader.Checked) { leader = true; }
-            if (checkPayed.Checked) { payed = true; }
-            
             if (comboBoxGender.SelectedItem == null)
             {
                 MessageBox.Show("Du måste ange om det är en man eller kvinna.");
@@ -120,8 +117,13 @@ namespace KulochBus
                 return;
             }
 
-            Membership membership = (Membership)cmbMembership.SelectedItem;
-            
+            if (!string.IsNullOrEmpty(felmeddelande))
+            {
+                MessageBox.Show(felmeddelande + "måste fyllas i.");
+                return;
+            }
+
+            Membership membership = (Membership)cmbMembership.SelectedItem;  
             Member mb = new Member()
             {
                 Firstname = txtFirstName.Text,
@@ -144,6 +146,7 @@ namespace KulochBus
 
             mb.CreateMember();
             EmptyTxtBoxes(panMember);
+            MessageBox.Show("Medlem tillagd");
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -343,33 +346,28 @@ namespace KulochBus
 
             ph.Phonenumber = txtPhone.Text;
 
-            //Member updateMember = new Member()
-            //{
-            //    PersonId = txtMemberId.Text,
-            //    Firstname = txtFirstName.Text,
-            //    LastName = txtLastName.Text,
-            //    SecurityNr = txtSecurityNr.Text,
-            //    Address = txtAddress.Text,
-            //    Zipcode = txtZipcode.Text,
-            //    City = txtCity.Text,
-            //    Email = txtEmail.Text,
-            //    Gender = comboBoxGender.SelectedItem.ToString(),
-            //    Responsibility = txtResponsibility.Text,
-            //    Membership = membership.Name,
-            //    Price = membership.Price,
-            //    Picture = picture,
-            //    Leader = leader,
-            //    Payed = payed,
-            //    Homeareacode = txtPhoneAreaCode.Text,
-            //    Homephone = txtPhone.Text,
-            //    Mobilecode = txtCellphoneAreaCode.Text,
-            //    Mobilephone = txtCellphone.Text
-            //};
+            Member updateMember = new Member()
+            {
+                PersonId = txtMemberId.Text,
+                Firstname = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                SecurityNr = txtSecurityNr.Text,
+                Address = txtAddress.Text,
+                Zipcode = txtZipcode.Text,
+                City = txtCity.Text,
+                Email = txtEmail.Text,
+                Gender = comboBoxGender.SelectedItem.ToString(),
+                Responsibility = txtResponsibility.Text,
+                Membership = membership.Name,
+                Price = membership.Price,
+                Picture = picture,
+                Leader = leader,
+                Payed = payed,
+                Phone = txtPhone.Text,
+                Cellphone = txtCellphone.Text
+            };
 
-            
-
-            //updateMember.UpdateMember();
-
+            updateMember.UpdateMember();
         }
 
         private void medlemToolStripMenuItem1_Click(object sender, EventArgs e)
