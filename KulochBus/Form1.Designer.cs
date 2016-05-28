@@ -1330,9 +1330,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 432);
             this.Controls.Add(this.panContact);
+            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.panTGGroupList);
-            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.menuStrip1);

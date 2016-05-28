@@ -328,13 +328,6 @@ namespace KulochBus
 
             dt.Columns.Add(new DataColumn("Selected", typeof(bool)));
 
-            //DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
-            //checkColumn.Name = "addCheck";
-            //checkColumn.HeaderText = "Lägg till";
-            //checkColumn.Width = 50;
-            //checkColumn.FillWeight = 10; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
-            //dgrCTsearchmedlem.Columns.Add(checkColumn);
-
             dgrCTsearchmedlem.DataSource = bs;
         }
 
@@ -355,7 +348,24 @@ namespace KulochBus
                 Cellphone = txtCTcellphone.Text,
             };
 
-            //ct.CreateContact();
+            List<string> memberids = new List<string>();
+
+            foreach (DataGridViewRow row in dgrCTsearchmedlem.Rows)
+            {
+                if (row.Cells[3].Value.ToString() == "True")
+                {
+                    memberids.Add(row.Cells[0].Value.ToString());
+                }
+            }
+
+            if (memberids.Count == 0)
+            {
+                MessageBox.Show("Du måste ange den medlem eller de medlemmar som kontakten är relaterad till.");
+                return;
+            }
+
+            dt = new DataTable();
+            dt = ct.AddContact(memberids);
         }
 
         private void btnCTcancel_Click(object sender, EventArgs e)
