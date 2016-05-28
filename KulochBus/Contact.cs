@@ -14,11 +14,62 @@ namespace KulochBus
             Sql querry = new Sql();
             DataTable dt = new DataTable();
 
-            string sql = "SELECT personid, firstname, lastname FROM person WHERE " +
+            string sql = "SELECT personid, firstname, lastname FROM person " +
+                "JOIN member ON personid = memberid WHERE " +
                 "firstname like '%" + search + "%' OR " +
                 "lastname like '%" + search + "%'";
 
             dt = querry.Select(sql);
+
+            return dt;
+        }
+
+        public DataTable AddContact(List<string> members)
+        {
+            Sql querry;
+            DataTable dt = new DataTable();
+
+            string sql =
+                "START TRANSACTION; " +
+                "WITH id AS (" +
+                "INSERT INTO person " +
+                "(firstname, lastname, securitynr, gender, address, zipcode, city, email) " +
+                "VALUES ('" + Firstname + "', '" + LastName + "', '" + SecurityNr + "', '" +
+                Gender + "', '" + Address + "', '" + Zipcode + "', '" + City + "', '" +
+                Email + "') RETURNING personid)," +
+                " mpid AS " +
+                "(INSERT INTO phone (personid, phone, type) " +
+                "SELECT id.personid, '" + Cellphone + "', '" + "cell' " +
+                "FROM id RETURNING personid)," +
+                " pid AS " +
+                "(INSERT INTO phone (personid, phone, type) " +
+                "SELECT mpid.personid, '" + Phone + "', '" + "phone' " +
+                "FROM mpid RETURNING personid) " +
+                "INSERT INTO contact " +
+                "(contactid) " + "SELECT pid.personid " + " FROM pid; " +
+                "COMMIT;";
+
+            querry = new Sql();
+            querry.Insert(sql);
+
+            querry = new Sql();
+            string getContactID = "select max(personid) from person";
+            dt = querry.Select(getContactID);
+
+            string contactid = "";
+
+            foreach (DataRow row in dt.Rows)
+            {
+                contactid = row["max"].ToString();
+            }
+
+            foreach (string id in members)
+            {
+                string add = "INSERT INTO membercontact (memberid, contactid) " +
+                    "VALUES (" + id + ", " + contactid + ")";
+                querry = new Sql();
+                querry.Insert(add);
+            }
 
             return dt;
         }
