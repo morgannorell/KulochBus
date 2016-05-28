@@ -65,7 +65,7 @@ namespace KulochBus
             // Ändrar visibility på buttons osv
             btnCreateNewMember.Show();
             btnContact.Hide();
-            btnSave.Hide();
+            btnMemberSave.Hide();
             txtMemberId.Hide();
             lblMemberID.Hide();
             btnViewList.Hide();
@@ -151,12 +151,59 @@ namespace KulochBus
             MessageBox.Show("Medlem tillagd");
         }
 
+        private void btnMemberSave_Click(object sender, EventArgs e)
+        {
+            bool picture = false;
+            bool leader = false;
+            bool payed = false;
+            //var membership = (Membership)cmbMembership.SelectedItem;    
+            Membership membership = new Membership();
+
+            if (checkBoxPicture.Checked) { picture = true; }
+            if (checkBoxLeader.Checked) { leader = true; }
+            if (checkPayed.Checked) { payed = true; }
+            if (cmbMembership.Text == "Medlem") { membership.Name = "Medlem"; membership.Price = 150; }
+            if (cmbMembership.Text == "Prova-på") { membership.Name = "Prova-på"; membership.Price = 50; }
+            if (cmbMembership.Text == "Cirkusvän") { membership.Name = "Cirkusvän"; membership.Price = 0; }
+
+            Member updateMember = new Member()
+            {
+                PersonId = txtMemberId.Text,
+                Firstname = txtFirstName.Text,
+                LastName = txtLastName.Text,
+                SecurityNr = txtSecurityNr.Text,
+                Address = txtAddress.Text,
+                Zipcode = txtZipcode.Text,
+                City = txtCity.Text,
+                Email = txtEmail.Text,
+                Gender = comboBoxGender.SelectedItem.ToString(),
+                Responsibility = txtResponsibility.Text,
+                Membership = membership.Name,
+                Price = membership.Price,
+                Picture = picture,
+                Leader = leader,
+                Payed = payed,
+                Phone = txtPhone.Text,
+                Cellphone = txtCellphone.Text
+            };
+
+            updateMember.UpdateMember();
+            MessageBox.Show("Medlem " + txtMemberId.Text + " är nu uppdaterad");
+        }
+
+        private void btnContact_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panContact.Show();
+            txtMemberIdContact.Text = txtMemberId.Text;
+            txtMemberIdContact.Enabled = false;
+        }
+
         private void btnCancel_Click(object sender, EventArgs e)
         {
             HidePanels();
             panStart.Show();
-        }
-        
+        }        
         //
         // Medlemslista
         //
@@ -204,11 +251,16 @@ namespace KulochBus
             btnCreateNewMember.Hide();
             panMember.Show();
             btnContact.Show();
-            btnSave.Show();
+            btnMemberSave.Show();
             lblCreateNewMember.Text = "Redigera medlem";
             lblMemberID.Show();
             txtMemberId.Show();
             btnViewList.Show();
+
+            //lägger till items i combobox + tilldelar värden
+            cmbMembership.Items.Add(new Membership("Medlem", 150));
+            cmbMembership.Items.Add(new Membership("Prova-på", 50));
+            cmbMembership.Items.Add(new Membership("Cirkusvän", 0));
 
             // Get memberid
             string selectedMember;
@@ -246,8 +298,7 @@ namespace KulochBus
             {
                 if ((string)row["type"] == "phone") { txtPhone.Text = row["phone"].ToString(); }
                 if ((string)row["type"] == "cell") { txtCellphone.Text = row["phone"].ToString(); }
-            }
-            
+            }            
         }
 
         private void btnViewList_Click(object sender, EventArgs e)
@@ -267,12 +318,27 @@ namespace KulochBus
             txtMemberIdContact.Enabled = true;
         }
 
-        private void btnContact_Click(object sender, EventArgs e)
+        private void btnCTsearch_Click(object sender, EventArgs e)
         {
-            HidePanels();
-            panContact.Show();
-            txtMemberIdContact.Text = txtMemberId.Text;
-            txtMemberIdContact.Enabled = false;
+            string search = txtCTsearch.Text;
+
+            Contact ct = new Contact();
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = ct.GetMemberContact(search);
+            bs.DataSource = dt;
+
+            dt.Columns.Add(new DataColumn("Selected", typeof(bool)));
+
+            //DataGridViewCheckBoxColumn checkColumn = new DataGridViewCheckBoxColumn();
+            //checkColumn.Name = "addCheck";
+            //checkColumn.HeaderText = "Lägg till";
+            //checkColumn.Width = 50;
+            //checkColumn.FillWeight = 10; //if the datagridview is resized (on form resize) the checkbox won't take up too much; value is relative to the other columns' fill values
+            //dgrCTsearchmedlem.Columns.Add(checkColumn);
+
+            dgrCTsearchmedlem.DataSource = bs;
         }
 
         private void btnNewContact_Click(object sender, EventArgs e)
@@ -281,14 +347,14 @@ namespace KulochBus
             Contact ct = new Contact()
             {
                 //MemberId = txtMemberIdContact.Text,
-                Firstname = txtContactFn.Text,
-                LastName = txtContactLn.Text,
-                SecurityNr = txtContactSc.Text,
-                Address = txtContactAddress.Text,
-                Zipcode = txtContactZipcode.Text,
-                City = txtContactCity.Text,
-                Email = txtContactEmail.Text,
-                Gender = comboBoxContactGender.SelectedItem.ToString(),
+                //Firstname = txtContactFn.Text,
+                //LastName = txtContactLn.Text,
+                //SecurityNr = txtContactSc.Text,
+                //Address = txtContactAddress.Text,
+                //Zipcode = txtContactZipcode.Text,
+                //City = txtContactCity.Text,
+                //Email = txtContactEmail.Text,
+                //Gender = comboBoxContactGender.SelectedItem.ToString(),
                 //Homeareacode = txtContactPAC.Text,
                 //Homephone = txtContactPhone.Text,
                 //Mobilecode = txtContactMPAC.Text,
@@ -298,6 +364,14 @@ namespace KulochBus
             //ct.CreateContact();
         }
 
+        private void btnCTcancel_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panStart.Show();
+        }
+        //
+        // Träningsgrupp
+        //
         private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HidePanels();
@@ -340,50 +414,6 @@ namespace KulochBus
             level.Show();
         }
         
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            bool picture = false;
-            bool leader = false;
-            bool payed = false;
-            //var membership = (Membership)cmbMembership.SelectedItem;    
-            Membership membership = new Membership();
-            
-            if (checkBoxPicture.Checked) { picture = true; }
-            if (checkBoxLeader.Checked) { leader = true; }
-            if (checkPayed.Checked) { payed = true; }
-            if (cmbMembership.Text == "Medlem") { membership.Name = "Medlem"; membership.Price = 150; }
-            if (cmbMembership.Text == "Prova-på") { membership.Name = "Prova-på"; membership.Price = 50; }
-            if (cmbMembership.Text == "Cirkusvän") { membership.Name = "Cirkusvän"; membership.Price = 0;}
-
-            Phone ph = new Phone();
-
-            ph.Phonenumber = txtPhone.Text;
-
-            Member updateMember = new Member()
-            {
-                PersonId = txtMemberId.Text,
-                Firstname = txtFirstName.Text,
-                LastName = txtLastName.Text,
-                SecurityNr = txtSecurityNr.Text,
-                Address = txtAddress.Text,
-                Zipcode = txtZipcode.Text,
-                City = txtCity.Text,
-                Email = txtEmail.Text,
-                Gender = comboBoxGender.SelectedItem.ToString(),
-                Responsibility = txtResponsibility.Text,
-                Membership = membership.Name,
-                Price = membership.Price,
-                Picture = picture,
-                Leader = leader,
-                Payed = payed,
-                Phone = txtPhone.Text,
-                Cellphone = txtCellphone.Text
-            };
-
-            updateMember.UpdateMember();
-            MessageBox.Show("Medlem " + txtMemberId.Text + " är nu uppdaterad");
-        }
-
         private void medlemToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             HidePanels();

@@ -69,15 +69,34 @@
             this.lblTraningTitle = new System.Windows.Forms.Label();
             this.btnTGCreate = new System.Windows.Forms.Button();
             this.panContact = new System.Windows.Forms.Panel();
-            this.txtMemberIdContact = new System.Windows.Forms.TextBox();
-            this.lblMemberIdContact = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.txtCTcellphone = new System.Windows.Forms.TextBox();
+            this.txtCTphone = new System.Windows.Forms.TextBox();
+            this.lblCTmobile = new System.Windows.Forms.Label();
+            this.lblCTphone = new System.Windows.Forms.Label();
+            this.txtCTemail = new System.Windows.Forms.TextBox();
+            this.cmbCTgender = new System.Windows.Forms.ComboBox();
+            this.txtCTcity = new System.Windows.Forms.TextBox();
+            this.txtCTzipcode = new System.Windows.Forms.TextBox();
+            this.txtCTaddress = new System.Windows.Forms.TextBox();
+            this.txtCTSecuritynr = new System.Windows.Forms.TextBox();
+            this.txtCTlastname = new System.Windows.Forms.TextBox();
+            this.lblCTemail = new System.Windows.Forms.Label();
+            this.lblCTcity = new System.Windows.Forms.Label();
+            this.lblCTzipcode = new System.Windows.Forms.Label();
+            this.lblCTaddress = new System.Windows.Forms.Label();
+            this.lblCTgender = new System.Windows.Forms.Label();
+            this.lblCTsecuritynr = new System.Windows.Forms.Label();
+            this.lblCTlastname = new System.Windows.Forms.Label();
+            this.lblCTfirstname = new System.Windows.Forms.Label();
+            this.txtCTfirstname = new System.Windows.Forms.TextBox();
             this.lblCTTitle = new System.Windows.Forms.Label();
             this.panMember = new System.Windows.Forms.Panel();
-            this.btnViewList = new System.Windows.Forms.Button();
             this.txtMemberId = new System.Windows.Forms.TextBox();
+            this.btnViewList = new System.Windows.Forms.Button();
             this.lblMemberID = new System.Windows.Forms.Label();
             this.btnContact = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnMemberSave = new System.Windows.Forms.Button();
             this.lblCreateNewMember = new System.Windows.Forms.Label();
             this.checkPayed = new System.Windows.Forms.CheckBox();
             this.checkBoxPicture = new System.Windows.Forms.CheckBox();
@@ -120,27 +139,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
-            this.txtCTcellphone = new System.Windows.Forms.TextBox();
-            this.txtCTphone = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtCTemail = new System.Windows.Forms.TextBox();
-            this.cmbCTgender = new System.Windows.Forms.ComboBox();
-            this.txtCTcity = new System.Windows.Forms.TextBox();
-            this.txtCTzipcode = new System.Windows.Forms.TextBox();
-            this.txtCTaddress = new System.Windows.Forms.TextBox();
-            this.txtCTSecuritynr = new System.Windows.Forms.TextBox();
-            this.txtCTlastname = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.txtCTfirstname = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnNewContact = new System.Windows.Forms.Button();
+            this.dgrCTsearchmedlem = new System.Windows.Forms.DataGridView();
+            this.btnCTsearch = new System.Windows.Forms.Button();
+            this.txtCTsearch = new System.Windows.Forms.TextBox();
+            this.lblCTsearch = new System.Windows.Forms.Label();
+            this.btnCTcancel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -150,6 +154,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewMember)).BeginInit();
             this.panTGGroupList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrCTsearchmedlem)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -320,7 +325,7 @@
             this.panTGGroup.Controls.Add(this.btnTGCreate);
             this.panTGGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panTGGroup.Location = new System.Drawing.Point(0, 24);
-            this.panTGGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panTGGroup.Margin = new System.Windows.Forms.Padding(2);
             this.panTGGroup.Name = "panTGGroup";
             this.panTGGroup.Size = new System.Drawing.Size(727, 408);
             this.panTGGroup.TabIndex = 37;
@@ -390,7 +395,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(73, 257);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(242, 116);
@@ -409,7 +414,7 @@
             // btnTGSave
             // 
             this.btnTGSave.Location = new System.Drawing.Point(251, 403);
-            this.btnTGSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTGSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnTGSave.Name = "btnTGSave";
             this.btnTGSave.Size = new System.Drawing.Size(64, 23);
             this.btnTGSave.TabIndex = 11;
@@ -420,7 +425,7 @@
             // 
             this.dgrListTGMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrListTGMembers.Location = new System.Drawing.Point(335, 47);
-            this.dgrListTGMembers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrListTGMembers.Margin = new System.Windows.Forms.Padding(2);
             this.dgrListTGMembers.Name = "dgrListTGMembers";
             this.dgrListTGMembers.RowTemplate.Height = 28;
             this.dgrListTGMembers.Size = new System.Drawing.Size(378, 388);
@@ -429,7 +434,7 @@
             // txtTGDescription
             // 
             this.txtTGDescription.Location = new System.Drawing.Point(73, 129);
-            this.txtTGDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTGDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGDescription.Multiline = true;
             this.txtTGDescription.Name = "txtTGDescription";
             this.txtTGDescription.Size = new System.Drawing.Size(242, 116);
@@ -438,7 +443,7 @@
             // txtTGLevel
             // 
             this.txtTGLevel.Location = new System.Drawing.Point(73, 102);
-            this.txtTGLevel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTGLevel.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGLevel.Name = "txtTGLevel";
             this.txtTGLevel.Size = new System.Drawing.Size(174, 20);
             this.txtTGLevel.TabIndex = 7;
@@ -446,7 +451,7 @@
             // txtTGDiciplin
             // 
             this.txtTGDiciplin.Location = new System.Drawing.Point(73, 76);
-            this.txtTGDiciplin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTGDiciplin.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGDiciplin.Name = "txtTGDiciplin";
             this.txtTGDiciplin.Size = new System.Drawing.Size(174, 20);
             this.txtTGDiciplin.TabIndex = 6;
@@ -454,7 +459,7 @@
             // txtTGName
             // 
             this.txtTGName.Location = new System.Drawing.Point(73, 50);
-            this.txtTGName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTGName.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGName.Name = "txtTGName";
             this.txtTGName.Size = new System.Drawing.Size(174, 20);
             this.txtTGName.TabIndex = 5;
@@ -523,11 +528,17 @@
             // 
             // panContact
             // 
+            this.panContact.Controls.Add(this.btnCTcancel);
+            this.panContact.Controls.Add(this.lblCTsearch);
+            this.panContact.Controls.Add(this.txtCTsearch);
+            this.panContact.Controls.Add(this.btnCTsearch);
+            this.panContact.Controls.Add(this.dgrCTsearchmedlem);
+            this.panContact.Controls.Add(this.btnNewContact);
             this.panContact.Controls.Add(this.button2);
             this.panContact.Controls.Add(this.txtCTcellphone);
             this.panContact.Controls.Add(this.txtCTphone);
-            this.panContact.Controls.Add(this.label1);
-            this.panContact.Controls.Add(this.label2);
+            this.panContact.Controls.Add(this.lblCTmobile);
+            this.panContact.Controls.Add(this.lblCTphone);
             this.panContact.Controls.Add(this.txtCTemail);
             this.panContact.Controls.Add(this.cmbCTgender);
             this.panContact.Controls.Add(this.txtCTcity);
@@ -535,43 +546,208 @@
             this.panContact.Controls.Add(this.txtCTaddress);
             this.panContact.Controls.Add(this.txtCTSecuritynr);
             this.panContact.Controls.Add(this.txtCTlastname);
-            this.panContact.Controls.Add(this.label15);
-            this.panContact.Controls.Add(this.label16);
-            this.panContact.Controls.Add(this.label17);
-            this.panContact.Controls.Add(this.label18);
-            this.panContact.Controls.Add(this.label19);
-            this.panContact.Controls.Add(this.label20);
-            this.panContact.Controls.Add(this.label21);
-            this.panContact.Controls.Add(this.label22);
+            this.panContact.Controls.Add(this.lblCTemail);
+            this.panContact.Controls.Add(this.lblCTcity);
+            this.panContact.Controls.Add(this.lblCTzipcode);
+            this.panContact.Controls.Add(this.lblCTaddress);
+            this.panContact.Controls.Add(this.lblCTgender);
+            this.panContact.Controls.Add(this.lblCTsecuritynr);
+            this.panContact.Controls.Add(this.lblCTlastname);
+            this.panContact.Controls.Add(this.lblCTfirstname);
             this.panContact.Controls.Add(this.txtCTfirstname);
-            this.panContact.Controls.Add(this.txtMemberIdContact);
-            this.panContact.Controls.Add(this.lblMemberIdContact);
             this.panContact.Controls.Add(this.lblCTTitle);
             this.panContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panContact.Location = new System.Drawing.Point(0, 24);
-            this.panContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panContact.Margin = new System.Windows.Forms.Padding(2);
             this.panContact.Name = "panContact";
             this.panContact.Size = new System.Drawing.Size(727, 408);
             this.panContact.TabIndex = 38;
             // 
-            // txtMemberIdContact
+            // button2
             // 
-            this.txtMemberIdContact.Enabled = false;
-            this.txtMemberIdContact.Location = new System.Drawing.Point(484, 352);
-            this.txtMemberIdContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtMemberIdContact.Name = "txtMemberIdContact";
-            this.txtMemberIdContact.Size = new System.Drawing.Size(119, 20);
-            this.txtMemberIdContact.TabIndex = 66;
+            this.button2.Location = new System.Drawing.Point(615, 17);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(70, 25);
+            this.button2.TabIndex = 87;
+            this.button2.Text = "Till Lista >";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
-            // lblMemberIdContact
+            // txtCTcellphone
             // 
-            this.lblMemberIdContact.AutoSize = true;
-            this.lblMemberIdContact.Location = new System.Drawing.Point(394, 357);
-            this.lblMemberIdContact.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblMemberIdContact.Name = "lblMemberIdContact";
-            this.lblMemberIdContact.Size = new System.Drawing.Size(131, 20);
-            this.lblMemberIdContact.TabIndex = 65;
-            this.lblMemberIdContact.Text = "Medlemsnummer";
+            this.txtCTcellphone.Location = new System.Drawing.Point(97, 354);
+            this.txtCTcellphone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCTcellphone.Name = "txtCTcellphone";
+            this.txtCTcellphone.Size = new System.Drawing.Size(150, 20);
+            this.txtCTcellphone.TabIndex = 84;
+            this.txtCTcellphone.Tag = "Mobilnummer";
+            // 
+            // txtCTphone
+            // 
+            this.txtCTphone.Location = new System.Drawing.Point(97, 323);
+            this.txtCTphone.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCTphone.Name = "txtCTphone";
+            this.txtCTphone.Size = new System.Drawing.Size(150, 20);
+            this.txtCTphone.TabIndex = 83;
+            this.txtCTphone.Tag = "Telefonnummer";
+            // 
+            // lblCTmobile
+            // 
+            this.lblCTmobile.AutoSize = true;
+            this.lblCTmobile.Location = new System.Drawing.Point(12, 357);
+            this.lblCTmobile.Name = "lblCTmobile";
+            this.lblCTmobile.Size = new System.Drawing.Size(69, 13);
+            this.lblCTmobile.TabIndex = 86;
+            this.lblCTmobile.Text = "Mobilnummer";
+            // 
+            // lblCTphone
+            // 
+            this.lblCTphone.AutoSize = true;
+            this.lblCTphone.Location = new System.Drawing.Point(12, 328);
+            this.lblCTphone.Name = "lblCTphone";
+            this.lblCTphone.Size = new System.Drawing.Size(80, 13);
+            this.lblCTphone.TabIndex = 85;
+            this.lblCTphone.Text = "Telefonnummer";
+            // 
+            // txtCTemail
+            // 
+            this.txtCTemail.Location = new System.Drawing.Point(97, 269);
+            this.txtCTemail.Name = "txtCTemail";
+            this.txtCTemail.Size = new System.Drawing.Size(150, 20);
+            this.txtCTemail.TabIndex = 81;
+            this.txtCTemail.Tag = "E-post";
+            // 
+            // cmbCTgender
+            // 
+            this.cmbCTgender.FormattingEnabled = true;
+            this.cmbCTgender.Items.AddRange(new object[] {
+            "Man",
+            "Kvinna"});
+            this.cmbCTgender.Location = new System.Drawing.Point(97, 147);
+            this.cmbCTgender.Name = "cmbCTgender";
+            this.cmbCTgender.Size = new System.Drawing.Size(150, 21);
+            this.cmbCTgender.TabIndex = 72;
+            // 
+            // txtCTcity
+            // 
+            this.txtCTcity.Location = new System.Drawing.Point(97, 238);
+            this.txtCTcity.Name = "txtCTcity";
+            this.txtCTcity.Size = new System.Drawing.Size(150, 20);
+            this.txtCTcity.TabIndex = 78;
+            this.txtCTcity.Tag = "Stad";
+            // 
+            // txtCTzipcode
+            // 
+            this.txtCTzipcode.Location = new System.Drawing.Point(97, 208);
+            this.txtCTzipcode.Name = "txtCTzipcode";
+            this.txtCTzipcode.Size = new System.Drawing.Size(150, 20);
+            this.txtCTzipcode.TabIndex = 76;
+            this.txtCTzipcode.Tag = "Postnummer";
+            // 
+            // txtCTaddress
+            // 
+            this.txtCTaddress.Location = new System.Drawing.Point(97, 176);
+            this.txtCTaddress.Name = "txtCTaddress";
+            this.txtCTaddress.Size = new System.Drawing.Size(150, 20);
+            this.txtCTaddress.TabIndex = 74;
+            this.txtCTaddress.Tag = "Adress";
+            // 
+            // txtCTSecuritynr
+            // 
+            this.txtCTSecuritynr.Location = new System.Drawing.Point(97, 120);
+            this.txtCTSecuritynr.Name = "txtCTSecuritynr";
+            this.txtCTSecuritynr.Size = new System.Drawing.Size(150, 20);
+            this.txtCTSecuritynr.TabIndex = 71;
+            this.txtCTSecuritynr.Tag = "Personnummer";
+            // 
+            // txtCTlastname
+            // 
+            this.txtCTlastname.Location = new System.Drawing.Point(97, 92);
+            this.txtCTlastname.Name = "txtCTlastname";
+            this.txtCTlastname.Size = new System.Drawing.Size(150, 20);
+            this.txtCTlastname.TabIndex = 68;
+            this.txtCTlastname.Tag = "Efternamn";
+            // 
+            // lblCTemail
+            // 
+            this.lblCTemail.AutoSize = true;
+            this.lblCTemail.Location = new System.Drawing.Point(14, 275);
+            this.lblCTemail.Name = "lblCTemail";
+            this.lblCTemail.Size = new System.Drawing.Size(37, 13);
+            this.lblCTemail.TabIndex = 82;
+            this.lblCTemail.Text = "E-post";
+            // 
+            // lblCTcity
+            // 
+            this.lblCTcity.AutoSize = true;
+            this.lblCTcity.Location = new System.Drawing.Point(12, 245);
+            this.lblCTcity.Name = "lblCTcity";
+            this.lblCTcity.Size = new System.Drawing.Size(29, 13);
+            this.lblCTcity.TabIndex = 80;
+            this.lblCTcity.Text = "Stad";
+            // 
+            // lblCTzipcode
+            // 
+            this.lblCTzipcode.AutoSize = true;
+            this.lblCTzipcode.Location = new System.Drawing.Point(12, 213);
+            this.lblCTzipcode.Name = "lblCTzipcode";
+            this.lblCTzipcode.Size = new System.Drawing.Size(65, 13);
+            this.lblCTzipcode.TabIndex = 79;
+            this.lblCTzipcode.Text = "Postnummer";
+            // 
+            // lblCTaddress
+            // 
+            this.lblCTaddress.AutoSize = true;
+            this.lblCTaddress.Location = new System.Drawing.Point(12, 179);
+            this.lblCTaddress.Name = "lblCTaddress";
+            this.lblCTaddress.Size = new System.Drawing.Size(39, 13);
+            this.lblCTaddress.TabIndex = 77;
+            this.lblCTaddress.Text = "Adress";
+            // 
+            // lblCTgender
+            // 
+            this.lblCTgender.AutoSize = true;
+            this.lblCTgender.Location = new System.Drawing.Point(12, 149);
+            this.lblCTgender.Name = "lblCTgender";
+            this.lblCTgender.Size = new System.Drawing.Size(26, 13);
+            this.lblCTgender.TabIndex = 75;
+            this.lblCTgender.Text = "Kön";
+            // 
+            // lblCTsecuritynr
+            // 
+            this.lblCTsecuritynr.AutoSize = true;
+            this.lblCTsecuritynr.Location = new System.Drawing.Point(12, 123);
+            this.lblCTsecuritynr.Name = "lblCTsecuritynr";
+            this.lblCTsecuritynr.Size = new System.Drawing.Size(77, 13);
+            this.lblCTsecuritynr.TabIndex = 73;
+            this.lblCTsecuritynr.Text = "Personnummer";
+            // 
+            // lblCTlastname
+            // 
+            this.lblCTlastname.AutoSize = true;
+            this.lblCTlastname.Location = new System.Drawing.Point(12, 93);
+            this.lblCTlastname.Name = "lblCTlastname";
+            this.lblCTlastname.Size = new System.Drawing.Size(55, 13);
+            this.lblCTlastname.TabIndex = 70;
+            this.lblCTlastname.Text = "Efternamn";
+            // 
+            // lblCTfirstname
+            // 
+            this.lblCTfirstname.AutoSize = true;
+            this.lblCTfirstname.Location = new System.Drawing.Point(12, 66);
+            this.lblCTfirstname.Name = "lblCTfirstname";
+            this.lblCTfirstname.Size = new System.Drawing.Size(48, 13);
+            this.lblCTfirstname.TabIndex = 69;
+            this.lblCTfirstname.Text = "Förnamn";
+            // 
+            // txtCTfirstname
+            // 
+            this.txtCTfirstname.Location = new System.Drawing.Point(97, 63);
+            this.txtCTfirstname.Name = "txtCTfirstname";
+            this.txtCTfirstname.Size = new System.Drawing.Size(150, 20);
+            this.txtCTfirstname.TabIndex = 67;
+            this.txtCTfirstname.Tag = "Förnamn";
             // 
             // lblCTTitle
             // 
@@ -587,16 +763,16 @@
             // panMember
             // 
             this.panMember.Controls.Add(this.txtMemberId);
+            this.panMember.Controls.Add(this.btnCreateNewMember);
             this.panMember.Controls.Add(this.btnViewList);
             this.panMember.Controls.Add(this.lblMemberID);
             this.panMember.Controls.Add(this.btnContact);
-            this.panMember.Controls.Add(this.btnSave);
+            this.panMember.Controls.Add(this.btnMemberSave);
             this.panMember.Controls.Add(this.lblCreateNewMember);
             this.panMember.Controls.Add(this.checkPayed);
             this.panMember.Controls.Add(this.checkBoxPicture);
             this.panMember.Controls.Add(this.checkBoxLeader);
             this.panMember.Controls.Add(this.btnCancel);
-            this.panMember.Controls.Add(this.btnCreateNewMember);
             this.panMember.Controls.Add(this.cmbMembership);
             this.panMember.Controls.Add(this.txtResponsibility);
             this.panMember.Controls.Add(this.lblMembership);
@@ -627,18 +803,6 @@
             this.panMember.Size = new System.Drawing.Size(727, 408);
             this.panMember.TabIndex = 1;
             // 
-            // btnViewList
-            // 
-            this.btnViewList.Location = new System.Drawing.Point(615, 17);
-            this.btnViewList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnViewList.Name = "btnViewList";
-            this.btnViewList.Size = new System.Drawing.Size(70, 25);
-            this.btnViewList.TabIndex = 46;
-            this.btnViewList.Text = "Till Lista >";
-            this.btnViewList.UseVisualStyleBackColor = true;
-            this.btnViewList.Visible = false;
-            this.btnViewList.Click += new System.EventHandler(this.btnViewList_Click);
-            // 
             // txtMemberId
             // 
             this.txtMemberId.Enabled = false;
@@ -648,6 +812,18 @@
             this.txtMemberId.Size = new System.Drawing.Size(46, 22);
             this.txtMemberId.TabIndex = 45;
             this.txtMemberId.Tag = "Medlemsnummer";
+            // 
+            // btnViewList
+            // 
+            this.btnViewList.Location = new System.Drawing.Point(615, 17);
+            this.btnViewList.Margin = new System.Windows.Forms.Padding(2);
+            this.btnViewList.Name = "btnViewList";
+            this.btnViewList.Size = new System.Drawing.Size(70, 25);
+            this.btnViewList.TabIndex = 46;
+            this.btnViewList.Text = "Till Lista >";
+            this.btnViewList.UseVisualStyleBackColor = true;
+            this.btnViewList.Visible = false;
+            this.btnViewList.Click += new System.EventHandler(this.btnViewList_Click);
             // 
             // lblMemberID
             // 
@@ -662,7 +838,7 @@
             // 
             // btnContact
             // 
-            this.btnContact.Location = new System.Drawing.Point(520, 312);
+            this.btnContact.Location = new System.Drawing.Point(561, 322);
             this.btnContact.Name = "btnContact";
             this.btnContact.Size = new System.Drawing.Size(75, 25);
             this.btnContact.TabIndex = 19;
@@ -670,15 +846,15 @@
             this.btnContact.UseVisualStyleBackColor = true;
             this.btnContact.Click += new System.EventHandler(this.btnContact_Click);
             // 
-            // btnSave
+            // btnMemberSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(433, 347);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(65, 25);
-            this.btnSave.TabIndex = 17;
-            this.btnSave.Text = "Spara";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnMemberSave.Location = new System.Drawing.Point(480, 351);
+            this.btnMemberSave.Name = "btnMemberSave";
+            this.btnMemberSave.Size = new System.Drawing.Size(65, 25);
+            this.btnMemberSave.TabIndex = 17;
+            this.btnMemberSave.Text = "Spara";
+            this.btnMemberSave.UseVisualStyleBackColor = true;
+            this.btnMemberSave.Click += new System.EventHandler(this.btnMemberSave_Click);
             // 
             // lblCreateNewMember
             // 
@@ -695,7 +871,7 @@
             // 
             this.checkPayed.AutoSize = true;
             this.checkPayed.Location = new System.Drawing.Point(439, 175);
-            this.checkPayed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkPayed.Margin = new System.Windows.Forms.Padding(2);
             this.checkPayed.Name = "checkPayed";
             this.checkPayed.Size = new System.Drawing.Size(126, 17);
             this.checkPayed.TabIndex = 16;
@@ -706,7 +882,7 @@
             // 
             this.checkBoxPicture.AutoSize = true;
             this.checkBoxPicture.Location = new System.Drawing.Point(439, 148);
-            this.checkBoxPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxPicture.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxPicture.Name = "checkBoxPicture";
             this.checkBoxPicture.Size = new System.Drawing.Size(76, 17);
             this.checkBoxPicture.TabIndex = 15;
@@ -717,7 +893,7 @@
             // 
             this.checkBoxLeader.AutoSize = true;
             this.checkBoxLeader.Location = new System.Drawing.Point(439, 120);
-            this.checkBoxLeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxLeader.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxLeader.Name = "checkBoxLeader";
             this.checkBoxLeader.Size = new System.Drawing.Size(59, 17);
             this.checkBoxLeader.TabIndex = 14;
@@ -726,7 +902,7 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(520, 347);
+            this.btnCancel.Location = new System.Drawing.Point(561, 351);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 25);
             this.btnCancel.TabIndex = 20;
@@ -736,7 +912,7 @@
             // 
             // btnCreateNewMember
             // 
-            this.btnCreateNewMember.Location = new System.Drawing.Point(397, 347);
+            this.btnCreateNewMember.Location = new System.Drawing.Point(444, 351);
             this.btnCreateNewMember.Name = "btnCreateNewMember";
             this.btnCreateNewMember.Size = new System.Drawing.Size(101, 25);
             this.btnCreateNewMember.TabIndex = 18;
@@ -782,7 +958,7 @@
             // txtCellphone
             // 
             this.txtCellphone.Location = new System.Drawing.Point(97, 354);
-            this.txtCellphone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCellphone.Margin = new System.Windows.Forms.Padding(2);
             this.txtCellphone.Name = "txtCellphone";
             this.txtCellphone.Size = new System.Drawing.Size(150, 20);
             this.txtCellphone.TabIndex = 11;
@@ -791,7 +967,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(97, 323);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(150, 20);
             this.txtPhone.TabIndex = 9;
@@ -963,7 +1139,7 @@
             this.panViewMember.Controls.Add(this.dgrViewMember);
             this.panViewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panViewMember.Location = new System.Drawing.Point(0, 24);
-            this.panViewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panViewMember.Margin = new System.Windows.Forms.Padding(2);
             this.panViewMember.Name = "panViewMember";
             this.panViewMember.Size = new System.Drawing.Size(727, 408);
             this.panViewMember.TabIndex = 9;
@@ -1005,7 +1181,7 @@
             // txtMemberSearch
             // 
             this.txtMemberSearch.Location = new System.Drawing.Point(473, 13);
-            this.txtMemberSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberSearch.Name = "txtMemberSearch";
             this.txtMemberSearch.Size = new System.Drawing.Size(163, 20);
             this.txtMemberSearch.TabIndex = 1;
@@ -1017,7 +1193,7 @@
             this.dgrViewMember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrViewMember.Location = new System.Drawing.Point(11, 49);
-            this.dgrViewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrViewMember.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewMember.Name = "dgrViewMember";
             this.dgrViewMember.ReadOnly = true;
             this.dgrViewMember.Size = new System.Drawing.Size(703, 344);
@@ -1059,7 +1235,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(473, 14);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(163, 20);
             this.textBox2.TabIndex = 6;
@@ -1071,7 +1247,7 @@
             this.dgrViewTGGroupList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewTGGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrViewTGGroupList.Location = new System.Drawing.Point(11, 50);
-            this.dgrViewTGGroupList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrViewTGGroupList.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewTGGroupList.Name = "dgrViewTGGroupList";
             this.dgrViewTGGroupList.ReadOnly = true;
             this.dgrViewTGGroupList.Size = new System.Drawing.Size(703, 386);
@@ -1087,191 +1263,61 @@
             this.panStart.Size = new System.Drawing.Size(727, 408);
             this.panStart.TabIndex = 46;
             // 
-            // txtCTcellphone
+            // btnNewContact
             // 
-            this.txtCTcellphone.Location = new System.Drawing.Point(97, 354);
-            this.txtCTcellphone.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCTcellphone.Name = "txtCTcellphone";
-            this.txtCTcellphone.Size = new System.Drawing.Size(150, 20);
-            this.txtCTcellphone.TabIndex = 84;
-            this.txtCTcellphone.Tag = "Mobilnummer";
+            this.btnNewContact.Location = new System.Drawing.Point(444, 351);
+            this.btnNewContact.Name = "btnNewContact";
+            this.btnNewContact.Size = new System.Drawing.Size(101, 25);
+            this.btnNewContact.TabIndex = 88;
+            this.btnNewContact.Text = "Skapa ny kontakt";
+            this.btnNewContact.UseVisualStyleBackColor = true;
             // 
-            // txtCTphone
+            // dgrCTsearchmedlem
             // 
-            this.txtCTphone.Location = new System.Drawing.Point(97, 323);
-            this.txtCTphone.Margin = new System.Windows.Forms.Padding(2);
-            this.txtCTphone.Name = "txtCTphone";
-            this.txtCTphone.Size = new System.Drawing.Size(150, 20);
-            this.txtCTphone.TabIndex = 83;
-            this.txtCTphone.Tag = "Telefonnummer";
+            this.dgrCTsearchmedlem.AllowUserToAddRows = false;
+            this.dgrCTsearchmedlem.AllowUserToDeleteRows = false;
+            this.dgrCTsearchmedlem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrCTsearchmedlem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrCTsearchmedlem.Location = new System.Drawing.Point(313, 90);
+            this.dgrCTsearchmedlem.Name = "dgrCTsearchmedlem";
+            this.dgrCTsearchmedlem.Size = new System.Drawing.Size(323, 213);
+            this.dgrCTsearchmedlem.TabIndex = 89;
             // 
-            // label1
+            // btnCTsearch
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 357);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 13);
-            this.label1.TabIndex = 86;
-            this.label1.Text = "Mobilnummer";
+            this.btnCTsearch.Location = new System.Drawing.Point(584, 61);
+            this.btnCTsearch.Name = "btnCTsearch";
+            this.btnCTsearch.Size = new System.Drawing.Size(51, 23);
+            this.btnCTsearch.TabIndex = 90;
+            this.btnCTsearch.Text = "Sök";
+            this.btnCTsearch.UseVisualStyleBackColor = true;
+            this.btnCTsearch.Click += new System.EventHandler(this.btnCTsearch_Click);
             // 
-            // label2
+            // txtCTsearch
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 328);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 13);
-            this.label2.TabIndex = 85;
-            this.label2.Text = "Telefonnummer";
+            this.txtCTsearch.Location = new System.Drawing.Point(364, 63);
+            this.txtCTsearch.Name = "txtCTsearch";
+            this.txtCTsearch.Size = new System.Drawing.Size(213, 20);
+            this.txtCTsearch.TabIndex = 91;
             // 
-            // txtCTemail
+            // lblCTsearch
             // 
-            this.txtCTemail.Location = new System.Drawing.Point(97, 269);
-            this.txtCTemail.Name = "txtCTemail";
-            this.txtCTemail.Size = new System.Drawing.Size(150, 20);
-            this.txtCTemail.TabIndex = 81;
-            this.txtCTemail.Tag = "E-post";
+            this.lblCTsearch.AutoSize = true;
+            this.lblCTsearch.Location = new System.Drawing.Point(293, 66);
+            this.lblCTsearch.Name = "lblCTsearch";
+            this.lblCTsearch.Size = new System.Drawing.Size(65, 13);
+            this.lblCTsearch.TabIndex = 92;
+            this.lblCTsearch.Text = "Sök medlem";
             // 
-            // cmbCTgender
+            // btnCTcancel
             // 
-            this.cmbCTgender.FormattingEnabled = true;
-            this.cmbCTgender.Items.AddRange(new object[] {
-            "Man",
-            "Kvinna"});
-            this.cmbCTgender.Location = new System.Drawing.Point(97, 147);
-            this.cmbCTgender.Name = "cmbCTgender";
-            this.cmbCTgender.Size = new System.Drawing.Size(150, 21);
-            this.cmbCTgender.TabIndex = 72;
-            // 
-            // txtCTcity
-            // 
-            this.txtCTcity.Location = new System.Drawing.Point(97, 238);
-            this.txtCTcity.Name = "txtCTcity";
-            this.txtCTcity.Size = new System.Drawing.Size(150, 20);
-            this.txtCTcity.TabIndex = 78;
-            this.txtCTcity.Tag = "Stad";
-            // 
-            // txtCTzipcode
-            // 
-            this.txtCTzipcode.Location = new System.Drawing.Point(97, 208);
-            this.txtCTzipcode.Name = "txtCTzipcode";
-            this.txtCTzipcode.Size = new System.Drawing.Size(150, 20);
-            this.txtCTzipcode.TabIndex = 76;
-            this.txtCTzipcode.Tag = "Postnummer";
-            // 
-            // txtCTaddress
-            // 
-            this.txtCTaddress.Location = new System.Drawing.Point(97, 176);
-            this.txtCTaddress.Name = "txtCTaddress";
-            this.txtCTaddress.Size = new System.Drawing.Size(150, 20);
-            this.txtCTaddress.TabIndex = 74;
-            this.txtCTaddress.Tag = "Adress";
-            // 
-            // txtCTSecuritynr
-            // 
-            this.txtCTSecuritynr.Location = new System.Drawing.Point(97, 120);
-            this.txtCTSecuritynr.Name = "txtCTSecuritynr";
-            this.txtCTSecuritynr.Size = new System.Drawing.Size(150, 20);
-            this.txtCTSecuritynr.TabIndex = 71;
-            this.txtCTSecuritynr.Tag = "Personnummer";
-            // 
-            // txtCTlastname
-            // 
-            this.txtCTlastname.Location = new System.Drawing.Point(97, 92);
-            this.txtCTlastname.Name = "txtCTlastname";
-            this.txtCTlastname.Size = new System.Drawing.Size(150, 20);
-            this.txtCTlastname.TabIndex = 68;
-            this.txtCTlastname.Tag = "Efternamn";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(14, 275);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(37, 13);
-            this.label15.TabIndex = 82;
-            this.label15.Text = "E-post";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(12, 245);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(29, 13);
-            this.label16.TabIndex = 80;
-            this.label16.Text = "Stad";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(12, 213);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 13);
-            this.label17.TabIndex = 79;
-            this.label17.Text = "Postnummer";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(12, 179);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(39, 13);
-            this.label18.TabIndex = 77;
-            this.label18.Text = "Adress";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(12, 149);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(26, 13);
-            this.label19.TabIndex = 75;
-            this.label19.Text = "Kön";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(12, 123);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(77, 13);
-            this.label20.TabIndex = 73;
-            this.label20.Text = "Personnummer";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(12, 93);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(55, 13);
-            this.label21.TabIndex = 70;
-            this.label21.Text = "Efternamn";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(12, 66);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(48, 13);
-            this.label22.TabIndex = 69;
-            this.label22.Text = "Förnamn";
-            // 
-            // txtCTfirstname
-            // 
-            this.txtCTfirstname.Location = new System.Drawing.Point(97, 63);
-            this.txtCTfirstname.Name = "txtCTfirstname";
-            this.txtCTfirstname.Size = new System.Drawing.Size(150, 20);
-            this.txtCTfirstname.TabIndex = 67;
-            this.txtCTfirstname.Tag = "Förnamn";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(615, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 25);
-            this.button2.TabIndex = 87;
-            this.button2.Text = "Till Lista >";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.btnCTcancel.Location = new System.Drawing.Point(561, 351);
+            this.btnCTcancel.Name = "btnCTcancel";
+            this.btnCTcancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCTcancel.TabIndex = 93;
+            this.btnCTcancel.Text = "Avbryt";
+            this.btnCTcancel.UseVisualStyleBackColor = true;
+            this.btnCTcancel.Click += new System.EventHandler(this.btnCTcancel_Click);
             // 
             // frmMain
             // 
@@ -1303,6 +1349,7 @@
             this.panTGGroupList.ResumeLayout(false);
             this.panTGGroupList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrCTsearchmedlem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1392,20 +1439,18 @@
         private System.Windows.Forms.Button btnTGCreate;
         private System.Windows.Forms.Button btnTGLevel;
         private System.Windows.Forms.Button btnTGDiciplin;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnMemberSave;
         private System.Windows.Forms.Button btnContact;
         private System.Windows.Forms.Label lblMemberID;
         private System.Windows.Forms.TextBox txtMemberId;
-        private System.Windows.Forms.TextBox txtMemberIdContact;
-        private System.Windows.Forms.Label lblMemberIdContact;
         private System.Windows.Forms.Panel panStart;
         private System.Windows.Forms.ComboBox cmbFilter;
         private System.Windows.Forms.Button btnViewList;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.TextBox txtCTcellphone;
         private System.Windows.Forms.TextBox txtCTphone;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblCTmobile;
+        private System.Windows.Forms.Label lblCTphone;
         private System.Windows.Forms.TextBox txtCTemail;
         private System.Windows.Forms.ComboBox cmbCTgender;
         private System.Windows.Forms.TextBox txtCTcity;
@@ -1413,15 +1458,21 @@
         private System.Windows.Forms.TextBox txtCTaddress;
         private System.Windows.Forms.TextBox txtCTSecuritynr;
         private System.Windows.Forms.TextBox txtCTlastname;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label lblCTemail;
+        private System.Windows.Forms.Label lblCTcity;
+        private System.Windows.Forms.Label lblCTzipcode;
+        private System.Windows.Forms.Label lblCTaddress;
+        private System.Windows.Forms.Label lblCTgender;
+        private System.Windows.Forms.Label lblCTsecuritynr;
+        private System.Windows.Forms.Label lblCTlastname;
+        private System.Windows.Forms.Label lblCTfirstname;
         private System.Windows.Forms.TextBox txtCTfirstname;
+        private System.Windows.Forms.Button btnCTcancel;
+        private System.Windows.Forms.Label lblCTsearch;
+        private System.Windows.Forms.TextBox txtCTsearch;
+        private System.Windows.Forms.Button btnCTsearch;
+        private System.Windows.Forms.DataGridView dgrCTsearchmedlem;
+        private System.Windows.Forms.Button btnNewContact;
     }
 }
 

@@ -3,11 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace KulochBus
 {
     class Contact:Person
     {
+        public DataTable GetMemberContact(string search)
+        {
+            Sql querry = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql = "SELECT personid, firstname, lastname FROM person WHERE " +
+                "firstname like '%" + search + "%' OR " +
+                "lastname like '%" + search + "%'";
+
+            dt = querry.Select(sql);
+
+            return dt;
+        }
+
         //ärver från person och skapar kontakt (persontabell och telefontabell)
         //public void CreateContact()
         //{
