@@ -68,5 +68,30 @@ namespace KulochBus
         {
             Close();
         }
+
+        private void txtLevel_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbnLevelAdd_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rbnLevelRemove_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblLevelTitle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgrViewLevels_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
