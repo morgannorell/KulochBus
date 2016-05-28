@@ -195,8 +195,6 @@ namespace KulochBus
         {
             HidePanels();
             panContact.Show();
-            txtMemberIdContact.Text = txtMemberId.Text;
-            txtMemberIdContact.Enabled = false;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -315,7 +313,6 @@ namespace KulochBus
         {
             HidePanels();
             panContact.Show();
-            txtMemberIdContact.Enabled = true;
         }
 
         private void btnCTsearch_Click(object sender, EventArgs e)
@@ -346,19 +343,16 @@ namespace KulochBus
 
             Contact ct = new Contact()
             {
-                //MemberId = txtMemberIdContact.Text,
-                //Firstname = txtContactFn.Text,
-                //LastName = txtContactLn.Text,
-                //SecurityNr = txtContactSc.Text,
-                //Address = txtContactAddress.Text,
-                //Zipcode = txtContactZipcode.Text,
-                //City = txtContactCity.Text,
-                //Email = txtContactEmail.Text,
-                //Gender = comboBoxContactGender.SelectedItem.ToString(),
-                //Homeareacode = txtContactPAC.Text,
-                //Homephone = txtContactPhone.Text,
-                //Mobilecode = txtContactMPAC.Text,
-                //Mobilephone = txtContactMobilephone.Text
+                Firstname = txtCTfirstname.Text,
+                LastName = txtCTlastname.Text,                
+                SecurityNr = txtCTSecuritynr.Text,
+                Gender = cmbCTgender.SelectedItem.ToString(),
+                Address = txtCTaddress.Text,
+                Zipcode = txtCTzipcode.Text,
+                City = txtCTcity.Text,
+                Email = txtCTemail.Text,                
+                Phone = txtCTphone.Text,
+                Cellphone = txtCTcellphone.Text,
             };
 
             //ct.CreateContact();
@@ -413,21 +407,10 @@ namespace KulochBus
             frmLevel level = new frmLevel();
             level.Show();
         }
-        
-        private void medlemToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            HidePanels();
-            panViewMember.Show();
-            string condition = "";
-            string search = "";
-            ShowMemberlist(condition, search);
 
-        }
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        
+        }        
     }
 }

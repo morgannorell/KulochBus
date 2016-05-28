@@ -69,6 +69,12 @@
             this.lblTraningTitle = new System.Windows.Forms.Label();
             this.btnTGCreate = new System.Windows.Forms.Button();
             this.panContact = new System.Windows.Forms.Panel();
+            this.btnCTcancel = new System.Windows.Forms.Button();
+            this.lblCTsearch = new System.Windows.Forms.Label();
+            this.txtCTsearch = new System.Windows.Forms.TextBox();
+            this.btnCTsearch = new System.Windows.Forms.Button();
+            this.dgrCTsearchmedlem = new System.Windows.Forms.DataGridView();
+            this.btnNewContact = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.txtCTcellphone = new System.Windows.Forms.TextBox();
             this.txtCTphone = new System.Windows.Forms.TextBox();
@@ -93,6 +99,7 @@
             this.lblCTTitle = new System.Windows.Forms.Label();
             this.panMember = new System.Windows.Forms.Panel();
             this.txtMemberId = new System.Windows.Forms.TextBox();
+            this.btnCreateNewMember = new System.Windows.Forms.Button();
             this.btnViewList = new System.Windows.Forms.Button();
             this.lblMemberID = new System.Windows.Forms.Label();
             this.btnContact = new System.Windows.Forms.Button();
@@ -102,7 +109,6 @@
             this.checkBoxPicture = new System.Windows.Forms.CheckBox();
             this.checkBoxLeader = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnCreateNewMember = new System.Windows.Forms.Button();
             this.cmbMembership = new System.Windows.Forms.ComboBox();
             this.txtResponsibility = new System.Windows.Forms.TextBox();
             this.lblMembership = new System.Windows.Forms.Label();
@@ -139,22 +145,16 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
-            this.btnNewContact = new System.Windows.Forms.Button();
-            this.dgrCTsearchmedlem = new System.Windows.Forms.DataGridView();
-            this.btnCTsearch = new System.Windows.Forms.Button();
-            this.txtCTsearch = new System.Windows.Forms.TextBox();
-            this.lblCTsearch = new System.Windows.Forms.Label();
-            this.btnCTcancel = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
             this.panContact.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrCTsearchmedlem)).BeginInit();
             this.panMember.SuspendLayout();
             this.panViewMember.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewMember)).BeginInit();
             this.panTGGroupList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrCTsearchmedlem)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -194,28 +194,28 @@
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.närvaroToolStripMenuItem.Text = "Närvaro...";
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.närvaroToolStripMenuItem.Text = "Närvarolista";
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medlemToolStripMenuItem.Text = "Medlem";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.kontaktToolStripMenuItem.Text = "Kontakt...";
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.kontaktToolStripMenuItem.Text = "Kontakt";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp...";
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
@@ -238,7 +238,6 @@
             this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
             this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
             this.medlemToolStripMenuItem1.Text = "Medlem";
-            this.medlemToolStripMenuItem1.Click += new System.EventHandler(this.medlemToolStripMenuItem1_Click);
             // 
             // visaToolStripMenuItem
             // 
@@ -303,6 +302,7 @@
             // 
             // panTGGroup
             // 
+            this.panTGGroup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panTGGroup.Controls.Add(this.btnTGLevel);
             this.panTGGroup.Controls.Add(this.btnTGDiciplin);
             this.panTGGroup.Controls.Add(this.rbnTGRemove);
@@ -528,6 +528,7 @@
             // 
             // panContact
             // 
+            this.panContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panContact.Controls.Add(this.btnCTcancel);
             this.panContact.Controls.Add(this.lblCTsearch);
             this.panContact.Controls.Add(this.txtCTsearch);
@@ -562,6 +563,63 @@
             this.panContact.Name = "panContact";
             this.panContact.Size = new System.Drawing.Size(727, 408);
             this.panContact.TabIndex = 38;
+            // 
+            // btnCTcancel
+            // 
+            this.btnCTcancel.Location = new System.Drawing.Point(561, 351);
+            this.btnCTcancel.Name = "btnCTcancel";
+            this.btnCTcancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCTcancel.TabIndex = 93;
+            this.btnCTcancel.Text = "Avbryt";
+            this.btnCTcancel.UseVisualStyleBackColor = true;
+            this.btnCTcancel.Click += new System.EventHandler(this.btnCTcancel_Click);
+            // 
+            // lblCTsearch
+            // 
+            this.lblCTsearch.AutoSize = true;
+            this.lblCTsearch.Location = new System.Drawing.Point(310, 66);
+            this.lblCTsearch.Name = "lblCTsearch";
+            this.lblCTsearch.Size = new System.Drawing.Size(65, 13);
+            this.lblCTsearch.TabIndex = 92;
+            this.lblCTsearch.Text = "Sök medlem";
+            // 
+            // txtCTsearch
+            // 
+            this.txtCTsearch.Location = new System.Drawing.Point(375, 63);
+            this.txtCTsearch.Name = "txtCTsearch";
+            this.txtCTsearch.Size = new System.Drawing.Size(202, 20);
+            this.txtCTsearch.TabIndex = 91;
+            // 
+            // btnCTsearch
+            // 
+            this.btnCTsearch.Location = new System.Drawing.Point(584, 61);
+            this.btnCTsearch.Name = "btnCTsearch";
+            this.btnCTsearch.Size = new System.Drawing.Size(51, 23);
+            this.btnCTsearch.TabIndex = 90;
+            this.btnCTsearch.Text = "Sök";
+            this.btnCTsearch.UseVisualStyleBackColor = true;
+            this.btnCTsearch.Click += new System.EventHandler(this.btnCTsearch_Click);
+            // 
+            // dgrCTsearchmedlem
+            // 
+            this.dgrCTsearchmedlem.AllowUserToAddRows = false;
+            this.dgrCTsearchmedlem.AllowUserToDeleteRows = false;
+            this.dgrCTsearchmedlem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrCTsearchmedlem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrCTsearchmedlem.Location = new System.Drawing.Point(313, 90);
+            this.dgrCTsearchmedlem.Name = "dgrCTsearchmedlem";
+            this.dgrCTsearchmedlem.Size = new System.Drawing.Size(323, 213);
+            this.dgrCTsearchmedlem.TabIndex = 89;
+            // 
+            // btnNewContact
+            // 
+            this.btnNewContact.Location = new System.Drawing.Point(444, 351);
+            this.btnNewContact.Name = "btnNewContact";
+            this.btnNewContact.Size = new System.Drawing.Size(101, 25);
+            this.btnNewContact.TabIndex = 88;
+            this.btnNewContact.Text = "Skapa ny kontakt";
+            this.btnNewContact.UseVisualStyleBackColor = true;
+            this.btnNewContact.Click += new System.EventHandler(this.btnNewContact_Click);
             // 
             // button2
             // 
@@ -762,6 +820,7 @@
             // 
             // panMember
             // 
+            this.panMember.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panMember.Controls.Add(this.txtMemberId);
             this.panMember.Controls.Add(this.btnCreateNewMember);
             this.panMember.Controls.Add(this.btnViewList);
@@ -812,6 +871,16 @@
             this.txtMemberId.Size = new System.Drawing.Size(46, 22);
             this.txtMemberId.TabIndex = 45;
             this.txtMemberId.Tag = "Medlemsnummer";
+            // 
+            // btnCreateNewMember
+            // 
+            this.btnCreateNewMember.Location = new System.Drawing.Point(444, 351);
+            this.btnCreateNewMember.Name = "btnCreateNewMember";
+            this.btnCreateNewMember.Size = new System.Drawing.Size(101, 25);
+            this.btnCreateNewMember.TabIndex = 18;
+            this.btnCreateNewMember.Text = "Skapa ny medlem";
+            this.btnCreateNewMember.UseVisualStyleBackColor = true;
+            this.btnCreateNewMember.Click += new System.EventHandler(this.btnCreateNewMember_Click);
             // 
             // btnViewList
             // 
@@ -909,16 +978,6 @@
             this.btnCancel.Text = "Avbryt";
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnCreateNewMember
-            // 
-            this.btnCreateNewMember.Location = new System.Drawing.Point(444, 351);
-            this.btnCreateNewMember.Name = "btnCreateNewMember";
-            this.btnCreateNewMember.Size = new System.Drawing.Size(101, 25);
-            this.btnCreateNewMember.TabIndex = 18;
-            this.btnCreateNewMember.Text = "Skapa ny medlem";
-            this.btnCreateNewMember.UseVisualStyleBackColor = true;
-            this.btnCreateNewMember.Click += new System.EventHandler(this.btnCreateNewMember_Click);
             // 
             // cmbMembership
             // 
@@ -1132,6 +1191,7 @@
             // 
             // panViewMember
             // 
+            this.panViewMember.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panViewMember.Controls.Add(this.cmbFilter);
             this.panViewMember.Controls.Add(this.btnMemberSearch);
             this.panViewMember.Controls.Add(this.lblViewMemberTitle);
@@ -1202,6 +1262,7 @@
             // 
             // panTGGroupList
             // 
+            this.panTGGroupList.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panTGGroupList.Controls.Add(this.button1);
             this.panTGGroupList.Controls.Add(this.lblTGGroupListTitle);
             this.panTGGroupList.Controls.Add(this.textBox2);
@@ -1263,73 +1324,17 @@
             this.panStart.Size = new System.Drawing.Size(727, 408);
             this.panStart.TabIndex = 46;
             // 
-            // btnNewContact
-            // 
-            this.btnNewContact.Location = new System.Drawing.Point(444, 351);
-            this.btnNewContact.Name = "btnNewContact";
-            this.btnNewContact.Size = new System.Drawing.Size(101, 25);
-            this.btnNewContact.TabIndex = 88;
-            this.btnNewContact.Text = "Skapa ny kontakt";
-            this.btnNewContact.UseVisualStyleBackColor = true;
-            // 
-            // dgrCTsearchmedlem
-            // 
-            this.dgrCTsearchmedlem.AllowUserToAddRows = false;
-            this.dgrCTsearchmedlem.AllowUserToDeleteRows = false;
-            this.dgrCTsearchmedlem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgrCTsearchmedlem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrCTsearchmedlem.Location = new System.Drawing.Point(313, 90);
-            this.dgrCTsearchmedlem.Name = "dgrCTsearchmedlem";
-            this.dgrCTsearchmedlem.Size = new System.Drawing.Size(323, 213);
-            this.dgrCTsearchmedlem.TabIndex = 89;
-            // 
-            // btnCTsearch
-            // 
-            this.btnCTsearch.Location = new System.Drawing.Point(584, 61);
-            this.btnCTsearch.Name = "btnCTsearch";
-            this.btnCTsearch.Size = new System.Drawing.Size(51, 23);
-            this.btnCTsearch.TabIndex = 90;
-            this.btnCTsearch.Text = "Sök";
-            this.btnCTsearch.UseVisualStyleBackColor = true;
-            this.btnCTsearch.Click += new System.EventHandler(this.btnCTsearch_Click);
-            // 
-            // txtCTsearch
-            // 
-            this.txtCTsearch.Location = new System.Drawing.Point(364, 63);
-            this.txtCTsearch.Name = "txtCTsearch";
-            this.txtCTsearch.Size = new System.Drawing.Size(213, 20);
-            this.txtCTsearch.TabIndex = 91;
-            // 
-            // lblCTsearch
-            // 
-            this.lblCTsearch.AutoSize = true;
-            this.lblCTsearch.Location = new System.Drawing.Point(293, 66);
-            this.lblCTsearch.Name = "lblCTsearch";
-            this.lblCTsearch.Size = new System.Drawing.Size(65, 13);
-            this.lblCTsearch.TabIndex = 92;
-            this.lblCTsearch.Text = "Sök medlem";
-            // 
-            // btnCTcancel
-            // 
-            this.btnCTcancel.Location = new System.Drawing.Point(561, 351);
-            this.btnCTcancel.Name = "btnCTcancel";
-            this.btnCTcancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCTcancel.TabIndex = 93;
-            this.btnCTcancel.Text = "Avbryt";
-            this.btnCTcancel.UseVisualStyleBackColor = true;
-            this.btnCTcancel.Click += new System.EventHandler(this.btnCTcancel_Click);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 432);
             this.Controls.Add(this.panContact);
-            this.Controls.Add(this.panMember);
-            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panStart);
-            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);
+            this.Controls.Add(this.panTGGroup);
+            this.Controls.Add(this.panViewMember);
+            this.Controls.Add(this.panMember);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
@@ -1341,6 +1346,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).EndInit();
             this.panContact.ResumeLayout(false);
             this.panContact.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrCTsearchmedlem)).EndInit();
             this.panMember.ResumeLayout(false);
             this.panMember.PerformLayout();
             this.panViewMember.ResumeLayout(false);
@@ -1349,7 +1355,6 @@
             this.panTGGroupList.ResumeLayout(false);
             this.panTGGroupList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrCTsearchmedlem)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
