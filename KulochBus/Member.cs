@@ -157,5 +157,29 @@ namespace KulochBus
 
             return dt;
         }
+
+        public DataTable GetTGMembers()
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT memberid, firstname, lastname, securitynr FROM member JOIN person ON personid = memberid";
+
+            DataTable dt = new DataTable();
+
+            dt = querry.Select(sql);
+            return dt;
+        }
+
+        public DataTable GetTGLeader()
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT memberid, firstname, lastname, securitynr FROM member JOIN person ON personid = memberid WHERE isleader = true";
+
+            DataTable dt = new DataTable();
+
+            dt = querry.Select(sql);
+            return dt;
+        }
     }
 }

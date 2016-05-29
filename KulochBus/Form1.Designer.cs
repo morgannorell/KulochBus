@@ -53,9 +53,9 @@
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.btnTGLevel = new System.Windows.Forms.Button();
             this.btnTGDiciplin = new System.Windows.Forms.Button();
-            this.rbnTGRemove = new System.Windows.Forms.RadioButton();
-            this.rbnTGAdd = new System.Windows.Forms.RadioButton();
-            this.cmbTGMember = new System.Windows.Forms.ComboBox();
+            this.rbnTGRemoveMember = new System.Windows.Forms.RadioButton();
+            this.rbnTGAddMember = new System.Windows.Forms.RadioButton();
+            this.cmbAddMember = new System.Windows.Forms.ComboBox();
             this.lblTGMisc = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnTGSave = new System.Windows.Forms.Button();
@@ -152,7 +152,14 @@
             this.lblContacts = new System.Windows.Forms.Label();
             this.txtGroupID = new System.Windows.Forms.TextBox();
             this.lblTGMembers = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblGroupID = new System.Windows.Forms.Label();
+            this.dgvAddLeader = new System.Windows.Forms.DataGridView();
+            this.lblLeader = new System.Windows.Forms.Label();
+            this.rbnRemoveLeader = new System.Windows.Forms.RadioButton();
+            this.rbnTGAddLeader = new System.Windows.Forms.RadioButton();
+            this.cmbAddLeader = new System.Windows.Forms.ComboBox();
+            this.btnAddLeader = new System.Windows.Forms.Button();
+            this.btnAddMember = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -166,6 +173,7 @@
             this.panViewContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -199,40 +207,40 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.närvaroToolStripMenuItem.Text = "Närvarolista";
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medlemToolStripMenuItem.Text = "Medlem";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.kontaktToolStripMenuItem.Text = "Kontakt";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -247,7 +255,7 @@
             // medlemToolStripMenuItem1
             // 
             this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
-            this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
+            this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.medlemToolStripMenuItem1.Text = "Medlem";
             // 
             // visaToolStripMenuItem
@@ -322,15 +330,22 @@
             // panTGGroup
             // 
             this.panTGGroup.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panTGGroup.Controls.Add(this.label1);
+            this.panTGGroup.Controls.Add(this.btnAddMember);
+            this.panTGGroup.Controls.Add(this.btnAddLeader);
+            this.panTGGroup.Controls.Add(this.rbnRemoveLeader);
+            this.panTGGroup.Controls.Add(this.rbnTGAddLeader);
+            this.panTGGroup.Controls.Add(this.cmbAddLeader);
+            this.panTGGroup.Controls.Add(this.lblLeader);
+            this.panTGGroup.Controls.Add(this.dgvAddLeader);
+            this.panTGGroup.Controls.Add(this.lblGroupID);
             this.panTGGroup.Controls.Add(this.txtGroupID);
             this.panTGGroup.Controls.Add(this.cmbDisciplin);
             this.panTGGroup.Controls.Add(this.cmbLevel);
             this.panTGGroup.Controls.Add(this.btnTGLevel);
             this.panTGGroup.Controls.Add(this.btnTGDiciplin);
-            this.panTGGroup.Controls.Add(this.rbnTGRemove);
-            this.panTGGroup.Controls.Add(this.rbnTGAdd);
-            this.panTGGroup.Controls.Add(this.cmbTGMember);
+            this.panTGGroup.Controls.Add(this.rbnTGRemoveMember);
+            this.panTGGroup.Controls.Add(this.rbnTGAddMember);
+            this.panTGGroup.Controls.Add(this.cmbAddMember);
             this.panTGGroup.Controls.Add(this.lblTGMisc);
             this.panTGGroup.Controls.Add(this.textBox1);
             this.panTGGroup.Controls.Add(this.lblTGMembers);
@@ -389,35 +404,35 @@
             this.btnTGDiciplin.Visible = false;
             this.btnTGDiciplin.Click += new System.EventHandler(this.btnTGDiciplin_Click);
             // 
-            // rbnTGRemove
+            // rbnTGRemoveMember
             // 
-            this.rbnTGRemove.AutoSize = true;
-            this.rbnTGRemove.Location = new System.Drawing.Point(18, 417);
-            this.rbnTGRemove.Name = "rbnTGRemove";
-            this.rbnTGRemove.Size = new System.Drawing.Size(59, 17);
-            this.rbnTGRemove.TabIndex = 17;
-            this.rbnTGRemove.TabStop = true;
-            this.rbnTGRemove.Text = "Ta bort";
-            this.rbnTGRemove.UseVisualStyleBackColor = true;
+            this.rbnTGRemoveMember.AutoSize = true;
+            this.rbnTGRemoveMember.Location = new System.Drawing.Point(406, 410);
+            this.rbnTGRemoveMember.Name = "rbnTGRemoveMember";
+            this.rbnTGRemoveMember.Size = new System.Drawing.Size(59, 17);
+            this.rbnTGRemoveMember.TabIndex = 17;
+            this.rbnTGRemoveMember.TabStop = true;
+            this.rbnTGRemoveMember.Text = "Ta bort";
+            this.rbnTGRemoveMember.UseVisualStyleBackColor = true;
             // 
-            // rbnTGAdd
+            // rbnTGAddMember
             // 
-            this.rbnTGAdd.AutoSize = true;
-            this.rbnTGAdd.Location = new System.Drawing.Point(18, 396);
-            this.rbnTGAdd.Name = "rbnTGAdd";
-            this.rbnTGAdd.Size = new System.Drawing.Size(65, 17);
-            this.rbnTGAdd.TabIndex = 16;
-            this.rbnTGAdd.TabStop = true;
-            this.rbnTGAdd.Text = "Lägg Till";
-            this.rbnTGAdd.UseVisualStyleBackColor = true;
+            this.rbnTGAddMember.AutoSize = true;
+            this.rbnTGAddMember.Location = new System.Drawing.Point(406, 389);
+            this.rbnTGAddMember.Name = "rbnTGAddMember";
+            this.rbnTGAddMember.Size = new System.Drawing.Size(65, 17);
+            this.rbnTGAddMember.TabIndex = 16;
+            this.rbnTGAddMember.TabStop = true;
+            this.rbnTGAddMember.Text = "Lägg Till";
+            this.rbnTGAddMember.UseVisualStyleBackColor = true;
             // 
-            // cmbTGMember
+            // cmbAddMember
             // 
-            this.cmbTGMember.FormattingEnabled = true;
-            this.cmbTGMember.Location = new System.Drawing.Point(89, 405);
-            this.cmbTGMember.Name = "cmbTGMember";
-            this.cmbTGMember.Size = new System.Drawing.Size(157, 21);
-            this.cmbTGMember.TabIndex = 15;
+            this.cmbAddMember.FormattingEnabled = true;
+            this.cmbAddMember.Location = new System.Drawing.Point(477, 398);
+            this.cmbAddMember.Name = "cmbAddMember";
+            this.cmbAddMember.Size = new System.Drawing.Size(166, 21);
+            this.cmbAddMember.TabIndex = 15;
             // 
             // lblTGMisc
             // 
@@ -435,27 +450,28 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 116);
+            this.textBox1.Size = new System.Drawing.Size(242, 126);
             this.textBox1.TabIndex = 13;
             // 
             // btnTGSave
             // 
-            this.btnTGSave.Location = new System.Drawing.Point(251, 403);
+            this.btnTGSave.Location = new System.Drawing.Point(251, 397);
             this.btnTGSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnTGSave.Name = "btnTGSave";
             this.btnTGSave.Size = new System.Drawing.Size(64, 23);
             this.btnTGSave.TabIndex = 11;
             this.btnTGSave.Text = "Spara";
             this.btnTGSave.UseVisualStyleBackColor = true;
+            this.btnTGSave.Click += new System.EventHandler(this.btnTGSave_Click);
             // 
             // dgrListTGMembers
             // 
             this.dgrListTGMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrListTGMembers.Location = new System.Drawing.Point(335, 47);
+            this.dgrListTGMembers.Location = new System.Drawing.Point(335, 193);
             this.dgrListTGMembers.Margin = new System.Windows.Forms.Padding(2);
             this.dgrListTGMembers.Name = "dgrListTGMembers";
             this.dgrListTGMembers.RowTemplate.Height = 28;
-            this.dgrListTGMembers.Size = new System.Drawing.Size(378, 388);
+            this.dgrListTGMembers.Size = new System.Drawing.Size(378, 190);
             this.dgrListTGMembers.TabIndex = 9;
             // 
             // txtTGDescription
@@ -1355,9 +1371,9 @@
             this.panViewContact.Controls.Add(this.dgrViewContact);
             this.panViewContact.Controls.Add(this.lblContacts);
             this.panViewContact.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panViewContact.Location = new System.Drawing.Point(0, 0);
+            this.panViewContact.Location = new System.Drawing.Point(0, 24);
             this.panViewContact.Name = "panViewContact";
-            this.panViewContact.Size = new System.Drawing.Size(727, 469);
+            this.panViewContact.Size = new System.Drawing.Size(727, 445);
             this.panViewContact.TabIndex = 94;
             // 
             // dgrViewCTmember
@@ -1408,22 +1424,93 @@
             // lblTGMembers
             // 
             this.lblTGMembers.AutoSize = true;
-            this.lblTGMembers.Location = new System.Drawing.Point(332, 28);
+            this.lblTGMembers.Location = new System.Drawing.Point(334, 178);
             this.lblTGMembers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTGMembers.Name = "lblTGMembers";
             this.lblTGMembers.Size = new System.Drawing.Size(61, 13);
             this.lblTGMembers.TabIndex = 12;
             this.lblTGMembers.Text = "Medlemmar";
             // 
-            // label1
+            // lblGroupID
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(609, 24);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "GruppID";
+            this.lblGroupID.AutoSize = true;
+            this.lblGroupID.Location = new System.Drawing.Point(609, 24);
+            this.lblGroupID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGroupID.Name = "lblGroupID";
+            this.lblGroupID.Size = new System.Drawing.Size(47, 13);
+            this.lblGroupID.TabIndex = 50;
+            this.lblGroupID.Text = "GruppID";
+            // 
+            // dgvAddLeader
+            // 
+            this.dgvAddLeader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddLeader.Location = new System.Drawing.Point(335, 63);
+            this.dgvAddLeader.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAddLeader.Name = "dgvAddLeader";
+            this.dgvAddLeader.RowTemplate.Height = 28;
+            this.dgvAddLeader.Size = new System.Drawing.Size(378, 82);
+            this.dgvAddLeader.TabIndex = 51;
+            // 
+            // lblLeader
+            // 
+            this.lblLeader.AutoSize = true;
+            this.lblLeader.Location = new System.Drawing.Point(332, 47);
+            this.lblLeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLeader.Name = "lblLeader";
+            this.lblLeader.Size = new System.Drawing.Size(40, 13);
+            this.lblLeader.TabIndex = 52;
+            this.lblLeader.Text = "Ledare";
+            // 
+            // rbnRemoveLeader
+            // 
+            this.rbnRemoveLeader.AutoSize = true;
+            this.rbnRemoveLeader.Location = new System.Drawing.Point(413, 173);
+            this.rbnRemoveLeader.Name = "rbnRemoveLeader";
+            this.rbnRemoveLeader.Size = new System.Drawing.Size(59, 17);
+            this.rbnRemoveLeader.TabIndex = 55;
+            this.rbnRemoveLeader.TabStop = true;
+            this.rbnRemoveLeader.Text = "Ta bort";
+            this.rbnRemoveLeader.UseVisualStyleBackColor = true;
+            // 
+            // rbnTGAddLeader
+            // 
+            this.rbnTGAddLeader.AutoSize = true;
+            this.rbnTGAddLeader.Location = new System.Drawing.Point(413, 152);
+            this.rbnTGAddLeader.Name = "rbnTGAddLeader";
+            this.rbnTGAddLeader.Size = new System.Drawing.Size(65, 17);
+            this.rbnTGAddLeader.TabIndex = 54;
+            this.rbnTGAddLeader.TabStop = true;
+            this.rbnTGAddLeader.Text = "Lägg Till";
+            this.rbnTGAddLeader.UseVisualStyleBackColor = true;
+            // 
+            // cmbAddLeader
+            // 
+            this.cmbAddLeader.FormattingEnabled = true;
+            this.cmbAddLeader.Location = new System.Drawing.Point(484, 161);
+            this.cmbAddLeader.Name = "cmbAddLeader";
+            this.cmbAddLeader.Size = new System.Drawing.Size(166, 21);
+            this.cmbAddLeader.TabIndex = 53;
+            // 
+            // btnAddLeader
+            // 
+            this.btnAddLeader.Location = new System.Drawing.Point(655, 159);
+            this.btnAddLeader.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddLeader.Name = "btnAddLeader";
+            this.btnAddLeader.Size = new System.Drawing.Size(61, 23);
+            this.btnAddLeader.TabIndex = 56;
+            this.btnAddLeader.Text = "Lägg till";
+            this.btnAddLeader.UseVisualStyleBackColor = true;
+            this.btnAddLeader.Click += new System.EventHandler(this.btnAddLeader_Click);
+            // 
+            // btnAddMember
+            // 
+            this.btnAddMember.Location = new System.Drawing.Point(653, 397);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddMember.Name = "btnAddMember";
+            this.btnAddMember.Size = new System.Drawing.Size(61, 23);
+            this.btnAddMember.TabIndex = 57;
+            this.btnAddMember.Text = "Lägg till";
+            this.btnAddMember.UseVisualStyleBackColor = true;
             // 
             // frmMain
             // 
@@ -1431,13 +1518,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
             this.Controls.Add(this.panTGGroup);
+            this.Controls.Add(this.panViewContact);
+            this.Controls.Add(this.panContact);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panStart);
-            this.Controls.Add(this.panContact);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.panViewContact);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Kul och Bus administration";
@@ -1461,6 +1548,7 @@
             this.panViewContact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1535,9 +1623,9 @@
         private System.Windows.Forms.Button btnMemberSearch;
         private System.Windows.Forms.Label lblTGMisc;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton rbnTGRemove;
-        private System.Windows.Forms.RadioButton rbnTGAdd;
-        private System.Windows.Forms.ComboBox cmbTGMember;
+        private System.Windows.Forms.RadioButton rbnTGRemoveMember;
+        private System.Windows.Forms.RadioButton rbnTGAddMember;
+        private System.Windows.Forms.ComboBox cmbAddMember;
         private System.Windows.Forms.ToolStripMenuItem träningsgrupperToolStripMenuItem;
         private System.Windows.Forms.Panel panTGGroupList;
         private System.Windows.Forms.Button btnTGSearch;
@@ -1589,9 +1677,16 @@
         private System.Windows.Forms.Button btnCTsave;
         private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.ComboBox cmbDisciplin;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblGroupID;
         private System.Windows.Forms.TextBox txtGroupID;
         private System.Windows.Forms.Label lblTGMembers;
+        private System.Windows.Forms.Button btnAddMember;
+        private System.Windows.Forms.Button btnAddLeader;
+        private System.Windows.Forms.RadioButton rbnRemoveLeader;
+        private System.Windows.Forms.RadioButton rbnTGAddLeader;
+        private System.Windows.Forms.ComboBox cmbAddLeader;
+        private System.Windows.Forms.Label lblLeader;
+        private System.Windows.Forms.DataGridView dgvAddLeader;
     }
 }
 

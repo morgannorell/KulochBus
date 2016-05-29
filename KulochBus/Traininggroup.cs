@@ -16,6 +16,7 @@ namespace KulochBus
         public string DiciplinName { get; set; }
         public int LevelId { get; set; }
         public int DiciplinId { get; set; }
+        public int GroupId { get; set; }
 
         public Traininggroup()
         {
@@ -89,7 +90,6 @@ namespace KulochBus
                         " JOIN level AS l ON t.levelid = l.levelid" +
                         " JOIN diciplin AS d ON t.diciplinid = d.diciplinid";
 
-
                 if (search != "")
                 {
                     int result;
@@ -104,7 +104,6 @@ namespace KulochBus
                     "d.name like '%" + search + "%'";
                 }
             
-
             DataTable dt = new DataTable();
             dt = querry.Select(sql);
 
@@ -119,16 +118,27 @@ namespace KulochBus
             " JOIN level AS l ON t.levelid = l.levelid" +
             " JOIN diciplin AS d ON t.diciplinid = d.diciplinid WHERE groupid = " + traininggroup;
 
-            //string sql =
-            //    "SELECT personid, firstname, lastname, securitynr, gender, address, zipcode, city, email, " +
-            //    "memberid, responsibility, membership, isleader, pictureallowed, ispayed " +
-            //    "FROM person JOIN member ON personid = memberid " +
-            //    "WHERE personid = " + member;
-
             DataTable dt = new DataTable();
 
             dt = querry.Select(sql);
             return dt;
+        }
+
+        public void UpdateTG()
+        {
+            Sql tg = new Sql();
+
+            string update = "UPDATE traininggroup SET description = '" + Description + "', name = '" + Name + "', levelid = " + LevelId + ", diciplinid = " + DiciplinId + " WHERE groupid = " + GroupId + ";";
+
+            tg.Insert(update);
+        }
+        public void AddLeader(int memberid, int groupid)
+        {
+            Sql TG = new Sql();
+
+            string sql = "INSERT INTO membergroup (memberid, groupid) VALUES (" + memberid + ", " + groupid + ")";
+
+            TG.Insert(sql);
         }
     }
 }
