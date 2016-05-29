@@ -49,6 +49,7 @@
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNMTitle = new System.Windows.Forms.Label();
             this.panTGGroup = new System.Windows.Forms.Panel();
+            this.cmbDisciplin = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.btnTGLevel = new System.Windows.Forms.Button();
@@ -151,7 +152,6 @@
             this.dgrViewCTmember = new System.Windows.Forms.DataGridView();
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
-            this.cmbDisciplin = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -348,6 +348,14 @@
             this.panTGGroup.Name = "panTGGroup";
             this.panTGGroup.Size = new System.Drawing.Size(727, 408);
             this.panTGGroup.TabIndex = 37;
+            // 
+            // cmbDisciplin
+            // 
+            this.cmbDisciplin.FormattingEnabled = true;
+            this.cmbDisciplin.Location = new System.Drawing.Point(73, 74);
+            this.cmbDisciplin.Name = "cmbDisciplin";
+            this.cmbDisciplin.Size = new System.Drawing.Size(174, 21);
+            this.cmbDisciplin.TabIndex = 23;
             // 
             // comboBox2
             // 
@@ -1368,10 +1376,11 @@
             // 
             // dgrViewCTmember
             // 
+            this.dgrViewCTmember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewCTmember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewCTmember.Location = new System.Drawing.Point(355, 49);
+            this.dgrViewCTmember.Location = new System.Drawing.Point(400, 49);
             this.dgrViewCTmember.Name = "dgrViewCTmember";
-            this.dgrViewCTmember.Size = new System.Drawing.Size(358, 344);
+            this.dgrViewCTmember.Size = new System.Drawing.Size(313, 344);
             this.dgrViewCTmember.TabIndex = 6;
             // 
             // dgrViewContact
@@ -1384,7 +1393,7 @@
             this.dgrViewContact.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewContact.Name = "dgrViewContact";
             this.dgrViewContact.ReadOnly = true;
-            this.dgrViewContact.Size = new System.Drawing.Size(331, 344);
+            this.dgrViewContact.Size = new System.Drawing.Size(370, 344);
             this.dgrViewContact.TabIndex = 5;
             this.dgrViewContact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellClick);
             this.dgrViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellDoubleClick);
@@ -1400,23 +1409,15 @@
             this.lblContacts.TabIndex = 4;
             this.lblContacts.Text = "Kontakter";
             // 
-            // cmbDisciplin
-            // 
-            this.cmbDisciplin.FormattingEnabled = true;
-            this.cmbDisciplin.Location = new System.Drawing.Point(73, 74);
-            this.cmbDisciplin.Name = "cmbDisciplin";
-            this.cmbDisciplin.Size = new System.Drawing.Size(174, 21);
-            this.cmbDisciplin.TabIndex = 23;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 432);
+            this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panContact);
-            this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panStart);
