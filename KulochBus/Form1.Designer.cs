@@ -151,6 +151,22 @@
             this.dgrViewCTmember = new System.Windows.Forms.DataGridView();
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
+            this.panAdendence = new System.Windows.Forms.Panel();
+            this.panViewAtendance = new System.Windows.Forms.Panel();
+            this.lvlALtitle = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblATtitle = new System.Windows.Forms.Label();
+            this.cmbATtrainggroups = new System.Windows.Forms.ComboBox();
+            this.lbxATleader = new System.Windows.Forms.ListBox();
+            this.lblATleader = new System.Windows.Forms.Label();
+            this.dgrATmemberlist = new System.Windows.Forms.DataGridView();
+            this.btnATsave = new System.Windows.Forms.Button();
+            this.btnATcancel = new System.Windows.Forms.Button();
+            this.lblATdate = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.lblATdateTitle = new System.Windows.Forms.Label();
+            this.lblATmemberlist = new System.Windows.Forms.Label();
+            this.lblATtraininggroups = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -164,6 +180,10 @@
             this.panViewContact.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).BeginInit();
+            this.panAdendence.SuspendLayout();
+            this.panViewAtendance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrATmemberlist)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -197,40 +217,41 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.närvaroToolStripMenuItem.Text = "Närvarolista";
+            this.närvaroToolStripMenuItem.Click += new System.EventHandler(this.närvaroToolStripMenuItem_Click);
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medlemToolStripMenuItem.Text = "Medlem";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.kontaktToolStripMenuItem.Text = "Kontakt";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -245,7 +266,7 @@
             // medlemToolStripMenuItem1
             // 
             this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
-            this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
+            this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.medlemToolStripMenuItem1.Text = "Medlem";
             // 
             // visaToolStripMenuItem
@@ -1284,7 +1305,7 @@
             this.dgrViewMember.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewMember.Name = "dgrViewMember";
             this.dgrViewMember.ReadOnly = true;
-            this.dgrViewMember.Size = new System.Drawing.Size(703, 344);
+            this.dgrViewMember.Size = new System.Drawing.Size(703, 385);
             this.dgrViewMember.TabIndex = 0;
             this.dgrViewMember.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewMember_CellDoubleClick);
             // 
@@ -1370,7 +1391,7 @@
             this.dgrViewCTmember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrViewCTmember.Location = new System.Drawing.Point(400, 49);
             this.dgrViewCTmember.Name = "dgrViewCTmember";
-            this.dgrViewCTmember.Size = new System.Drawing.Size(313, 344);
+            this.dgrViewCTmember.Size = new System.Drawing.Size(313, 384);
             this.dgrViewCTmember.TabIndex = 6;
             // 
             // dgrViewContact
@@ -1383,7 +1404,7 @@
             this.dgrViewContact.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewContact.Name = "dgrViewContact";
             this.dgrViewContact.ReadOnly = true;
-            this.dgrViewContact.Size = new System.Drawing.Size(370, 344);
+            this.dgrViewContact.Size = new System.Drawing.Size(370, 385);
             this.dgrViewContact.TabIndex = 5;
             this.dgrViewContact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellClick);
             this.dgrViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellDoubleClick);
@@ -1399,20 +1420,184 @@
             this.lblContacts.TabIndex = 4;
             this.lblContacts.Text = "Kontakter";
             // 
+            // panAdendence
+            // 
+            this.panAdendence.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panAdendence.Controls.Add(this.lblATtraininggroups);
+            this.panAdendence.Controls.Add(this.lblATmemberlist);
+            this.panAdendence.Controls.Add(this.lblATdateTitle);
+            this.panAdendence.Controls.Add(this.dateTimePicker1);
+            this.panAdendence.Controls.Add(this.lblATdate);
+            this.panAdendence.Controls.Add(this.btnATcancel);
+            this.panAdendence.Controls.Add(this.btnATsave);
+            this.panAdendence.Controls.Add(this.dgrATmemberlist);
+            this.panAdendence.Controls.Add(this.lblATleader);
+            this.panAdendence.Controls.Add(this.lbxATleader);
+            this.panAdendence.Controls.Add(this.cmbATtrainggroups);
+            this.panAdendence.Controls.Add(this.lblATtitle);
+            this.panAdendence.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panAdendence.Location = new System.Drawing.Point(0, 24);
+            this.panAdendence.Name = "panAdendence";
+            this.panAdendence.Size = new System.Drawing.Size(727, 445);
+            this.panAdendence.TabIndex = 7;
+            // 
+            // panViewAtendance
+            // 
+            this.panViewAtendance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panViewAtendance.Controls.Add(this.dataGridView1);
+            this.panViewAtendance.Controls.Add(this.lvlALtitle);
+            this.panViewAtendance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panViewAtendance.Location = new System.Drawing.Point(0, 24);
+            this.panViewAtendance.Name = "panViewAtendance";
+            this.panViewAtendance.Size = new System.Drawing.Size(727, 445);
+            this.panViewAtendance.TabIndex = 0;
+            // 
+            // lvlALtitle
+            // 
+            this.lvlALtitle.AutoSize = true;
+            this.lvlALtitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvlALtitle.Location = new System.Drawing.Point(12, 9);
+            this.lvlALtitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lvlALtitle.Name = "lvlALtitle";
+            this.lvlALtitle.Size = new System.Drawing.Size(168, 32);
+            this.lvlALtitle.TabIndex = 5;
+            this.lvlALtitle.Text = "Närvarolistor";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 50);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(703, 385);
+            this.dataGridView1.TabIndex = 6;
+            // 
+            // lblATtitle
+            // 
+            this.lblATtitle.AutoSize = true;
+            this.lblATtitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblATtitle.Location = new System.Drawing.Point(12, 9);
+            this.lblATtitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblATtitle.Name = "lblATtitle";
+            this.lblATtitle.Size = new System.Drawing.Size(110, 32);
+            this.lblATtitle.TabIndex = 42;
+            this.lblATtitle.Text = "Närvaro";
+            // 
+            // cmbATtrainggroups
+            // 
+            this.cmbATtrainggroups.FormattingEnabled = true;
+            this.cmbATtrainggroups.Location = new System.Drawing.Point(542, 14);
+            this.cmbATtrainggroups.Name = "cmbATtrainggroups";
+            this.cmbATtrainggroups.Size = new System.Drawing.Size(171, 21);
+            this.cmbATtrainggroups.TabIndex = 43;
+            this.cmbATtrainggroups.SelectedIndexChanged += new System.EventHandler(this.cmbATtrainggroups_SelectedIndexChanged);
+            // 
+            // lbxATleader
+            // 
+            this.lbxATleader.FormattingEnabled = true;
+            this.lbxATleader.Location = new System.Drawing.Point(15, 92);
+            this.lbxATleader.Name = "lbxATleader";
+            this.lbxATleader.Size = new System.Drawing.Size(231, 69);
+            this.lbxATleader.TabIndex = 44;
+            // 
+            // lblATleader
+            // 
+            this.lblATleader.AutoSize = true;
+            this.lblATleader.Location = new System.Drawing.Point(15, 70);
+            this.lblATleader.Name = "lblATleader";
+            this.lblATleader.Size = new System.Drawing.Size(40, 13);
+            this.lblATleader.TabIndex = 45;
+            this.lblATleader.Text = "Ledare";
+            // 
+            // dgrATmemberlist
+            // 
+            this.dgrATmemberlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrATmemberlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrATmemberlist.Location = new System.Drawing.Point(258, 92);
+            this.dgrATmemberlist.Name = "dgrATmemberlist";
+            this.dgrATmemberlist.Size = new System.Drawing.Size(455, 306);
+            this.dgrATmemberlist.TabIndex = 46;
+            // 
+            // btnATsave
+            // 
+            this.btnATsave.Location = new System.Drawing.Point(549, 410);
+            this.btnATsave.Name = "btnATsave";
+            this.btnATsave.Size = new System.Drawing.Size(75, 23);
+            this.btnATsave.TabIndex = 47;
+            this.btnATsave.Text = "Spara";
+            this.btnATsave.UseVisualStyleBackColor = true;
+            // 
+            // btnATcancel
+            // 
+            this.btnATcancel.Location = new System.Drawing.Point(638, 410);
+            this.btnATcancel.Name = "btnATcancel";
+            this.btnATcancel.Size = new System.Drawing.Size(75, 23);
+            this.btnATcancel.TabIndex = 48;
+            this.btnATcancel.Text = "Avbryt";
+            this.btnATcancel.UseVisualStyleBackColor = true;
+            // 
+            // lblATdate
+            // 
+            this.lblATdate.AutoSize = true;
+            this.lblATdate.Location = new System.Drawing.Point(131, 182);
+            this.lblATdate.Name = "lblATdate";
+            this.lblATdate.Size = new System.Drawing.Size(0, 13);
+            this.lblATdate.TabIndex = 49;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(18, 199);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePicker1.TabIndex = 50;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            // 
+            // lblATdateTitle
+            // 
+            this.lblATdateTitle.AutoSize = true;
+            this.lblATdateTitle.Location = new System.Drawing.Point(15, 182);
+            this.lblATdateTitle.Name = "lblATdateTitle";
+            this.lblATdateTitle.Size = new System.Drawing.Size(116, 13);
+            this.lblATdateTitle.TabIndex = 51;
+            this.lblATdateTitle.Text = "Datum för närvarolista: ";
+            // 
+            // lblATmemberlist
+            // 
+            this.lblATmemberlist.AutoSize = true;
+            this.lblATmemberlist.Location = new System.Drawing.Point(263, 70);
+            this.lblATmemberlist.Name = "lblATmemberlist";
+            this.lblATmemberlist.Size = new System.Drawing.Size(67, 13);
+            this.lblATmemberlist.TabIndex = 52;
+            this.lblATmemberlist.Text = "Medlemslista";
+            // 
+            // lblATtraininggroups
+            // 
+            this.lblATtraininggroups.AutoSize = true;
+            this.lblATtraininggroups.Location = new System.Drawing.Point(461, 16);
+            this.lblATtraininggroups.Name = "lblATtraininggroups";
+            this.lblATtraininggroups.Size = new System.Drawing.Size(75, 13);
+            this.lblATtraininggroups.TabIndex = 53;
+            this.lblATtraininggroups.Text = "Träningsgrupp";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
-            this.Controls.Add(this.panStart);
-            this.Controls.Add(this.panTGGroup);
-            this.Controls.Add(this.panViewMember);
+            this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panMember);
-            this.Controls.Add(this.panContact);
+            this.Controls.Add(this.panStart);
             this.Controls.Add(this.panTGGroupList);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panViewContact);
-
+            this.Controls.Add(this.panViewAtendance);
+            this.Controls.Add(this.panViewMember);
+            this.Controls.Add(this.panContact);
+            this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
             this.Text = "Kul och Bus administration";
@@ -1436,6 +1621,12 @@
             this.panViewContact.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).EndInit();
+            this.panAdendence.ResumeLayout(false);
+            this.panAdendence.PerformLayout();
+            this.panViewAtendance.ResumeLayout(false);
+            this.panViewAtendance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrATmemberlist)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1565,6 +1756,22 @@
         private System.Windows.Forms.Button btnCTsave;
         private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.ComboBox cmbDisciplin;
+        private System.Windows.Forms.Panel panAdendence;
+        private System.Windows.Forms.Panel panViewAtendance;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lvlALtitle;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label lblATdate;
+        private System.Windows.Forms.Button btnATcancel;
+        private System.Windows.Forms.Button btnATsave;
+        private System.Windows.Forms.DataGridView dgrATmemberlist;
+        private System.Windows.Forms.Label lblATleader;
+        private System.Windows.Forms.ListBox lbxATleader;
+        private System.Windows.Forms.ComboBox cmbATtrainggroups;
+        private System.Windows.Forms.Label lblATtitle;
+        private System.Windows.Forms.Label lblATdateTitle;
+        private System.Windows.Forms.Label lblATmemberlist;
+        private System.Windows.Forms.Label lblATtraininggroups;
     }
 }
 

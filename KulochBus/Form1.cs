@@ -568,6 +568,48 @@ namespace KulochBus
         {
             Application.Exit();
         }
+        //
+        // Närvarolista
+        //
+        private void närvaroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panAdendence.Show();
 
+            string currentDate = DateTime.Now.ToString("yyyy-MM-dd", System.Globalization.CultureInfo.GetCultureInfo("sv-SE"));
+            lblATdate.Text = currentDate;
+
+            Attendance at = new Attendance();
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = at.GetTrainingGroups();
+            bs.DataSource = dt;
+
+            cmbATtrainggroups.DataSource = bs;
+            cmbATtrainggroups.DisplayMember = "name";
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = new DateTime();
+            date = dateTimePicker1.Value;
+            string now = date.ToString("yyyy-MM-dd");
+            lblATdate.Text = now;
+        }
+
+        private void cmbATtrainggroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedGroup;
+            selectedGroup = cmbATtrainggroups.Text;
+
+            Attendance at = new Attendance();
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = at.GetMembers(selectedGroup);
+            bs.DataSource = dt;
+            dgrATmemberlist.DataSource = bs;
+        }
     }
 }
