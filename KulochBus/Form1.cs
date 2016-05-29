@@ -404,8 +404,6 @@ namespace KulochBus
             btnTGLevel.Show();
         }
 
-        
-
         private void btnTGCreate_Click(object sender, EventArgs e)
         {
 
@@ -477,12 +475,7 @@ namespace KulochBus
             panContact.Show();
             btnCTsave.Show();
             lblCTTitle.Text = "Redigera kontakt";
-            btnContactList.Show();
-
-            //lägger till items i combobox + tilldelar värden
-            //cmbMembership.Items.Add(new Membership("Medlem", 150));
-            //cmbMembership.Items.Add(new Membership("Prova-på", 50));
-            //cmbMembership.Items.Add(new Membership("Cirkusvän", 0));
+            btnContactList.Show();            
 
             // Get memberid
             string selectedContact;
@@ -514,6 +507,16 @@ namespace KulochBus
                 if ((string)row["type"] == "phone") { txtCTcellphone.Text = row["phone"].ToString(); }
                 if ((string)row["type"] == "cell") { txtCTphone.Text = row["phone"].ToString(); }
             }
+
+            string search = "";
+
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = ct.GetMemberContact(search);
+            bs.DataSource = dt;
+
+            dgrCTsearchmedlem.DataSource = bs;
         }
 
         private void btnContactList_Click(object sender, EventArgs e)

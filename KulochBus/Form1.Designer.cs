@@ -41,6 +41,7 @@
             this.medlemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.visaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medlemmarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kontaktlistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.närvaroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.träningsgrupperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,6 +70,7 @@
             this.lblTraningTitle = new System.Windows.Forms.Label();
             this.btnTGCreate = new System.Windows.Forms.Button();
             this.panContact = new System.Windows.Forms.Panel();
+            this.btnCTsave = new System.Windows.Forms.Button();
             this.btnCTcancel = new System.Windows.Forms.Button();
             this.lblCTsearch = new System.Windows.Forms.Label();
             this.txtCTsearch = new System.Windows.Forms.TextBox();
@@ -146,11 +148,9 @@
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
             this.panViewContact = new System.Windows.Forms.Panel();
-            this.lblContacts = new System.Windows.Forms.Label();
-            this.dgrViewContact = new System.Windows.Forms.DataGridView();
-            this.kontaktlistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dgrViewCTmember = new System.Windows.Forms.DataGridView();
-            this.btnCTsave = new System.Windows.Forms.Button();
+            this.dgrViewContact = new System.Windows.Forms.DataGridView();
+            this.lblContacts = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -162,8 +162,8 @@
             this.panTGGroupList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).BeginInit();
             this.panViewContact.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -265,6 +265,13 @@
             this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.medlemmarToolStripMenuItem.Text = "Medlemslista";
             this.medlemmarToolStripMenuItem.Click += new System.EventHandler(this.medlemmarToolStripMenuItem_Click);
+            // 
+            // kontaktlistaToolStripMenuItem
+            // 
+            this.kontaktlistaToolStripMenuItem.Name = "kontaktlistaToolStripMenuItem";
+            this.kontaktlistaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.kontaktlistaToolStripMenuItem.Text = "Kontaktlista";
+            this.kontaktlistaToolStripMenuItem.Click += new System.EventHandler(this.kontaktlistaToolStripMenuItem_Click);
             // 
             // närvaroToolStripMenuItem1
             // 
@@ -574,6 +581,15 @@
             this.panContact.Name = "panContact";
             this.panContact.Size = new System.Drawing.Size(727, 408);
             this.panContact.TabIndex = 38;
+            // 
+            // btnCTsave
+            // 
+            this.btnCTsave.Location = new System.Drawing.Point(470, 352);
+            this.btnCTsave.Name = "btnCTsave";
+            this.btnCTsave.Size = new System.Drawing.Size(75, 23);
+            this.btnCTsave.TabIndex = 94;
+            this.btnCTsave.Text = "Spara";
+            this.btnCTsave.UseVisualStyleBackColor = true;
             // 
             // btnCTcancel
             // 
@@ -1348,16 +1364,13 @@
             this.panViewContact.Size = new System.Drawing.Size(727, 408);
             this.panViewContact.TabIndex = 94;
             // 
-            // lblContacts
+            // dgrViewCTmember
             // 
-            this.lblContacts.AutoSize = true;
-            this.lblContacts.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblContacts.Location = new System.Drawing.Point(12, 9);
-            this.lblContacts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblContacts.Name = "lblContacts";
-            this.lblContacts.Size = new System.Drawing.Size(132, 32);
-            this.lblContacts.TabIndex = 4;
-            this.lblContacts.Text = "Kontakter";
+            this.dgrViewCTmember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrViewCTmember.Location = new System.Drawing.Point(355, 49);
+            this.dgrViewCTmember.Name = "dgrViewCTmember";
+            this.dgrViewCTmember.Size = new System.Drawing.Size(358, 344);
+            this.dgrViewCTmember.TabIndex = 6;
             // 
             // dgrViewContact
             // 
@@ -1374,38 +1387,25 @@
             this.dgrViewContact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellClick);
             this.dgrViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellDoubleClick);
             // 
-            // kontaktlistaToolStripMenuItem
+            // lblContacts
             // 
-            this.kontaktlistaToolStripMenuItem.Name = "kontaktlistaToolStripMenuItem";
-            this.kontaktlistaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
-            this.kontaktlistaToolStripMenuItem.Text = "Kontaktlista";
-            this.kontaktlistaToolStripMenuItem.Click += new System.EventHandler(this.kontaktlistaToolStripMenuItem_Click);
-            // 
-            // dgrViewCTmember
-            // 
-            this.dgrViewCTmember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewCTmember.Location = new System.Drawing.Point(355, 49);
-            this.dgrViewCTmember.Name = "dgrViewCTmember";
-            this.dgrViewCTmember.Size = new System.Drawing.Size(358, 344);
-            this.dgrViewCTmember.TabIndex = 6;
-            // 
-            // btnCTsave
-            // 
-            this.btnCTsave.Location = new System.Drawing.Point(470, 352);
-            this.btnCTsave.Name = "btnCTsave";
-            this.btnCTsave.Size = new System.Drawing.Size(75, 23);
-            this.btnCTsave.TabIndex = 94;
-            this.btnCTsave.Text = "Spara";
-            this.btnCTsave.UseVisualStyleBackColor = true;
+            this.lblContacts.AutoSize = true;
+            this.lblContacts.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContacts.Location = new System.Drawing.Point(12, 9);
+            this.lblContacts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContacts.Name = "lblContacts";
+            this.lblContacts.Size = new System.Drawing.Size(132, 32);
+            this.lblContacts.TabIndex = 4;
+            this.lblContacts.Text = "Kontakter";
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 432);
+            this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panMember);
-            this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panStart);
@@ -1432,8 +1432,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).EndInit();
             this.panViewContact.ResumeLayout(false);
             this.panViewContact.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
