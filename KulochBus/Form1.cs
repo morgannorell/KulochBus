@@ -413,7 +413,8 @@ namespace KulochBus
 
         private void btnTGDiciplin_Click(object sender, EventArgs e)
         {
-
+            FormDisciplin disciplin = new FormDisciplin();
+            disciplin.Show();
         }
 
         private void btnTGLevel_Click(object sender, EventArgs e)

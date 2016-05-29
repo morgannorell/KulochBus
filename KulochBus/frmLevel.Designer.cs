@@ -44,34 +44,39 @@
             this.dgrViewLevels.AllowUserToDeleteRows = false;
             this.dgrViewLevels.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewLevels.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewLevels.Location = new System.Drawing.Point(224, 59);
+            this.dgrViewLevels.Location = new System.Drawing.Point(336, 91);
+            this.dgrViewLevels.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgrViewLevels.Name = "dgrViewLevels";
-            this.dgrViewLevels.Size = new System.Drawing.Size(168, 143);
+            this.dgrViewLevels.Size = new System.Drawing.Size(252, 220);
             this.dgrViewLevels.TabIndex = 0;
+            this.dgrViewLevels.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewLevels_CellContentClick);
             // 
             // lblLevelTitle
             // 
             this.lblLevelTitle.AutoSize = true;
             this.lblLevelTitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLevelTitle.Location = new System.Drawing.Point(11, 9);
-            this.lblLevelTitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLevelTitle.Location = new System.Drawing.Point(16, 14);
             this.lblLevelTitle.Name = "lblLevelTitle";
-            this.lblLevelTitle.Size = new System.Drawing.Size(68, 32);
+            this.lblLevelTitle.Size = new System.Drawing.Size(100, 47);
             this.lblLevelTitle.TabIndex = 1;
             this.lblLevelTitle.Text = "Nivå";
+            this.lblLevelTitle.Click += new System.EventHandler(this.lblLevelTitle_Click);
             // 
             // txtLevel
             // 
-            this.txtLevel.Location = new System.Drawing.Point(17, 59);
+            this.txtLevel.Location = new System.Drawing.Point(26, 91);
+            this.txtLevel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtLevel.Name = "txtLevel";
-            this.txtLevel.Size = new System.Drawing.Size(183, 20);
+            this.txtLevel.Size = new System.Drawing.Size(272, 26);
             this.txtLevel.TabIndex = 2;
+            this.txtLevel.TextChanged += new System.EventHandler(this.txtLevel_TextChanged);
             // 
             // btnLevelSave
             // 
-            this.btnLevelSave.Location = new System.Drawing.Point(17, 179);
+            this.btnLevelSave.Location = new System.Drawing.Point(26, 275);
+            this.btnLevelSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLevelSave.Name = "btnLevelSave";
-            this.btnLevelSave.Size = new System.Drawing.Size(75, 23);
+            this.btnLevelSave.Size = new System.Drawing.Size(112, 35);
             this.btnLevelSave.TabIndex = 3;
             this.btnLevelSave.Text = "Spara";
             this.btnLevelSave.UseVisualStyleBackColor = true;
@@ -80,30 +85,35 @@
             // rbnLevelRemove
             // 
             this.rbnLevelRemove.AutoSize = true;
-            this.rbnLevelRemove.Location = new System.Drawing.Point(17, 106);
+            this.rbnLevelRemove.Location = new System.Drawing.Point(26, 163);
+            this.rbnLevelRemove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbnLevelRemove.Name = "rbnLevelRemove";
-            this.rbnLevelRemove.Size = new System.Drawing.Size(59, 17);
+            this.rbnLevelRemove.Size = new System.Drawing.Size(84, 24);
             this.rbnLevelRemove.TabIndex = 19;
             this.rbnLevelRemove.TabStop = true;
             this.rbnLevelRemove.Text = "Ta bort";
             this.rbnLevelRemove.UseVisualStyleBackColor = true;
+            this.rbnLevelRemove.CheckedChanged += new System.EventHandler(this.rbnLevelRemove_CheckedChanged);
             // 
             // rbnLevelAdd
             // 
             this.rbnLevelAdd.AutoSize = true;
-            this.rbnLevelAdd.Location = new System.Drawing.Point(17, 85);
+            this.rbnLevelAdd.Location = new System.Drawing.Point(26, 131);
+            this.rbnLevelAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbnLevelAdd.Name = "rbnLevelAdd";
-            this.rbnLevelAdd.Size = new System.Drawing.Size(65, 17);
+            this.rbnLevelAdd.Size = new System.Drawing.Size(92, 24);
             this.rbnLevelAdd.TabIndex = 18;
             this.rbnLevelAdd.TabStop = true;
             this.rbnLevelAdd.Text = "Lägg Till";
             this.rbnLevelAdd.UseVisualStyleBackColor = true;
+            this.rbnLevelAdd.CheckedChanged += new System.EventHandler(this.rbnLevelAdd_CheckedChanged);
             // 
             // btnLevelClose
             // 
-            this.btnLevelClose.Location = new System.Drawing.Point(98, 179);
+            this.btnLevelClose.Location = new System.Drawing.Point(147, 275);
+            this.btnLevelClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLevelClose.Name = "btnLevelClose";
-            this.btnLevelClose.Size = new System.Drawing.Size(75, 23);
+            this.btnLevelClose.Size = new System.Drawing.Size(112, 35);
             this.btnLevelClose.TabIndex = 20;
             this.btnLevelClose.Text = "Stäng";
             this.btnLevelClose.UseVisualStyleBackColor = true;
@@ -111,9 +121,9 @@
             // 
             // frmLevel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(403, 212);
+            this.ClientSize = new System.Drawing.Size(604, 326);
             this.Controls.Add(this.btnLevelClose);
             this.Controls.Add(this.rbnLevelRemove);
             this.Controls.Add(this.rbnLevelAdd);
@@ -121,6 +131,7 @@
             this.Controls.Add(this.txtLevel);
             this.Controls.Add(this.lblLevelTitle);
             this.Controls.Add(this.dgrViewLevels);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmLevel";
             this.Text = "Träningsnivåer";
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewLevels)).EndInit();
