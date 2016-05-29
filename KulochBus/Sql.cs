@@ -122,5 +122,28 @@ namespace KulochBus
             }
             conn.Close();
         }
+
+        public DataTable Show(string sql)
+        {
+            DataTable myTable = new DataTable();
+
+            try
+            {
+                //NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, conn);
+
+                da.SelectCommand = cmd;
+                da.Fill(myTable);
+
+                return myTable;
+            }
+
+            catch (NpgsqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+                return myTable;
+            }
+            conn.Close();
+        }
     }
 }

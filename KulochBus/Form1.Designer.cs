@@ -49,6 +49,8 @@
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNMTitle = new System.Windows.Forms.Label();
             this.panTGGroup = new System.Windows.Forms.Panel();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.btnTGLevel = new System.Windows.Forms.Button();
             this.btnTGDiciplin = new System.Windows.Forms.Button();
             this.rbnTGRemove = new System.Windows.Forms.RadioButton();
@@ -60,8 +62,6 @@
             this.btnTGSave = new System.Windows.Forms.Button();
             this.dgrListTGMembers = new System.Windows.Forms.DataGridView();
             this.txtTGDescription = new System.Windows.Forms.TextBox();
-            this.txtTGLevel = new System.Windows.Forms.TextBox();
-            this.txtTGDiciplin = new System.Windows.Forms.TextBox();
             this.txtTGName = new System.Windows.Forms.TextBox();
             this.lblTGDiciplin = new System.Windows.Forms.Label();
             this.lblTGDescription = new System.Windows.Forms.Label();
@@ -151,6 +151,7 @@
             this.dgrViewCTmember = new System.Windows.Forms.DataGridView();
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
+            this.cmbDisciplin = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -197,40 +198,40 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.närvaroToolStripMenuItem.Text = "Närvarolista";
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medlemToolStripMenuItem.Text = "Medlem";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.kontaktToolStripMenuItem.Text = "Kontakt";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -320,6 +321,9 @@
             // panTGGroup
             // 
             this.panTGGroup.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panTGGroup.Controls.Add(this.cmbDisciplin);
+            this.panTGGroup.Controls.Add(this.comboBox2);
+            this.panTGGroup.Controls.Add(this.cmbLevel);
             this.panTGGroup.Controls.Add(this.btnTGLevel);
             this.panTGGroup.Controls.Add(this.btnTGDiciplin);
             this.panTGGroup.Controls.Add(this.rbnTGRemove);
@@ -331,8 +335,6 @@
             this.panTGGroup.Controls.Add(this.btnTGSave);
             this.panTGGroup.Controls.Add(this.dgrListTGMembers);
             this.panTGGroup.Controls.Add(this.txtTGDescription);
-            this.panTGGroup.Controls.Add(this.txtTGLevel);
-            this.panTGGroup.Controls.Add(this.txtTGDiciplin);
             this.panTGGroup.Controls.Add(this.txtTGName);
             this.panTGGroup.Controls.Add(this.lblTGDiciplin);
             this.panTGGroup.Controls.Add(this.lblTGDescription);
@@ -346,6 +348,22 @@
             this.panTGGroup.Name = "panTGGroup";
             this.panTGGroup.Size = new System.Drawing.Size(727, 408);
             this.panTGGroup.TabIndex = 37;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(276, 194);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(174, 21);
+            this.comboBox2.TabIndex = 22;
+            // 
+            // cmbLevel
+            // 
+            this.cmbLevel.FormattingEnabled = true;
+            this.cmbLevel.Location = new System.Drawing.Point(73, 101);
+            this.cmbLevel.Name = "cmbLevel";
+            this.cmbLevel.Size = new System.Drawing.Size(174, 21);
+            this.cmbLevel.TabIndex = 21;
             // 
             // btnTGLevel
             // 
@@ -456,22 +474,6 @@
             this.txtTGDescription.Name = "txtTGDescription";
             this.txtTGDescription.Size = new System.Drawing.Size(242, 116);
             this.txtTGDescription.TabIndex = 8;
-            // 
-            // txtTGLevel
-            // 
-            this.txtTGLevel.Location = new System.Drawing.Point(73, 102);
-            this.txtTGLevel.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTGLevel.Name = "txtTGLevel";
-            this.txtTGLevel.Size = new System.Drawing.Size(174, 20);
-            this.txtTGLevel.TabIndex = 7;
-            // 
-            // txtTGDiciplin
-            // 
-            this.txtTGDiciplin.Location = new System.Drawing.Point(73, 76);
-            this.txtTGDiciplin.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTGDiciplin.Name = "txtTGDiciplin";
-            this.txtTGDiciplin.Size = new System.Drawing.Size(174, 20);
-            this.txtTGDiciplin.TabIndex = 6;
             // 
             // txtTGName
             // 
@@ -1398,18 +1400,26 @@
             this.lblContacts.TabIndex = 4;
             this.lblContacts.Text = "Kontakter";
             // 
+            // cmbDisciplin
+            // 
+            this.cmbDisciplin.FormattingEnabled = true;
+            this.cmbDisciplin.Location = new System.Drawing.Point(73, 74);
+            this.cmbDisciplin.Name = "cmbDisciplin";
+            this.cmbDisciplin.Size = new System.Drawing.Size(174, 21);
+            this.cmbDisciplin.TabIndex = 23;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 432);
+            this.Controls.Add(this.panTGGroup);
+            this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panViewMember);
-            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panStart);
-            this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
@@ -1458,8 +1468,6 @@
         private System.Windows.Forms.ToolStripMenuItem träningsgruppToolStripMenuItem;
         private System.Windows.Forms.Panel panTGGroup;
         private System.Windows.Forms.Label lblTraningTitle;
-        private System.Windows.Forms.TextBox txtTGLevel;
-        private System.Windows.Forms.TextBox txtTGDiciplin;
         private System.Windows.Forms.TextBox txtTGName;
         private System.Windows.Forms.Label lblTGDiciplin;
         private System.Windows.Forms.Label lblTGDescription;
@@ -1563,6 +1571,9 @@
         private System.Windows.Forms.Label lblContacts;
         private System.Windows.Forms.DataGridView dgrViewCTmember;
         private System.Windows.Forms.Button btnCTsave;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbLevel;
+        private System.Windows.Forms.ComboBox cmbDisciplin;
     }
 }
 

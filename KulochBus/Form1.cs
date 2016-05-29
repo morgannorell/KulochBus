@@ -507,6 +507,24 @@ namespace KulochBus
             btnTGCreate.Show();
             btnTGDiciplin.Show();
             btnTGLevel.Show();
+
+            Traininggroup tg = new Traininggroup();
+            dt = new DataTable();
+            bs = new BindingSource();
+            dt = tg.GetTGLevelList();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cmbLevel.Items.Add(dt.Rows[i]["Name"]);
+            }
+
+            dt.Clear();
+
+            dt = tg.GetTGDiciplinList();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cmbDisciplin.Items.Add(dt.Rows[i]["Name"]);
+            }
         }
 
         private void btnTGCreate_Click(object sender, EventArgs e)
@@ -530,5 +548,6 @@ namespace KulochBus
         {
             Application.Exit();
         }
+
     }
 }
