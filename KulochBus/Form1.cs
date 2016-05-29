@@ -539,7 +539,6 @@ namespace KulochBus
             diciplinId = nntg.GetTGDiciplin();
             levelId = nntg.GetTGLevel();
 
-
             Traininggroup ntg = new Traininggroup()
             {
                 Description = txtTGDescription.Text,
@@ -551,7 +550,6 @@ namespace KulochBus
             };
 
             ntg.CreateTG();
-
         }
 
         private void btnTGDiciplin_Click(object sender, EventArgs e)

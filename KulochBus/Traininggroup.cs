@@ -25,12 +25,10 @@ namespace KulochBus
         {
             Sql TG = new Sql();
 
-            string sql = "INSERT INTO traininggroup (description, name, levelid, diciplinid) VALUES ('" + Description + "', '" + Name + "', " + LevelId + ", " + DiciplinId + "";
+            string sql = "INSERT INTO traininggroup (description, name, levelid, diciplinid) VALUES ('" + Description + "', '" + Name + "', " + LevelId + ", " + DiciplinId + ")";
 
             TG.Insert(sql);
-
         }
-
 
         // Methods
         public DataTable GetTGLevelList()

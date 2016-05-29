@@ -49,6 +49,7 @@
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNMTitle = new System.Windows.Forms.Label();
             this.panTGGroup = new System.Windows.Forms.Panel();
+            this.cmbDisciplin = new System.Windows.Forms.ComboBox();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.btnTGLevel = new System.Windows.Forms.Button();
             this.btnTGDiciplin = new System.Windows.Forms.Button();
@@ -150,7 +151,6 @@
             this.dgrViewCTmember = new System.Windows.Forms.DataGridView();
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
-            this.cmbDisciplin = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -346,6 +346,14 @@
             this.panTGGroup.Name = "panTGGroup";
             this.panTGGroup.Size = new System.Drawing.Size(727, 445);
             this.panTGGroup.TabIndex = 37;
+            // 
+            // cmbDisciplin
+            // 
+            this.cmbDisciplin.FormattingEnabled = true;
+            this.cmbDisciplin.Location = new System.Drawing.Point(73, 74);
+            this.cmbDisciplin.Name = "cmbDisciplin";
+            this.cmbDisciplin.Size = new System.Drawing.Size(174, 21);
+            this.cmbDisciplin.TabIndex = 23;
             // 
             // cmbLevel
             // 
@@ -1389,14 +1397,6 @@
             this.lblContacts.Size = new System.Drawing.Size(132, 32);
             this.lblContacts.TabIndex = 4;
             this.lblContacts.Text = "Kontakter";
-            // 
-            // cmbDisciplin
-            // 
-            this.cmbDisciplin.FormattingEnabled = true;
-            this.cmbDisciplin.Location = new System.Drawing.Point(73, 74);
-            this.cmbDisciplin.Name = "cmbDisciplin";
-            this.cmbDisciplin.Size = new System.Drawing.Size(174, 21);
-            this.cmbDisciplin.TabIndex = 23;
             // 
             // frmMain
             // 
