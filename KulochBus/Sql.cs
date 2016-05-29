@@ -120,6 +120,7 @@ namespace KulochBus
                 System.Windows.Forms.MessageBox.Show(ex.Message);
                 return myTable;    
             }
+            conn.Close();
         }
     }
 }

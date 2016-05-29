@@ -313,6 +313,13 @@ namespace KulochBus
         {
             HidePanels();
             panContact.Show();
+            EmptyTxtBoxes(panContact);
+            //bs.Dispose();
+            //dgrCTsearchmedlem.Rows.Clear();
+            //dgrCTsearchmedlem.Refresh();
+            lblCTTitle.Text = "Skapa ny kontakt";
+            btnContactList.Hide();
+            btnCTsave.Hide();
         }
 
         private void btnCTsearch_Click(object sender, EventArgs e)
@@ -378,54 +385,6 @@ namespace KulochBus
             panStart.Show();
         }
         //
-        // Träningsgrupp
-        //
-        private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            HidePanels();
-            panTGGroupList.Show();
-
-            Traininggroup tg = new Traininggroup();
-        }
-
-        private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            HidePanels();
-            rbnTGAdd.Hide();
-            rbnTGRemove.Hide();
-            cmbTGMember.Hide();
-            btnTGSave.Hide();
-            lblTGMembers.Hide();
-            dgrListTGMembers.Hide();
-
-            panTGGroup.Show();
-            btnTGCreate.Show();
-            btnTGDiciplin.Show();
-            btnTGLevel.Show();
-        }
-
-        private void btnTGCreate_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnTGDiciplin_Click(object sender, EventArgs e)
-        {
-            FormDisciplin disciplin = new FormDisciplin();
-            disciplin.Show();
-        }
-
-        private void btnTGLevel_Click(object sender, EventArgs e)
-        {
-            frmLevel level = new frmLevel();
-            level.Show();
-        }
-
-        private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-        //
         // Kontaktlista
         //
         private void ShowContactlist()
@@ -446,7 +405,7 @@ namespace KulochBus
 
         private void kontaktlistaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ShowContactlist();
+            ShowContactlist();            
         }
 
         private void dgrViewContact_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -475,7 +434,7 @@ namespace KulochBus
             panContact.Show();
             btnCTsave.Show();
             lblCTTitle.Text = "Redigera kontakt";
-            btnContactList.Show();            
+            btnContactList.Show();
 
             // Get memberid
             string selectedContact;
@@ -522,6 +481,54 @@ namespace KulochBus
         private void btnContactList_Click(object sender, EventArgs e)
         {
             ShowContactlist();
+        }
+        //
+        // Träningsgrupp
+        //
+        private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panTGGroupList.Show();
+
+            Traininggroup tg = new Traininggroup();
+        }
+
+        private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            rbnTGAdd.Hide();
+            rbnTGRemove.Hide();
+            cmbTGMember.Hide();
+            btnTGSave.Hide();
+            lblTGMembers.Hide();
+            dgrListTGMembers.Hide();
+
+            panTGGroup.Show();
+            btnTGCreate.Show();
+            btnTGDiciplin.Show();
+            btnTGLevel.Show();
+        }
+
+        private void btnTGCreate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTGDiciplin_Click(object sender, EventArgs e)
+        {
+            FormDisciplin disciplin = new FormDisciplin();
+            disciplin.Show();
+        }
+
+        private void btnTGLevel_Click(object sender, EventArgs e)
+        {
+            frmLevel level = new frmLevel();
+            level.Show();
+        }
+
+        private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
