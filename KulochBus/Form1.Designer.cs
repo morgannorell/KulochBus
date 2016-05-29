@@ -75,7 +75,7 @@
             this.btnCTsearch = new System.Windows.Forms.Button();
             this.dgrCTsearchmedlem = new System.Windows.Forms.DataGridView();
             this.btnNewContact = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnContactList = new System.Windows.Forms.Button();
             this.txtCTcellphone = new System.Windows.Forms.TextBox();
             this.txtCTphone = new System.Windows.Forms.TextBox();
             this.lblCTmobile = new System.Windows.Forms.Label();
@@ -145,6 +145,12 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
+            this.panViewContact = new System.Windows.Forms.Panel();
+            this.lblContacts = new System.Windows.Forms.Label();
+            this.dgrViewContact = new System.Windows.Forms.DataGridView();
+            this.kontaktlistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dgrViewCTmember = new System.Windows.Forms.DataGridView();
+            this.btnCTsave = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -155,6 +161,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewMember)).BeginInit();
             this.panTGGroupList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).BeginInit();
+            this.panViewContact.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -243,6 +252,7 @@
             // 
             this.visaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.medlemmarToolStripMenuItem,
+            this.kontaktlistaToolStripMenuItem,
             this.närvaroToolStripMenuItem1,
             this.träningsgrupperToolStripMenuItem});
             this.visaToolStripMenuItem.Name = "visaToolStripMenuItem";
@@ -529,13 +539,14 @@
             // panContact
             // 
             this.panContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panContact.Controls.Add(this.btnCTsave);
             this.panContact.Controls.Add(this.btnCTcancel);
             this.panContact.Controls.Add(this.lblCTsearch);
             this.panContact.Controls.Add(this.txtCTsearch);
             this.panContact.Controls.Add(this.btnCTsearch);
             this.panContact.Controls.Add(this.dgrCTsearchmedlem);
             this.panContact.Controls.Add(this.btnNewContact);
-            this.panContact.Controls.Add(this.button2);
+            this.panContact.Controls.Add(this.btnContactList);
             this.panContact.Controls.Add(this.txtCTcellphone);
             this.panContact.Controls.Add(this.txtCTphone);
             this.panContact.Controls.Add(this.lblCTmobile);
@@ -608,7 +619,7 @@
             this.dgrCTsearchmedlem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrCTsearchmedlem.Location = new System.Drawing.Point(313, 90);
             this.dgrCTsearchmedlem.Name = "dgrCTsearchmedlem";
-            this.dgrCTsearchmedlem.Size = new System.Drawing.Size(323, 213);
+            this.dgrCTsearchmedlem.Size = new System.Drawing.Size(323, 251);
             this.dgrCTsearchmedlem.TabIndex = 89;
             // 
             // btnNewContact
@@ -621,16 +632,17 @@
             this.btnNewContact.UseVisualStyleBackColor = true;
             this.btnNewContact.Click += new System.EventHandler(this.btnNewContact_Click);
             // 
-            // button2
+            // btnContactList
             // 
-            this.button2.Location = new System.Drawing.Point(615, 17);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(70, 25);
-            this.button2.TabIndex = 87;
-            this.button2.Text = "Till Lista >";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
+            this.btnContactList.Location = new System.Drawing.Point(615, 17);
+            this.btnContactList.Margin = new System.Windows.Forms.Padding(2);
+            this.btnContactList.Name = "btnContactList";
+            this.btnContactList.Size = new System.Drawing.Size(70, 25);
+            this.btnContactList.TabIndex = 87;
+            this.btnContactList.Text = "Till Lista >";
+            this.btnContactList.UseVisualStyleBackColor = true;
+            this.btnContactList.Visible = false;
+            this.btnContactList.Click += new System.EventHandler(this.btnContactList_Click);
             // 
             // txtCTcellphone
             // 
@@ -1324,17 +1336,80 @@
             this.panStart.Size = new System.Drawing.Size(727, 408);
             this.panStart.TabIndex = 46;
             // 
+            // panViewContact
+            // 
+            this.panViewContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panViewContact.Controls.Add(this.dgrViewCTmember);
+            this.panViewContact.Controls.Add(this.dgrViewContact);
+            this.panViewContact.Controls.Add(this.lblContacts);
+            this.panViewContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panViewContact.Location = new System.Drawing.Point(0, 24);
+            this.panViewContact.Name = "panViewContact";
+            this.panViewContact.Size = new System.Drawing.Size(727, 408);
+            this.panViewContact.TabIndex = 94;
+            // 
+            // lblContacts
+            // 
+            this.lblContacts.AutoSize = true;
+            this.lblContacts.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContacts.Location = new System.Drawing.Point(12, 9);
+            this.lblContacts.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblContacts.Name = "lblContacts";
+            this.lblContacts.Size = new System.Drawing.Size(132, 32);
+            this.lblContacts.TabIndex = 4;
+            this.lblContacts.Text = "Kontakter";
+            // 
+            // dgrViewContact
+            // 
+            this.dgrViewContact.AllowUserToAddRows = false;
+            this.dgrViewContact.AllowUserToDeleteRows = false;
+            this.dgrViewContact.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgrViewContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrViewContact.Location = new System.Drawing.Point(11, 49);
+            this.dgrViewContact.Margin = new System.Windows.Forms.Padding(2);
+            this.dgrViewContact.Name = "dgrViewContact";
+            this.dgrViewContact.ReadOnly = true;
+            this.dgrViewContact.Size = new System.Drawing.Size(331, 344);
+            this.dgrViewContact.TabIndex = 5;
+            this.dgrViewContact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellClick);
+            this.dgrViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellDoubleClick);
+            // 
+            // kontaktlistaToolStripMenuItem
+            // 
+            this.kontaktlistaToolStripMenuItem.Name = "kontaktlistaToolStripMenuItem";
+            this.kontaktlistaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.kontaktlistaToolStripMenuItem.Text = "Kontaktlista";
+            this.kontaktlistaToolStripMenuItem.Click += new System.EventHandler(this.kontaktlistaToolStripMenuItem_Click);
+            // 
+            // dgrViewCTmember
+            // 
+            this.dgrViewCTmember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgrViewCTmember.Location = new System.Drawing.Point(355, 49);
+            this.dgrViewCTmember.Name = "dgrViewCTmember";
+            this.dgrViewCTmember.Size = new System.Drawing.Size(358, 344);
+            this.dgrViewCTmember.TabIndex = 6;
+            // 
+            // btnCTsave
+            // 
+            this.btnCTsave.Location = new System.Drawing.Point(470, 352);
+            this.btnCTsave.Name = "btnCTsave";
+            this.btnCTsave.Size = new System.Drawing.Size(75, 23);
+            this.btnCTsave.TabIndex = 94;
+            this.btnCTsave.Text = "Spara";
+            this.btnCTsave.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 432);
             this.Controls.Add(this.panContact);
+            this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panViewContact);
+            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.panTGGroupList);
-            this.Controls.Add(this.panViewMember);
-            this.Controls.Add(this.panMember);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
@@ -1355,6 +1430,10 @@
             this.panTGGroupList.ResumeLayout(false);
             this.panTGGroupList.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewTGGroupList)).EndInit();
+            this.panViewContact.ResumeLayout(false);
+            this.panViewContact.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgrViewCTmember)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1451,7 +1530,7 @@
         private System.Windows.Forms.Panel panStart;
         private System.Windows.Forms.ComboBox cmbFilter;
         private System.Windows.Forms.Button btnViewList;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnContactList;
         private System.Windows.Forms.TextBox txtCTcellphone;
         private System.Windows.Forms.TextBox txtCTphone;
         private System.Windows.Forms.Label lblCTmobile;
@@ -1478,6 +1557,12 @@
         private System.Windows.Forms.Button btnCTsearch;
         private System.Windows.Forms.DataGridView dgrCTsearchmedlem;
         private System.Windows.Forms.Button btnNewContact;
+        private System.Windows.Forms.ToolStripMenuItem kontaktlistaToolStripMenuItem;
+        private System.Windows.Forms.Panel panViewContact;
+        private System.Windows.Forms.DataGridView dgrViewContact;
+        private System.Windows.Forms.Label lblContacts;
+        private System.Windows.Forms.DataGridView dgrViewCTmember;
+        private System.Windows.Forms.Button btnCTsave;
     }
 }
 

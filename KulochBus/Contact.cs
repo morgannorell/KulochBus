@@ -21,6 +21,14 @@ namespace KulochBus
 
             dt = querry.Select(sql);
 
+            dt.Columns.Add(new DataColumn("Selected", typeof(bool)));
+
+            string hasMember =
+                "SELECT memberid AS \"Medlemsnr\", firstname AS \"Förnamn\", lastname AS \"Efternamn\" " +
+                "FROM person JOIN membercontact ON personid = memberid " +
+                "WHERE contactid = "; // + contact;
+
+
             return dt;
         }
 
@@ -70,6 +78,63 @@ namespace KulochBus
                 querry = new Sql();
                 querry.Insert(add);
             }
+
+            return dt;
+        }
+
+        public DataTable GetContactList()
+        {
+            Sql querry = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql =
+                "SELECT contactid AS \"Kontaktnr\", firstname AS \"Förnamn\", " +
+                "lastname AS \"Efternamn\" " +
+                "FROM person " +
+                "Join contact ON personid = contactid";
+
+            dt = querry.Select(sql);
+            return dt;
+        }
+
+        public DataTable GetContactMembers(string contact)
+        {
+            Sql querry = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql =
+                "SELECT memberid AS \"Medlemsnr\", firstname AS \"Förnamn\", " +
+                "lastname AS \"Efternamn\" " +
+                "FROM person " +
+                "Join membercontact ON personid = memberid " +
+                "WHERE contactid = " + contact;
+
+              dt = querry.Select(sql);
+            return dt;
+        }
+
+        public DataTable GetContactDetail(string member)
+        {
+            Sql querry = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql =
+                "SELECT personid, firstname, lastname, securitynr, gender, address, zipcode, city, email " +
+                "FROM person JOIN contact ON personid = contactid " +
+                "WHERE personid = " + member;
+
+            dt = querry.Select(sql);
+            return dt;
+        }
+
+        public DataTable GetPhone(string member)
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT phone, type FROM phone WHERE personid = " + member;
+
+            DataTable dt = new DataTable();
+            dt = querry.Select(sql);
 
             return dt;
         }

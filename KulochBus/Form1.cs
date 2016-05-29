@@ -326,8 +326,6 @@ namespace KulochBus
             dt = ct.GetMemberContact(search);
             bs.DataSource = dt;
 
-            dt.Columns.Add(new DataColumn("Selected", typeof(bool)));
-
             dgrCTsearchmedlem.DataSource = bs;
         }
 
@@ -347,6 +345,12 @@ namespace KulochBus
                 Phone = txtCTphone.Text,
                 Cellphone = txtCTcellphone.Text,
             };
+
+            if (comboBoxGender.SelectedItem == null)
+            {
+                MessageBox.Show("Du måste ange om det är en man eller kvinna.");
+                return;
+            }
 
             List<string> memberids = new List<string>();
 
@@ -421,6 +425,99 @@ namespace KulochBus
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }        
+        }
+        //
+        // Kontaktlista
+        //
+        private void ShowContactlist()
+        {
+            HidePanels();
+            panViewContact.Show();
+
+            Contact ct = new Contact();
+
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = ct.GetContactList();
+            bs.DataSource = dt;
+
+            dgrViewContact.DataSource = bs;
+        }
+
+        private void kontaktlistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowContactlist();
+        }
+
+        private void dgrViewContact_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Contact ct = new Contact();
+
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            // Get memberid
+            string selectedContact;
+            DataGridViewRow selectedRow = dgrViewContact.Rows[e.RowIndex];
+            selectedContact = selectedRow.Cells[0].Value.ToString();
+
+            dt = ct.GetContactMembers(selectedContact);
+            bs.DataSource = dt;
+
+            dgrViewCTmember.DataSource = bs;
+        }
+
+        private void dgrViewContact_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //visibility på members
+            HidePanels();
+            btnNewContact.Hide();
+            panContact.Show();
+            btnCTsave.Show();
+            lblCTTitle.Text = "Redigera kontakt";
+            btnContactList.Show();
+
+            //lägger till items i combobox + tilldelar värden
+            //cmbMembership.Items.Add(new Membership("Medlem", 150));
+            //cmbMembership.Items.Add(new Membership("Prova-på", 50));
+            //cmbMembership.Items.Add(new Membership("Cirkusvän", 0));
+
+            // Get memberid
+            string selectedContact;
+            DataGridViewRow selectedRow = dgrViewContact.Rows[e.RowIndex];
+            selectedContact = selectedRow.Cells[0].Value.ToString();
+
+            Contact ct = new Contact();
+
+            dt = new DataTable();
+            dt = ct.GetContactDetail(selectedContact);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                txtCTfirstname.Text = row["firstname"].ToString();
+                txtCTlastname.Text = row["lastname"].ToString();
+                txtCTSecuritynr.Text = row["securitynr"].ToString();
+                cmbCTgender.Text = row["gender"].ToString();
+                txtCTaddress.Text = row["address"].ToString();
+                txtCTcity.Text = row["city"].ToString();
+                txtCTzipcode.Text = row["zipcode"].ToString();
+                txtCTemail.Text = row["email"].ToString();
+            }
+
+            dt = new DataTable();
+            dt = ct.GetPhone(selectedContact);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                if ((string)row["type"] == "phone") { txtCTcellphone.Text = row["phone"].ToString(); }
+                if ((string)row["type"] == "cell") { txtCTphone.Text = row["phone"].ToString(); }
+            }
+        }
+
+        private void btnContactList_Click(object sender, EventArgs e)
+        {
+            ShowContactlist();
+        }
     }
 }
