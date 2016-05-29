@@ -119,7 +119,6 @@ namespace KulochBus
                 System.Windows.Forms.MessageBox.Show(ex.Message);
                 return myTable;    
             }
-            conn.Close();
         }
 
         public int SelectDiciplin(string sql)

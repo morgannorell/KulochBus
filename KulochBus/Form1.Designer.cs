@@ -53,12 +53,11 @@
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.btnTGLevel = new System.Windows.Forms.Button();
             this.btnTGDiciplin = new System.Windows.Forms.Button();
-            this.rbnTGRemove = new System.Windows.Forms.RadioButton();
-            this.rbnTGAdd = new System.Windows.Forms.RadioButton();
-            this.cmbTGMember = new System.Windows.Forms.ComboBox();
+            this.rbnTGRemoveMember = new System.Windows.Forms.RadioButton();
+            this.rbnTGAddMember = new System.Windows.Forms.RadioButton();
+            this.cmbAddMember = new System.Windows.Forms.ComboBox();
             this.lblTGMisc = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblTGMembers = new System.Windows.Forms.Label();
             this.btnTGSave = new System.Windows.Forms.Button();
             this.dgrListTGMembers = new System.Windows.Forms.DataGridView();
             this.txtTGDescription = new System.Windows.Forms.TextBox();
@@ -142,9 +141,9 @@
             this.txtMemberSearch = new System.Windows.Forms.TextBox();
             this.dgrViewMember = new System.Windows.Forms.DataGridView();
             this.panTGGroupList = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnTGSearch = new System.Windows.Forms.Button();
             this.lblTGGroupListTitle = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTGSearch = new System.Windows.Forms.TextBox();
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
             this.panViewContact = new System.Windows.Forms.Panel();
@@ -167,6 +166,16 @@
             this.lblATdateTitle = new System.Windows.Forms.Label();
             this.lblATmemberlist = new System.Windows.Forms.Label();
             this.lblATtraininggroups = new System.Windows.Forms.Label();
+            this.txtGroupID = new System.Windows.Forms.TextBox();
+            this.lblTGMembers = new System.Windows.Forms.Label();
+            this.lblGroupID = new System.Windows.Forms.Label();
+            this.dgvAddLeader = new System.Windows.Forms.DataGridView();
+            this.lblLeader = new System.Windows.Forms.Label();
+            this.rbnRemoveLeader = new System.Windows.Forms.RadioButton();
+            this.rbnTGAddLeader = new System.Windows.Forms.RadioButton();
+            this.cmbAddLeader = new System.Windows.Forms.ComboBox();
+            this.btnAddLeader = new System.Windows.Forms.Button();
+            this.btnAddMember = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrListTGMembers)).BeginInit();
@@ -184,6 +193,7 @@
             this.panViewAtendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrATmemberlist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -341,13 +351,22 @@
             // panTGGroup
             // 
             this.panTGGroup.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panTGGroup.Controls.Add(this.btnAddMember);
+            this.panTGGroup.Controls.Add(this.btnAddLeader);
+            this.panTGGroup.Controls.Add(this.rbnRemoveLeader);
+            this.panTGGroup.Controls.Add(this.rbnTGAddLeader);
+            this.panTGGroup.Controls.Add(this.cmbAddLeader);
+            this.panTGGroup.Controls.Add(this.lblLeader);
+            this.panTGGroup.Controls.Add(this.dgvAddLeader);
+            this.panTGGroup.Controls.Add(this.lblGroupID);
+            this.panTGGroup.Controls.Add(this.txtGroupID);
             this.panTGGroup.Controls.Add(this.cmbDisciplin);
             this.panTGGroup.Controls.Add(this.cmbLevel);
             this.panTGGroup.Controls.Add(this.btnTGLevel);
             this.panTGGroup.Controls.Add(this.btnTGDiciplin);
-            this.panTGGroup.Controls.Add(this.rbnTGRemove);
-            this.panTGGroup.Controls.Add(this.rbnTGAdd);
-            this.panTGGroup.Controls.Add(this.cmbTGMember);
+            this.panTGGroup.Controls.Add(this.rbnTGRemoveMember);
+            this.panTGGroup.Controls.Add(this.rbnTGAddMember);
+            this.panTGGroup.Controls.Add(this.cmbAddMember);
             this.panTGGroup.Controls.Add(this.lblTGMisc);
             this.panTGGroup.Controls.Add(this.textBox1);
             this.panTGGroup.Controls.Add(this.lblTGMembers);
@@ -373,7 +392,7 @@
             this.cmbDisciplin.FormattingEnabled = true;
             this.cmbDisciplin.Location = new System.Drawing.Point(73, 74);
             this.cmbDisciplin.Name = "cmbDisciplin";
-            this.cmbDisciplin.Size = new System.Drawing.Size(174, 21);
+            this.cmbDisciplin.Size = new System.Drawing.Size(162, 21);
             this.cmbDisciplin.TabIndex = 23;
             // 
             // cmbLevel
@@ -381,60 +400,60 @@
             this.cmbLevel.FormattingEnabled = true;
             this.cmbLevel.Location = new System.Drawing.Point(73, 101);
             this.cmbLevel.Name = "cmbLevel";
-            this.cmbLevel.Size = new System.Drawing.Size(174, 21);
+            this.cmbLevel.Size = new System.Drawing.Size(162, 21);
             this.cmbLevel.TabIndex = 21;
             // 
             // btnTGLevel
             // 
-            this.btnTGLevel.Location = new System.Drawing.Point(258, 100);
+            this.btnTGLevel.Location = new System.Drawing.Point(243, 100);
             this.btnTGLevel.Name = "btnTGLevel";
-            this.btnTGLevel.Size = new System.Drawing.Size(57, 23);
+            this.btnTGLevel.Size = new System.Drawing.Size(72, 23);
             this.btnTGLevel.TabIndex = 20;
-            this.btnTGLevel.Text = "Nivå...";
+            this.btnTGLevel.Text = "Ny nivå...";
             this.btnTGLevel.UseVisualStyleBackColor = true;
             this.btnTGLevel.Visible = false;
             this.btnTGLevel.Click += new System.EventHandler(this.btnTGLevel_Click);
             // 
             // btnTGDiciplin
             // 
-            this.btnTGDiciplin.Location = new System.Drawing.Point(258, 74);
+            this.btnTGDiciplin.Location = new System.Drawing.Point(243, 74);
             this.btnTGDiciplin.Name = "btnTGDiciplin";
-            this.btnTGDiciplin.Size = new System.Drawing.Size(57, 23);
+            this.btnTGDiciplin.Size = new System.Drawing.Size(72, 23);
             this.btnTGDiciplin.TabIndex = 19;
-            this.btnTGDiciplin.Text = "Disiplin...";
+            this.btnTGDiciplin.Text = "Ny disiplin...";
             this.btnTGDiciplin.UseVisualStyleBackColor = true;
             this.btnTGDiciplin.Visible = false;
             this.btnTGDiciplin.Click += new System.EventHandler(this.btnTGDiciplin_Click);
             // 
-            // rbnTGRemove
+            // rbnTGRemoveMember
             // 
-            this.rbnTGRemove.AutoSize = true;
-            this.rbnTGRemove.Location = new System.Drawing.Point(18, 417);
-            this.rbnTGRemove.Name = "rbnTGRemove";
-            this.rbnTGRemove.Size = new System.Drawing.Size(59, 17);
-            this.rbnTGRemove.TabIndex = 17;
-            this.rbnTGRemove.TabStop = true;
-            this.rbnTGRemove.Text = "Ta bort";
-            this.rbnTGRemove.UseVisualStyleBackColor = true;
+            this.rbnTGRemoveMember.AutoSize = true;
+            this.rbnTGRemoveMember.Location = new System.Drawing.Point(406, 410);
+            this.rbnTGRemoveMember.Name = "rbnTGRemoveMember";
+            this.rbnTGRemoveMember.Size = new System.Drawing.Size(59, 17);
+            this.rbnTGRemoveMember.TabIndex = 17;
+            this.rbnTGRemoveMember.TabStop = true;
+            this.rbnTGRemoveMember.Text = "Ta bort";
+            this.rbnTGRemoveMember.UseVisualStyleBackColor = true;
             // 
-            // rbnTGAdd
+            // rbnTGAddMember
             // 
-            this.rbnTGAdd.AutoSize = true;
-            this.rbnTGAdd.Location = new System.Drawing.Point(18, 396);
-            this.rbnTGAdd.Name = "rbnTGAdd";
-            this.rbnTGAdd.Size = new System.Drawing.Size(65, 17);
-            this.rbnTGAdd.TabIndex = 16;
-            this.rbnTGAdd.TabStop = true;
-            this.rbnTGAdd.Text = "Lägg Till";
-            this.rbnTGAdd.UseVisualStyleBackColor = true;
+            this.rbnTGAddMember.AutoSize = true;
+            this.rbnTGAddMember.Location = new System.Drawing.Point(406, 389);
+            this.rbnTGAddMember.Name = "rbnTGAddMember";
+            this.rbnTGAddMember.Size = new System.Drawing.Size(65, 17);
+            this.rbnTGAddMember.TabIndex = 16;
+            this.rbnTGAddMember.TabStop = true;
+            this.rbnTGAddMember.Text = "Lägg Till";
+            this.rbnTGAddMember.UseVisualStyleBackColor = true;
             // 
-            // cmbTGMember
+            // cmbAddMember
             // 
-            this.cmbTGMember.FormattingEnabled = true;
-            this.cmbTGMember.Location = new System.Drawing.Point(89, 405);
-            this.cmbTGMember.Name = "cmbTGMember";
-            this.cmbTGMember.Size = new System.Drawing.Size(157, 21);
-            this.cmbTGMember.TabIndex = 15;
+            this.cmbAddMember.FormattingEnabled = true;
+            this.cmbAddMember.Location = new System.Drawing.Point(477, 398);
+            this.cmbAddMember.Name = "cmbAddMember";
+            this.cmbAddMember.Size = new System.Drawing.Size(166, 21);
+            this.cmbAddMember.TabIndex = 15;
             // 
             // lblTGMisc
             // 
@@ -452,37 +471,28 @@
             this.textBox1.Margin = new System.Windows.Forms.Padding(2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(242, 116);
+            this.textBox1.Size = new System.Drawing.Size(242, 126);
             this.textBox1.TabIndex = 13;
-            // 
-            // lblTGMembers
-            // 
-            this.lblTGMembers.AutoSize = true;
-            this.lblTGMembers.Location = new System.Drawing.Point(332, 28);
-            this.lblTGMembers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblTGMembers.Name = "lblTGMembers";
-            this.lblTGMembers.Size = new System.Drawing.Size(61, 13);
-            this.lblTGMembers.TabIndex = 12;
-            this.lblTGMembers.Text = "Medlemmar";
             // 
             // btnTGSave
             // 
-            this.btnTGSave.Location = new System.Drawing.Point(251, 403);
+            this.btnTGSave.Location = new System.Drawing.Point(251, 397);
             this.btnTGSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnTGSave.Name = "btnTGSave";
             this.btnTGSave.Size = new System.Drawing.Size(64, 23);
             this.btnTGSave.TabIndex = 11;
             this.btnTGSave.Text = "Spara";
             this.btnTGSave.UseVisualStyleBackColor = true;
+            this.btnTGSave.Click += new System.EventHandler(this.btnTGSave_Click);
             // 
             // dgrListTGMembers
             // 
             this.dgrListTGMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrListTGMembers.Location = new System.Drawing.Point(335, 47);
+            this.dgrListTGMembers.Location = new System.Drawing.Point(335, 193);
             this.dgrListTGMembers.Margin = new System.Windows.Forms.Padding(2);
             this.dgrListTGMembers.Name = "dgrListTGMembers";
             this.dgrListTGMembers.RowTemplate.Height = 28;
-            this.dgrListTGMembers.Size = new System.Drawing.Size(378, 388);
+            this.dgrListTGMembers.Size = new System.Drawing.Size(378, 190);
             this.dgrListTGMembers.TabIndex = 9;
             // 
             // txtTGDescription
@@ -499,7 +509,7 @@
             this.txtTGName.Location = new System.Drawing.Point(73, 50);
             this.txtTGName.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGName.Name = "txtTGName";
-            this.txtTGName.Size = new System.Drawing.Size(174, 20);
+            this.txtTGName.Size = new System.Drawing.Size(162, 20);
             this.txtTGName.TabIndex = 5;
             // 
             // lblTGDiciplin
@@ -1312,9 +1322,9 @@
             // panTGGroupList
             // 
             this.panTGGroupList.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panTGGroupList.Controls.Add(this.button1);
+            this.panTGGroupList.Controls.Add(this.btnTGSearch);
             this.panTGGroupList.Controls.Add(this.lblTGGroupListTitle);
-            this.panTGGroupList.Controls.Add(this.textBox2);
+            this.panTGGroupList.Controls.Add(this.txtTGSearch);
             this.panTGGroupList.Controls.Add(this.dgrViewTGGroupList);
             this.panTGGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panTGGroupList.Location = new System.Drawing.Point(0, 24);
@@ -1322,14 +1332,15 @@
             this.panTGGroupList.Size = new System.Drawing.Size(727, 445);
             this.panTGGroupList.TabIndex = 18;
             // 
-            // button1
+            // btnTGSearch
             // 
-            this.button1.Location = new System.Drawing.Point(652, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(61, 23);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Sök";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnTGSearch.Location = new System.Drawing.Point(652, 12);
+            this.btnTGSearch.Name = "btnTGSearch";
+            this.btnTGSearch.Size = new System.Drawing.Size(61, 23);
+            this.btnTGSearch.TabIndex = 8;
+            this.btnTGSearch.Text = "Sök";
+            this.btnTGSearch.UseVisualStyleBackColor = true;
+            this.btnTGSearch.Click += new System.EventHandler(this.btnTGSearch_Click);
             // 
             // lblTGGroupListTitle
             // 
@@ -1342,13 +1353,13 @@
             this.lblTGGroupListTitle.TabIndex = 7;
             this.lblTGGroupListTitle.Text = "Träningsgrupper";
             // 
-            // textBox2
+            // txtTGSearch
             // 
-            this.textBox2.Location = new System.Drawing.Point(473, 14);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(163, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtTGSearch.Location = new System.Drawing.Point(473, 14);
+            this.txtTGSearch.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTGSearch.Name = "txtTGSearch";
+            this.txtTGSearch.Size = new System.Drawing.Size(163, 20);
+            this.txtTGSearch.TabIndex = 6;
             // 
             // dgrViewTGGroupList
             // 
@@ -1362,6 +1373,7 @@
             this.dgrViewTGGroupList.ReadOnly = true;
             this.dgrViewTGGroupList.Size = new System.Drawing.Size(703, 386);
             this.dgrViewTGGroupList.TabIndex = 5;
+            this.dgrViewTGGroupList.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewTGGroupList_CellDoubleClick);
             // 
             // panStart
             // 
@@ -1583,6 +1595,107 @@
             this.lblATtraininggroups.TabIndex = 53;
             this.lblATtraininggroups.Text = "Träningsgrupp";
             // 
+            // txtGroupID
+            // 
+            this.txtGroupID.Enabled = false;
+            this.txtGroupID.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGroupID.Location = new System.Drawing.Point(667, 18);
+            this.txtGroupID.Name = "txtGroupID";
+            this.txtGroupID.Size = new System.Drawing.Size(46, 22);
+            this.txtGroupID.TabIndex = 48;
+            this.txtGroupID.Tag = "Medlemsnummer";
+            // 
+            // lblTGMembers
+            // 
+            this.lblTGMembers.AutoSize = true;
+            this.lblTGMembers.Location = new System.Drawing.Point(334, 178);
+            this.lblTGMembers.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTGMembers.Name = "lblTGMembers";
+            this.lblTGMembers.Size = new System.Drawing.Size(61, 13);
+            this.lblTGMembers.TabIndex = 12;
+            this.lblTGMembers.Text = "Medlemmar";
+            // 
+            // lblGroupID
+            // 
+            this.lblGroupID.AutoSize = true;
+            this.lblGroupID.Location = new System.Drawing.Point(609, 24);
+            this.lblGroupID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblGroupID.Name = "lblGroupID";
+            this.lblGroupID.Size = new System.Drawing.Size(47, 13);
+            this.lblGroupID.TabIndex = 50;
+            this.lblGroupID.Text = "GruppID";
+            // 
+            // dgvAddLeader
+            // 
+            this.dgvAddLeader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAddLeader.Location = new System.Drawing.Point(335, 63);
+            this.dgvAddLeader.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAddLeader.Name = "dgvAddLeader";
+            this.dgvAddLeader.RowTemplate.Height = 28;
+            this.dgvAddLeader.Size = new System.Drawing.Size(378, 82);
+            this.dgvAddLeader.TabIndex = 51;
+            // 
+            // lblLeader
+            // 
+            this.lblLeader.AutoSize = true;
+            this.lblLeader.Location = new System.Drawing.Point(332, 47);
+            this.lblLeader.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLeader.Name = "lblLeader";
+            this.lblLeader.Size = new System.Drawing.Size(40, 13);
+            this.lblLeader.TabIndex = 52;
+            this.lblLeader.Text = "Ledare";
+            // 
+            // rbnRemoveLeader
+            // 
+            this.rbnRemoveLeader.AutoSize = true;
+            this.rbnRemoveLeader.Location = new System.Drawing.Point(413, 173);
+            this.rbnRemoveLeader.Name = "rbnRemoveLeader";
+            this.rbnRemoveLeader.Size = new System.Drawing.Size(59, 17);
+            this.rbnRemoveLeader.TabIndex = 55;
+            this.rbnRemoveLeader.TabStop = true;
+            this.rbnRemoveLeader.Text = "Ta bort";
+            this.rbnRemoveLeader.UseVisualStyleBackColor = true;
+            // 
+            // rbnTGAddLeader
+            // 
+            this.rbnTGAddLeader.AutoSize = true;
+            this.rbnTGAddLeader.Location = new System.Drawing.Point(413, 152);
+            this.rbnTGAddLeader.Name = "rbnTGAddLeader";
+            this.rbnTGAddLeader.Size = new System.Drawing.Size(65, 17);
+            this.rbnTGAddLeader.TabIndex = 54;
+            this.rbnTGAddLeader.TabStop = true;
+            this.rbnTGAddLeader.Text = "Lägg Till";
+            this.rbnTGAddLeader.UseVisualStyleBackColor = true;
+            // 
+            // cmbAddLeader
+            // 
+            this.cmbAddLeader.FormattingEnabled = true;
+            this.cmbAddLeader.Location = new System.Drawing.Point(484, 161);
+            this.cmbAddLeader.Name = "cmbAddLeader";
+            this.cmbAddLeader.Size = new System.Drawing.Size(166, 21);
+            this.cmbAddLeader.TabIndex = 53;
+            // 
+            // btnAddLeader
+            // 
+            this.btnAddLeader.Location = new System.Drawing.Point(655, 159);
+            this.btnAddLeader.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddLeader.Name = "btnAddLeader";
+            this.btnAddLeader.Size = new System.Drawing.Size(61, 23);
+            this.btnAddLeader.TabIndex = 56;
+            this.btnAddLeader.Text = "Lägg till";
+            this.btnAddLeader.UseVisualStyleBackColor = true;
+            this.btnAddLeader.Click += new System.EventHandler(this.btnAddLeader_Click);
+            // 
+            // btnAddMember
+            // 
+            this.btnAddMember.Location = new System.Drawing.Point(653, 397);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddMember.Name = "btnAddMember";
+            this.btnAddMember.Size = new System.Drawing.Size(61, 23);
+            this.btnAddMember.TabIndex = 57;
+            this.btnAddMember.Text = "Lägg till";
+            this.btnAddMember.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1593,6 +1706,12 @@
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panTGGroup);
+            this.Controls.Add(this.panViewContact);
+            this.Controls.Add(this.panContact);
+            this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panTGGroupList);
+            this.Controls.Add(this.panViewMember);
+            this.Controls.Add(this.panStart);
             this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panViewAtendance);
             this.Controls.Add(this.panViewMember);
@@ -1627,6 +1746,7 @@
             this.panViewAtendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgrATmemberlist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1694,7 +1814,6 @@
         private System.Windows.Forms.Panel panMember;
         private System.Windows.Forms.CheckBox checkPayed;
         private System.Windows.Forms.Label lblCreateNewMember;
-        private System.Windows.Forms.Label lblTGMembers;
         private System.Windows.Forms.Button btnTGSave;
         private System.Windows.Forms.DataGridView dgrListTGMembers;
         private System.Windows.Forms.Label lblViewMemberTitle;
@@ -1702,14 +1821,14 @@
         private System.Windows.Forms.Button btnMemberSearch;
         private System.Windows.Forms.Label lblTGMisc;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.RadioButton rbnTGRemove;
-        private System.Windows.Forms.RadioButton rbnTGAdd;
-        private System.Windows.Forms.ComboBox cmbTGMember;
+        private System.Windows.Forms.RadioButton rbnTGRemoveMember;
+        private System.Windows.Forms.RadioButton rbnTGAddMember;
+        private System.Windows.Forms.ComboBox cmbAddMember;
         private System.Windows.Forms.ToolStripMenuItem träningsgrupperToolStripMenuItem;
         private System.Windows.Forms.Panel panTGGroupList;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTGSearch;
         private System.Windows.Forms.Label lblTGGroupListTitle;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTGSearch;
         private System.Windows.Forms.DataGridView dgrViewTGGroupList;
         private System.Windows.Forms.Button btnTGCreate;
         private System.Windows.Forms.Button btnTGLevel;
@@ -1772,6 +1891,16 @@
         private System.Windows.Forms.Label lblATdateTitle;
         private System.Windows.Forms.Label lblATmemberlist;
         private System.Windows.Forms.Label lblATtraininggroups;
+        private System.Windows.Forms.Label lblGroupID;
+        private System.Windows.Forms.TextBox txtGroupID;
+        private System.Windows.Forms.Label lblTGMembers;
+        private System.Windows.Forms.Button btnAddMember;
+        private System.Windows.Forms.Button btnAddLeader;
+        private System.Windows.Forms.RadioButton rbnRemoveLeader;
+        private System.Windows.Forms.RadioButton rbnTGAddLeader;
+        private System.Windows.Forms.ComboBox cmbAddLeader;
+        private System.Windows.Forms.Label lblLeader;
+        private System.Windows.Forms.DataGridView dgvAddLeader;
     }
 }
 

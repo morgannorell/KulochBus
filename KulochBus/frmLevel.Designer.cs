@@ -49,7 +49,6 @@
             this.dgrViewLevels.Name = "dgrViewLevels";
             this.dgrViewLevels.Size = new System.Drawing.Size(252, 220);
             this.dgrViewLevels.TabIndex = 0;
-            this.dgrViewLevels.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewLevels_CellContentClick);
             // 
             // lblLevelTitle
             // 
@@ -60,7 +59,6 @@
             this.lblLevelTitle.Size = new System.Drawing.Size(100, 47);
             this.lblLevelTitle.TabIndex = 1;
             this.lblLevelTitle.Text = "Nivå";
-            this.lblLevelTitle.Click += new System.EventHandler(this.lblLevelTitle_Click);
             // 
             // txtLevel
             // 
@@ -69,7 +67,6 @@
             this.txtLevel.Name = "txtLevel";
             this.txtLevel.Size = new System.Drawing.Size(272, 26);
             this.txtLevel.TabIndex = 2;
-            this.txtLevel.TextChanged += new System.EventHandler(this.txtLevel_TextChanged);
             // 
             // btnLevelSave
             // 
@@ -93,7 +90,6 @@
             this.rbnLevelRemove.TabStop = true;
             this.rbnLevelRemove.Text = "Ta bort";
             this.rbnLevelRemove.UseVisualStyleBackColor = true;
-            this.rbnLevelRemove.CheckedChanged += new System.EventHandler(this.rbnLevelRemove_CheckedChanged);
             // 
             // rbnLevelAdd
             // 
@@ -106,7 +102,6 @@
             this.rbnLevelAdd.TabStop = true;
             this.rbnLevelAdd.Text = "Lägg Till";
             this.rbnLevelAdd.UseVisualStyleBackColor = true;
-            this.rbnLevelAdd.CheckedChanged += new System.EventHandler(this.rbnLevelAdd_CheckedChanged);
             // 
             // btnLevelClose
             // 
