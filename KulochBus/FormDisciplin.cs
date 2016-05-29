@@ -15,44 +15,12 @@ namespace KulochBus
         public FormDisciplin()
         {
             InitializeComponent();
-            ListLevels();
+            ListDiciplin();
         }
 
-        private void btnDisciplinSave_Click(object sender, EventArgs e)
-        {
-            if (rbnDisciplinAdd.Checked)
-            {
-                string newDisciplin = txtDisciplin.Text;
-                if (String.IsNullOrWhiteSpace(newDisciplin))
-                {
-                    MessageBox.Show("Du måste ge din disciplin ett namn.");
-                }
-
-                else
-                {
-                    string insert = "INSERT INTO disciplin (name) VALUES ('" + newDisciplin + "')";
-                    Sql disciplin = new Sql();
-
-                    disciplin.Connect();
-                    disciplin.Insert(insert);
-                }
-            }
-
-            else if (rbnDisciplinRemove.Checked)
-            {
-
-            }
-
-            else
-                MessageBox.Show("Du måste välja att lägga till eller ta bort en disciplin.");
-
-            ListLevels();
-        }
-
-        private void ListLevels()
+        private void ListDiciplin()
         {
             Sql listDisciplin = new Sql();
-            listDisciplin.Connect();
 
             string querry = "SELECT name FROM diciplin";
 
@@ -64,9 +32,39 @@ namespace KulochBus
             dgrViewDisciplin.DataSource = bs;
         }
 
-        private void btnLevelClose_Click(object sender, EventArgs e)
+        private void btnDisciplinSave_Click_1(object sender, EventArgs e)
         {
-            Close();
+            Sql disciplin = new Sql();
+
+            if (rbnDisciplinAdd.Checked)
+            {
+                string newDisciplin = txtDisciplin.Text;
+                if (String.IsNullOrWhiteSpace(newDisciplin))
+                {
+                    MessageBox.Show("Du måste ge din disciplin ett namn.");
+                }
+
+                else
+                {
+                    string insert = "INSERT INTO diciplin (name) VALUES ('" + newDisciplin + "')";
+                    
+
+                    disciplin.Insert(insert);
+                }
+            }
+
+            else if (rbnDisciplinRemove.Checked)
+            {
+                string a = dgrViewDisciplin.CurrentCell.FormattedValue.ToString();
+                string delete = "DELETE FROM diciplin WHERE name='" + a + "'";
+                disciplin.Insert(delete);
+            }
+
+            else
+                MessageBox.Show("Du måste välja att lägga till eller ta bort en disciplin.");
+
+            ListDiciplin();
         }
+
     }
 }

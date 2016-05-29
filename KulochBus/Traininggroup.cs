@@ -81,6 +81,54 @@ namespace KulochBus
             return dt;
         }
 
+        public DataTable GetTGList(string search)
+        {
+            Sql querry = new Sql();
 
+            string sql = "SELECT groupid AS \"GruppID\", t.name AS \"Gruppnamn\", l.name AS \"Nivå\", d.name AS \"Disciplin\" FROM traininggroup AS t" +
+                        " JOIN level AS l ON t.levelid = l.levelid" +
+                        " JOIN diciplin AS d ON t.diciplinid = d.diciplinid";
+
+
+                if (search != "")
+                {
+                    int result;
+                    sql += " WHERE ";
+                    if(int.TryParse(search, out result))
+                    {
+                        sql += "groupid = " + result + " OR ";
+                    }
+                    sql += 
+                    "t.name like '%" + search + "%' OR " +
+                    "l.name like '%" + search + "%' OR " +
+                    "d.name like '%" + search + "%'";
+                }
+            
+
+            DataTable dt = new DataTable();
+            dt = querry.Select(sql);
+
+            return dt;
+        }
+
+        public DataTable GetTGDetail(string traininggroup)
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT groupid AS \"GruppID\", t.name AS \"Gruppnamn\", l.name AS \"Nivå\", d.name AS \"Disciplin\", description AS \"Beskrivning\" FROM traininggroup AS t" +
+            " JOIN level AS l ON t.levelid = l.levelid" +
+            " JOIN diciplin AS d ON t.diciplinid = d.diciplinid WHERE groupid = " + traininggroup;
+
+            //string sql =
+            //    "SELECT personid, firstname, lastname, securitynr, gender, address, zipcode, city, email, " +
+            //    "memberid, responsibility, membership, isleader, pictureallowed, ispayed " +
+            //    "FROM person JOIN member ON personid = memberid " +
+            //    "WHERE personid = " + member;
+
+            DataTable dt = new DataTable();
+
+            dt = querry.Select(sql);
+            return dt;
+        }
     }
 }

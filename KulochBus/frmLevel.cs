@@ -20,6 +20,7 @@ namespace KulochBus
 
         private void btnLevelSave_Click(object sender, EventArgs e)
         {
+                    Sql level = new Sql();
             if (rbnLevelAdd.Checked)
             {
                 string newLevel = txtLevel.Text;
@@ -31,7 +32,7 @@ namespace KulochBus
                 else
                 {
                     string insert = "Insert into level (name) values ('" + newLevel + "')";
-                    Sql level = new Sql();
+
 
                     level.Connect();
                     level.Insert(insert);
@@ -40,19 +41,21 @@ namespace KulochBus
 
             else if (rbnLevelRemove.Checked)
             {
-
+                string a = dgrViewLevels.CurrentCell.FormattedValue.ToString();
+                string delete = "DELETE FROM level WHERE name='" + a + "'";
+                level.Insert(delete);
             }
 
             else
                 MessageBox.Show("Du måste välja att lägga till eller ta bort nivå.");
 
             ListLevels();
+
         }
 
         private void ListLevels()
         {
             Sql listLevels = new Sql();
-            listLevels.Connect();
 
             string querry = "SELECT name FROM level";
 
@@ -69,29 +72,5 @@ namespace KulochBus
             Close();
         }
 
-        private void txtLevel_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbnLevelAdd_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void rbnLevelRemove_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblLevelTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dgrViewLevels_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }

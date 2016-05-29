@@ -485,12 +485,28 @@ namespace KulochBus
         //
         // Träningsgrupp
         //
-        private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void ShowTGlist(string search)
         {
             HidePanels();
             panTGGroupList.Show();
 
             Traininggroup tg = new Traininggroup();
+
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = tg.GetTGList( search);
+            bs.DataSource = dt;
+            dgrViewTGGroupList.DataSource = bs;
+        }
+
+        private void träningsgrupperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+
+            string search = "";
+            ShowTGlist(search);
         }
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
@@ -568,6 +584,75 @@ namespace KulochBus
         {
             Application.Exit();
         }
+
+        private void btnTGSearch_Click(object sender, EventArgs e)
+        {
+            string search = txtTGSearch.Text;
+
+            ShowTGlist(search);
+        }
+
+        private void dgrViewTGGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            HidePanels();
+            btnTGCreate.Hide();
+            panTGGroup.Show();
+            btnTGSave.Show();
+            lblTraningTitle.Text = "Redigera träningsgrupp";
+            dgrListTGMembers.Show();
+            lblTGMembers.Show();
+            cmbTGMember.Show();
+            rbnTGAdd.Show();
+            rbnTGRemove.Show();
+            btnTGLevel.Visible = false;
+            btnTGDiciplin.Visible = false;
+
+            Traininggroup tg = new Traininggroup();
+            dt = new DataTable();
+            bs = new BindingSource();
+            dt = tg.GetTGLevelList();
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cmbLevel.Items.Add(dt.Rows[i]["name"]);
+            }
+
+            dt = tg.GetTGDiciplinList();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cmbDisciplin.Items.Add(dt.Rows[i]["name"]);
+            }
+
+            string selectedTG;
+            DataGridViewRow selectedRow = dgrViewTGGroupList.Rows[e.RowIndex];
+            selectedTG = selectedRow.Cells[0].Value.ToString();
+
+
+            dt = new DataTable();
+            dt = tg.GetTGDetail(selectedTG);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                txtGroupID.Text = row["GruppID"].ToString();
+                txtTGName.Text = row["Gruppnamn"].ToString();
+                cmbDisciplin.SelectedItem = row["Disciplin"].ToString();
+                cmbLevel.SelectedItem = row["Nivå"].ToString();
+                txtTGDescription.Text = row["Beskrivning"].ToString();
+            }
+
+            bs = new BindingSource();
+            bs.DataSource = dt;
+
+            dgrCTsearchmedlem.DataSource = bs;
+        }
+
+
+
+
+
+
+
+
 
     }
 }
