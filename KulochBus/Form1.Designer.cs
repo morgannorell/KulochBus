@@ -1366,10 +1366,11 @@
             // 
             // dgrViewCTmember
             // 
+            this.dgrViewCTmember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewCTmember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewCTmember.Location = new System.Drawing.Point(355, 49);
+            this.dgrViewCTmember.Location = new System.Drawing.Point(400, 49);
             this.dgrViewCTmember.Name = "dgrViewCTmember";
-            this.dgrViewCTmember.Size = new System.Drawing.Size(358, 344);
+            this.dgrViewCTmember.Size = new System.Drawing.Size(313, 344);
             this.dgrViewCTmember.TabIndex = 6;
             // 
             // dgrViewContact
@@ -1382,7 +1383,7 @@
             this.dgrViewContact.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewContact.Name = "dgrViewContact";
             this.dgrViewContact.ReadOnly = true;
-            this.dgrViewContact.Size = new System.Drawing.Size(331, 344);
+            this.dgrViewContact.Size = new System.Drawing.Size(370, 344);
             this.dgrViewContact.TabIndex = 5;
             this.dgrViewContact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellClick);
             this.dgrViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellDoubleClick);
@@ -1406,7 +1407,6 @@
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panContact);
-            this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panStart);
