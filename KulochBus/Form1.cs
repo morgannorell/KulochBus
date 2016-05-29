@@ -515,20 +515,42 @@ namespace KulochBus
 
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                cmbLevel.Items.Add(dt.Rows[i]["Name"]);
+                cmbLevel.Items.Add(dt.Rows[i]["name"]);
             }
-
-            dt.Clear();
 
             dt = tg.GetTGDiciplinList();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
-                cmbDisciplin.Items.Add(dt.Rows[i]["Name"]);
+                cmbDisciplin.Items.Add(dt.Rows[i]["name"]);
             }
         }
 
         private void btnTGCreate_Click(object sender, EventArgs e)
         {
+            Traininggroup nntg = new Traininggroup()
+            {
+                LevelName = cmbLevel.SelectedItem.ToString(),
+                DiciplinName = cmbDisciplin.SelectedItem.ToString()
+            };
+
+            int diciplinId;
+            int levelId;
+
+            diciplinId = nntg.GetTGDiciplin();
+            levelId = nntg.GetTGLevel();
+
+
+            Traininggroup ntg = new Traininggroup()
+            {
+                Description = txtTGDescription.Text,
+                Name = txtTGName.Text,
+                DiciplinId = diciplinId,
+                DiciplinName = cmbDisciplin.SelectedItem.ToString(),
+                LevelName = cmbLevel.SelectedItem.ToString(),
+                LevelId = levelId
+            };
+
+            ntg.CreateTG();
 
         }
 

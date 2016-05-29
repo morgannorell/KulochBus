@@ -18,7 +18,6 @@ namespace KulochBus
         private DataTable _table;
 
 
-
         public Sql()
         {
             conn = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["db_connection"].ConnectionString);
@@ -123,27 +122,52 @@ namespace KulochBus
             conn.Close();
         }
 
-        public DataTable Show(string sql)
+        public int SelectDiciplin(string sql)
         {
-            DataTable myTable = new DataTable();
-
             try
             {
-                //NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter(sql, conn);
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+                NpgsqlDataReader da = cmd.ExecuteReader();
 
-                da.SelectCommand = cmd;
-                da.Fill(myTable);
-
-                return myTable;
+                if (da.HasRows)
+                {
+                    while (da.Read())
+                    {
+                        int id = Convert.ToInt32(da["diciplinid"]);
+                        return id;
+                    }
+                }
             }
 
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
-                return myTable;
             }
-            conn.Close();
+            return 0;
+        }
+
+        public int SelectLevel(string sql)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+                NpgsqlDataReader da = cmd.ExecuteReader();
+
+                if (da.HasRows)
+                {
+                    while (da.Read())
+                    {
+                        int id = Convert.ToInt32(da["levelid"]);
+                        return id;
+                    }
+                }
+            }
+
+            catch (NpgsqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            return 0;
         }
     }
 }

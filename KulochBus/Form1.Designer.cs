@@ -49,8 +49,6 @@
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNMTitle = new System.Windows.Forms.Label();
             this.panTGGroup = new System.Windows.Forms.Panel();
-            this.cmbDisciplin = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.cmbLevel = new System.Windows.Forms.ComboBox();
             this.btnTGLevel = new System.Windows.Forms.Button();
             this.btnTGDiciplin = new System.Windows.Forms.Button();
@@ -322,7 +320,6 @@
             // 
             this.panTGGroup.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panTGGroup.Controls.Add(this.cmbDisciplin);
-            this.panTGGroup.Controls.Add(this.comboBox2);
             this.panTGGroup.Controls.Add(this.cmbLevel);
             this.panTGGroup.Controls.Add(this.btnTGLevel);
             this.panTGGroup.Controls.Add(this.btnTGDiciplin);
@@ -346,24 +343,8 @@
             this.panTGGroup.Location = new System.Drawing.Point(0, 24);
             this.panTGGroup.Margin = new System.Windows.Forms.Padding(2);
             this.panTGGroup.Name = "panTGGroup";
-            this.panTGGroup.Size = new System.Drawing.Size(727, 408);
+            this.panTGGroup.Size = new System.Drawing.Size(727, 445);
             this.panTGGroup.TabIndex = 37;
-            // 
-            // cmbDisciplin
-            // 
-            this.cmbDisciplin.FormattingEnabled = true;
-            this.cmbDisciplin.Location = new System.Drawing.Point(73, 74);
-            this.cmbDisciplin.Name = "cmbDisciplin";
-            this.cmbDisciplin.Size = new System.Drawing.Size(174, 21);
-            this.cmbDisciplin.TabIndex = 23;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(276, 194);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(174, 21);
-            this.comboBox2.TabIndex = 22;
             // 
             // cmbLevel
             // 
@@ -589,7 +570,7 @@
             this.panContact.Location = new System.Drawing.Point(0, 24);
             this.panContact.Margin = new System.Windows.Forms.Padding(2);
             this.panContact.Name = "panContact";
-            this.panContact.Size = new System.Drawing.Size(727, 408);
+            this.panContact.Size = new System.Drawing.Size(727, 445);
             this.panContact.TabIndex = 38;
             // 
             // btnCTsave
@@ -897,7 +878,7 @@
             this.panMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panMember.Location = new System.Drawing.Point(0, 24);
             this.panMember.Name = "panMember";
-            this.panMember.Size = new System.Drawing.Size(727, 408);
+            this.panMember.Size = new System.Drawing.Size(727, 445);
             this.panMember.TabIndex = 1;
             // 
             // txtMemberId
@@ -1239,7 +1220,7 @@
             this.panViewMember.Location = new System.Drawing.Point(0, 24);
             this.panViewMember.Margin = new System.Windows.Forms.Padding(2);
             this.panViewMember.Name = "panViewMember";
-            this.panViewMember.Size = new System.Drawing.Size(727, 408);
+            this.panViewMember.Size = new System.Drawing.Size(727, 445);
             this.panViewMember.TabIndex = 9;
             // 
             // cmbFilter
@@ -1308,7 +1289,7 @@
             this.panTGGroupList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panTGGroupList.Location = new System.Drawing.Point(0, 24);
             this.panTGGroupList.Name = "panTGGroupList";
-            this.panTGGroupList.Size = new System.Drawing.Size(727, 408);
+            this.panTGGroupList.Size = new System.Drawing.Size(727, 445);
             this.panTGGroupList.TabIndex = 18;
             // 
             // button1
@@ -1359,7 +1340,7 @@
             this.panStart.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panStart.Location = new System.Drawing.Point(0, 24);
             this.panStart.Name = "panStart";
-            this.panStart.Size = new System.Drawing.Size(727, 408);
+            this.panStart.Size = new System.Drawing.Size(727, 445);
             this.panStart.TabIndex = 46;
             // 
             // panViewContact
@@ -1371,7 +1352,7 @@
             this.panViewContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panViewContact.Location = new System.Drawing.Point(0, 24);
             this.panViewContact.Name = "panViewContact";
-            this.panViewContact.Size = new System.Drawing.Size(727, 408);
+            this.panViewContact.Size = new System.Drawing.Size(727, 445);
             this.panViewContact.TabIndex = 94;
             // 
             // dgrViewCTmember
@@ -1413,8 +1394,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 432);
-            this.Controls.Add(this.panViewContact);
+            this.ClientSize = new System.Drawing.Size(727, 469);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panContact);
@@ -1572,7 +1552,6 @@
         private System.Windows.Forms.Label lblContacts;
         private System.Windows.Forms.DataGridView dgrViewCTmember;
         private System.Windows.Forms.Button btnCTsave;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.ComboBox cmbDisciplin;
     }
