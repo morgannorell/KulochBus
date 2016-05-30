@@ -314,6 +314,7 @@ namespace KulochBus
             HidePanels();
             panContact.Show();
             EmptyTxtBoxes(panContact);
+            dgrCTsearchmedlem.DataSource = null;
             //bs.Dispose();
             //dgrCTsearchmedlem.Rows.Clear();
             //dgrCTsearchmedlem.Refresh();
@@ -511,7 +512,9 @@ namespace KulochBus
 
         private void träningsgruppToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            EmptyTxtBoxes(panTGGroup);
             HidePanels();
+            btnRemoveTG.Hide();
             rbnTGAddMember.Hide();
             rbnTGRemoveMember.Hide();
             cmbAddMember.Hide();
@@ -571,10 +574,13 @@ namespace KulochBus
                 DiciplinId = diciplinId,
                 DiciplinName = cmbDisciplin.SelectedItem.ToString(),
                 LevelName = cmbLevel.SelectedItem.ToString(),
-                LevelId = levelId
+                LevelId = levelId,
+                Notes = txtNotes.Text
             };
 
             ntg.CreateTG();
+            MessageBox.Show("Träningsgrupp skapad");
+            EmptyTxtBoxes(panTGGroup);
         }
 
         private void btnTGDiciplin_Click(object sender, EventArgs e)
@@ -622,6 +628,30 @@ namespace KulochBus
             ShowTGlist(search);
         }
 
+        private void ShowTGLeaderList(int groupid)
+        {
+            Traininggroup tg = new Traininggroup();
+
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = tg.GetTGLeaderList(groupid);
+            bs.DataSource = dt;
+            dgvAddLeader.DataSource = bs;
+        }
+
+        private void ShowTGMemberList(int groupid)
+        {
+            Traininggroup tg = new Traininggroup();
+
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = tg.GetTGMemberList(groupid);
+            bs.DataSource = dt;
+            dgrListTGMembers.DataSource = bs;
+        }
+
         private void dgrViewTGGroupList_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             HidePanels();
@@ -631,6 +661,7 @@ namespace KulochBus
             lblTraningTitle.Text = "Redigera träningsgrupp";
             dgrListTGMembers.Show();
             lblTGMembers.Show();
+            btnRemoveTG.Show();
             cmbAddMember.Show();
             rbnTGAddMember.Show();
             rbnTGRemoveMember.Show();
@@ -639,6 +670,7 @@ namespace KulochBus
             lblTGMembers.Show();
             dgrListTGMembers.Show();
             txtGroupID.Show();
+
             dgvAddLeader.Show();
             lblGroupID.Show();
             lblLeader.Show();
@@ -653,12 +685,14 @@ namespace KulochBus
             bs = new BindingSource();
             dt = tg.GetTGLevelList();
 
+
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cmbLevel.Items.Add(dt.Rows[i]["name"]);
             }
 
             dt = tg.GetTGDiciplinList();
+
             for (int i = 0; i < dt.Rows.Count; i++)
             {
                 cmbDisciplin.Items.Add(dt.Rows[i]["name"]);
@@ -670,6 +704,7 @@ namespace KulochBus
             {
                 cmbAddMember.Items.Add(dt.Rows[i]["memberid"] + " - " + dt.Rows[i]["firstname"] + " " + dt.Rows[i]["lastname"] + " " + dt.Rows[i]["securitynr"]);
             }
+
             dt = nm.GetTGLeader();
             for (int i = 0; i < dt.Rows.Count; i++)
             {
@@ -685,6 +720,7 @@ namespace KulochBus
 
             foreach (DataRow row in dt.Rows)
             {
+                txtNotes.Text = row["Noteringar"].ToString();
                 txtGroupID.Text = row["GruppID"].ToString();
                 txtTGName.Text = row["Gruppnamn"].ToString();
                 cmbDisciplin.SelectedItem = row["Disciplin"].ToString();
@@ -696,6 +732,9 @@ namespace KulochBus
             bs.DataSource = dt;
 
             dgrCTsearchmedlem.DataSource = bs;
+            int groupid = Convert.ToInt32(txtGroupID.Text);
+            ShowTGLeaderList(groupid);
+            ShowTGMemberList(groupid);
         }
 
         private void btnTGSave_Click(object sender, EventArgs e)
@@ -724,25 +763,40 @@ namespace KulochBus
             };
 
             tg.UpdateTG();
-            MessageBox.Show("Medlem " + txtMemberId.Text + " är nu uppdaterad");
-
+            MessageBox.Show("Träningsgrupp " + txtGroupID.Text + " är nu uppdaterad");
         }
 
         private void btnAddLeader_Click(object sender, EventArgs e)
         {
+            Traininggroup ntg = new Traininggroup();
+
+            int groupid = Convert.ToInt32(txtGroupID.Text);
+            bool leader = true;
+
             if (rbnTGAddLeader.Checked)
             {
-                string hej = cmbAddLeader.SelectedItem.ToString();
-                string[] list = hej.Split(' ');
+                string member = cmbAddLeader.SelectedItem.ToString();
+                string[] list = member.Split(' ');
                 int memberid = Convert.ToInt32(list[0]);
-                int groupid = Convert.ToInt32(txtGroupID.Text);
-
-                Traininggroup ntg = new Traininggroup();
-                ntg.AddLeader(memberid, groupid);
-
+                ntg.AddTGMember(memberid, groupid, leader);
+                cmbAddLeader.Items.Remove(member);
+                member = null;
             }
 
+            else if (rbnRemoveLeader.Checked)
+            {
+                string delete = dgvAddLeader.CurrentCell.FormattedValue.ToString();
+                ntg.deleteTGLeader(delete);
+                delete = null;
+            }
+            else
+            {
+                MessageBox.Show("Du måste välja att lägga till eller ta bort en ledare.");
+            }
+
+            ShowTGLeaderList(groupid);
         }
+
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
             DateTime date = new DateTime();
@@ -763,6 +817,48 @@ namespace KulochBus
             dt = at.GetMembers(selectedGroup);
             bs.DataSource = dt;
             dgrATmemberlist.DataSource = bs;
+        }
+
+        private void btnAddMember_Click(object sender, EventArgs e)
+        {
+            Traininggroup ntg = new Traininggroup();
+
+            int groupid = Convert.ToInt32(txtGroupID.Text);
+            bool leader = false;
+
+
+            if (rbnTGAddMember.Checked)
+            {
+                string member = cmbAddMember.SelectedItem.ToString();
+                string[] list = member.Split(' ');
+                int memberid = Convert.ToInt32(list[0]);
+                ntg.AddTGMember(memberid, groupid, leader);
+                cmbAddMember.Items.Remove(member);
+            }
+                
+            else if (rbnTGRemoveMember.Checked)
+            {
+                string delete = dgrListTGMembers.CurrentCell.FormattedValue.ToString();
+                ntg.deleteTGMember(delete);
+                delete = null;
+            }
+            else
+            {
+                MessageBox.Show("Du måste välja att lägga till eller ta bort en medlem.");
+            }
+
+            ShowTGMemberList(groupid);
+        }
+
+        private void btnRemoveTG_Click(object sender, EventArgs e)
+        {
+            int delete = Convert.ToInt32(txtGroupID.Text);
+            Traininggroup ntg = new Traininggroup();
+            ntg.deleteTG(delete);
+            MessageBox.Show("Träningsgruppen är borttagen");
+            EmptyTxtBoxes(panTGGroup);
+            dgvAddLeader.DataSource = null;
+            dgrListTGMembers.DataSource = null;
         }
     }
 }

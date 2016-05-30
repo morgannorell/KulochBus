@@ -66,5 +66,10 @@ namespace KulochBus
             ListDiciplin();
         }
 
+        private void btnLDisciplinClose_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
     }
 }

@@ -17,6 +17,8 @@ namespace KulochBus
         public int LevelId { get; set; }
         public int DiciplinId { get; set; }
         public int GroupId { get; set; }
+        bool Leader { get; set; }
+        public string Notes { get; set; }
 
         public Traininggroup()
         {
@@ -26,7 +28,7 @@ namespace KulochBus
         {
             Sql TG = new Sql();
 
-            string sql = "INSERT INTO traininggroup (description, name, levelid, diciplinid) VALUES ('" + Description + "', '" + Name + "', " + LevelId + ", " + DiciplinId + ")";
+            string sql = "INSERT INTO traininggroup (description, name, notes, levelid, diciplinid) VALUES ('" + Description + "', '" + Name + "', '" + Notes + "', " + LevelId + ", " + DiciplinId + ")";
 
             TG.Insert(sql);
         }
@@ -114,7 +116,7 @@ namespace KulochBus
         {
             Sql querry = new Sql();
 
-            string sql = "SELECT groupid AS \"GruppID\", t.name AS \"Gruppnamn\", l.name AS \"Nivå\", d.name AS \"Disciplin\", description AS \"Beskrivning\" FROM traininggroup AS t" +
+            string sql = "SELECT groupid AS \"GruppID\", notes AS \"Noteringar\", t.name AS \"Gruppnamn\", l.name AS \"Nivå\", d.name AS \"Disciplin\", description AS \"Beskrivning\" FROM traininggroup AS t" +
             " JOIN level AS l ON t.levelid = l.levelid" +
             " JOIN diciplin AS d ON t.diciplinid = d.diciplinid WHERE groupid = " + traininggroup;
 
@@ -128,17 +130,68 @@ namespace KulochBus
         {
             Sql tg = new Sql();
 
-            string update = "UPDATE traininggroup SET description = '" + Description + "', name = '" + Name + "', levelid = " + LevelId + ", diciplinid = " + DiciplinId + " WHERE groupid = " + GroupId + ";";
+            string update = "UPDATE traininggroup SET description = '" + Description + "', name = '" + Name + "', notes = '" + Notes + "', levelid = " + LevelId + ", diciplinid = " + DiciplinId + " WHERE groupid = " + GroupId + ";";
 
             tg.Insert(update);
         }
-        public void AddLeader(int memberid, int groupid)
+        public void AddTGMember(int memberid, int groupid, bool leader)
         {
             Sql TG = new Sql();
 
-            string sql = "INSERT INTO membergroup (memberid, groupid) VALUES (" + memberid + ", " + groupid + ")";
+            string sql = "INSERT INTO membergroup (memberid, groupid, isleader) VALUES (" + memberid + ", " + groupid + ", '" + leader + "')";
 
             TG.Insert(sql);
+        }
+
+        public DataTable GetTGMemberList(int groupid)
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT memberid AS \"Medlemsnr\", firstname AS \"Förnamn\", lastname AS \"Efternamn\" FROM membergroup JOIN person ON personid = memberid AND groupid = " + groupid + ";";
+
+            DataTable dt = new DataTable();
+            dt = querry.Select(sql);
+
+            return dt;
+        }
+
+        public DataTable GetTGLeaderList(int groupid)
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT memberid AS \"Medlemsnr\", firstname AS \"Förnamn\", lastname AS \"Efternamn\" FROM membergroup JOIN person ON personid = memberid AND groupid = " + groupid + " WHERE isleader = true;";
+
+            DataTable dt = new DataTable();
+            dt = querry.Select(sql);
+
+            return dt;
+        }
+
+        public void deleteTGMember (string delete)
+        {
+            Sql tg = new Sql();
+
+            string sql = "DELETE FROM membergroup WHERE memberid = " + delete + "";
+
+            tg.Insert(sql);
+        }
+
+        public void deleteTGLeader(string delete)
+        {
+            Sql tg = new Sql();
+
+            string sql = "DELETE FROM membergroup WHERE memberid = " + delete + " AND isleader = true";
+
+            tg.Insert(sql);
+        }
+
+        public void deleteTG(int delete)
+        {
+            Sql tg = new Sql();
+
+            string sql = "START TRANSACTION; DELETE FROM membergroup WHERE groupid = " + delete + "; DELETE FROM traininggroup WHERE groupid = " + delete + "; COMMIT;";
+
+            tg.Insert(sql);
         }
     }
 }

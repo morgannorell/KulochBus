@@ -40,19 +40,22 @@
             // 
             // btnLDisciplinClose
             // 
-            this.btnLDisciplinClose.Location = new System.Drawing.Point(98, 179);
+            this.btnLDisciplinClose.Location = new System.Drawing.Point(147, 275);
+            this.btnLDisciplinClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnLDisciplinClose.Name = "btnLDisciplinClose";
-            this.btnLDisciplinClose.Size = new System.Drawing.Size(75, 23);
+            this.btnLDisciplinClose.Size = new System.Drawing.Size(112, 35);
             this.btnLDisciplinClose.TabIndex = 27;
             this.btnLDisciplinClose.Text = "Stäng";
             this.btnLDisciplinClose.UseVisualStyleBackColor = true;
+            this.btnLDisciplinClose.Click += new System.EventHandler(this.btnLDisciplinClose_Click);
             // 
             // rbnDisciplinRemove
             // 
             this.rbnDisciplinRemove.AutoSize = true;
-            this.rbnDisciplinRemove.Location = new System.Drawing.Point(17, 107);
+            this.rbnDisciplinRemove.Location = new System.Drawing.Point(26, 165);
+            this.rbnDisciplinRemove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbnDisciplinRemove.Name = "rbnDisciplinRemove";
-            this.rbnDisciplinRemove.Size = new System.Drawing.Size(59, 17);
+            this.rbnDisciplinRemove.Size = new System.Drawing.Size(84, 24);
             this.rbnDisciplinRemove.TabIndex = 26;
             this.rbnDisciplinRemove.TabStop = true;
             this.rbnDisciplinRemove.Text = "Ta bort";
@@ -61,9 +64,10 @@
             // rbnDisciplinAdd
             // 
             this.rbnDisciplinAdd.AutoSize = true;
-            this.rbnDisciplinAdd.Location = new System.Drawing.Point(17, 86);
+            this.rbnDisciplinAdd.Location = new System.Drawing.Point(26, 132);
+            this.rbnDisciplinAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbnDisciplinAdd.Name = "rbnDisciplinAdd";
-            this.rbnDisciplinAdd.Size = new System.Drawing.Size(65, 17);
+            this.rbnDisciplinAdd.Size = new System.Drawing.Size(92, 24);
             this.rbnDisciplinAdd.TabIndex = 25;
             this.rbnDisciplinAdd.TabStop = true;
             this.rbnDisciplinAdd.Text = "Lägg Till";
@@ -71,9 +75,10 @@
             // 
             // btnDisciplinSave
             // 
-            this.btnDisciplinSave.Location = new System.Drawing.Point(17, 179);
+            this.btnDisciplinSave.Location = new System.Drawing.Point(26, 275);
+            this.btnDisciplinSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDisciplinSave.Name = "btnDisciplinSave";
-            this.btnDisciplinSave.Size = new System.Drawing.Size(75, 23);
+            this.btnDisciplinSave.Size = new System.Drawing.Size(112, 35);
             this.btnDisciplinSave.TabIndex = 24;
             this.btnDisciplinSave.Text = "Spara";
             this.btnDisciplinSave.UseVisualStyleBackColor = true;
@@ -81,19 +86,19 @@
             // 
             // txtDisciplin
             // 
-            this.txtDisciplin.Location = new System.Drawing.Point(17, 60);
+            this.txtDisciplin.Location = new System.Drawing.Point(26, 92);
+            this.txtDisciplin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtDisciplin.Name = "txtDisciplin";
-            this.txtDisciplin.Size = new System.Drawing.Size(183, 20);
+            this.txtDisciplin.Size = new System.Drawing.Size(272, 26);
             this.txtDisciplin.TabIndex = 23;
             // 
             // lblDisciplin
             // 
             this.lblDisciplin.AutoSize = true;
             this.lblDisciplin.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDisciplin.Location = new System.Drawing.Point(11, 10);
-            this.lblDisciplin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDisciplin.Location = new System.Drawing.Point(16, 15);
             this.lblDisciplin.Name = "lblDisciplin";
-            this.lblDisciplin.Size = new System.Drawing.Size(117, 32);
+            this.lblDisciplin.Size = new System.Drawing.Size(171, 47);
             this.lblDisciplin.TabIndex = 22;
             this.lblDisciplin.Text = "Disciplin";
             // 
@@ -103,16 +108,17 @@
             this.dgrViewDisciplin.AllowUserToDeleteRows = false;
             this.dgrViewDisciplin.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewDisciplin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewDisciplin.Location = new System.Drawing.Point(224, 60);
+            this.dgrViewDisciplin.Location = new System.Drawing.Point(336, 92);
+            this.dgrViewDisciplin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgrViewDisciplin.Name = "dgrViewDisciplin";
-            this.dgrViewDisciplin.Size = new System.Drawing.Size(168, 143);
+            this.dgrViewDisciplin.Size = new System.Drawing.Size(252, 220);
             this.dgrViewDisciplin.TabIndex = 21;
             // 
             // FormDisciplin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(402, 211);
+            this.ClientSize = new System.Drawing.Size(603, 325);
             this.Controls.Add(this.btnLDisciplinClose);
             this.Controls.Add(this.rbnDisciplinRemove);
             this.Controls.Add(this.rbnDisciplinAdd);
@@ -120,7 +126,6 @@
             this.Controls.Add(this.txtDisciplin);
             this.Controls.Add(this.lblDisciplin);
             this.Controls.Add(this.dgrViewDisciplin);
-            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormDisciplin";
             this.Text = "FormDisciplin";
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewDisciplin)).EndInit();
