@@ -291,6 +291,7 @@
             this.visaToolStripMenuItem.Name = "visaToolStripMenuItem";
             this.visaToolStripMenuItem.Size = new System.Drawing.Size(56, 29);
             this.visaToolStripMenuItem.Text = "Visa";
+            this.visaToolStripMenuItem.Click += new System.EventHandler(this.visaToolStripMenuItem_Click);
             // 
             // medlemmarToolStripMenuItem
             // 

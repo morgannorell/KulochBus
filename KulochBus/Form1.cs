@@ -698,18 +698,7 @@ namespace KulochBus
                 cmbDisciplin.Items.Add(dt.Rows[i]["name"]);
             }
 
-            Member nm = new Member();
-            dt = nm.GetTGMembers();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                cmbAddMember.Items.Add(dt.Rows[i]["memberid"] + " - " + dt.Rows[i]["firstname"] + " " + dt.Rows[i]["lastname"] + " " + dt.Rows[i]["securitynr"]);
-            }
 
-            dt = nm.GetTGLeader();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                cmbAddLeader.Items.Add(dt.Rows[i]["memberid"] + " - " + dt.Rows[i]["firstname"] + " " + dt.Rows[i]["lastname"] + " " + dt.Rows[i]["securitynr"]);
-            }
 
             string selectedTG;
             DataGridViewRow selectedRow = dgrViewTGGroupList.Rows[e.RowIndex];
@@ -726,6 +715,21 @@ namespace KulochBus
                 cmbDisciplin.SelectedItem = row["Disciplin"].ToString();
                 cmbLevel.SelectedItem = row["Nivå"].ToString();
                 txtTGDescription.Text = row["Beskrivning"].ToString();
+            }
+
+            Member nm = new Member();
+            dt = nm.GetTGMembers();
+            cmbAddMember.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cmbAddMember.Items.Add(dt.Rows[i]["memberid"] + " - " + dt.Rows[i]["firstname"] + " " + dt.Rows[i]["lastname"] + " " + dt.Rows[i]["securitynr"]);
+            }
+
+            dt = nm.GetTGLeader();
+            cmbAddLeader.Items.Clear();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                cmbAddLeader.Items.Add(dt.Rows[i]["memberid"] + " - " + dt.Rows[i]["firstname"] + " " + dt.Rows[i]["lastname"] + " " + dt.Rows[i]["securitynr"]);
             }
 
             bs = new BindingSource();
@@ -859,6 +863,11 @@ namespace KulochBus
             EmptyTxtBoxes(panTGGroup);
             dgvAddLeader.DataSource = null;
             dgrListTGMembers.DataSource = null;
+        }
+
+        private void visaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
