@@ -16,7 +16,7 @@ namespace KulochBus
 
             string sql = "SELECT name FROM traininggroup";
             dt = querry.Select(sql);
-
+            
             return dt;
         }
 
@@ -32,7 +32,17 @@ namespace KulochBus
 
             dt = querry.Select(sql);
 
+            dt.Columns.Add(new DataColumn("Närvaro", typeof(bool)));
+
             return dt;
+        }
+
+        public void CreateMemberlist()
+        {
+            Sql newList = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql = "INSERT INTO attendance (groupid, description, place) VALUES ()";
         }
     }
 }

@@ -36,24 +36,24 @@ namespace KulochBus
         // Methods
         public DataTable GetTGLevelList()
         {
-            Sql querry = new Sql();
+            Sql query = new Sql();
 
             string sql = "SELECT name, levelid FROM level";
 
             DataTable dt = new DataTable();
-            dt = querry.Select(sql);
+            dt = query.Select(sql);
 
             return dt;
         }
 
         public DataTable GetTGDiciplinList()
         {
-            Sql querry = new Sql();
+            Sql query = new Sql();
 
             string sql = "SELECT name FROM diciplin";
 
             DataTable dt = new DataTable();
-            dt = querry.Select(sql);
+            dt = query.Select(sql);
 
             return dt;
         }

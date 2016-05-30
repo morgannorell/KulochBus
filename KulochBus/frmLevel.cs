@@ -20,7 +20,7 @@ namespace KulochBus
 
         private void btnLevelSave_Click(object sender, EventArgs e)
         {
-                    Sql level = new Sql();
+            Sql level = new Sql();
             if (rbnLevelAdd.Checked)
             {
                 string newLevel = txtLevel.Text;
@@ -32,9 +32,6 @@ namespace KulochBus
                 else
                 {
                     string insert = "Insert into level (name) values ('" + newLevel + "')";
-
-
-                    level.Connect();
                     level.Insert(insert);
                 }
             }

@@ -14,8 +14,6 @@ namespace KulochBus
     {
         private NpgsqlConnection conn;
         private NpgsqlCommand cmd;
-        private NpgsqlDataReader _dr;
-        private DataTable _table;
 
 
         public Sql()
@@ -50,39 +48,6 @@ namespace KulochBus
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
         }
-        public void Connect()
-        {
-            ////try
-            ////{
-            ////    //conn.Open();
-
-            ////    var startTime = DateTime.Now;
-            ////    var endTime = DateTime.Now.AddSeconds(5);
-            ////    var timeOut = false;
-
-            ////    while (conn.State != ConnectionState.Open)
-            ////    {
-            ////        if (DateTime.Now.CompareTo(endTime) >= 0)
-            ////        {
-            ////            timeOut = true;
-            ////            break;
-            ////        }
-            ////        Thread.Yield();
-            ////    }
-
-            ////    if (timeOut)
-            ////    {
-            ////        // if sql connection times out
-            ////        System.Windows.Forms.MessageBox.Show("Connection Timeout");
-            ////    }
-
-            //}
-
-            //catch (NpgsqlException ex)
-            //{
-            //    System.Windows.Forms.MessageBox.Show(ex.Message);
-            //}
-        }
 
         public void Insert(string sql)
         {
@@ -100,25 +65,24 @@ namespace KulochBus
         }
 
         public DataTable Select(string sql)
-        {     
+        {
             DataTable myTable = new DataTable();
 
             try
             {
-                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
-                NpgsqlDataAdapter da = new NpgsqlDataAdapter();
+                cmd = new NpgsqlCommand(sql, conn);
+                NpgsqlDataReader da = cmd.ExecuteReader();
 
-                da.SelectCommand = cmd; 
-                da.Fill(myTable);
+                myTable.Load(da);
 
-                return myTable;                
+                return myTable;
             }
 
             catch (NpgsqlException ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
-                return myTable;    
-            }
+                return myTable;
+            }           
         }
 
         public int SelectDiciplin(string sql)

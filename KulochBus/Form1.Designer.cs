@@ -162,7 +162,7 @@
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
             this.panAdendence = new System.Windows.Forms.Panel();
-            this.lblATtraininggroups = new System.Windows.Forms.Label();
+            this.lstATtraininggroups = new System.Windows.Forms.ListBox();
             this.lblATmemberlist = new System.Windows.Forms.Label();
             this.lblATdateTitle = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -171,12 +171,12 @@
             this.btnATsave = new System.Windows.Forms.Button();
             this.dgrATmemberlist = new System.Windows.Forms.DataGridView();
             this.lblATleader = new System.Windows.Forms.Label();
-            this.lbxATleader = new System.Windows.Forms.ListBox();
-            this.cmbATtrainggroups = new System.Windows.Forms.ComboBox();
+            this.lstATleader = new System.Windows.Forms.ListBox();
             this.lblATtitle = new System.Windows.Forms.Label();
             this.panViewAtendance = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lvlALtitle = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -290,7 +290,6 @@
             this.visaToolStripMenuItem.Name = "visaToolStripMenuItem";
             this.visaToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.visaToolStripMenuItem.Text = "Visa";
-            this.visaToolStripMenuItem.Click += new System.EventHandler(this.visaToolStripMenuItem_Click);
             // 
             // medlemmarToolStripMenuItem
             // 
@@ -385,7 +384,7 @@
             this.panTGGroup.Controls.Add(this.btnTGCreate);
             this.panTGGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panTGGroup.Location = new System.Drawing.Point(0, 24);
-            this.panTGGroup.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panTGGroup.Margin = new System.Windows.Forms.Padding(2);
             this.panTGGroup.Name = "panTGGroup";
             this.panTGGroup.Size = new System.Drawing.Size(727, 445);
             this.panTGGroup.TabIndex = 37;
@@ -393,7 +392,7 @@
             // btnRemoveTG
             // 
             this.btnRemoveTG.Location = new System.Drawing.Point(189, 397);
-            this.btnRemoveTG.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnRemoveTG.Margin = new System.Windows.Forms.Padding(2);
             this.btnRemoveTG.Name = "btnRemoveTG";
             this.btnRemoveTG.Size = new System.Drawing.Size(64, 23);
             this.btnRemoveTG.TabIndex = 58;
@@ -404,7 +403,7 @@
             // btnAddMember
             // 
             this.btnAddMember.Location = new System.Drawing.Point(644, 396);
-            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddMember.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddMember.Name = "btnAddMember";
             this.btnAddMember.Size = new System.Drawing.Size(61, 23);
             this.btnAddMember.TabIndex = 57;
@@ -415,7 +414,7 @@
             // btnAddLeader
             // 
             this.btnAddLeader.Location = new System.Drawing.Point(644, 158);
-            this.btnAddLeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddLeader.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddLeader.Name = "btnAddLeader";
             this.btnAddLeader.Size = new System.Drawing.Size(61, 23);
             this.btnAddLeader.TabIndex = 56;
@@ -470,9 +469,8 @@
             this.dgvAddLeader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvAddLeader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAddLeader.Location = new System.Drawing.Point(343, 63);
-            this.dgvAddLeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvAddLeader.Margin = new System.Windows.Forms.Padding(2);
             this.dgvAddLeader.Name = "dgvAddLeader";
-            this.dgvAddLeader.RowTemplate.Height = 28;
             this.dgvAddLeader.Size = new System.Drawing.Size(361, 82);
             this.dgvAddLeader.TabIndex = 51;
             // 
@@ -577,7 +575,7 @@
             // txtNotes
             // 
             this.txtNotes.Location = new System.Drawing.Point(83, 257);
-            this.txtNotes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNotes.Margin = new System.Windows.Forms.Padding(2);
             this.txtNotes.Multiline = true;
             this.txtNotes.Name = "txtNotes";
             this.txtNotes.Size = new System.Drawing.Size(242, 126);
@@ -596,7 +594,7 @@
             // btnTGSave
             // 
             this.btnTGSave.Location = new System.Drawing.Point(261, 397);
-            this.btnTGSave.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTGSave.Margin = new System.Windows.Forms.Padding(2);
             this.btnTGSave.Name = "btnTGSave";
             this.btnTGSave.Size = new System.Drawing.Size(64, 23);
             this.btnTGSave.TabIndex = 11;
@@ -611,16 +609,15 @@
             this.dgrListTGMembers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrListTGMembers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrListTGMembers.Location = new System.Drawing.Point(343, 193);
-            this.dgrListTGMembers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrListTGMembers.Margin = new System.Windows.Forms.Padding(2);
             this.dgrListTGMembers.Name = "dgrListTGMembers";
-            this.dgrListTGMembers.RowTemplate.Height = 28;
             this.dgrListTGMembers.Size = new System.Drawing.Size(361, 190);
             this.dgrListTGMembers.TabIndex = 9;
             // 
             // txtTGDescription
             // 
             this.txtTGDescription.Location = new System.Drawing.Point(83, 129);
-            this.txtTGDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTGDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGDescription.Multiline = true;
             this.txtTGDescription.Name = "txtTGDescription";
             this.txtTGDescription.Size = new System.Drawing.Size(242, 116);
@@ -629,7 +626,7 @@
             // txtTGName
             // 
             this.txtTGName.Location = new System.Drawing.Point(83, 50);
-            this.txtTGName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTGName.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGName.Name = "txtTGName";
             this.txtTGName.Size = new System.Drawing.Size(162, 20);
             this.txtTGName.TabIndex = 5;
@@ -730,7 +727,7 @@
             this.panContact.Controls.Add(this.lblCTTitle);
             this.panContact.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panContact.Location = new System.Drawing.Point(0, 24);
-            this.panContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panContact.Margin = new System.Windows.Forms.Padding(2);
             this.panContact.Name = "panContact";
             this.panContact.Size = new System.Drawing.Size(727, 445);
             this.panContact.TabIndex = 38;
@@ -804,7 +801,7 @@
             // btnContactList
             // 
             this.btnContactList.Location = new System.Drawing.Point(615, 17);
-            this.btnContactList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnContactList.Margin = new System.Windows.Forms.Padding(2);
             this.btnContactList.Name = "btnContactList";
             this.btnContactList.Size = new System.Drawing.Size(70, 25);
             this.btnContactList.TabIndex = 87;
@@ -816,7 +813,7 @@
             // txtCTcellphone
             // 
             this.txtCTcellphone.Location = new System.Drawing.Point(97, 354);
-            this.txtCTcellphone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCTcellphone.Margin = new System.Windows.Forms.Padding(2);
             this.txtCTcellphone.Name = "txtCTcellphone";
             this.txtCTcellphone.Size = new System.Drawing.Size(150, 20);
             this.txtCTcellphone.TabIndex = 84;
@@ -825,7 +822,7 @@
             // txtCTphone
             // 
             this.txtCTphone.Location = new System.Drawing.Point(97, 323);
-            this.txtCTphone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCTphone.Margin = new System.Windows.Forms.Padding(2);
             this.txtCTphone.Name = "txtCTphone";
             this.txtCTphone.Size = new System.Drawing.Size(150, 20);
             this.txtCTphone.TabIndex = 83;
@@ -1066,7 +1063,7 @@
             // btnViewList
             // 
             this.btnViewList.Location = new System.Drawing.Point(615, 17);
-            this.btnViewList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnViewList.Margin = new System.Windows.Forms.Padding(2);
             this.btnViewList.Name = "btnViewList";
             this.btnViewList.Size = new System.Drawing.Size(70, 25);
             this.btnViewList.TabIndex = 46;
@@ -1121,7 +1118,7 @@
             // 
             this.checkPayed.AutoSize = true;
             this.checkPayed.Location = new System.Drawing.Point(439, 175);
-            this.checkPayed.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkPayed.Margin = new System.Windows.Forms.Padding(2);
             this.checkPayed.Name = "checkPayed";
             this.checkPayed.Size = new System.Drawing.Size(126, 17);
             this.checkPayed.TabIndex = 16;
@@ -1132,7 +1129,7 @@
             // 
             this.checkBoxPicture.AutoSize = true;
             this.checkBoxPicture.Location = new System.Drawing.Point(439, 148);
-            this.checkBoxPicture.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxPicture.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxPicture.Name = "checkBoxPicture";
             this.checkBoxPicture.Size = new System.Drawing.Size(76, 17);
             this.checkBoxPicture.TabIndex = 15;
@@ -1143,7 +1140,7 @@
             // 
             this.checkBoxLeader.AutoSize = true;
             this.checkBoxLeader.Location = new System.Drawing.Point(439, 120);
-            this.checkBoxLeader.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.checkBoxLeader.Margin = new System.Windows.Forms.Padding(2);
             this.checkBoxLeader.Name = "checkBoxLeader";
             this.checkBoxLeader.Size = new System.Drawing.Size(59, 17);
             this.checkBoxLeader.TabIndex = 14;
@@ -1198,7 +1195,7 @@
             // txtCellphone
             // 
             this.txtCellphone.Location = new System.Drawing.Point(97, 354);
-            this.txtCellphone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCellphone.Margin = new System.Windows.Forms.Padding(2);
             this.txtCellphone.Name = "txtCellphone";
             this.txtCellphone.Size = new System.Drawing.Size(150, 20);
             this.txtCellphone.TabIndex = 11;
@@ -1207,7 +1204,7 @@
             // txtPhone
             // 
             this.txtPhone.Location = new System.Drawing.Point(97, 323);
-            this.txtPhone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(150, 20);
             this.txtPhone.TabIndex = 9;
@@ -1380,7 +1377,7 @@
             this.panViewMember.Controls.Add(this.dgrViewMember);
             this.panViewMember.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panViewMember.Location = new System.Drawing.Point(0, 24);
-            this.panViewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panViewMember.Margin = new System.Windows.Forms.Padding(2);
             this.panViewMember.Name = "panViewMember";
             this.panViewMember.Size = new System.Drawing.Size(727, 445);
             this.panViewMember.TabIndex = 9;
@@ -1422,7 +1419,7 @@
             // txtMemberSearch
             // 
             this.txtMemberSearch.Location = new System.Drawing.Point(473, 13);
-            this.txtMemberSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMemberSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtMemberSearch.Name = "txtMemberSearch";
             this.txtMemberSearch.Size = new System.Drawing.Size(163, 20);
             this.txtMemberSearch.TabIndex = 1;
@@ -1434,7 +1431,7 @@
             this.dgrViewMember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewMember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrViewMember.Location = new System.Drawing.Point(11, 49);
-            this.dgrViewMember.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrViewMember.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewMember.Name = "dgrViewMember";
             this.dgrViewMember.ReadOnly = true;
             this.dgrViewMember.Size = new System.Drawing.Size(703, 385);
@@ -1478,7 +1475,7 @@
             // txtTGSearch
             // 
             this.txtTGSearch.Location = new System.Drawing.Point(473, 14);
-            this.txtTGSearch.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTGSearch.Margin = new System.Windows.Forms.Padding(2);
             this.txtTGSearch.Name = "txtTGSearch";
             this.txtTGSearch.Size = new System.Drawing.Size(163, 20);
             this.txtTGSearch.TabIndex = 6;
@@ -1490,7 +1487,7 @@
             this.dgrViewTGGroupList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewTGGroupList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrViewTGGroupList.Location = new System.Drawing.Point(11, 50);
-            this.dgrViewTGGroupList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrViewTGGroupList.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewTGGroupList.Name = "dgrViewTGGroupList";
             this.dgrViewTGGroupList.ReadOnly = true;
             this.dgrViewTGGroupList.Size = new System.Drawing.Size(703, 386);
@@ -1535,7 +1532,7 @@
             this.dgrViewContact.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgrViewContact.Location = new System.Drawing.Point(11, 49);
-            this.dgrViewContact.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgrViewContact.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewContact.Name = "dgrViewContact";
             this.dgrViewContact.ReadOnly = true;
             this.dgrViewContact.Size = new System.Drawing.Size(370, 385);
@@ -1557,7 +1554,8 @@
             // panAdendence
             // 
             this.panAdendence.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panAdendence.Controls.Add(this.lblATtraininggroups);
+            this.panAdendence.Controls.Add(this.label1);
+            this.panAdendence.Controls.Add(this.lstATtraininggroups);
             this.panAdendence.Controls.Add(this.lblATmemberlist);
             this.panAdendence.Controls.Add(this.lblATdateTitle);
             this.panAdendence.Controls.Add(this.dateTimePicker1);
@@ -1566,8 +1564,7 @@
             this.panAdendence.Controls.Add(this.btnATsave);
             this.panAdendence.Controls.Add(this.dgrATmemberlist);
             this.panAdendence.Controls.Add(this.lblATleader);
-            this.panAdendence.Controls.Add(this.lbxATleader);
-            this.panAdendence.Controls.Add(this.cmbATtrainggroups);
+            this.panAdendence.Controls.Add(this.lstATleader);
             this.panAdendence.Controls.Add(this.lblATtitle);
             this.panAdendence.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panAdendence.Location = new System.Drawing.Point(0, 24);
@@ -1575,19 +1572,19 @@
             this.panAdendence.Size = new System.Drawing.Size(727, 445);
             this.panAdendence.TabIndex = 7;
             // 
-            // lblATtraininggroups
+            // lstATtraininggroups
             // 
-            this.lblATtraininggroups.AutoSize = true;
-            this.lblATtraininggroups.Location = new System.Drawing.Point(461, 16);
-            this.lblATtraininggroups.Name = "lblATtraininggroups";
-            this.lblATtraininggroups.Size = new System.Drawing.Size(75, 13);
-            this.lblATtraininggroups.TabIndex = 53;
-            this.lblATtraininggroups.Text = "Träningsgrupp";
+            this.lstATtraininggroups.FormattingEnabled = true;
+            this.lstATtraininggroups.Location = new System.Drawing.Point(16, 238);
+            this.lstATtraininggroups.Name = "lstATtraininggroups";
+            this.lstATtraininggroups.Size = new System.Drawing.Size(208, 95);
+            this.lstATtraininggroups.TabIndex = 54;
+            this.lstATtraininggroups.SelectedIndexChanged += new System.EventHandler(this.lstATtraininggroups_SelectedIndexChanged);
             // 
             // lblATmemberlist
             // 
             this.lblATmemberlist.AutoSize = true;
-            this.lblATmemberlist.Location = new System.Drawing.Point(263, 70);
+            this.lblATmemberlist.Location = new System.Drawing.Point(258, 66);
             this.lblATmemberlist.Name = "lblATmemberlist";
             this.lblATmemberlist.Size = new System.Drawing.Size(67, 13);
             this.lblATmemberlist.TabIndex = 52;
@@ -1626,6 +1623,7 @@
             this.btnATcancel.TabIndex = 48;
             this.btnATcancel.Text = "Avbryt";
             this.btnATcancel.UseVisualStyleBackColor = true;
+            this.btnATcancel.Click += new System.EventHandler(this.btnATcancel_Click);
             // 
             // btnATsave
             // 
@@ -1635,41 +1633,35 @@
             this.btnATsave.TabIndex = 47;
             this.btnATsave.Text = "Spara";
             this.btnATsave.UseVisualStyleBackColor = true;
+            this.btnATsave.Click += new System.EventHandler(this.btnATsave_Click);
             // 
             // dgrATmemberlist
             // 
+            this.dgrATmemberlist.AllowUserToAddRows = false;
+            this.dgrATmemberlist.AllowUserToDeleteRows = false;
             this.dgrATmemberlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrATmemberlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrATmemberlist.Location = new System.Drawing.Point(258, 92);
+            this.dgrATmemberlist.Location = new System.Drawing.Point(258, 87);
             this.dgrATmemberlist.Name = "dgrATmemberlist";
-            this.dgrATmemberlist.Size = new System.Drawing.Size(455, 306);
+            this.dgrATmemberlist.Size = new System.Drawing.Size(455, 311);
             this.dgrATmemberlist.TabIndex = 46;
             // 
             // lblATleader
             // 
             this.lblATleader.AutoSize = true;
-            this.lblATleader.Location = new System.Drawing.Point(15, 70);
+            this.lblATleader.Location = new System.Drawing.Point(15, 66);
             this.lblATleader.Name = "lblATleader";
             this.lblATleader.Size = new System.Drawing.Size(40, 13);
             this.lblATleader.TabIndex = 45;
             this.lblATleader.Text = "Ledare";
             // 
-            // lbxATleader
+            // lstATleader
             // 
-            this.lbxATleader.FormattingEnabled = true;
-            this.lbxATleader.Location = new System.Drawing.Point(15, 92);
-            this.lbxATleader.Name = "lbxATleader";
-            this.lbxATleader.Size = new System.Drawing.Size(231, 69);
-            this.lbxATleader.TabIndex = 44;
-            // 
-            // cmbATtrainggroups
-            // 
-            this.cmbATtrainggroups.FormattingEnabled = true;
-            this.cmbATtrainggroups.Location = new System.Drawing.Point(542, 14);
-            this.cmbATtrainggroups.Name = "cmbATtrainggroups";
-            this.cmbATtrainggroups.Size = new System.Drawing.Size(171, 21);
-            this.cmbATtrainggroups.TabIndex = 43;
-            this.cmbATtrainggroups.SelectedIndexChanged += new System.EventHandler(this.cmbATtrainggroups_SelectedIndexChanged);
+            this.lstATleader.FormattingEnabled = true;
+            this.lstATleader.Location = new System.Drawing.Point(15, 87);
+            this.lstATleader.Name = "lstATleader";
+            this.lstATleader.Size = new System.Drawing.Size(208, 82);
+            this.lstATleader.TabIndex = 44;
             // 
             // lblATtitle
             // 
@@ -1700,7 +1692,7 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 50);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(703, 385);
@@ -1717,16 +1709,25 @@
             this.lvlALtitle.TabIndex = 5;
             this.lvlALtitle.Text = "Närvarolistor";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(470, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "label1";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
+            this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panTGGroupList);
-            this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panViewAtendance);
@@ -1900,12 +1901,10 @@
         private System.Windows.Forms.Button btnATsave;
         private System.Windows.Forms.DataGridView dgrATmemberlist;
         private System.Windows.Forms.Label lblATleader;
-        private System.Windows.Forms.ListBox lbxATleader;
-        private System.Windows.Forms.ComboBox cmbATtrainggroups;
+        private System.Windows.Forms.ListBox lstATleader;
         private System.Windows.Forms.Label lblATtitle;
         private System.Windows.Forms.Label lblATdateTitle;
         private System.Windows.Forms.Label lblATmemberlist;
-        private System.Windows.Forms.Label lblATtraininggroups;
         private System.Windows.Forms.Label lblGroupID;
         private System.Windows.Forms.TextBox txtGroupID;
         private System.Windows.Forms.Label lblTGMembers;
@@ -1917,6 +1916,8 @@
         private System.Windows.Forms.Label lblLeader;
         private System.Windows.Forms.DataGridView dgvAddLeader;
         private System.Windows.Forms.Button btnRemoveTG;
+        private System.Windows.Forms.ListBox lstATtraininggroups;
+        private System.Windows.Forms.Label label1;
     }
 }
 

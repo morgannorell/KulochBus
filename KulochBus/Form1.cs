@@ -538,7 +538,6 @@ namespace KulochBus
 
             Traininggroup tg = new Traininggroup();
             dt = new DataTable();
-            bs = new BindingSource();
             dt = tg.GetTGLevelList();
 
             for (int i = 0; i < dt.Rows.Count; i++)
@@ -582,19 +581,7 @@ namespace KulochBus
             MessageBox.Show("Träningsgrupp skapad");
             EmptyTxtBoxes(panTGGroup);
         }
-
-        private void btnTGDiciplin_Click(object sender, EventArgs e)
-        {
-            FormDisciplin disciplin = new FormDisciplin();
-            disciplin.Show();
-        }
-
-        private void btnTGLevel_Click(object sender, EventArgs e)
-        {
-            frmLevel level = new frmLevel();
-            level.Show();
-        }
-
+        
         private void avslutaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -617,10 +604,83 @@ namespace KulochBus
             dt = at.GetTrainingGroups();
             bs.DataSource = dt;
 
-            cmbATtrainggroups.DataSource = bs;
-            cmbATtrainggroups.DisplayMember = "name";
+            lstATtraininggroups.DataSource = dt;
+            lstATtraininggroups.DisplayMember = "name";
         }
 
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime date = new DateTime();
+            date = dateTimePicker1.Value;
+            string now = date.ToString("yyyy-MM-dd");
+            lblATdate.Text = now;
+        }
+
+        private void lstATtraininggroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string selectedGroup;
+            
+            if (lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue) != null)
+            {
+                selectedGroup = lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue);
+
+                Attendance at = new Attendance();
+                dt = new DataTable();
+                bs = new BindingSource();
+
+                dt = at.GetMembers(selectedGroup);
+                bs.DataSource = dt;
+                dgrATmemberlist.DataSource = bs;
+            }
+        }
+
+        private void btnATsave_Click(object sender, EventArgs e)
+        {
+            Attendance at = new Attendance();                       
+            List<string> members = new List<string>();
+            int count = 0;
+
+            foreach (DataGridViewRow row in dgrATmemberlist.Rows)
+            {
+                if (row.Cells[3].Value.ToString() == "True")
+                {
+                    count++;
+                }
+            }
+
+            if (count == 0) { MessageBox.Show("Du måste markera den medlem eller de medlemmar som är närvarande."); }
+
+            at.CreateMemberlist();
+
+            string securitynr, firstname, lastname;
+            foreach (DataGridViewRow row in dgrATmemberlist.Rows)
+            {
+                if (row.Cells[3].Value.ToString() == "True")
+                {
+                    securitynr = row.Cells[0].Value.ToString();
+                    firstname = row.Cells[1].Value.ToString();
+                    lastname = row.Cells[2].Value.ToString();
+                }
+            }
+
+            if (members.Count == 0)
+            {
+                MessageBox.Show("Du måste markera den medlem eller de medlemmar som är närvarande.");
+                return;
+            }
+
+            dt = new DataTable();
+            //dt = at.CreateMemberlist(members);
+        }
+
+        private void btnATcancel_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panStart.Show();
+        }
+        //
+        // Traininggroup
+        //
         private void btnTGSearch_Click(object sender, EventArgs e)
         {
             string search = txtTGSearch.Text;
@@ -800,29 +860,7 @@ namespace KulochBus
 
             ShowTGLeaderList(groupid);
         }
-
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime date = new DateTime();
-            date = dateTimePicker1.Value;
-            string now = date.ToString("yyyy-MM-dd");
-            lblATdate.Text = now;
-        }
-
-        private void cmbATtrainggroups_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            string selectedGroup;
-            selectedGroup = cmbATtrainggroups.Text;
-
-            Attendance at = new Attendance();
-            dt = new DataTable();
-            bs = new BindingSource();
-
-            dt = at.GetMembers(selectedGroup);
-            bs.DataSource = dt;
-            dgrATmemberlist.DataSource = bs;
-        }
-
+        
         private void btnAddMember_Click(object sender, EventArgs e)
         {
             Traininggroup ntg = new Traininggroup();
@@ -865,9 +903,18 @@ namespace KulochBus
             dgrListTGMembers.DataSource = null;
         }
 
-        private void visaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void btnTGDiciplin_Click(object sender, EventArgs e)
         {
-
+            FormDisciplin disciplin = new FormDisciplin();
+            disciplin.Show();
         }
+
+        private void btnTGLevel_Click(object sender, EventArgs e)
+        {
+            frmLevel level = new frmLevel();
+            level.Show();
+        }
+
+        
     }
 }
