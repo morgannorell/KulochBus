@@ -162,6 +162,12 @@
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
             this.panAdendence = new System.Windows.Forms.Panel();
+            this.lblDescription = new System.Windows.Forms.Label();
+            this.txtDescription = new System.Windows.Forms.RichTextBox();
+            this.lblTG = new System.Windows.Forms.Label();
+            this.lblLocation = new System.Windows.Forms.Label();
+            this.txtLocation = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lstATtraininggroups = new System.Windows.Forms.ListBox();
             this.lblATmemberlist = new System.Windows.Forms.Label();
             this.lblATdateTitle = new System.Windows.Forms.Label();
@@ -176,7 +182,6 @@
             this.panViewAtendance = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lvlALtitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -1554,6 +1559,11 @@
             // panAdendence
             // 
             this.panAdendence.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panAdendence.Controls.Add(this.lblDescription);
+            this.panAdendence.Controls.Add(this.txtDescription);
+            this.panAdendence.Controls.Add(this.lblTG);
+            this.panAdendence.Controls.Add(this.lblLocation);
+            this.panAdendence.Controls.Add(this.txtLocation);
             this.panAdendence.Controls.Add(this.label1);
             this.panAdendence.Controls.Add(this.lstATtraininggroups);
             this.panAdendence.Controls.Add(this.lblATmemberlist);
@@ -1572,10 +1582,61 @@
             this.panAdendence.Size = new System.Drawing.Size(727, 445);
             this.panAdendence.TabIndex = 7;
             // 
+            // lblDescription
+            // 
+            this.lblDescription.AutoSize = true;
+            this.lblDescription.Location = new System.Drawing.Point(15, 331);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(56, 13);
+            this.lblDescription.TabIndex = 60;
+            this.lblDescription.Text = "Noteringar";
+            // 
+            // txtDescription
+            // 
+            this.txtDescription.Location = new System.Drawing.Point(15, 346);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(209, 80);
+            this.txtDescription.TabIndex = 59;
+            this.txtDescription.Text = "";
+            // 
+            // lblTG
+            // 
+            this.lblTG.AutoSize = true;
+            this.lblTG.Location = new System.Drawing.Point(12, 175);
+            this.lblTG.Name = "lblTG";
+            this.lblTG.Size = new System.Drawing.Size(75, 13);
+            this.lblTG.TabIndex = 58;
+            this.lblTG.Text = "Träningsgrupp";
+            // 
+            // lblLocation
+            // 
+            this.lblLocation.AutoSize = true;
+            this.lblLocation.Location = new System.Drawing.Point(17, 291);
+            this.lblLocation.Name = "lblLocation";
+            this.lblLocation.Size = new System.Drawing.Size(30, 13);
+            this.lblLocation.TabIndex = 57;
+            this.lblLocation.Text = "Plats";
+            // 
+            // txtLocation
+            // 
+            this.txtLocation.Location = new System.Drawing.Point(17, 306);
+            this.txtLocation.Name = "txtLocation";
+            this.txtLocation.Size = new System.Drawing.Size(207, 20);
+            this.txtLocation.TabIndex = 56;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(573, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 13);
+            this.label1.TabIndex = 55;
+            this.label1.Text = "Fyll i närvarande medlemmar";
+            // 
             // lstATtraininggroups
             // 
             this.lstATtraininggroups.FormattingEnabled = true;
-            this.lstATtraininggroups.Location = new System.Drawing.Point(16, 238);
+            this.lstATtraininggroups.Location = new System.Drawing.Point(16, 190);
             this.lstATtraininggroups.Name = "lstATtraininggroups";
             this.lstATtraininggroups.Size = new System.Drawing.Size(208, 95);
             this.lstATtraininggroups.TabIndex = 54;
@@ -1584,7 +1645,7 @@
             // lblATmemberlist
             // 
             this.lblATmemberlist.AutoSize = true;
-            this.lblATmemberlist.Location = new System.Drawing.Point(258, 66);
+            this.lblATmemberlist.Location = new System.Drawing.Point(258, 46);
             this.lblATmemberlist.Name = "lblATmemberlist";
             this.lblATmemberlist.Size = new System.Drawing.Size(67, 13);
             this.lblATmemberlist.TabIndex = 52;
@@ -1593,7 +1654,7 @@
             // lblATdateTitle
             // 
             this.lblATdateTitle.AutoSize = true;
-            this.lblATdateTitle.Location = new System.Drawing.Point(15, 182);
+            this.lblATdateTitle.Location = new System.Drawing.Point(15, 128);
             this.lblATdateTitle.Name = "lblATdateTitle";
             this.lblATdateTitle.Size = new System.Drawing.Size(116, 13);
             this.lblATdateTitle.TabIndex = 51;
@@ -1601,7 +1662,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(18, 199);
+            this.dateTimePicker1.Location = new System.Drawing.Point(18, 145);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 50;
@@ -1610,14 +1671,14 @@
             // lblATdate
             // 
             this.lblATdate.AutoSize = true;
-            this.lblATdate.Location = new System.Drawing.Point(131, 182);
+            this.lblATdate.Location = new System.Drawing.Point(131, 129);
             this.lblATdate.Name = "lblATdate";
             this.lblATdate.Size = new System.Drawing.Size(0, 13);
             this.lblATdate.TabIndex = 49;
             // 
             // btnATcancel
             // 
-            this.btnATcancel.Location = new System.Drawing.Point(638, 410);
+            this.btnATcancel.Location = new System.Drawing.Point(638, 412);
             this.btnATcancel.Name = "btnATcancel";
             this.btnATcancel.Size = new System.Drawing.Size(75, 23);
             this.btnATcancel.TabIndex = 48;
@@ -1627,7 +1688,7 @@
             // 
             // btnATsave
             // 
-            this.btnATsave.Location = new System.Drawing.Point(549, 410);
+            this.btnATsave.Location = new System.Drawing.Point(549, 412);
             this.btnATsave.Name = "btnATsave";
             this.btnATsave.Size = new System.Drawing.Size(75, 23);
             this.btnATsave.TabIndex = 47;
@@ -1641,15 +1702,15 @@
             this.dgrATmemberlist.AllowUserToDeleteRows = false;
             this.dgrATmemberlist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrATmemberlist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrATmemberlist.Location = new System.Drawing.Point(258, 87);
+            this.dgrATmemberlist.Location = new System.Drawing.Point(258, 65);
             this.dgrATmemberlist.Name = "dgrATmemberlist";
-            this.dgrATmemberlist.Size = new System.Drawing.Size(455, 311);
+            this.dgrATmemberlist.Size = new System.Drawing.Size(455, 337);
             this.dgrATmemberlist.TabIndex = 46;
             // 
             // lblATleader
             // 
             this.lblATleader.AutoSize = true;
-            this.lblATleader.Location = new System.Drawing.Point(15, 66);
+            this.lblATleader.Location = new System.Drawing.Point(15, 43);
             this.lblATleader.Name = "lblATleader";
             this.lblATleader.Size = new System.Drawing.Size(40, 13);
             this.lblATleader.TabIndex = 45;
@@ -1658,16 +1719,16 @@
             // lstATleader
             // 
             this.lstATleader.FormattingEnabled = true;
-            this.lstATleader.Location = new System.Drawing.Point(15, 87);
+            this.lstATleader.Location = new System.Drawing.Point(15, 64);
             this.lstATleader.Name = "lstATleader";
-            this.lstATleader.Size = new System.Drawing.Size(208, 82);
+            this.lstATleader.Size = new System.Drawing.Size(208, 56);
             this.lstATleader.TabIndex = 44;
             // 
             // lblATtitle
             // 
             this.lblATtitle.AutoSize = true;
             this.lblATtitle.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblATtitle.Location = new System.Drawing.Point(12, 9);
+            this.lblATtitle.Location = new System.Drawing.Point(12, 6);
             this.lblATtitle.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblATtitle.Name = "lblATtitle";
             this.lblATtitle.Size = new System.Drawing.Size(110, 32);
@@ -1709,27 +1770,18 @@
             this.lvlALtitle.TabIndex = 5;
             this.lvlALtitle.Text = "Närvarolistor";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(470, 32);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 55;
-            this.label1.Text = "label1";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
             this.Controls.Add(this.panAdendence);
-            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panContact);
+            this.Controls.Add(this.panViewContact);
+            this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panStart);
-            this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panViewAtendance);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.menuStrip1);
@@ -1918,6 +1970,11 @@
         private System.Windows.Forms.Button btnRemoveTG;
         private System.Windows.Forms.ListBox lstATtraininggroups;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblTG;
+        private System.Windows.Forms.Label lblLocation;
+        private System.Windows.Forms.TextBox txtLocation;
+        private System.Windows.Forms.Label lblDescription;
+        private System.Windows.Forms.RichTextBox txtDescription;
     }
 }
 

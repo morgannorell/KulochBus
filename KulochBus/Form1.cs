@@ -631,46 +631,42 @@ namespace KulochBus
                 dt = at.GetMembers(selectedGroup);
                 bs.DataSource = dt;
                 dgrATmemberlist.DataSource = bs;
+
+                BindingSource bs1 = new BindingSource();
+                dt = at.GetLeaders(selectedGroup);
+                bs1.DataSource = dt;
+                lstATleader.DataSource = bs1;
+                lstATleader.DisplayMember = "firstname";
             }
         }
 
         private void btnATsave_Click(object sender, EventArgs e)
         {
+            string selectedGroup = lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue);
+            string description = txtDescription.Text;
+            string place = txtLocation.Text;
+            string date = lblATdate.Text;
+
             Attendance at = new Attendance();                       
-            List<string> members = new List<string>();
-            int count = 0;
+            List<string> memberids = new List<string>();
 
             foreach (DataGridViewRow row in dgrATmemberlist.Rows)
             {
-                if (row.Cells[3].Value.ToString() == "True")
+                if (row.Cells[4].Value.ToString() == "True")
                 {
-                    count++;
+                    memberids.Add(row.Cells[0].Value.ToString());
                 }
             }
 
-            if (count == 0) { MessageBox.Show("Du måste markera den medlem eller de medlemmar som är närvarande."); }
-
-            at.CreateMemberlist();
-
-            string securitynr, firstname, lastname;
-            foreach (DataGridViewRow row in dgrATmemberlist.Rows)
+            if (memberids.Count == 0)
             {
-                if (row.Cells[3].Value.ToString() == "True")
-                {
-                    securitynr = row.Cells[0].Value.ToString();
-                    firstname = row.Cells[1].Value.ToString();
-                    lastname = row.Cells[2].Value.ToString();
-                }
-            }
-
-            if (members.Count == 0)
-            {
-                MessageBox.Show("Du måste markera den medlem eller de medlemmar som är närvarande.");
+                MessageBox.Show("Du måste ange den medlem eller de medlemmar som har varit närvarande.");
                 return;
             }
 
             dt = new DataTable();
-            //dt = at.CreateMemberlist(members);
+            dt = at.CreateMemberlist(memberids, selectedGroup, description, place, date);
+               
         }
 
         private void btnATcancel_Click(object sender, EventArgs e)
@@ -859,6 +855,7 @@ namespace KulochBus
             }
 
             ShowTGLeaderList(groupid);
+            ShowTGMemberList(groupid);
         }
         
         private void btnAddMember_Click(object sender, EventArgs e)
@@ -914,7 +911,6 @@ namespace KulochBus
             frmLevel level = new frmLevel();
             level.Show();
         }
-
         
     }
 }

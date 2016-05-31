@@ -132,5 +132,29 @@ namespace KulochBus
             }
             return 0;
         }
+
+        public int SelectID(string sql)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+                NpgsqlDataReader da = cmd.ExecuteReader();
+
+                if (da.HasRows)
+                {
+                    while (da.Read())
+                    {
+                        int id = Convert.ToInt32(da["groupid"]);
+                        return id;
+                    }
+                }
+            }
+
+            catch (NpgsqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            return 0;
+        }
     }
 }
