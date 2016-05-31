@@ -194,16 +194,16 @@ namespace KulochBus
             tg.Insert(sql);
         }
 
-        //public string GetTGnameid(string selectedAttendance)
-        //{
-        //    Sql querry = new Sql();
+        public string GetTGnameid(string selectedAttendance)
+        {
+            Sql querry = new Sql();
 
-        //    string sql = "SELECT groupid FROM attendance WHERE date = '" + selectedAttendance + "'";
+            string sql = "SELECT a.groupid, t.name FROM attendance AS a JOIN traininggroup AS t ON a.groupid = t.groupid WHERE a.date = '" + selectedAttendance + "'";
 
-        //    querry.SelectedGID(sql);
+            string id = querry.SelectedGID(sql);
 
-        //    return id;
-        //}
+            return id;
+        }
 
     }
 }

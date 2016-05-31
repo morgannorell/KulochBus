@@ -45,10 +45,9 @@ namespace KulochBus
             string sql = "SELECT securitynr, firstname, lastname " +
                 "from member_base join membergroup on member_base.memberid = membergroup.memberid " +
                 "join traininggroup on membergroup.groupid = traininggroup.groupid " +
-                "WHERE name = '" + group + "' AND isleader = TRUE";
+                "WHERE traininggroup.groupid = '" + group + "' AND isleader = TRUE";
 
             dt = querry.Select(sql);
-
 
             return dt;
         }
@@ -102,20 +101,32 @@ namespace KulochBus
             Sql newSql = new Sql();
             DataTable dt = new DataTable();
 
-            string sql = "SELECT a.date AS \"Datum\", tg.name AS \"Gruppnamn\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid GROUP BY ma.attendanceid, a.date, tg.name";
+            string sql = "SELECT a.date AS \"Datum\", tg.groupid AS \"Gruppid\", tg.name AS \"Gruppnamn\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid GROUP BY ma.attendanceid, a.date, tg.name, tg.groupid";
 
             dt = newSql.Select(sql);
 
             return dt;
         }
 
-        public DataTable showAttendance(string attendance)
+        public DataTable showAttendance(string id)
         {
             Sql newSql = new Sql();
             DataTable dt = new DataTable();
 
-            string sql = "SELECT a.date AS \"Datum\", a.timestart AS \"Starttid\", a.timeend AS \"Sluttid\", a.place AS \"Plats\", a.description AS \"Aktivitet\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid GROUP BY a.date, a.timestart, a.timeend, a.description, a.place";
+            string sql = "SELECT ma.attendanceid AS \"ID\", a.date AS \"Datum\", a.timestart AS \"Starttid\", a.timeend AS \"Sluttid\", a.place AS \"Plats\", a.description AS \"Aktivitet\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid WHERE a.groupid = '" + id + "' GROUP BY a.date, a.timestart, a.timeend, a.description, a.place, ma.attendanceid";
                
+            dt = newSql.Select(sql);
+
+            return dt;
+        }
+
+        public DataTable showAttenders(string id)
+        {
+            Sql newSql = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql = "SELECT ma.memberid AS \"Medlemsnr\", p.firstname AS \"Förnamn\", p.lastname AS \"Efternamn\", p.securitynr AS \"Personnr\" FROM memberattendance AS ma JOIN person AS p ON ma.memberid = p.personid WHERE ma.attendanceid = " + id + "";
+
             dt = newSql.Select(sql);
 
             return dt;
