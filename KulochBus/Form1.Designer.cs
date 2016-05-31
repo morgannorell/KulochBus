@@ -162,6 +162,10 @@
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
             this.panAdendence = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtTimeEnd = new System.Windows.Forms.TextBox();
+            this.txtTimestart = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblDescription = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.lblTG = new System.Windows.Forms.Label();
@@ -179,9 +183,28 @@
             this.lblATleader = new System.Windows.Forms.Label();
             this.lstATleader = new System.Windows.Forms.ListBox();
             this.lblATtitle = new System.Windows.Forms.Label();
-            this.panViewAtendance = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panViewAttendance = new System.Windows.Forms.Panel();
+            this.dgvAttendancelist = new System.Windows.Forms.DataGridView();
             this.lvlALtitle = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.dgvAttendance = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTGroupName = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panPrint = new System.Windows.Forms.Panel();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTGroupID = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -198,8 +221,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgrViewContact)).BeginInit();
             this.panAdendence.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrATmemberlist)).BeginInit();
-            this.panViewAtendance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panViewAttendance.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendancelist)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panPrint.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -315,6 +341,7 @@
             this.närvaroToolStripMenuItem1.Name = "närvaroToolStripMenuItem1";
             this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.närvaroToolStripMenuItem1.Text = "Närvarolistor";
+            this.närvaroToolStripMenuItem1.Click += new System.EventHandler(this.närvaroToolStripMenuItem1_Click);
             // 
             // träningsgrupperToolStripMenuItem
             // 
@@ -1559,6 +1586,10 @@
             // panAdendence
             // 
             this.panAdendence.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panAdendence.Controls.Add(this.label11);
+            this.panAdendence.Controls.Add(this.txtTimeEnd);
+            this.panAdendence.Controls.Add(this.txtTimestart);
+            this.panAdendence.Controls.Add(this.label7);
             this.panAdendence.Controls.Add(this.lblDescription);
             this.panAdendence.Controls.Add(this.txtDescription);
             this.panAdendence.Controls.Add(this.lblTG);
@@ -1582,10 +1613,42 @@
             this.panAdendence.Size = new System.Drawing.Size(727, 445);
             this.panAdendence.TabIndex = 7;
             // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(74, 190);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(10, 13);
+            this.label11.TabIndex = 64;
+            this.label11.Text = "-";
+            // 
+            // txtTimeEnd
+            // 
+            this.txtTimeEnd.Location = new System.Drawing.Point(92, 187);
+            this.txtTimeEnd.Name = "txtTimeEnd";
+            this.txtTimeEnd.Size = new System.Drawing.Size(50, 20);
+            this.txtTimeEnd.TabIndex = 63;
+            // 
+            // txtTimestart
+            // 
+            this.txtTimestart.Location = new System.Drawing.Point(17, 187);
+            this.txtTimestart.Name = "txtTimestart";
+            this.txtTimestart.Size = new System.Drawing.Size(50, 20);
+            this.txtTimestart.TabIndex = 62;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(14, 172);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(22, 13);
+            this.label7.TabIndex = 61;
+            this.label7.Text = "Tid";
+            // 
             // lblDescription
             // 
             this.lblDescription.AutoSize = true;
-            this.lblDescription.Location = new System.Drawing.Point(15, 331);
+            this.lblDescription.Location = new System.Drawing.Point(15, 362);
             this.lblDescription.Name = "lblDescription";
             this.lblDescription.Size = new System.Drawing.Size(56, 13);
             this.lblDescription.TabIndex = 60;
@@ -1593,16 +1656,16 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(15, 346);
+            this.txtDescription.Location = new System.Drawing.Point(15, 377);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(209, 80);
+            this.txtDescription.Size = new System.Drawing.Size(209, 56);
             this.txtDescription.TabIndex = 59;
             this.txtDescription.Text = "";
             // 
             // lblTG
             // 
             this.lblTG.AutoSize = true;
-            this.lblTG.Location = new System.Drawing.Point(12, 175);
+            this.lblTG.Location = new System.Drawing.Point(12, 216);
             this.lblTG.Name = "lblTG";
             this.lblTG.Size = new System.Drawing.Size(75, 13);
             this.lblTG.TabIndex = 58;
@@ -1611,7 +1674,7 @@
             // lblLocation
             // 
             this.lblLocation.AutoSize = true;
-            this.lblLocation.Location = new System.Drawing.Point(17, 291);
+            this.lblLocation.Location = new System.Drawing.Point(17, 320);
             this.lblLocation.Name = "lblLocation";
             this.lblLocation.Size = new System.Drawing.Size(30, 13);
             this.lblLocation.TabIndex = 57;
@@ -1619,7 +1682,7 @@
             // 
             // txtLocation
             // 
-            this.txtLocation.Location = new System.Drawing.Point(17, 306);
+            this.txtLocation.Location = new System.Drawing.Point(17, 335);
             this.txtLocation.Name = "txtLocation";
             this.txtLocation.Size = new System.Drawing.Size(207, 20);
             this.txtLocation.TabIndex = 56;
@@ -1636,9 +1699,9 @@
             // lstATtraininggroups
             // 
             this.lstATtraininggroups.FormattingEnabled = true;
-            this.lstATtraininggroups.Location = new System.Drawing.Point(16, 190);
+            this.lstATtraininggroups.Location = new System.Drawing.Point(16, 231);
             this.lstATtraininggroups.Name = "lstATtraininggroups";
-            this.lstATtraininggroups.Size = new System.Drawing.Size(208, 95);
+            this.lstATtraininggroups.Size = new System.Drawing.Size(208, 82);
             this.lstATtraininggroups.TabIndex = 54;
             this.lstATtraininggroups.SelectedIndexChanged += new System.EventHandler(this.lstATtraininggroups_SelectedIndexChanged);
             // 
@@ -1710,7 +1773,7 @@
             // lblATleader
             // 
             this.lblATleader.AutoSize = true;
-            this.lblATleader.Location = new System.Drawing.Point(15, 43);
+            this.lblATleader.Location = new System.Drawing.Point(15, 47);
             this.lblATleader.Name = "lblATleader";
             this.lblATleader.Size = new System.Drawing.Size(40, 13);
             this.lblATleader.TabIndex = 45;
@@ -1735,29 +1798,30 @@
             this.lblATtitle.TabIndex = 42;
             this.lblATtitle.Text = "Närvaro";
             // 
-            // panViewAtendance
+            // panViewAttendance
             // 
-            this.panViewAtendance.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panViewAtendance.Controls.Add(this.dataGridView1);
-            this.panViewAtendance.Controls.Add(this.lvlALtitle);
-            this.panViewAtendance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panViewAtendance.Location = new System.Drawing.Point(0, 24);
-            this.panViewAtendance.Name = "panViewAtendance";
-            this.panViewAtendance.Size = new System.Drawing.Size(727, 445);
-            this.panViewAtendance.TabIndex = 0;
+            this.panViewAttendance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panViewAttendance.Controls.Add(this.dgvAttendancelist);
+            this.panViewAttendance.Controls.Add(this.lvlALtitle);
+            this.panViewAttendance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panViewAttendance.Location = new System.Drawing.Point(0, 24);
+            this.panViewAttendance.Name = "panViewAttendance";
+            this.panViewAttendance.Size = new System.Drawing.Size(727, 445);
+            this.panViewAttendance.TabIndex = 0;
             // 
-            // dataGridView1
+            // dgvAttendancelist
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 50);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(703, 385);
-            this.dataGridView1.TabIndex = 6;
+            this.dgvAttendancelist.AllowUserToAddRows = false;
+            this.dgvAttendancelist.AllowUserToDeleteRows = false;
+            this.dgvAttendancelist.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAttendancelist.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAttendancelist.Location = new System.Drawing.Point(12, 50);
+            this.dgvAttendancelist.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvAttendancelist.Name = "dgvAttendancelist";
+            this.dgvAttendancelist.ReadOnly = true;
+            this.dgvAttendancelist.Size = new System.Drawing.Size(703, 383);
+            this.dgvAttendancelist.TabIndex = 6;
+            this.dgvAttendancelist.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttendancelist_CellDoubleClick);
             // 
             // lvlALtitle
             // 
@@ -1770,20 +1834,207 @@
             this.lvlALtitle.TabIndex = 5;
             this.lvlALtitle.Text = "Närvarolistor";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(12, 6);
+            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(156, 32);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Närvarokort";
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.Location = new System.Drawing.Point(19, 116);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(208, 56);
+            this.listBox2.TabIndex = 44;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 100);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(40, 13);
+            this.label9.TabIndex = 45;
+            this.label9.Text = "Ledare";
+            // 
+            // dgvAttendance
+            // 
+            this.dgvAttendance.AllowUserToAddRows = false;
+            this.dgvAttendance.AllowUserToDeleteRows = false;
+            this.dgvAttendance.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAttendance.Location = new System.Drawing.Point(258, 65);
+            this.dgvAttendance.Name = "dgvAttendance";
+            this.dgvAttendance.Size = new System.Drawing.Size(455, 163);
+            this.dgvAttendance.TabIndex = 46;
+            this.dgvAttendance.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttendance_CellDoubleClick);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(549, 412);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 47;
+            this.button2.Text = "Spara";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(638, 412);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Avbryt";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(343, 363);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(0, 13);
+            this.label8.TabIndex = 49;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(258, 46);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(82, 13);
+            this.label6.TabIndex = 52;
+            this.label6.Text = "Träningstillfällen";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(15, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(75, 13);
+            this.label3.TabIndex = 58;
+            this.label3.Text = "Träningsgrupp";
+            // 
+            // txtTGroupName
+            // 
+            this.txtTGroupName.Location = new System.Drawing.Point(18, 65);
+            this.txtTGroupName.Name = "txtTGroupName";
+            this.txtTGroupName.Size = new System.Drawing.Size(150, 20);
+            this.txtTGroupName.TabIndex = 61;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(258, 256);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(244, 179);
+            this.dataGridView2.TabIndex = 62;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(256, 238);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.TabIndex = 63;
+            this.label2.Text = "Deltagare";
+            // 
+            // panPrint
+            // 
+            this.panPrint.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panPrint.Controls.Add(this.label12);
+            this.panPrint.Controls.Add(this.txtTGroupID);
+            this.panPrint.Controls.Add(this.textBox3);
+            this.panPrint.Controls.Add(this.textBox1);
+            this.panPrint.Controls.Add(this.label5);
+            this.panPrint.Controls.Add(this.label4);
+            this.panPrint.Controls.Add(this.label2);
+            this.panPrint.Controls.Add(this.dataGridView2);
+            this.panPrint.Controls.Add(this.txtTGroupName);
+            this.panPrint.Controls.Add(this.label3);
+            this.panPrint.Controls.Add(this.label6);
+            this.panPrint.Controls.Add(this.label8);
+            this.panPrint.Controls.Add(this.button1);
+            this.panPrint.Controls.Add(this.button2);
+            this.panPrint.Controls.Add(this.dgvAttendance);
+            this.panPrint.Controls.Add(this.label9);
+            this.panPrint.Controls.Add(this.listBox2);
+            this.panPrint.Controls.Add(this.label10);
+            this.panPrint.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panPrint.Location = new System.Drawing.Point(0, 24);
+            this.panPrint.Name = "panPrint";
+            this.panPrint.Size = new System.Drawing.Size(727, 445);
+            this.panPrint.TabIndex = 61;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(673, 279);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(39, 20);
+            this.textBox3.TabIndex = 67;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(673, 251);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(39, 20);
+            this.textBox1.TabIndex = 66;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(525, 256);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(142, 13);
+            this.label5.TabIndex = 65;
+            this.label5.Text = "Summa antal träningstillfällen";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(525, 284);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(115, 13);
+            this.label4.TabIndex = 64;
+            this.label4.Text = "Summa antal deltagare";
+            // 
+            // txtTGroupID
+            // 
+            this.txtTGroupID.Location = new System.Drawing.Point(174, 65);
+            this.txtTGroupID.Name = "txtTGroupID";
+            this.txtTGroupID.Size = new System.Drawing.Size(53, 20);
+            this.txtTGroupID.TabIndex = 68;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(172, 48);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(46, 13);
+            this.label12.TabIndex = 69;
+            this.label12.Text = "Nummer";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
+            this.Controls.Add(this.panViewAttendance);
+            this.Controls.Add(this.panPrint);
             this.Controls.Add(this.panAdendence);
+            this.Controls.Add(this.panViewMember);
+            this.Controls.Add(this.panMember);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panTGGroup);
-            this.Controls.Add(this.panMember);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panStart);
-            this.Controls.Add(this.panViewAtendance);
-            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmMain";
@@ -1812,9 +2063,13 @@
             this.panAdendence.ResumeLayout(false);
             this.panAdendence.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgrATmemberlist)).EndInit();
-            this.panViewAtendance.ResumeLayout(false);
-            this.panViewAtendance.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panViewAttendance.ResumeLayout(false);
+            this.panViewAttendance.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendancelist)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panPrint.ResumeLayout(false);
+            this.panPrint.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1944,8 +2199,8 @@
         private System.Windows.Forms.ComboBox cmbLevel;
         private System.Windows.Forms.ComboBox cmbDisciplin;
         private System.Windows.Forms.Panel panAdendence;
-        private System.Windows.Forms.Panel panViewAtendance;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Panel panViewAttendance;
+        private System.Windows.Forms.DataGridView dgvAttendancelist;
         private System.Windows.Forms.Label lvlALtitle;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label lblATdate;
@@ -1975,6 +2230,29 @@
         private System.Windows.Forms.TextBox txtLocation;
         private System.Windows.Forms.Label lblDescription;
         private System.Windows.Forms.RichTextBox txtDescription;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txtTimeEnd;
+        private System.Windows.Forms.TextBox txtTimestart;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridView dgvAttendance;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTGroupName;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panPrint;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtTGroupID;
     }
 }
 

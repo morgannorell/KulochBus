@@ -64,13 +64,13 @@ namespace KulochBus
             return find;
         }
 
-        public DataTable CreateMemberlist(List<string> members, string selectedgroup, string description, string place, string date)
+        public DataTable CreateMemberlist(List<string> members, string selectedgroup, string description, string place, string date, string start, string end)
         {
             Sql newList = new Sql();
             int sg = findGroupID(selectedgroup);
             DataTable dt = new DataTable();
 
-            string sql = " INSERT INTO attendance (groupid, description, place, date) VALUES ('" + sg + "', '" + description + "', '" + place + "', '" + date + "')";
+            string sql = " INSERT INTO attendance (groupid, description, place, date, timestart, timeend) VALUES ('" + sg + "', '" + description + "', '" + place + "', '" + date + "', '" + start + "', '" + end + "')";
 
             newList.Insert(sql);
 
@@ -95,7 +95,31 @@ namespace KulochBus
             }
 
             return dt;
-
         }
+
+        public DataTable countParticipant()
+        {
+            Sql newSql = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql = "SELECT a.date AS \"Datum\", tg.name AS \"Gruppnamn\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid GROUP BY ma.attendanceid, a.date, tg.name";
+
+            dt = newSql.Select(sql);
+
+            return dt;
+        }
+
+        public DataTable showAttendance(string attendance)
+        {
+            Sql newSql = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql = "SELECT a.date AS \"Datum\", a.timestart AS \"Starttid\", a.timeend AS \"Sluttid\", a.place AS \"Plats\", a.description AS \"Aktivitet\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid GROUP BY a.date, a.timestart, a.timeend, a.description, a.place";
+               
+            dt = newSql.Select(sql);
+
+            return dt;
+        }
+
     }
 }

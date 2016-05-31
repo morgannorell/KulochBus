@@ -156,5 +156,19 @@ namespace KulochBus
             }
             return 0;
         }
+
+        public void SelectedGID(string sql)
+        {
+            try
+            {
+                NpgsqlCommand cmd = new NpgsqlCommand(sql, conn);
+                NpgsqlDataReader da = cmd.ExecuteReader();
+            }
+
+            catch (NpgsqlException ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

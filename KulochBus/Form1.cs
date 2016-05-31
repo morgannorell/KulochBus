@@ -646,6 +646,8 @@ namespace KulochBus
             string description = txtDescription.Text;
             string place = txtLocation.Text;
             string date = lblATdate.Text;
+            string starttime = txtTimestart.Text;
+            string endtime = txtTimeEnd.Text;
 
             Attendance at = new Attendance();                       
             List<string> memberids = new List<string>();
@@ -665,7 +667,9 @@ namespace KulochBus
             }
 
             dt = new DataTable();
-            dt = at.CreateMemberlist(memberids, selectedGroup, description, place, date);
+            dt = at.CreateMemberlist(memberids, selectedGroup, description, place, date, starttime, endtime);
+
+            MessageBox.Show("Närvarolista tillagd");
                
         }
 
@@ -911,6 +915,69 @@ namespace KulochBus
             frmLevel level = new frmLevel();
             level.Show();
         }
+
+        private void ShowAttendancelist()
+        {
+            HidePanels();
+            panViewAttendance.Show();
+
+            Attendance at = new Attendance();
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = at.countParticipant();
+            bs.DataSource = dt;
+            dgvAttendancelist.DataSource = bs;
+        }
+
+        private void närvaroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ShowAttendancelist();
+        }
+
+        private void dgvAttendancelist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //visibility på members
+            HidePanels();       
+            panPrint.Show();
+
+            // Get memberid
+            string selectedAttendance;
+            DataGridViewRow selectedRow = dgvAttendancelist.Rows[e.RowIndex];
+            selectedAttendance = selectedRow.Cells[0].Value.ToString();
+
+
+            Attendance at = new Attendance();
+            dt = new DataTable();
+            bs = new BindingSource();
+            
+            dt = at.showAttendance(selectedAttendance);
+            bs.DataSource = dt;
+            dgvAttendance.DataSource = bs;
+
+
+            //Traininggroup tg = new Traininggroup();
+            //string ID = tg.GetTGnameid(selectedAttendance);
+            //txtTGName.Text = ID;
+            //txtTGroupID.Text =;
+            
+        }
         
+
+        private void dgvAttendance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string selectedAttendance;
+            DataGridViewRow selectedRow = dgvAttendance.Rows[e.RowIndex];
+            selectedAttendance = selectedRow.Cells[0].Value.ToString();
+
+
+            Attendance at = new Attendance();
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = at.showAttendance(selectedAttendance);
+            bs.DataSource = dt;
+            dgvAttendance.DataSource = bs;
+        }
     }
 }
