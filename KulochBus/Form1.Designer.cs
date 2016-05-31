@@ -187,7 +187,7 @@
             this.dgvAttendancelist = new System.Windows.Forms.DataGridView();
             this.lvlALtitle = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listAttLeader = new System.Windows.Forms.ListBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dgvAttendance = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
@@ -196,7 +196,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTGroupName = new System.Windows.Forms.TextBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvAttendees = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.panPrint = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
@@ -230,7 +230,7 @@
             this.panViewAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendancelist)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendance)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).BeginInit();
             this.panPrint.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -265,41 +265,41 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.närvaroToolStripMenuItem.Text = "Närvarolista";
             this.närvaroToolStripMenuItem.Click += new System.EventHandler(this.närvaroToolStripMenuItem_Click);
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.medlemToolStripMenuItem.Text = "Medlem";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.kontaktToolStripMenuItem.Text = "Kontakt";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -1857,13 +1857,13 @@
             this.label10.TabIndex = 42;
             this.label10.Text = "Närvarokort";
             // 
-            // listBox2
+            // listAttLeader
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(19, 116);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(208, 56);
-            this.listBox2.TabIndex = 44;
+            this.listAttLeader.FormattingEnabled = true;
+            this.listAttLeader.Location = new System.Drawing.Point(19, 116);
+            this.listAttLeader.Name = "listAttLeader";
+            this.listAttLeader.Size = new System.Drawing.Size(208, 56);
+            this.listAttLeader.TabIndex = 44;
             // 
             // label9
             // 
@@ -1937,16 +1937,16 @@
             this.txtTGroupName.Size = new System.Drawing.Size(150, 20);
             this.txtTGroupName.TabIndex = 61;
             // 
-            // dataGridView2
+            // dgvAttendees
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(258, 256);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(244, 179);
-            this.dataGridView2.TabIndex = 62;
+            this.dgvAttendees.AllowUserToAddRows = false;
+            this.dgvAttendees.AllowUserToDeleteRows = false;
+            this.dgvAttendees.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvAttendees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAttendees.Location = new System.Drawing.Point(258, 256);
+            this.dgvAttendees.Name = "dgvAttendees";
+            this.dgvAttendees.Size = new System.Drawing.Size(244, 179);
+            this.dgvAttendees.TabIndex = 62;
             // 
             // label2
             // 
@@ -1967,7 +1967,7 @@
             this.panPrint.Controls.Add(this.label5);
             this.panPrint.Controls.Add(this.label4);
             this.panPrint.Controls.Add(this.label2);
-            this.panPrint.Controls.Add(this.dataGridView2);
+            this.panPrint.Controls.Add(this.dgvAttendees);
             this.panPrint.Controls.Add(this.txtTGroupName);
             this.panPrint.Controls.Add(this.label3);
             this.panPrint.Controls.Add(this.label6);
@@ -1976,7 +1976,7 @@
             this.panPrint.Controls.Add(this.button2);
             this.panPrint.Controls.Add(this.dgvAttendance);
             this.panPrint.Controls.Add(this.label9);
-            this.panPrint.Controls.Add(this.listBox2);
+            this.panPrint.Controls.Add(this.listAttLeader);
             this.panPrint.Controls.Add(this.label10);
             this.panPrint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panPrint.Location = new System.Drawing.Point(0, 24);
@@ -2088,11 +2088,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
-            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panPrint);
+            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panAdendence);
-            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panTGGroup);
@@ -2130,7 +2130,7 @@
             this.panViewAttendance.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendancelist)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).EndInit();
             this.panPrint.ResumeLayout(false);
             this.panPrint.PerformLayout();
             this.ResumeLayout(false);
@@ -2298,7 +2298,7 @@
         private System.Windows.Forms.TextBox txtTimestart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ListBox listBox2;
+        private System.Windows.Forms.ListBox listAttLeader;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvAttendance;
         private System.Windows.Forms.Button button2;
@@ -2307,7 +2307,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTGroupName;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvAttendees;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panPrint;
         private System.Windows.Forms.TextBox textBox3;

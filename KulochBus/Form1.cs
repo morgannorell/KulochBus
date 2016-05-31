@@ -942,42 +942,46 @@ namespace KulochBus
             panPrint.Show();
 
             // Get memberid
-            string selectedAttendance;
             DataGridViewRow selectedRow = dgvAttendancelist.Rows[e.RowIndex];
-            selectedAttendance = selectedRow.Cells[0].Value.ToString();
-
+            string selectedID = selectedRow.Cells[1].Value.ToString();
+            string selectedName = selectedRow.Cells[2].Value.ToString();
+            txtTGroupID.Text = selectedID;
+            txtTGroupName.Text = selectedName;
 
             Attendance at = new Attendance();
             dt = new DataTable();
             bs = new BindingSource();
             
-            dt = at.showAttendance(selectedAttendance);
+            dt = at.showAttendance(selectedID);
             bs.DataSource = dt;
             dgvAttendance.DataSource = bs;
 
+            string selectedGroup = txtTGroupID.Text;
 
-            //Traininggroup tg = new Traininggroup();
-            //string ID = tg.GetTGnameid(selectedAttendance);
-            //txtTGName.Text = ID;
-            //txtTGroupID.Text =;
+            Attendance at1 = new Attendance();
+            DataTable dt1 = new DataTable();
+            BindingSource bs1 = new BindingSource();
+
+            dt1 = at1.GetLeaders(selectedGroup);
+            bs1.DataSource = dt1;
+            listAttLeader.DataSource = bs1;
+            listAttLeader.DisplayMember = "firstname";
             
         }
         
 
         private void dgvAttendance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string selectedAttendance;
-            DataGridViewRow selectedRow = dgvAttendance.Rows[e.RowIndex];
-            selectedAttendance = selectedRow.Cells[0].Value.ToString();
-
-
             Attendance at = new Attendance();
+            DataGridViewRow selectedRow = dgvAttendancelist.Rows[e.RowIndex];
+            string selectedID = selectedRow.Cells[1].Value.ToString();
+
             dt = new DataTable();
             bs = new BindingSource();
 
-            dt = at.showAttendance(selectedAttendance);
+            dt = at.showAttenders(selectedID);
             bs.DataSource = dt;
-            dgvAttendance.DataSource = bs;
+            dgvAttendees.DataSource = bs;
         }
     }
 }
