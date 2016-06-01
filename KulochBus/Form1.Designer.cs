@@ -2092,6 +2092,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
             this.Controls.Add(this.panAdendence);
+            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panPrint);
