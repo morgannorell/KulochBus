@@ -1726,7 +1726,6 @@
             // 
             // lstATtraininggroups
             // 
-            this.lstATtraininggroups.FormattingEnabled = true;
             this.lstATtraininggroups.Location = new System.Drawing.Point(16, 231);
             this.lstATtraininggroups.Name = "lstATtraininggroups";
             this.lstATtraininggroups.Size = new System.Drawing.Size(208, 82);
@@ -1884,7 +1883,7 @@
             this.dtVATto.Name = "dtVATto";
             this.dtVATto.Size = new System.Drawing.Size(119, 20);
             this.dtVATto.TabIndex = 8;
-            this.dtVATto.ValueChanged += new System.EventHandler(this.dtVATto_ValueChanged);
+            this.dtVATto.CloseUp += new System.EventHandler(this.dtVATto_CloseUp);
             // 
             // dtVATfrom
             // 
@@ -1895,7 +1894,7 @@
             this.dtVATfrom.Name = "dtVATfrom";
             this.dtVATfrom.Size = new System.Drawing.Size(119, 20);
             this.dtVATfrom.TabIndex = 7;
-            this.dtVATfrom.ValueChanged += new System.EventHandler(this.dtVATfrom_ValueChanged);
+            this.dtVATfrom.CloseUp += new System.EventHandler(this.dtVATfrom_CloseUp);
             // 
             // dgvAttendancelist
             // 
@@ -2203,6 +2202,7 @@
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panLeader);
             this.Controls.Add(this.panViewAttendance);
+            this.Controls.Add(this.panMember);
             this.Controls.Add(this.panPrint);
             this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panViewMember);

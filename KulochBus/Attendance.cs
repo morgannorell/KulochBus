@@ -45,7 +45,7 @@ namespace KulochBus
             string sql = "SELECT securitynr, firstname, lastname " +
                 "from member_base join membergroup on member_base.memberid = membergroup.memberid " +
                 "join traininggroup on membergroup.groupid = traininggroup.groupid " +
-                "WHERE traininggroup.name = '" + group + "' AND isleader = TRUE";
+                "WHERE traininggroup.groupid = '" + group + "' AND isleader = TRUE";
 
             dt = querry.Select(sql);
 
@@ -159,13 +159,7 @@ namespace KulochBus
             Sql query = new Sql();
             DataTable dt = new DataTable();
 
-            //string sql = "SELECT * from attendance where date >= '" + date + "'";
-
-            string sql = "SELECT a.date AS \"Datum\", tg.groupid AS \"Gruppid\", tg.name AS \"Gruppnamn\", " +
-            "COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS " +
-            "a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid " +
-            "GROUP BY ma.attendanceid, a.date, tg.name, tg.groupid where date >= '" + date + "'";
-            
+            string sql = "SELECT * from attendance where date >= '" + date + "'";
             query.Select(sql);
 
             return dt;
