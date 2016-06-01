@@ -220,6 +220,7 @@
             this.dgvGroupLeader = new System.Windows.Forms.DataGridView();
             this.dgvLeader = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
+            this.btnAvbrytTR = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -410,6 +411,7 @@
             // panTGGroup
             // 
             this.panTGGroup.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panTGGroup.Controls.Add(this.btnAvbrytTR);
             this.panTGGroup.Controls.Add(this.btnRemoveTG);
             this.panTGGroup.Controls.Add(this.btnAddMember);
             this.panTGGroup.Controls.Add(this.btnAddLeader);
@@ -742,7 +744,7 @@
             // 
             // btnTGCreate
             // 
-            this.btnTGCreate.Location = new System.Drawing.Point(211, 390);
+            this.btnTGCreate.Location = new System.Drawing.Point(211, 397);
             this.btnTGCreate.Name = "btnTGCreate";
             this.btnTGCreate.Size = new System.Drawing.Size(114, 23);
             this.btnTGCreate.TabIndex = 18;
@@ -2192,11 +2194,24 @@
             this.label13.TabIndex = 4;
             this.label13.Text = "Ledare";
             // 
+            // btnAvbrytTR
+            // 
+            this.btnAvbrytTR.Location = new System.Drawing.Point(83, 397);
+            this.btnAvbrytTR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAvbrytTR.Name = "btnAvbrytTR";
+            this.btnAvbrytTR.Size = new System.Drawing.Size(64, 23);
+            this.btnAvbrytTR.TabIndex = 59;
+            this.btnAvbrytTR.Text = "Avbryt";
+            this.btnAvbrytTR.UseVisualStyleBackColor = true;
+            this.btnAvbrytTR.Click += new System.EventHandler(this.btnAvbrytTR_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
+            this.Controls.Add(this.panTGGroup);
+            this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
@@ -2205,8 +2220,6 @@
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panPrint);
             this.Controls.Add(this.panViewMember);
-            this.Controls.Add(this.panTGGroup);
-            this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -2446,6 +2459,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnAvbrytTR;
     }
 }
 
