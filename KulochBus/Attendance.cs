@@ -154,19 +154,30 @@ namespace KulochBus
             return find;
         }
 
-        public DataTable DateFrom(string date)
+        public DataTable GetDate(string from, string to)
         {
             Sql query = new Sql();
             DataTable dt = new DataTable();
 
-            //string sql = "SELECT * from attendance where date >= '" + date + "'";
+            string myQuerry = "";
 
-            string sql = "SELECT a.date AS \"Datum\", tg.groupid AS \"Gruppid\", tg.name AS \"Gruppnamn\", " +
+            if ((from != "1900-01-01") && (to != "2999-12-31"))
+            {
+                myQuerry = ">= '" + from + "' AND a.date <= '" + to + "'";
+            }
+            else if ((from != "1900-01-01"))
+            {
+                myQuerry = ">= '" + from + "'";
+            }
+            else
+                myQuerry = "<= '" + to + "'";
+
+            string sql = "SELECT a.attendanceid AS \"NärvaroID\", a.date AS \"Datum\", tg.groupid AS \"Gruppid\", tg.name AS \"Gruppnamn\", " +
             "COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS " +
             "a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid " +
-            "GROUP BY ma.attendanceid, a.date, tg.name, tg.groupid where date >= '" + date + "'";
-            
-            query.Select(sql);
+            "GROUP BY ma.attendanceid, a.date, tg.name, tg.groupid, a.attendanceid HAVING a.date " + myQuerry;
+
+            dt = query.Select(sql);
 
             return dt;
         }

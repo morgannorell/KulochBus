@@ -37,8 +37,6 @@
             this.kontaktToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.träningsgruppToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.avslutaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redigeraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medlemToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.visaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medlemmarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kontaktlistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -251,7 +249,6 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.arkivToolStripMenuItem,
-            this.redigeraToolStripMenuItem,
             this.visaToolStripMenuItem,
             this.hjälpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -314,20 +311,6 @@
             this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
-            // 
-            // redigeraToolStripMenuItem
-            // 
-            this.redigeraToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.medlemToolStripMenuItem1});
-            this.redigeraToolStripMenuItem.Name = "redigeraToolStripMenuItem";
-            this.redigeraToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
-            this.redigeraToolStripMenuItem.Text = "Redigera";
-            // 
-            // medlemToolStripMenuItem1
-            // 
-            this.medlemToolStripMenuItem1.Name = "medlemToolStripMenuItem1";
-            this.medlemToolStripMenuItem1.Size = new System.Drawing.Size(118, 22);
-            this.medlemToolStripMenuItem1.Text = "Medlem";
             // 
             // visaToolStripMenuItem
             // 
@@ -1875,6 +1858,7 @@
             this.btnVATsearch.TabIndex = 11;
             this.btnVATsearch.Text = "Sök";
             this.btnVATsearch.UseVisualStyleBackColor = true;
+            this.btnVATsearch.Click += new System.EventHandler(this.btnVATsearch_Click);
             // 
             // lblVATto
             // 
@@ -1901,6 +1885,7 @@
             this.dtVATto.Name = "dtVATto";
             this.dtVATto.Size = new System.Drawing.Size(119, 20);
             this.dtVATto.TabIndex = 8;
+            this.dtVATto.Value = new System.DateTime(2999, 12, 31, 0, 0, 0, 0);
             this.dtVATto.CloseUp += new System.EventHandler(this.dtVATto_CloseUp);
             // 
             // dtVATfrom
@@ -1912,6 +1897,7 @@
             this.dtVATfrom.Name = "dtVATfrom";
             this.dtVATfrom.Size = new System.Drawing.Size(119, 20);
             this.dtVATfrom.TabIndex = 7;
+            this.dtVATfrom.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtVATfrom.CloseUp += new System.EventHandler(this.dtVATfrom_CloseUp);
             // 
             // dgvAttendancelist
@@ -2197,11 +2183,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
+            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panLeader);
-            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panPrint);
             this.Controls.Add(this.panViewMember);
@@ -2260,14 +2246,12 @@
         private System.Windows.Forms.ToolStripMenuItem närvaroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem medlemToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kontaktToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redigeraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem närvaroToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem medlemmarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem hjälpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem visaHjälpToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem omToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem medlemToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem träningsgruppToolStripMenuItem;
         private System.Windows.Forms.Panel panTGGroup;
         private System.Windows.Forms.Label lblTraningTitle;

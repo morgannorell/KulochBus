@@ -939,13 +939,15 @@ namespace KulochBus
 
         private void närvaroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ShowAttendancelist();
-
             dtVATfrom.CustomFormat = " ";
             dtVATfrom.Format = DateTimePickerFormat.Custom;
+            dtVATfrom.Value.ToString("1900-01-01");
 
             dtVATto.CustomFormat = " ";
             dtVATto.Format = DateTimePickerFormat.Custom;
+            dtVATto.Value.ToString("2999-01-01");
+
+            ShowAttendancelist();
         }
 
         private void dgvAttendancelist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -988,12 +990,9 @@ namespace KulochBus
             txtSumTG.Text = tgSum.ToString();
 
             int atSum = at1.findATSum(selectedID);
-            txtATSum.Text = atSum.ToString();
-
-            
+            txtATSum.Text = atSum.ToString();            
         }
         
-
         private void dgvAttendance_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Attendance at = new Attendance();
@@ -1007,26 +1006,7 @@ namespace KulochBus
             bs.DataSource = dt;
             dgvAttendees.DataSource = bs;
         }
-
-        private void dtVATfrom_CloseUp(object sender, EventArgs e)
-        {
-            dtVATfrom.CustomFormat = "yyyy-MM-dd";
-            dtVATfrom.Format = DateTimePickerFormat.Custom;
-
-            string mydate = dtVATfrom.Value.ToString();
-
-            Attendance at = new Attendance();
-            at.DateFrom(mydate);
-            //
-            ShowAttendancelist();
-        }
-
-        private void dtVATto_CloseUp(object sender, EventArgs e)
-        {
-            dtVATto.CustomFormat = "yyyy-MM-dd";
-            dtVATto.Format = DateTimePickerFormat.Custom;
-        }
-
+        
         private void ledareToolStripMenuItem_Click(object sender, EventArgs e)
         {
             HidePanels();
@@ -1058,6 +1038,33 @@ namespace KulochBus
             bs.DataSource = dt;
 
             dgvGroupLeader.DataSource = bs;
+        }
+
+        private void btnVATsearch_Click(object sender, EventArgs e)
+        {
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            string myFromDate = dtVATfrom.Value.ToString("yyyy-MM-dd");
+            string myToDate = dtVATto.Value.ToString("yyyy-MM-dd");
+
+            Attendance at = new Attendance();
+            dt = at.GetDate(myFromDate, myToDate);
+
+            bs.DataSource = dt;
+            dgvAttendancelist.DataSource = bs;
+        }
+
+        private void dtVATfrom_CloseUp(object sender, EventArgs e)
+        {
+            dtVATfrom.CustomFormat = "yyyy-MM-dd";
+            dtVATfrom.Format = DateTimePickerFormat.Custom;
+        }
+
+        private void dtVATto_CloseUp(object sender, EventArgs e)
+        {
+            dtVATto.CustomFormat = "yyyy-MM-dd"; 
+            dtVATto.Format = DateTimePickerFormat.Custom;
         }
     }
 }
