@@ -390,9 +390,7 @@ namespace KulochBus
             HidePanels();
             panStart.Show();
         }
-        //
-        // Kontaktlista
-        //
+
         private void ShowContactlist()
         {
             HidePanels();
