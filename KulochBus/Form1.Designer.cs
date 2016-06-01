@@ -1909,14 +1909,6 @@
             this.lblVATfrom.TabIndex = 9;
             this.lblVATfrom.Text = "Från";
             // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(380, 17);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(119, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
             // dtVATfrom
             // 
             this.dtVATfrom.Checked = false;
