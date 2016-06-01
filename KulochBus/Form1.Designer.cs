@@ -2189,7 +2189,6 @@
             this.btnAvbrytTR.TabIndex = 59;
             this.btnAvbrytTR.Text = "Avbryt";
             this.btnAvbrytTR.UseVisualStyleBackColor = true;
-            this.btnAvbrytTR.Click += new System.EventHandler(this.btnAvbrytTR_Click);
             // 
             // frmMain
             // 
@@ -2431,7 +2430,6 @@
         private System.Windows.Forms.Button btnVATsearch;
         private System.Windows.Forms.Label lblVATto;
         private System.Windows.Forms.Label lblVATfrom;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ListBox listAttLeader;
         private System.Windows.Forms.DateTimePicker dtVATto;
         private System.Windows.Forms.ToolStripMenuItem ledareToolStripMenuItem;
