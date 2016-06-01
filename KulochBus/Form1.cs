@@ -992,15 +992,19 @@ namespace KulochBus
 
         private void dtVATfrom_ValueChanged(object sender, EventArgs e)
         {
+            dt = new DataTable();
+
             dtVATfrom.CustomFormat = "yyyy-MM-dd";
             dtVATfrom.Format = DateTimePickerFormat.Custom;
 
-            string mydate = dtVATfrom.Value.ToString();
+            string mydate = dtVATfrom.Value.ToString("yyyy-MM-dd");
 
             Attendance at = new Attendance();
-            at.DateFrom(mydate);
+            dt = at.DateFrom(mydate);
 
-            ShowAttendancelist();
+            dt = at.countParticipant();
+            bs.DataSource = dt;
+            dgvAttendancelist.DataSource = bs;
         }
 
         private void dtVATto_ValueChanged(object sender, EventArgs e)
