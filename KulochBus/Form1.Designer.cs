@@ -331,28 +331,28 @@
             // medlemmarToolStripMenuItem
             // 
             this.medlemmarToolStripMenuItem.Name = "medlemmarToolStripMenuItem";
-            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.medlemmarToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.medlemmarToolStripMenuItem.Text = "Medlemslista";
             this.medlemmarToolStripMenuItem.Click += new System.EventHandler(this.medlemmarToolStripMenuItem_Click);
             // 
             // kontaktlistaToolStripMenuItem
             // 
             this.kontaktlistaToolStripMenuItem.Name = "kontaktlistaToolStripMenuItem";
-            this.kontaktlistaToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.kontaktlistaToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.kontaktlistaToolStripMenuItem.Text = "Kontaktlista";
             this.kontaktlistaToolStripMenuItem.Click += new System.EventHandler(this.kontaktlistaToolStripMenuItem_Click);
             // 
             // närvaroToolStripMenuItem1
             // 
             this.närvaroToolStripMenuItem1.Name = "närvaroToolStripMenuItem1";
-            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
+            this.närvaroToolStripMenuItem1.Size = new System.Drawing.Size(161, 22);
             this.närvaroToolStripMenuItem1.Text = "Närvarolistor";
             this.närvaroToolStripMenuItem1.Click += new System.EventHandler(this.närvaroToolStripMenuItem1_Click);
             // 
             // träningsgrupperToolStripMenuItem
             // 
             this.träningsgrupperToolStripMenuItem.Name = "träningsgrupperToolStripMenuItem";
-            this.träningsgrupperToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.träningsgrupperToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.träningsgrupperToolStripMenuItem.Text = "Träningsgrupper";
             this.träningsgrupperToolStripMenuItem.Click += new System.EventHandler(this.träningsgrupperToolStripMenuItem_Click);
             // 
@@ -1875,49 +1875,6 @@
             this.dtVATfrom.TabIndex = 7;
             this.dtVATfrom.ValueChanged += new System.EventHandler(this.dtVATfrom_ValueChanged);
             // 
-            // txtVATsearch
-            // 
-            this.txtVATsearch.Location = new System.Drawing.Point(533, 18);
-            this.txtVATsearch.Name = "txtVATsearch";
-            this.txtVATsearch.Size = new System.Drawing.Size(129, 20);
-            this.txtVATsearch.TabIndex = 12;
-            // 
-            // btnVATsearch
-            // 
-            this.btnVATsearch.Location = new System.Drawing.Point(668, 16);
-            this.btnVATsearch.Name = "btnVATsearch";
-            this.btnVATsearch.Size = new System.Drawing.Size(45, 23);
-            this.btnVATsearch.TabIndex = 11;
-            this.btnVATsearch.Text = "Sök";
-            this.btnVATsearch.UseVisualStyleBackColor = true;
-            // 
-            // lblVATto
-            // 
-            this.lblVATto.AutoSize = true;
-            this.lblVATto.Location = new System.Drawing.Point(358, 22);
-            this.lblVATto.Name = "lblVATto";
-            this.lblVATto.Size = new System.Drawing.Size(20, 13);
-            this.lblVATto.TabIndex = 10;
-            this.lblVATto.Text = "Till";
-            // 
-            // lblVATfrom
-            // 
-            this.lblVATfrom.AutoSize = true;
-            this.lblVATfrom.Location = new System.Drawing.Point(195, 22);
-            this.lblVATfrom.Name = "lblVATfrom";
-            this.lblVATfrom.Size = new System.Drawing.Size(28, 13);
-            this.lblVATfrom.TabIndex = 9;
-            this.lblVATfrom.Text = "Från";
-            // 
-            // dtVATfrom
-            // 
-            this.dtVATfrom.Checked = false;
-            this.dtVATfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtVATfrom.Location = new System.Drawing.Point(225, 17);
-            this.dtVATfrom.Name = "dtVATfrom";
-            this.dtVATfrom.Size = new System.Drawing.Size(119, 20);
-            this.dtVATfrom.TabIndex = 7;
-            // 
             // dgvAttendancelist
             // 
             this.dgvAttendancelist.AllowUserToAddRows = false;
@@ -2135,9 +2092,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
-            this.Controls.Add(this.panViewAttendance);
-            this.Controls.Add(this.panPrint);
             this.Controls.Add(this.panAdendence);
+            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panPrint);
             this.Controls.Add(this.panViewMember);
