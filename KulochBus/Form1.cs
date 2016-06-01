@@ -604,6 +604,8 @@ namespace KulochBus
             dt = at.GetTrainingGroups();
             bs.DataSource = dt;
 
+            
+
             lstATtraininggroups.DataSource = dt;
             lstATtraininggroups.DisplayMember = "name";
         }
@@ -632,10 +634,12 @@ namespace KulochBus
                 bs.DataSource = dt;
                 dgrATmemberlist.DataSource = bs;
 
-                BindingSource bs1 = new BindingSource();
+
+                DataTable _dt = new DataTable();
+                BindingSource _bs = new BindingSource();
                 dt = at.GetLeaders(selectedGroup);
-                bs1.DataSource = dt;
-                lstATleader.DataSource = bs1;
+                bs.DataSource = dt;
+                lstATleader.DataSource = bs;
                 lstATleader.DisplayMember = "firstname";
             }
         }
@@ -1001,7 +1005,7 @@ namespace KulochBus
             dgvAttendees.DataSource = bs;
         }
 
-        private void dtVATfrom_ValueChanged(object sender, EventArgs e)
+        private void dtVATfrom_CloseUp(object sender, EventArgs e)
         {
             dtVATfrom.CustomFormat = "yyyy-MM-dd";
             dtVATfrom.Format = DateTimePickerFormat.Custom;
@@ -1014,11 +1018,10 @@ namespace KulochBus
             ShowAttendancelist();
         }
 
-        private void dtVATto_ValueChanged(object sender, EventArgs e)
+        private void dtVATto_CloseUp(object sender, EventArgs e)
         {
             dtVATto.CustomFormat = "yyyy-MM-dd";
             dtVATto.Format = DateTimePickerFormat.Custom;
         }
-
     }
 }
