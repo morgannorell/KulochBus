@@ -1010,7 +1010,7 @@ namespace KulochBus
 
             Attendance at = new Attendance();
             at.DateFrom(mydate);
-
+            //
             ShowAttendancelist();
         }
 
