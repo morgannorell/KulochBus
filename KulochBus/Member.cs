@@ -100,7 +100,7 @@ namespace KulochBus
 
                 if (search != "")
                 {
-                    sql += "(firstname like '%" + search + "%' OR " +
+                    sql += "(cast(memberid AS Character(6)) like '%" + search + "%' OR firstname like '%" + search + "%' OR " +
                     "lastname like '%" + search + "%' OR " +
                     "securitynr like '%" + search + "%' OR " +
                     "gender like '%" + search + "%' OR " +

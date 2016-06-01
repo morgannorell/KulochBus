@@ -620,7 +620,7 @@ namespace KulochBus
         {
             string selectedGroup;
             
-             if (lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue) != null)
+            if (lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue) != null)
             {
                 selectedGroup = lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue);
 
@@ -933,6 +933,12 @@ namespace KulochBus
         private void närvaroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             ShowAttendancelist();
+
+            dtVATfrom.CustomFormat = " ";
+            dtVATfrom.Format = DateTimePickerFormat.Custom;
+
+            dtVATto.CustomFormat = " ";
+            dtVATto.Format = DateTimePickerFormat.Custom;
         }
 
         private void dgvAttendancelist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -955,7 +961,7 @@ namespace KulochBus
             Attendance at = new Attendance();
             dt = new DataTable();
             bs = new BindingSource();
-
+            
             dt = at.showAttendance(selectedID);
             bs.DataSource = dt;
             dgvAttendance.DataSource = bs;
@@ -970,7 +976,7 @@ namespace KulochBus
             bs1.DataSource = dt1;
             listAttLeader.DataSource = bs1;
             listAttLeader.DisplayMember = "firstname";
-
+            
             int tgSum = at1.findTGSum(selectedID);
             txtSumTG.Text = tgSum.ToString();
 
@@ -979,7 +985,7 @@ namespace KulochBus
 
             
         }
-       
+        
 
         private void dgvAttendance_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -993,6 +999,29 @@ namespace KulochBus
             dt = at.showAttenders(selectedID);
             bs.DataSource = dt;
             dgvAttendees.DataSource = bs;
+        }
+
+        private void dtVATfrom_ValueChanged(object sender, EventArgs e)
+        {
+            dt = new DataTable();
+
+            dtVATfrom.CustomFormat = "yyyy-MM-dd";
+            dtVATfrom.Format = DateTimePickerFormat.Custom;
+
+            string mydate = dtVATfrom.Value.ToString("yyyy-MM-dd");
+
+            Attendance at = new Attendance();
+            dt = at.DateFrom(mydate);
+
+            dt = at.countParticipant();
+            bs.DataSource = dt;
+            dgvAttendancelist.DataSource = bs;
+        }
+
+        private void dtVATto_ValueChanged(object sender, EventArgs e)
+        {
+            dtVATto.CustomFormat = "yyyy-MM-dd";
+            dtVATto.Format = DateTimePickerFormat.Custom;
         }
 
     }
