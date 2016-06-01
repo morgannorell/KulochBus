@@ -642,9 +642,9 @@ namespace KulochBus
 
                 DataTable _dt = new DataTable();
                 BindingSource _bs = new BindingSource();
-                dt = at.GetLeaders(selectedGroup);
-                bs.DataSource = dt;
-                lstATleader.DataSource = bs;
+                _dt = at.GetLeaders(selectedGroup);
+                _bs.DataSource = _dt;
+                lstATleader.DataSource = _bs;
                 lstATleader.DisplayMember = "firstname";
             }
         }

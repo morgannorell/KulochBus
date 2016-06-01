@@ -159,6 +159,8 @@
             this.dgrViewTGGroupList = new System.Windows.Forms.DataGridView();
             this.panStart = new System.Windows.Forms.Panel();
             this.panViewContact = new System.Windows.Forms.Panel();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
             this.dgrViewCTmember = new System.Windows.Forms.DataGridView();
             this.dgrViewContact = new System.Windows.Forms.DataGridView();
             this.lblContacts = new System.Windows.Forms.Label();
@@ -218,8 +220,6 @@
             this.dgvGroupLeader = new System.Windows.Forms.DataGridView();
             this.dgvLeader = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -1576,6 +1576,24 @@
             this.panViewContact.Size = new System.Drawing.Size(727, 445);
             this.panViewContact.TabIndex = 94;
             // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(390, 61);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 13);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Medlem";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(19, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 13);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Kontakt";
+            // 
             // dgrViewCTmember
             // 
             this.dgrViewCTmember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -2174,37 +2192,18 @@
             this.label13.TabIndex = 4;
             this.label13.Text = "Ledare";
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(19, 63);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(44, 13);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Kontakt";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(390, 61);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(44, 13);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Medlem";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
+            this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
-            this.Controls.Add(this.panMember);
             this.Controls.Add(this.panLeader);
             this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panMember);
             this.Controls.Add(this.panPrint);
-            this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);
