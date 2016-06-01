@@ -517,6 +517,8 @@ namespace KulochBus
         {
             EmptyTxtBoxes(panTGGroup);
             HidePanels();
+            cmbDisciplin.Items.Clear();
+            cmbLevel.Items.Clear();
             btnRemoveTG.Hide();
             rbnTGAddMember.Hide();
             rbnTGRemoveMember.Hide();
@@ -909,6 +911,7 @@ namespace KulochBus
             EmptyTxtBoxes(panTGGroup);
             dgvAddLeader.DataSource = null;
             dgrListTGMembers.DataSource = null;
+            panTGGroupList.Show();
         }
 
         private void btnTGDiciplin_Click(object sender, EventArgs e)
