@@ -920,13 +920,7 @@ namespace KulochBus
         {
             HidePanels();
             panViewAttendance.Show();
-
-            dtVATfrom.CustomFormat = " ";
-            dtVATfrom.Format = DateTimePickerFormat.Custom;
-
-            dtVATto.CustomFormat = " ";
-            dtVATto.Format = DateTimePickerFormat.Custom;
-
+         
             Attendance at = new Attendance();
             dt = new DataTable();
             bs = new BindingSource();
@@ -938,7 +932,13 @@ namespace KulochBus
 
         private void närvaroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ShowAttendancelist();            
+            ShowAttendancelist();
+
+            dtVATfrom.CustomFormat = " ";
+            dtVATfrom.Format = DateTimePickerFormat.Custom;
+
+            dtVATto.CustomFormat = " ";
+            dtVATto.Format = DateTimePickerFormat.Custom;
         }
 
         private void dgvAttendancelist_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -995,8 +995,12 @@ namespace KulochBus
             dtVATfrom.CustomFormat = "yyyy-MM-dd";
             dtVATfrom.Format = DateTimePickerFormat.Custom;
 
+            string mydate = dtVATfrom.Value.ToString();
+
             Attendance at = new Attendance();
-            
+            at.DateFrom(mydate);
+
+            ShowAttendancelist();
         }
 
         private void dtVATto_ValueChanged(object sender, EventArgs e)
