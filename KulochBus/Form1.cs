@@ -61,6 +61,7 @@ namespace KulochBus
             HidePanels();
             panMember.Show();
             EmptyTxtBoxes(panMember);
+            cmbMembership.Items.Clear();
 
             // Ändrar visibility på buttons osv
             btnCreateNewMember.Show();
@@ -340,6 +341,12 @@ namespace KulochBus
         private void btnNewContact_Click(object sender, EventArgs e)
         {
 
+            if (cmbCTgender.SelectedItem == null)
+            {
+                MessageBox.Show("Du måste ange om det är en man eller kvinna.");
+                return;
+            }
+
             Contact ct = new Contact()
             {
                 Firstname = txtCTfirstname.Text,
@@ -354,11 +361,7 @@ namespace KulochBus
                 Cellphone = txtCTcellphone.Text,
             };
 
-            if (comboBoxGender.SelectedItem == null)
-            {
-                MessageBox.Show("Du måste ange om det är en man eller kvinna.");
-                return;
-            }
+
 
             List<string> memberids = new List<string>();
 
@@ -378,6 +381,8 @@ namespace KulochBus
 
             dt = new DataTable();
             dt = ct.AddContact(memberids);
+
+            MessageBox.Show("Kontakt tillagd");
         }
 
         private void btnCTcancel_Click(object sender, EventArgs e)
@@ -976,7 +981,7 @@ namespace KulochBus
             DataTable dt1 = new DataTable();
             BindingSource bs1 = new BindingSource();
 
-            dt1 = at1.GetLeaders(selectedGroup);
+            dt1 = at1.GetLeadersAtt(selectedGroup);
             bs1.DataSource = dt1;
             listAttLeader.DataSource = bs1;
             listAttLeader.DisplayMember = "firstname";
@@ -1022,6 +1027,39 @@ namespace KulochBus
         {
             dtVATto.CustomFormat = "yyyy-MM-dd";
             dtVATto.Format = DateTimePickerFormat.Custom;
+        }
+
+        private void ledareToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HidePanels();
+            panLeader.Show();
+
+            Member mb = new Member();
+
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            dt = mb.GetLeaderList();
+            bs.DataSource = dt;
+
+            dgvLeader.DataSource = bs;
+        }
+
+        private void dgvLeader_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Member mb = new Member();
+            dt = new DataTable();
+            bs = new BindingSource();
+
+            // Get memberid
+            int selectedLeader;
+            DataGridViewRow selectedRow = dgvLeader.Rows[e.RowIndex];
+            selectedLeader = Convert.ToInt32(selectedRow.Cells[0].Value);
+
+            dt = mb.GetGroupLeader(selectedLeader);
+            bs.DataSource = dt;
+
+            dgvGroupLeader.DataSource = bs;
         }
     }
 }

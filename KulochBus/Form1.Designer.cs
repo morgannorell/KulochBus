@@ -44,6 +44,7 @@
             this.kontaktlistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.närvaroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.träningsgrupperToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ledareToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.visaHjälpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -211,6 +212,14 @@
             this.txtSumTG = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.panLeader = new System.Windows.Forms.Panel();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.dgvGroupLeader = new System.Windows.Forms.DataGridView();
+            this.dgvLeader = new System.Windows.Forms.DataGridView();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -232,6 +241,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendance)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).BeginInit();
             this.panPrint.SuspendLayout();
+            this.panLeader.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupLeader)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeader)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -323,7 +335,8 @@
             this.medlemmarToolStripMenuItem,
             this.kontaktlistaToolStripMenuItem,
             this.närvaroToolStripMenuItem1,
-            this.träningsgrupperToolStripMenuItem});
+            this.träningsgrupperToolStripMenuItem,
+            this.ledareToolStripMenuItem});
             this.visaToolStripMenuItem.Name = "visaToolStripMenuItem";
             this.visaToolStripMenuItem.Size = new System.Drawing.Size(40, 20);
             this.visaToolStripMenuItem.Text = "Visa";
@@ -355,6 +368,13 @@
             this.träningsgrupperToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.träningsgrupperToolStripMenuItem.Text = "Träningsgrupper";
             this.träningsgrupperToolStripMenuItem.Click += new System.EventHandler(this.träningsgrupperToolStripMenuItem_Click);
+            // 
+            // ledareToolStripMenuItem
+            // 
+            this.ledareToolStripMenuItem.Name = "ledareToolStripMenuItem";
+            this.ledareToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.ledareToolStripMenuItem.Text = "Ledare";
+            this.ledareToolStripMenuItem.Click += new System.EventHandler(this.ledareToolStripMenuItem_Click);
             // 
             // hjälpToolStripMenuItem
             // 
@@ -1545,6 +1565,8 @@
             // panViewContact
             // 
             this.panViewContact.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panViewContact.Controls.Add(this.label17);
+            this.panViewContact.Controls.Add(this.label16);
             this.panViewContact.Controls.Add(this.dgrViewCTmember);
             this.panViewContact.Controls.Add(this.dgrViewContact);
             this.panViewContact.Controls.Add(this.lblContacts);
@@ -1558,9 +1580,9 @@
             // 
             this.dgrViewCTmember.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewCTmember.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewCTmember.Location = new System.Drawing.Point(400, 49);
+            this.dgrViewCTmember.Location = new System.Drawing.Point(393, 80);
             this.dgrViewCTmember.Name = "dgrViewCTmember";
-            this.dgrViewCTmember.Size = new System.Drawing.Size(313, 384);
+            this.dgrViewCTmember.Size = new System.Drawing.Size(313, 352);
             this.dgrViewCTmember.TabIndex = 6;
             // 
             // dgrViewContact
@@ -1569,11 +1591,11 @@
             this.dgrViewContact.AllowUserToDeleteRows = false;
             this.dgrViewContact.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgrViewContact.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgrViewContact.Location = new System.Drawing.Point(11, 49);
+            this.dgrViewContact.Location = new System.Drawing.Point(20, 81);
             this.dgrViewContact.Margin = new System.Windows.Forms.Padding(2);
             this.dgrViewContact.Name = "dgrViewContact";
             this.dgrViewContact.ReadOnly = true;
-            this.dgrViewContact.Size = new System.Drawing.Size(370, 385);
+            this.dgrViewContact.Size = new System.Drawing.Size(326, 353);
             this.dgrViewContact.TabIndex = 5;
             this.dgrViewContact.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellClick);
             this.dgrViewContact.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgrViewContact_CellDoubleClick);
@@ -2086,19 +2108,104 @@
             this.label4.TabIndex = 64;
             this.label4.Text = "Summa antal deltagare";
             // 
+            // panLeader
+            // 
+            this.panLeader.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panLeader.Controls.Add(this.label15);
+            this.panLeader.Controls.Add(this.label14);
+            this.panLeader.Controls.Add(this.dgvGroupLeader);
+            this.panLeader.Controls.Add(this.dgvLeader);
+            this.panLeader.Controls.Add(this.label13);
+            this.panLeader.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panLeader.Location = new System.Drawing.Point(0, 24);
+            this.panLeader.Name = "panLeader";
+            this.panLeader.Size = new System.Drawing.Size(727, 445);
+            this.panLeader.TabIndex = 95;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(375, 57);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(45, 13);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Grupper";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(16, 56);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(40, 13);
+            this.label14.TabIndex = 7;
+            this.label14.Text = "Ledare";
+            // 
+            // dgvGroupLeader
+            // 
+            this.dgvGroupLeader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvGroupLeader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvGroupLeader.Location = new System.Drawing.Point(375, 74);
+            this.dgvGroupLeader.Name = "dgvGroupLeader";
+            this.dgvGroupLeader.Size = new System.Drawing.Size(335, 359);
+            this.dgvGroupLeader.TabIndex = 6;
+            // 
+            // dgvLeader
+            // 
+            this.dgvLeader.AllowUserToAddRows = false;
+            this.dgvLeader.AllowUserToDeleteRows = false;
+            this.dgvLeader.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvLeader.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLeader.Location = new System.Drawing.Point(17, 74);
+            this.dgvLeader.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvLeader.Name = "dgvLeader";
+            this.dgvLeader.ReadOnly = true;
+            this.dgvLeader.Size = new System.Drawing.Size(326, 360);
+            this.dgvLeader.TabIndex = 5;
+            this.dgvLeader.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLeader_CellClick);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(12, 9);
+            this.label13.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 32);
+            this.label13.TabIndex = 4;
+            this.label13.Text = "Ledare";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(19, 63);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(44, 13);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Kontakt";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(390, 61);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(44, 13);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Medlem";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
-            this.Controls.Add(this.panAdendence);
-            this.Controls.Add(this.panViewAttendance);
-            this.Controls.Add(this.panMember);
-            this.Controls.Add(this.panViewAttendance);
-            this.Controls.Add(this.panPrint);
-            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
+            this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panLeader);
+            this.Controls.Add(this.panViewAttendance);
+            this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panPrint);
+            this.Controls.Add(this.panAdendence);
+            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);
             this.Controls.Add(this.panStart);
@@ -2137,6 +2244,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAttendees)).EndInit();
             this.panPrint.ResumeLayout(false);
             this.panPrint.PerformLayout();
+            this.panLeader.ResumeLayout(false);
+            this.panLeader.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvGroupLeader)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLeader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2327,6 +2438,15 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ListBox listAttLeader;
         private System.Windows.Forms.DateTimePicker dtVATto;
+        private System.Windows.Forms.ToolStripMenuItem ledareToolStripMenuItem;
+        private System.Windows.Forms.Panel panLeader;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.DataGridView dgvGroupLeader;
+        private System.Windows.Forms.DataGridView dgvLeader;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
     }
 }
 

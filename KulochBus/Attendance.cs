@@ -171,5 +171,19 @@ namespace KulochBus
             return dt;
         }
 
+        public DataTable GetLeadersAtt(string group)
+        {
+            Sql querry = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql = "SELECT securitynr, firstname, lastname " +
+                "from member_base join membergroup on member_base.memberid = membergroup.memberid " +
+                "join traininggroup on membergroup.groupid = traininggroup.groupid " +
+                "WHERE traininggroup.groupid = '" + group + "' AND isleader = TRUE";
+
+            dt = querry.Select(sql);
+
+            return dt;
+        }
     }
 }
