@@ -181,5 +181,31 @@ namespace KulochBus
             dt = querry.Select(sql);
             return dt;
         }
+
+        public DataTable GetLeaderList()
+        {
+            Sql querry = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql =
+                "SELECT memberid AS \"Medlemsnr\", firstname AS \"Förnamn\", lastname AS \"Efternamn\"" +
+                " FROM person JOIN member ON personid = memberid WHERE isleader = TRUE";
+
+            dt = querry.Select(sql);
+            return dt;
+        }
+
+        public DataTable GetGroupLeader(int id)
+        {
+            Sql querry = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql =
+                "SELECT mg.groupid AS \"GruppID\", t.name AS \"Gruppnamn\", t.levelid AS \"Nivå\", t.diciplinid AS \"Diciplin\" FROM membergroup AS mg JOIN traininggroup AS t ON mg.groupid = t.groupid WHERE mg.memberid = '" + id + "' AND isleader = TRUE";
+
+            dt = querry.Select(sql);
+            return dt;
+        }
+
     }
 }
