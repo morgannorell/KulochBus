@@ -132,5 +132,16 @@ namespace KulochBus
             return dt;
         }
 
+        public DataTable DateFrom(string date)
+        {
+            Sql query = new Sql();
+            DataTable dt = new DataTable();
+
+            string sql = "SELECT * from attendance where date >= '" + date + "'";
+            query.Select(sql);
+
+            return dt;
+        }
+
     }
 }
