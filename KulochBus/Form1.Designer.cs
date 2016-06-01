@@ -184,6 +184,12 @@
             this.lstATleader = new System.Windows.Forms.ListBox();
             this.lblATtitle = new System.Windows.Forms.Label();
             this.panViewAttendance = new System.Windows.Forms.Panel();
+            this.txtVATsearch = new System.Windows.Forms.TextBox();
+            this.btnVATsearch = new System.Windows.Forms.Button();
+            this.lblVATto = new System.Windows.Forms.Label();
+            this.lblVATfrom = new System.Windows.Forms.Label();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dtVATfrom = new System.Windows.Forms.DateTimePicker();
             this.dgvAttendancelist = new System.Windows.Forms.DataGridView();
             this.lvlALtitle = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -201,16 +207,10 @@
             this.panPrint = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.txtTGroupID = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtATSum = new System.Windows.Forms.TextBox();
+            this.txtSumTG = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtVATfrom = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.lblVATfrom = new System.Windows.Forms.Label();
-            this.lblVATto = new System.Windows.Forms.Label();
-            this.btnVATsearch = new System.Windows.Forms.Button();
-            this.txtVATsearch = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -265,41 +265,41 @@
             this.kontaktToolStripMenuItem,
             this.träningsgruppToolStripMenuItem});
             this.nyToolStripMenuItem.Name = "nyToolStripMenuItem";
-            this.nyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nyToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.nyToolStripMenuItem.Text = "Ny";
             // 
             // närvaroToolStripMenuItem
             // 
             this.närvaroToolStripMenuItem.Name = "närvaroToolStripMenuItem";
-            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.närvaroToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.närvaroToolStripMenuItem.Text = "Närvarolista";
             this.närvaroToolStripMenuItem.Click += new System.EventHandler(this.närvaroToolStripMenuItem_Click);
             // 
             // medlemToolStripMenuItem
             // 
             this.medlemToolStripMenuItem.Name = "medlemToolStripMenuItem";
-            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medlemToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.medlemToolStripMenuItem.Text = "Medlem";
             this.medlemToolStripMenuItem.Click += new System.EventHandler(this.medlemToolStripMenuItem_Click);
             // 
             // kontaktToolStripMenuItem
             // 
             this.kontaktToolStripMenuItem.Name = "kontaktToolStripMenuItem";
-            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.kontaktToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.kontaktToolStripMenuItem.Text = "Kontakt";
             this.kontaktToolStripMenuItem.Click += new System.EventHandler(this.kontaktToolStripMenuItem_Click);
             // 
             // träningsgruppToolStripMenuItem
             // 
             this.träningsgruppToolStripMenuItem.Name = "träningsgruppToolStripMenuItem";
-            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.träningsgruppToolStripMenuItem.Size = new System.Drawing.Size(151, 22);
             this.träningsgruppToolStripMenuItem.Text = "Träningsgrupp";
             this.träningsgruppToolStripMenuItem.Click += new System.EventHandler(this.träningsgruppToolStripMenuItem_Click);
             // 
             // avslutaToolStripMenuItem
             // 
             this.avslutaToolStripMenuItem.Name = "avslutaToolStripMenuItem";
-            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.avslutaToolStripMenuItem.Size = new System.Drawing.Size(113, 22);
             this.avslutaToolStripMenuItem.Text = "Avsluta";
             this.avslutaToolStripMenuItem.Click += new System.EventHandler(this.avslutaToolStripMenuItem_Click);
             // 
@@ -1821,6 +1821,57 @@
             this.panViewAttendance.Size = new System.Drawing.Size(727, 445);
             this.panViewAttendance.TabIndex = 0;
             // 
+            // txtVATsearch
+            // 
+            this.txtVATsearch.Location = new System.Drawing.Point(533, 18);
+            this.txtVATsearch.Name = "txtVATsearch";
+            this.txtVATsearch.Size = new System.Drawing.Size(129, 20);
+            this.txtVATsearch.TabIndex = 12;
+            // 
+            // btnVATsearch
+            // 
+            this.btnVATsearch.Location = new System.Drawing.Point(668, 16);
+            this.btnVATsearch.Name = "btnVATsearch";
+            this.btnVATsearch.Size = new System.Drawing.Size(45, 23);
+            this.btnVATsearch.TabIndex = 11;
+            this.btnVATsearch.Text = "Sök";
+            this.btnVATsearch.UseVisualStyleBackColor = true;
+            // 
+            // lblVATto
+            // 
+            this.lblVATto.AutoSize = true;
+            this.lblVATto.Location = new System.Drawing.Point(358, 22);
+            this.lblVATto.Name = "lblVATto";
+            this.lblVATto.Size = new System.Drawing.Size(20, 13);
+            this.lblVATto.TabIndex = 10;
+            this.lblVATto.Text = "Till";
+            // 
+            // lblVATfrom
+            // 
+            this.lblVATfrom.AutoSize = true;
+            this.lblVATfrom.Location = new System.Drawing.Point(195, 22);
+            this.lblVATfrom.Name = "lblVATfrom";
+            this.lblVATfrom.Size = new System.Drawing.Size(28, 13);
+            this.lblVATfrom.TabIndex = 9;
+            this.lblVATfrom.Text = "Från";
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(380, 17);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(119, 20);
+            this.dateTimePicker2.TabIndex = 8;
+            // 
+            // dtVATfrom
+            // 
+            this.dtVATfrom.Checked = false;
+            this.dtVATfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtVATfrom.Location = new System.Drawing.Point(225, 17);
+            this.dtVATfrom.Name = "dtVATfrom";
+            this.dtVATfrom.Size = new System.Drawing.Size(119, 20);
+            this.dtVATfrom.TabIndex = 7;
+            // 
             // dgvAttendancelist
             // 
             this.dgvAttendancelist.AllowUserToAddRows = false;
@@ -1862,6 +1913,7 @@
             this.listAttLeader.FormattingEnabled = true;
             this.listAttLeader.Location = new System.Drawing.Point(19, 116);
             this.listAttLeader.Name = "listAttLeader";
+            this.listAttLeader.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listAttLeader.Size = new System.Drawing.Size(208, 56);
             this.listAttLeader.TabIndex = 44;
             // 
@@ -1884,7 +1936,7 @@
             this.dgvAttendance.Name = "dgvAttendance";
             this.dgvAttendance.Size = new System.Drawing.Size(455, 163);
             this.dgvAttendance.TabIndex = 46;
-            this.dgvAttendance.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttendance_CellDoubleClick);
+            this.dgvAttendance.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAttendance_CellClick);
             // 
             // button2
             // 
@@ -1962,8 +2014,8 @@
             this.panPrint.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panPrint.Controls.Add(this.label12);
             this.panPrint.Controls.Add(this.txtTGroupID);
-            this.panPrint.Controls.Add(this.textBox3);
-            this.panPrint.Controls.Add(this.textBox1);
+            this.panPrint.Controls.Add(this.txtATSum);
+            this.panPrint.Controls.Add(this.txtSumTG);
             this.panPrint.Controls.Add(this.label5);
             this.panPrint.Controls.Add(this.label4);
             this.panPrint.Controls.Add(this.label2);
@@ -2000,19 +2052,19 @@
             this.txtTGroupID.Size = new System.Drawing.Size(53, 20);
             this.txtTGroupID.TabIndex = 68;
             // 
-            // textBox3
+            // txtATSum
             // 
-            this.textBox3.Location = new System.Drawing.Point(673, 279);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(39, 20);
-            this.textBox3.TabIndex = 67;
+            this.txtATSum.Location = new System.Drawing.Point(673, 279);
+            this.txtATSum.Name = "txtATSum";
+            this.txtATSum.Size = new System.Drawing.Size(39, 20);
+            this.txtATSum.TabIndex = 67;
             // 
-            // textBox1
+            // txtSumTG
             // 
-            this.textBox1.Location = new System.Drawing.Point(673, 251);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(39, 20);
-            this.textBox1.TabIndex = 66;
+            this.txtSumTG.Location = new System.Drawing.Point(673, 251);
+            this.txtSumTG.Name = "txtSumTG";
+            this.txtSumTG.Size = new System.Drawing.Size(39, 20);
+            this.txtSumTG.TabIndex = 66;
             // 
             // label5
             // 
@@ -2032,66 +2084,15 @@
             this.label4.TabIndex = 64;
             this.label4.Text = "Summa antal deltagare";
             // 
-            // dtVATfrom
-            // 
-            this.dtVATfrom.Checked = false;
-            this.dtVATfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtVATfrom.Location = new System.Drawing.Point(225, 17);
-            this.dtVATfrom.Name = "dtVATfrom";
-            this.dtVATfrom.Size = new System.Drawing.Size(119, 20);
-            this.dtVATfrom.TabIndex = 7;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(380, 17);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(119, 20);
-            this.dateTimePicker2.TabIndex = 8;
-            // 
-            // lblVATfrom
-            // 
-            this.lblVATfrom.AutoSize = true;
-            this.lblVATfrom.Location = new System.Drawing.Point(195, 22);
-            this.lblVATfrom.Name = "lblVATfrom";
-            this.lblVATfrom.Size = new System.Drawing.Size(28, 13);
-            this.lblVATfrom.TabIndex = 9;
-            this.lblVATfrom.Text = "Från";
-            // 
-            // lblVATto
-            // 
-            this.lblVATto.AutoSize = true;
-            this.lblVATto.Location = new System.Drawing.Point(358, 22);
-            this.lblVATto.Name = "lblVATto";
-            this.lblVATto.Size = new System.Drawing.Size(20, 13);
-            this.lblVATto.TabIndex = 10;
-            this.lblVATto.Text = "Till";
-            // 
-            // btnVATsearch
-            // 
-            this.btnVATsearch.Location = new System.Drawing.Point(668, 16);
-            this.btnVATsearch.Name = "btnVATsearch";
-            this.btnVATsearch.Size = new System.Drawing.Size(45, 23);
-            this.btnVATsearch.TabIndex = 11;
-            this.btnVATsearch.Text = "Sök";
-            this.btnVATsearch.UseVisualStyleBackColor = true;
-            // 
-            // txtVATsearch
-            // 
-            this.txtVATsearch.Location = new System.Drawing.Point(533, 18);
-            this.txtVATsearch.Name = "txtVATsearch";
-            this.txtVATsearch.Size = new System.Drawing.Size(129, 20);
-            this.txtVATsearch.TabIndex = 12;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
-            this.Controls.Add(this.panPrint);
-            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panAdendence);
+            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panPrint);
             this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panContact);
             this.Controls.Add(this.panViewContact);
@@ -2298,7 +2299,6 @@
         private System.Windows.Forms.TextBox txtTimestart;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ListBox listAttLeader;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DataGridView dgvAttendance;
         private System.Windows.Forms.Button button2;
@@ -2310,8 +2310,8 @@
         private System.Windows.Forms.DataGridView dgvAttendees;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panPrint;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtATSum;
+        private System.Windows.Forms.TextBox txtSumTG;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label12;
@@ -2322,6 +2322,7 @@
         private System.Windows.Forms.Label lblVATto;
         private System.Windows.Forms.Label lblVATfrom;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.ListBox listAttLeader;
     }
 }
 

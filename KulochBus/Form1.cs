@@ -97,7 +97,7 @@ namespace KulochBus
                     TextBox txtBox = (TextBox)control;
                     if (string.IsNullOrEmpty(txtBox.Text))
                     {
-                        if (txtBox.Tag.ToString() == "Medlemsnummer")
+                        if (txtBox.Tag.ToString() == "Medlemsnummer" || txtBox.Tag.ToString() == "Ansvarsområde")
                         {
                             continue;
                         }
@@ -156,7 +156,7 @@ namespace KulochBus
             bool picture = false;
             bool leader = false;
             bool payed = false;
-            //var membership = (Membership)cmbMembership.SelectedItem;    
+   
             Membership membership = new Membership();
 
             if (checkBoxPicture.Checked) { picture = true; }
@@ -620,7 +620,7 @@ namespace KulochBus
         {
             string selectedGroup;
             
-            if (lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue) != null)
+             if (lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue) != null)
             {
                 selectedGroup = lstATtraininggroups.GetItemText(lstATtraininggroups.SelectedValue);
 
@@ -940,18 +940,22 @@ namespace KulochBus
             //visibility på members
             HidePanels();       
             panPrint.Show();
+            txtTGroupName.Enabled = false;
+            txtTGroupID.Enabled = false;
+            txtSumTG.Enabled = false;
+            txtATSum.Enabled = false;
 
             // Get memberid
             DataGridViewRow selectedRow = dgvAttendancelist.Rows[e.RowIndex];
-            string selectedID = selectedRow.Cells[1].Value.ToString();
-            string selectedName = selectedRow.Cells[2].Value.ToString();
-            txtTGroupID.Text = selectedID;
+            int selectedID = Convert.ToInt32(selectedRow.Cells[2].Value);
+            string selectedName = selectedRow.Cells[3].Value.ToString();
+            txtTGroupID.Text = selectedID.ToString();
             txtTGroupName.Text = selectedName;
 
             Attendance at = new Attendance();
             dt = new DataTable();
             bs = new BindingSource();
-            
+
             dt = at.showAttendance(selectedID);
             bs.DataSource = dt;
             dgvAttendance.DataSource = bs;
@@ -966,15 +970,22 @@ namespace KulochBus
             bs1.DataSource = dt1;
             listAttLeader.DataSource = bs1;
             listAttLeader.DisplayMember = "firstname";
+
+            int tgSum = at1.findTGSum(selectedID);
+            txtSumTG.Text = tgSum.ToString();
+
+            int atSum = at1.findATSum(selectedID);
+            txtATSum.Text = atSum.ToString();
+
             
         }
-        
+       
 
-        private void dgvAttendance_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void dgvAttendance_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             Attendance at = new Attendance();
-            DataGridViewRow selectedRow = dgvAttendancelist.Rows[e.RowIndex];
-            string selectedID = selectedRow.Cells[1].Value.ToString();
+            DataGridViewRow selectedRow = dgvAttendance.Rows[e.RowIndex];
+            string selectedID = selectedRow.Cells[0].Value.ToString();
 
             dt = new DataTable();
             bs = new BindingSource();
@@ -983,5 +994,6 @@ namespace KulochBus
             bs.DataSource = dt;
             dgvAttendees.DataSource = bs;
         }
+
     }
 }

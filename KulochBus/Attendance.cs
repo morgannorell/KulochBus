@@ -101,14 +101,14 @@ namespace KulochBus
             Sql newSql = new Sql();
             DataTable dt = new DataTable();
 
-            string sql = "SELECT a.date AS \"Datum\", tg.groupid AS \"Gruppid\", tg.name AS \"Gruppnamn\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid GROUP BY ma.attendanceid, a.date, tg.name, tg.groupid";
+            string sql = "SELECT a.attendanceid AS \"NärvaroID\", a.date AS \"Datum\", tg.groupid AS \"Gruppid\", tg.name AS \"Gruppnamn\", COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid GROUP BY ma.attendanceid, a.date, tg.name, tg.groupid, a.attendanceid";
 
             dt = newSql.Select(sql);
 
             return dt;
         }
 
-        public DataTable showAttendance(string id)
+        public DataTable showAttendance(int id)
         {
             Sql newSql = new Sql();
             DataTable dt = new DataTable();
@@ -130,6 +130,28 @@ namespace KulochBus
             dt = newSql.Select(sql);
 
             return dt;
+        }
+
+        public int findTGSum(int id)
+        {
+            Sql newList = new Sql();
+
+            string sql = "SELECT COUNT(attendanceid) FROM attendance WHERE groupid = " + id + "";
+
+            int find = newList.SelectATSum(sql);
+
+            return find;
+        }
+
+        public int findATSum (int id)
+        {
+            Sql newList = new Sql();
+
+            string sql = "SELECT COUNT(ma.memberid) AS membercount FROM attendance AS a JOIN memberattendance AS ma ON ma.attendanceid = a.attendanceid WHERE a.groupid = " + id;
+
+            int find = newList.SelectMemberCount(sql);
+
+            return find;
         }
 
     }
