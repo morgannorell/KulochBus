@@ -88,7 +88,7 @@ namespace KulochBus
                 "gender AS \"Kön\", membership AS \"Medlemstyp\", " +
                 "ispayed AS \"Betalt\", isleader AS \"Ledare\" " +
                 "FROM person " +
-                "Join member ON personid = memberid";
+                "Join member ON personid = memberid WHERE isactive = TRUE";
 
             if (((condition == "") || (condition == "Inget filter")) && (search == ""))
             {
@@ -96,7 +96,7 @@ namespace KulochBus
             }
             else
             {
-                sql += " WHERE ";
+                sql += " AND ";
 
                 if (search != "")
                 {
@@ -122,6 +122,7 @@ namespace KulochBus
                 {
                     sql += "isleader = true";
                 } 
+
             }
             
             DataTable dt = new DataTable();
@@ -205,6 +206,15 @@ namespace KulochBus
 
             dt = querry.Select(sql);
             return dt;
+        }
+
+        public void UpdateActivity(bool activity, int id)
+        {
+            Sql member = new Sql();
+
+            string update = "UPDATE member SET isactive = " + activity +" WHERE memberid = " + id +"";
+
+            member.Insert(update);
         }
 
     }

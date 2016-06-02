@@ -70,6 +70,7 @@ namespace KulochBus
             txtMemberId.Hide();
             lblMemberID.Hide();
             btnViewList.Hide();
+            btnInactive.Hide();
             lblCreateNewMember.Text = "Skapa ny medlem";
 
             //lägger till items i combobox + tilldelar värden
@@ -242,6 +243,7 @@ namespace KulochBus
             else if (cmbFilter.SelectedItem.ToString() == "Ej betalt")
                 condition = "notPayed";
 
+
             ShowMemberlist(condition, search);
         }
         private void dgrViewMember_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -256,6 +258,8 @@ namespace KulochBus
             lblMemberID.Show();
             txtMemberId.Show();
             btnViewList.Show();
+            btnInactive.Show();
+
 
             //lägger till items i combobox + tilldelar värden
             cmbMembership.Items.Add(new Membership("Medlem", 150));
@@ -969,6 +973,7 @@ namespace KulochBus
             txtSumTG.Enabled = false;
             txtATSum.Enabled = false;
 
+
             // Get memberid
             DataGridViewRow selectedRow = dgvAttendancelist.Rows[e.RowIndex];
             int selectedID = Convert.ToInt32(selectedRow.Cells[2].Value);
@@ -1092,5 +1097,20 @@ namespace KulochBus
             dgvAttendancelist.DataSource = bs;  
         }
 
+        private void btnInactive_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtMemberId.Text);
+            Member mb = new Member();
+            bool activity = false;
+            mb.UpdateActivity(activity, id);
+
+            MessageBox.Show("Medlemmen är inaktiverad");
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            HidePanels();    
+            panStart.Show();
+        }
     }
 }
