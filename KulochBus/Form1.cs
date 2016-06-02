@@ -196,6 +196,7 @@ namespace KulochBus
         {
             HidePanels();
             panContact.Show();
+            btnCTsave.Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -535,11 +536,14 @@ namespace KulochBus
             cmbAddLeader.Hide();
             btnAddLeader.Hide();
             btnAddMember.Hide();
+            
 
             panTGGroup.Show();
             btnTGCreate.Show();
             btnTGDiciplin.Show();
             btnTGLevel.Show();
+            lblTraningTitle.Text = "Träningsgrupp";
+
 
             Traininggroup tg = new Traininggroup();
             dt = new DataTable();
@@ -678,8 +682,7 @@ namespace KulochBus
             dt = new DataTable();
             dt = at.CreateMemberlist(memberids, selectedGroup, description, place, date, starttime, endtime);
 
-            MessageBox.Show("Närvarolista tillagd");
-               
+            MessageBox.Show("Närvarolista tillagd");     
         }
 
         private void btnATcancel_Click(object sender, EventArgs e)
@@ -739,6 +742,9 @@ namespace KulochBus
             lblTGMembers.Show();
             dgrListTGMembers.Show();
             txtGroupID.Show();
+            cmbDisciplin.Items.Clear();
+            cmbLevel.Items.Clear();
+
 
             dgvAddLeader.Show();
             lblGroupID.Show();
@@ -1045,6 +1051,7 @@ namespace KulochBus
 
         private void btnVATsearch_Click(object sender, EventArgs e)
         {
+
             dt = new DataTable();
             bs = new BindingSource();
 
@@ -1055,7 +1062,8 @@ namespace KulochBus
             dt = at.GetDate(myFromDate, myToDate);
 
             bs.DataSource = dt;
-            dgvAttendancelist.DataSource = bs;
+            dgvAttendancelist.DataSource = bs;           
+            
         }
 
         private void dtVATfrom_CloseUp(object sender, EventArgs e)
@@ -1069,5 +1077,20 @@ namespace KulochBus
             dtVATto.CustomFormat = "yyyy-MM-dd"; 
             dtVATto.Format = DateTimePickerFormat.Custom;
         }
+
+        private void btnSearchAttText_Click(object sender, EventArgs e)
+        {
+            dt = new DataTable();
+            bs = new BindingSource();
+            string search = txtVATsearch.Text;
+
+            Attendance at = new Attendance();
+
+            dt = at.ShowAttList(search);
+
+            bs.DataSource = dt;
+            dgvAttendancelist.DataSource = bs;  
+        }
+
     }
 }

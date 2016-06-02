@@ -48,6 +48,7 @@
             this.omToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lblNMTitle = new System.Windows.Forms.Label();
             this.panTGGroup = new System.Windows.Forms.Panel();
+            this.btnAvbrytTR = new System.Windows.Forms.Button();
             this.btnRemoveTG = new System.Windows.Forms.Button();
             this.btnAddMember = new System.Windows.Forms.Button();
             this.btnAddLeader = new System.Windows.Forms.Button();
@@ -185,6 +186,7 @@
             this.lstATleader = new System.Windows.Forms.ListBox();
             this.lblATtitle = new System.Windows.Forms.Label();
             this.panViewAttendance = new System.Windows.Forms.Panel();
+            this.btnSearchAttText = new System.Windows.Forms.Button();
             this.txtVATsearch = new System.Windows.Forms.TextBox();
             this.btnVATsearch = new System.Windows.Forms.Button();
             this.lblVATto = new System.Windows.Forms.Label();
@@ -218,7 +220,6 @@
             this.dgvGroupLeader = new System.Windows.Forms.DataGridView();
             this.dgvLeader = new System.Windows.Forms.DataGridView();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnAvbrytTR = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panTGGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAddLeader)).BeginInit();
@@ -431,6 +432,16 @@
             this.panTGGroup.Name = "panTGGroup";
             this.panTGGroup.Size = new System.Drawing.Size(727, 445);
             this.panTGGroup.TabIndex = 37;
+            // 
+            // btnAvbrytTR
+            // 
+            this.btnAvbrytTR.Location = new System.Drawing.Point(83, 397);
+            this.btnAvbrytTR.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAvbrytTR.Name = "btnAvbrytTR";
+            this.btnAvbrytTR.Size = new System.Drawing.Size(64, 23);
+            this.btnAvbrytTR.TabIndex = 59;
+            this.btnAvbrytTR.Text = "Avbryt";
+            this.btnAvbrytTR.UseVisualStyleBackColor = true;
             // 
             // btnRemoveTG
             // 
@@ -1831,6 +1842,7 @@
             // panViewAttendance
             // 
             this.panViewAttendance.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panViewAttendance.Controls.Add(this.btnSearchAttText);
             this.panViewAttendance.Controls.Add(this.txtVATsearch);
             this.panViewAttendance.Controls.Add(this.btnVATsearch);
             this.panViewAttendance.Controls.Add(this.lblVATto);
@@ -1845,6 +1857,16 @@
             this.panViewAttendance.Size = new System.Drawing.Size(727, 445);
             this.panViewAttendance.TabIndex = 0;
             // 
+            // btnSearchAttText
+            // 
+            this.btnSearchAttText.Location = new System.Drawing.Point(670, 17);
+            this.btnSearchAttText.Name = "btnSearchAttText";
+            this.btnSearchAttText.Size = new System.Drawing.Size(45, 23);
+            this.btnSearchAttText.TabIndex = 13;
+            this.btnSearchAttText.Text = "Sök";
+            this.btnSearchAttText.UseVisualStyleBackColor = true;
+            this.btnSearchAttText.Click += new System.EventHandler(this.btnSearchAttText_Click);
+            // 
             // txtVATsearch
             // 
             this.txtVATsearch.Location = new System.Drawing.Point(533, 18);
@@ -1854,7 +1876,7 @@
             // 
             // btnVATsearch
             // 
-            this.btnVATsearch.Location = new System.Drawing.Point(668, 16);
+            this.btnVATsearch.Location = new System.Drawing.Point(452, 16);
             this.btnVATsearch.Name = "btnVATsearch";
             this.btnVATsearch.Size = new System.Drawing.Size(45, 23);
             this.btnVATsearch.TabIndex = 11;
@@ -1865,7 +1887,7 @@
             // lblVATto
             // 
             this.lblVATto.AutoSize = true;
-            this.lblVATto.Location = new System.Drawing.Point(358, 22);
+            this.lblVATto.Location = new System.Drawing.Point(329, 22);
             this.lblVATto.Name = "lblVATto";
             this.lblVATto.Size = new System.Drawing.Size(20, 13);
             this.lblVATto.TabIndex = 10;
@@ -1883,9 +1905,9 @@
             // dtVATto
             // 
             this.dtVATto.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtVATto.Location = new System.Drawing.Point(380, 17);
+            this.dtVATto.Location = new System.Drawing.Point(351, 17);
             this.dtVATto.Name = "dtVATto";
-            this.dtVATto.Size = new System.Drawing.Size(119, 20);
+            this.dtVATto.Size = new System.Drawing.Size(94, 20);
             this.dtVATto.TabIndex = 8;
             this.dtVATto.Value = new System.DateTime(2999, 12, 31, 0, 0, 0, 0);
             this.dtVATto.CloseUp += new System.EventHandler(this.dtVATto_CloseUp);
@@ -1897,7 +1919,7 @@
             this.dtVATfrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtVATfrom.Location = new System.Drawing.Point(225, 17);
             this.dtVATfrom.Name = "dtVATfrom";
-            this.dtVATfrom.Size = new System.Drawing.Size(119, 20);
+            this.dtVATfrom.Size = new System.Drawing.Size(100, 20);
             this.dtVATfrom.TabIndex = 7;
             this.dtVATfrom.Value = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
             this.dtVATfrom.CloseUp += new System.EventHandler(this.dtVATfrom_CloseUp);
@@ -2180,31 +2202,21 @@
             this.label13.TabIndex = 4;
             this.label13.Text = "Ledare";
             // 
-            // btnAvbrytTR
-            // 
-            this.btnAvbrytTR.Location = new System.Drawing.Point(83, 397);
-            this.btnAvbrytTR.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAvbrytTR.Name = "btnAvbrytTR";
-            this.btnAvbrytTR.Size = new System.Drawing.Size(64, 23);
-            this.btnAvbrytTR.TabIndex = 59;
-            this.btnAvbrytTR.Text = "Avbryt";
-            this.btnAvbrytTR.UseVisualStyleBackColor = true;
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 469);
-            this.Controls.Add(this.panViewAttendance);
+            this.Controls.Add(this.panViewMember);
+            this.Controls.Add(this.panContact);
+            this.Controls.Add(this.panAdendence);
             this.Controls.Add(this.panTGGroup);
             this.Controls.Add(this.panTGGroupList);
-            this.Controls.Add(this.panAdendence);
-            this.Controls.Add(this.panContact);
+            this.Controls.Add(this.panMember);
+            this.Controls.Add(this.panViewAttendance);
             this.Controls.Add(this.panViewContact);
             this.Controls.Add(this.panLeader);
-            this.Controls.Add(this.panMember);
             this.Controls.Add(this.panPrint);
-            this.Controls.Add(this.panViewMember);
             this.Controls.Add(this.panStart);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -2442,6 +2454,7 @@
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button btnAvbrytTR;
+        private System.Windows.Forms.Button btnSearchAttText;
     }
 }
 

@@ -196,5 +196,21 @@ namespace KulochBus
 
             return dt;
         }
+
+        public DataTable ShowAttList(string search)
+        {
+            Sql querry = new Sql();
+
+            string sql = "SELECT a.attendanceid AS \"NärvaroID\", a.date AS \"Datum\", tg.groupid AS \"Gruppid\", tg.name AS \"Gruppnamn\", " +
+                        "COUNT(ma.memberid) AS \"Antal närvarande\" FROM memberattendance AS ma JOIN attendance AS " +
+                        "a ON ma.attendanceid = a.attendanceid JOIN traininggroup AS tg ON tg.groupid = a.groupid " +
+                        "WHERE tg.name LIKE '%" + search + "%' GROUP BY ma.attendanceid, a.date, tg.name, tg.groupid, a.attendanceid";         
+
+
+            DataTable dt = new DataTable();
+            dt = querry.Select(sql);
+
+            return dt;
+        }
     }
 }
